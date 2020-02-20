@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Gaming-Babay</title>
+
+<!-- Bootstrap -->
+
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+<link href="../assets/css/owl.carousel.min.css" rel="stylesheet">
+<link href="../assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ <style>
+  #container:fullscreen {
+      width: 100%;
+      height: 100%;
+      background-color: green;
+  }
+
+  #container:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+      background-color: green;
+  }
+
+  #unlock-button {
+      display: none;
+  }
+</style>     
+</head>
+<body>
+<section class="reward-collection-outer"  id="container">
+<p id="orientation-status"></p>
+<div class="container">
+<div class="announcement-cstm-outer">
+<div class="announcement-slider">
+<div id="owl-example" class="owl-carousel">
+<div class="slider-item">
+<div class="slider-item-inner">
+<div class="announcement-slider-left-sec">
+                        <img src="../assets/images/seriesimg06.png">
+</div>
+<div class="announcement-slider-right-sec">
+                    <div class="modal-body">
+
+                      <div class="babyimg_info">
+                        <div class="tpname">
+                          <h2>這是道具名稱</h2>
+                          <img class="starimg" src="../assets/images/starsimg.png">
+                        </div>
+                        <div class="paragraph">
+                          亞美沒花意每雄象，連住會後親被住病行工：論賣查機品一學大位長；歡思的分。臺是意樹公一電女馬友？增時工考相策白便適是。
+                        </div>
+                        <div class="ratings_info">
+                          <h3>- 星數說明 -</h3>
+                          <p>有是院，起重設頭處輪！時下快錯這兒不片：因我服可大間不長中陽子樣級刻位力那不他的小比、評福成區到術，個明年小加定這地。</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="popupprple_btn" data-dismiss="modal"><img src="../assets/images/puprleimgbtn.png"><span>出售</span></button>
+                      <button class="popupprple_btn" data-dismiss="modal"><img src="../assets/images/pinkbtnbgr.png"><span>升級</span></button>
+                    </div></div>
+</div>
+</div>
+<div class="slider-item">
+<div class="slider-item-inner">
+<div class="announcement-slider-left-sec">
+<h2>新註冊用戶超值優惠</h2>
+<p>2019/10/11~2019/12/10 活動期間所有新註冊用戶可於獎勵領取頁面領取000拉幣。</p>
+</div>
+<div class="announcement-slider-right-sec">
+<img src="img/annoucement-slidr-img.png" class="img-responsive">
+</div>
+</div>
+</div>
+<div class="slider-item">
+<div class="slider-item-inner">
+<div class="announcement-slider-left-sec">
+<h2>新註冊用戶超值優惠</h2>
+<p>2019/10/11~2019/12/10 活動期間所有新註冊用戶可於獎勵領取頁面領取000拉幣。</p>
+</div>
+<div class="announcement-slider-right-sec">
+<img src="img/annoucement-slidr-img.png" class="img-responsive">
+</div>
+</div>
+</div>
+<div class="slider-item">
+<div class="slider-item-inner">
+<div class="announcement-slider-left-sec">
+<h2>新註冊用戶超值優惠</h2>
+<p>2019/10/11~2019/12/10 活動期間所有新註冊用戶可於獎勵領取頁面領取000拉幣。</p>
+</div>
+<div class="announcement-slider-right-sec">
+<img src="img/annoucement-slidr-img.png" class="img-responsive">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+ <div id="buttons-container">
+    <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
+    <!-- <button id="unlock-button">Unlock</button> -->
+  </div>
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/owl.carousel.min.js"></script> 
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script> 
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+	nav:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        768:{
+            items:1,
+            nav:false
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:false
+        }
+    }
+})
+</script>
+<script>
+            
+  var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
+          // _UNLOCK_BUTTON = document.querySelector("#unlock-button"),
+          _STATUS = document.querySelector("#orientation-status");
+
+  // _STATUS.innerHTML = screen.orientation.type + ' mode';
+
+  // upon lock to landscape-primary mode
+  function landScapeMode() {
+      
+      if (document.documentElement.requestFullscreen)
+      {
+          document.querySelector("#container").requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullScreen)
+      {
+          document.querySelector("#container").webkitRequestFullScreen();
+      }
+
+      screen.orientation.lock("landscape-primary")
+              .then(function () {
+                  _LOCK_BUTTON.style.display = 'none';
+                  // _UNLOCK_BUTTON.style.display = 'block';
+              })
+              .catch(function (error) {
+                  alert(error);
+              });
+  }
+  // upon unlock
+  /*document.querySelector("#unlock-button").addEventListener('click', function () {
+      screen.orientation.unlock();
+
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });*/
+  // when screen orientation changes
+  screen.orientation.addEventListener("change", function () {
+      // _STATUS.innerHTML = screen.orientation.type + ' mode';
+  });
+  // on exiting full-screen lock is automatically released
+  document.addEventListener("fullscreenchange", function () {
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });
+  document.addEventListener("webkitfullscreenchange", function () {
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });
+  function myFunction() {
+      document.getElementById("lock-landscape-button").click();
+    }
+  //etTimeout(myFunction, 2000);
+</script>
+</body>
+</html>

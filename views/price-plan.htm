@@ -1,0 +1,22 @@
+<section class="reward-collection-outer"  id="container" ng-init="getListPricePlan()">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec"> <a href="#!dashboard"><img src="/assets/img/img-check-circle.png"/> 包月/儲值 </a> </div>
+    </div>
+    <div class="container">
+        <div class="monthly-stored-value" ng-repeat="item in pricePlans" ng-if="item.type == 0"> <a href="#"><img src="/assets/img/monthly-value-top-img.png"></a> </div>
+        <div class="monthly-stored-value-bottom-sec">
+            <ul>
+                <a href="#"  ng-repeat="item in pricePlans" ng-if="item.type == 1">
+                    <li><div class="img-outer-cstm"><img ng-src="{{'/assets/' + item.image || '/assets/img/gold-icon-2.png'}}" class="img-responsive"></div>
+                        <h4>{{item.credit}} G幣</h4>
+                        <span> NT {{item.cash}} </span> </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div id="buttons-container">
+        <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
+        <!-- <button id="unlock-button">Unlock</button> -->
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="uniformsister" ng-init="getListPrizeLogs()">
+    <div class="uniformheader title-arrow">
+        <a href="#!dashboard" class="">
+            <img src="/assets/img/img-check-circle.png"/>
+        </a>
+        <h1> 獎勵領取</h1>
+        <button ng-click="openModal('prize_log')"
+                class="popupprple_btn bookbtn pull-right" style="width:200px;margin-top: 0px;">領取紀錄
+        </button>
+    </div>
+
+    <div class="gamelist">
+        <div class="gamelist_top">
+            <button ng-click="checkAllPrizes()" class="bookbtn">一鍵全選</button>
+            <ul ng-init="getListPrizes()" class="gamelist_inner">
+                <li ng-repeat="prize in prizes">
+                    <div class="shadow">
+                        <div class="listbox">
+                            <img ng-src="{{prize.type == 0 && '/assets/images/coinicon-02.png' || prize.type == 1 && '/assets/images/gamebook02.png'}}">
+                            <div class="price"><span>{{prize.name}}</span><br>
+                                <span ng-if="prize.type == 0">{{prize.coin}}</span>
+                                <span ng-if="prize.type == 1">{{prize.card}}</span>
+                            </div>
+                            <div class="boxcheck">
+                                <label class="pkcheckbox">
+                                    <input ng-model="prize.selected" type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <button ng-click="redeem()" class="popupprple_btn"><img src="/assets/images/puprleimgbtn.png"><span>領取</span></button>
+
+        </div>
+    </div>
+</section>

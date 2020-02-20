@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="modal.product_info.close()">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="mall-modal-content">
+        <div class="mall-modal-content-left-sec">
+            <!--start-->
+            <div class="mall-modal-slider">
+                <data-thumbnail-slider id="thumbnail-slider" data-options="defaultOptions" style="float:left;">
+                    <div class="inner">
+                        <ul>
+                            <li thumbnail-slider-item ng-repeat="image in currentProduct.images"> <a class="thumb" ng-href="{{path['product']}}{{image.src}}"></a> </li>
+                        </ul>
+                    </div>
+                </data-thumbnail-slider>
+                <data-image-slider id="ninja-slider" data-options="nsOptions" style="float:left;">
+                    <div class="slider-inner">
+                        <ul>
+                            <li image-slider-item ng-repeat="image in currentProduct.images"><a class="ns-img" ng-href="{{path['product']}}{{image.src}}"></a></li>
+                        </ul>
+                    </div>
+                </data-image-slider>
+            </div>
+            <!--end-->
+
+        </div>
+        <div class="mall-modal-content-right-sec">
+            <h2>{{currentProduct.name}}</h2>
+            <p ng-bind-html="currentProduct.intro"></p>
+
+            <div class="product-price"><span><img src="/assets/img/price-icon.png"> <b>{{currentProduct.price}}</b></span>
+            </div>
+            <div class="mall-product-btn"><a href="#" ng-click="buyProduct(currentProduct)">購買</a></div>
+        </div>
+    </div>
+</div>

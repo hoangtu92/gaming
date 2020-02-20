@@ -1,0 +1,39 @@
+<section class="reward-collection-outer" id="container">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec"><a href="#!dashboard"><img
+                src="/assets/img/img-check-circle.png"/> 商城 </a></div>
+    </div>
+    <div class="mall-product-outer">
+        <div class="container">
+            <div class="mall-category-header-menu"><span class="mall-cat-name"><img src="/assets/img/category-icon.png"
+                                                                                    class="img-responsive"> 類別</span>
+                <ul class="mall-category-menu" ng-init="getListProductTags()">
+                    <li ng-class="{active : currentFilter === undefined}">
+                        <button ng-click="getProducts()" class="btn btn-default filter-button"
+                                data-filter="all-category">全部類別
+                        </button>
+                    </li>
+                    <li ng-class="{active: currentFilter === tag.name}" ng-repeat="tag in productTags">
+                        <button ng-click="getProducts(tag.name)" class="btn btn-default filter-button"
+                                data-filter="{{tag.name}}">{{tag.name}}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="mall-category-products" ng-init="getProducts()">
+                <div ng-repeat="product in products" ng-show="checkItemTags(product, tag)"
+                     class="gallery_product filter" ng-click="setCurrentProduct(product);">
+                    <a class="mall-product-inner" href="#">
+                        <div class="image-box"><img ng-src="{{path['product']}}{{product.thumbnail}}"
+                                                    class="img-responsive"></div>
+                        <h3 class="product-title">{{product.name}}</h3>
+                        <div class="product-price"><span><img src="/assets/img/price-icon.png"> <b>{{product.price}}</b></span>
+                        </div>
+                    </a></div>
+
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,28 @@
+<section ng-init="getCurrentUser()" class="uniformsister uniformsister06">
+    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img src="/assets/img/img-check-circle.png"/>
+        <h1>普通抽牌</h1></a>
+    </div>
+
+    <div class="uniform_boxes">
+        <ul class="list-unstyled" ng-init="getListCards()">
+            <li ng-repeat="card in cards">
+                <div class="uniformbox_inner">
+                    <div class="imgg"><img alt="book" height="" ng-src="{{path['card']}}{{card.thumbnail}}" width=""/></div>
+
+                    <div class="bookname">
+                        <h2>{{card.name}}</h2>
+                        <button class="bookbtn" id="myButton">抽卡機率</button>
+                    </div>
+
+                    <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
+                        <h3>{{card.preSalePrice}}</h3>
+                        <button class="pinkbtn" ng-click="setCurrentCard(card); openModal('card_buy')"><img
+                                src="/assets/images/button01.png"/></button> <!-- Modal -->
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</section>

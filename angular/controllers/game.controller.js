@@ -1,0 +1,440 @@
+gamingApp.controller("gameController", function ($scope, $route, $routeParams, $http, $location, $infoModal, $timeout) {
+
+    /**
+     * Sic bo dice game
+     */
+
+    $scope.dices = {
+        1: "/assets/images/onered_box.png",
+        2: "/assets/images/twoblack_box.png",
+        3: "/assets/images/threeblack_box.png",
+        4: "/assets/images/fourred_box.png",
+        5: "/assets/images/fiveblack_box.png",
+        6: "/assets/images/sixblack_box.png",
+    };
+
+    function getAllBets(){
+
+        var bets = [];
+
+        if($scope.gaming.score_4 > 0){
+            bets.push("score_4");
+        }
+        if($scope.gaming.score_5 > 0){
+            bets.push("score_5");
+        }
+
+        if($scope.gaming.score_6 > 0){
+            bets.push("score_6");
+        }
+
+        if($scope.gaming.score_7 > 0){
+            bets.push("score_7");
+        }
+
+        if($scope.gaming.score_8 > 0){
+            bets.push("score_8");
+        }
+
+        if($scope.gaming.score_9 > 0){
+            bets.push("score_9");
+        }
+
+        if($scope.gaming.score_10 > 0){
+            bets.push("score_10");
+        }
+
+        if($scope.gaming.score_11 > 0){
+            bets.push("score_11");
+        }
+
+        if($scope.gaming.score_12 > 0){
+            bets.push("score_12");
+        }
+
+        if($scope.gaming.score_13 > 0){
+            bets.push("score_13");
+        }
+
+        if($scope.gaming.score_14 > 0){
+            bets.push("score_14");
+        }
+
+        if($scope.gaming.score_15 > 0){
+            bets.push("score_15");
+        }
+
+        if($scope.gaming.score_16 > 0){
+            bets.push("score_16");
+        }
+        if($scope.gaming.score_17 > 0){
+            bets.push("score_17");
+        }
+        //check big bet
+        if($scope.gaming.big > 0){
+            bets.push("big");
+        }
+
+        //check small bet
+        if($scope.gaming.small > 0){
+            bets.push("small");
+        }
+
+        //check single bet
+        if($scope.gaming.dice_1 > 0){
+            bets.push("dice_1");
+        }
+
+        if($scope.gaming.dice_2 > 0){
+            bets.push("dice_2");
+        }
+
+        if($scope.gaming.dice_3 > 0){
+            bets.push("dice_3");
+        }
+
+        if($scope.gaming.dice_4 > 0){
+            bets.push("dice_4");
+        }
+
+        if($scope.gaming.dice_5 > 0){
+            bets.push("dice_5");
+        }
+
+        if($scope.gaming.dice_6 > 0){
+            bets.push("dice_6");
+        }
+
+        //check triple bet
+        if($scope.gaming.triple_1 > 0){
+            bets.push("triple_1");
+        }
+
+        if($scope.gaming.triple_2 > 0){
+            bets.push("triple_2");
+        }
+
+        if($scope.gaming.triple_3 > 0){
+            bets.push("triple_3");
+        }
+
+        if($scope.gaming.triple_4 > 0){
+            bets.push("triple_4");
+        }
+
+        if($scope.gaming.triple_5 > 0){
+            bets.push("triple_5");
+        }
+
+        if($scope.gaming.triple_6 > 0){
+            bets.push("triple_6");
+        }
+
+        //check any triple bet
+        if($scope.gaming.any_triple > 0){
+            bets.push("any_triple");
+        }
+
+        return bets;
+    }
+
+    /**
+     * get game ratio
+     */
+    $scope.getRatios = function(){
+      $http.get(localStorage.base_api + "game/getRatios").then(function (res) {
+            $scope.ratio = res.data;
+      })
+    };
+
+    /**
+     * Get bet units
+     */
+    $scope.getBetUnits = function(){
+      $http.get(localStorage.base_api + "game/getBetUnits").then(function (res) {
+            $scope.units = res.data;
+      })
+    };
+
+    /**
+     * Restore all bets by its value
+     */
+    $scope.restoreGame = function () {
+
+
+        if(typeof $scope.gaming === 'undefined') return;
+
+        var bets = getAllBets();
+
+
+        $timeout(function () {
+            bets.forEach(function (o, i) {
+                $scope.drawIcon(document.querySelector('[data-bet="'+o+'"]'));
+            });
+        }, 500);
+    };
+
+    /**
+     * Double all current bet on table
+     */
+    $scope.cloneBet = function(){
+        if(typeof $scope.gaming === "undefined") return;
+
+        var bets = getAllBets();
+
+        bets.forEach(function (o) {
+            $scope.gaming[o] = $scope.gaming[o] * 2;
+        });
+
+        $scope.restoreGame();
+
+    };
+
+    /**
+     * Save current bet to the local machine
+     */
+    $scope.saveBet = function(){
+        var bets = getAllBets();
+        var gamingSession = {};
+        bets.forEach(function (value) {
+            gamingSession[value] = $scope.gaming[value];
+        });
+        localStorage["game_session_" + $scope.gaming.id] = JSON.stringify(gamingSession);
+    };
+
+    /**
+     * Restore bets from local machine
+     */
+    $scope.applySavedBets = function(){
+
+        if(typeof localStorage["game_session_" + $scope.gaming.id] === "undefined") return;
+
+        var gamingSession = JSON.parse(localStorage["game_session_" + $scope.gaming.id]);
+
+        if(gamingSession){
+            for(var i in gamingSession){
+                if(gamingSession.hasOwnProperty(i)){
+                    $scope.gaming[i] += gamingSession[i];
+                }
+            }
+
+            $http.post(localStorage.base_api + "game/updateGame", JSON.stringify($scope.gaming)).then(function (res) {
+                $scope.gaming = res.data.model;
+                $scope.restoreGame();
+            }, function (reason) {
+
+            });
+
+        }
+
+
+
+    };
+
+    $scope.resetGameState = function(){
+        angular.element(".dices-result-container").hide();
+        angular.element(".win").removeClass("win");
+        angular.element(".lost").removeClass("lost");
+    };
+
+    //Select bet amount
+    $scope.selectBet = function (amount) {
+        $scope.selectedBet = amount;
+        $scope.resetGameState();
+
+    };
+
+    /**
+     *
+     * @param el
+     * @param amount
+     * @returns {boolean}
+     */
+    $scope.placeBet = function (el, amount) {
+
+        $scope.resetGameState();
+
+        //Check bet unit is selected
+        if (isNaN(amount)) {
+            $infoModal.open("請先選擇壓注籌碼");
+            return false;
+        }
+
+        //Get bet area key
+        var bet_area = el.getAttribute('data-bet');
+
+        //Initialize bet are amount 0
+        if (typeof $scope.gaming[bet_area] === 'undefined') $scope.gaming[bet_area] = 0;
+
+        //Placing bet
+        $http.post(localStorage.base_api + "game/placeBet", JSON.stringify({
+            sessionId: $scope.gaming.id,
+            amount: amount,
+            area: bet_area
+        })).then(function (res) {
+            if (res.data.status) {
+
+                //New gaming model with updated bet value and user credit
+                $scope.gaming = res.data.model;
+                $scope.hasUnsavedChange = true;
+
+                //place the icon
+                $scope.drawIcon(el);
+
+                console.log($scope.gaming);
+
+            }
+        }, function (res) {
+            $scope.gaming = res.data.model;
+
+        });
+
+        return true;
+
+    };
+
+    /**
+     * Draw icon on screen
+     * @param area
+     */
+    $scope.drawIcon = function(area){
+
+        //Get position of element
+        var pos = area.getBoundingClientRect(),
+            bet_area = area.getAttribute('data-bet');
+
+        //Remove exists pos&element
+        angular.element("." + bet_area).remove();
+
+        //Calculate the bet amount and display in web
+        var result = $scope.gaming[bet_area] / 1000,
+            style = 'display: none; position: fixed; left: ' + pos.x + 'px; top: ' + pos.y + 'px;',
+            icon = '<div class="bet-icon redvlack_circle ' + bet_area + '" style="' + style + '">\n' +
+                '                                    <img src="/assets/images/redblackbgr.png">\n' +
+                '                                    <div class="text">' + result + 'K</div>\n' +
+                '                                </div>';
+
+        var html = angular.element(icon);
+
+        //Insert to document
+        angular.element('body .gamepage').append(html);
+
+        $timeout(function () {
+            html.show();
+        }, 300);
+    };
+
+
+    /**
+     * Initializing game session
+     */
+    $scope.initGame = function () {
+        $http({
+            url: localStorage.base_api + "game/initializeGame",
+            method: "POST",
+            headers: {
+                sessionId: sessionStorage.session_id
+            }
+        }).then(function (res) {
+            $scope.gaming = res.data.model;
+            sessionStorage.session_id = $scope.gaming.id;
+            $scope.restoreGame();
+        })
+    };
+
+
+    /**
+     * Reset game
+     */
+    $scope.resetGame = function () {
+
+        $http.get(localStorage.base_api + "game/resetGame", {
+            params: {
+                sessionId: $scope.gaming.id
+            }
+        }).then(function (res) {
+            $scope.gaming = res.data.model;
+            angular.element(".bet-icon").remove();
+            $scope.resetGameState();
+        });
+
+    };
+
+    /**
+     * Exit current game
+     */
+    $scope.exitGame = function(){
+        $http.get(localStorage.base_api + "game/closeGame", {params: {sessionId: $scope.gaming.id}}).finally(function () {
+            $location.url("dashboard");
+        })
+    };
+
+
+    /**
+     * Open game result
+     */
+    $scope.startGame = function () {
+
+        $scope.resetGameState();
+
+        $http.get(localStorage.base_api + "game/shake", {params: {sessionId: $scope.gaming.id}}).then(function (res) {
+            $scope.gaming = res.data.model;
+
+            var win = Object.keys($scope.gaming['win']),
+                lost = Object.keys($scope.gaming['lost']);
+
+            for(var i in win){
+                if(win.hasOwnProperty(i)){
+                    angular.element('[data-bet="'+win[i]+'"]').addClass("win");
+                    angular.element("." + win[i]).addClass("win");
+                }
+            }
+            for(var i in lost){
+                if(lost.hasOwnProperty(i)){
+                    angular.element('[data-bet="'+lost[i]+'"]').addClass("lost");
+                    angular.element("." + lost[i]).addClass("lost");
+                }
+            }
+
+            angular.element(".dices-result-container").show();
+
+
+            $scope.hasUnsavedChange = false;
+        }, function () {
+            //$scope.resetGame();
+        });
+    };
+
+    /**
+     * Click event on area
+     */
+    angular.element(".bet-area").each(function (i, o) {
+        o.onclick = function () {
+            $scope.placeBet(o, $scope.selectedBet);
+            $scope.$apply();
+        }
+    });
+
+    //Re draw icon when window resize, scroll
+    window.addEventListener("resize", function (e) {
+        $scope.restoreGame();
+    });
+
+    window.addEventListener("scroll", function (e) {
+        $scope.restoreGame();
+    });
+
+
+    //Close the game when user close tab
+    window.addEventListener('beforeunload', function (e) {
+
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open("GET", localStorage.base_api + "game/closeGame?sessionId=" + $scope.gaming.id, false);
+        xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        xhttp.setRequestHeader("Authorization", "Bearer " + localStorage.session_token);
+        xhttp.send();
+
+    });
+
+});

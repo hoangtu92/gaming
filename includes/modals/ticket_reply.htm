@@ -1,0 +1,17 @@
+<div class="reward-collection-modal">
+    <div class="top-modal-section">
+        <h2>{{selectedTicket.issue}}</h2> <span>{{selectedTicket.datetime.toDate().toLocaleDateString()}}</span>
+    </div>
+
+    <div class="customer-reply-popup-content">
+        <p>{{selectedTicket.description}}</p>
+        <div ng-repeat="msg in selectedTicket.messages">
+            <h3>{{msg.author.username}}</h3>
+            <p>{{msg.replied_time.toDate().toLocaleDateString()}}: {{msg.message}}</p>
+        </div>
+
+    </div>
+</div>
+<div class="reward-confirmation-btn">
+    <button ng-click="modal.ticket_reply.close()"><img src="/assets/img/reply-confrimation-btn.png"></button>
+</div>

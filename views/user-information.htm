@@ -1,0 +1,33 @@
+<section class="reward-collection-outer" id="container" ng-init="getCurrentUser()">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec"><a href="#!dashboard"><img
+                src="/assets/img/img-check-circle.png"/> 用戶資料 </a></div>
+    </div>
+    <div class="container">
+        <div class="reward-collection-mid-section">
+            <div class="user-information-outer">
+                <div class="user-info-coulmn">
+                    <div class="author-img"><img ng-src="{{path['user']}}{{currentUser.avatar}}" class="img-responsive"></div>
+                    <h2>{{currentUser.username}}</h2>
+                    <span><strong>UID</strong> {{currentUser.uid}}</span></div>
+                <div class="user-info-coulmn">
+                    <h5>擁有G幣</h5>
+                    <h3>{{currentUser.credit}}</h3>
+                    <a href="#!monthly-stored-value"><img src="/assets/img/go-to-stored-value-btn.png"
+                                                              class="img-responsive"></a></div>
+                <div class="user-info-coulmn">
+                    <div class="progress" data-percentage="{{currentUser.game_progress}}"><span class="progress-left"> <span
+                            class="progress-bar"></span> </span> <span class="progress-right"> <span
+                            class="progress-bar"></span> </span>
+                        <div class="progress-value">
+                            <div><span>遊戲進度</span><br>
+                                {{currentUser.game_progress}}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

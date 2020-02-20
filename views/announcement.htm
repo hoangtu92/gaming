@@ -1,0 +1,33 @@
+<section class="reward-collection-outer" id="container">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec">
+            <a href="#!dashboard"><img alt="go back" src="/assets/img/img-check-circle.png"/> 公告 </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="announcement-cstm-outer">
+            <div class="announcement-slider" ng-init="getListNews()">
+                <data-owl-carousel class="owl-carousel" data-options="sliderOptions">
+                    <div owl-carousel-item="" ng-repeat="item in news" class="item">
+                        <div class="slider-item-inner">
+                            <div class="announcement-slider-left-sec">
+                                <h2>{{item.title}}</h2>
+                                <p>{{item.content}}</p>
+                            </div>
+                            <div class="announcement-slider-right-sec">
+                                <img alt="{{item.title}}" ng-src="{{path['announcement'] + item.image || '/assets/img/annoucement-slidr-img.png'}}" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </data-owl-carousel>
+
+            </div>
+        </div>
+
+        <div id="buttons-container">
+            <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
+            <!-- <button id="unlock-button">Unlock</button> -->
+        </div>
+    </div>
+</section>

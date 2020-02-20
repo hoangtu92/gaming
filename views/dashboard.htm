@@ -1,0 +1,94 @@
+<section class="welcome-page" id="container" ng-init="getCurrentUser()">
+    <p id="orientation-status"></p>
+    <div class="gaming-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#"><img src="/assets/img/logo.png"
+                                                                                      class="img-responsive"></a></div>
+                <div class="menu-section col-md-9 col-sm-9 col-xs-9" ng-init="getListPrizes()">
+                    <div ng-include="'/includes/sidebar.htm'">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-mid-section">
+        <div class="container-fluid">
+            <div class="welcome-mid-left-sec">
+                <div class="welcome-mid-left-girl-img"><img style="width: 400px; height: auto" ng-src="{{path['role']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                    <div class="welcome-left-author-sec"><span class="img-sec">
+                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{path['user']}}{{currentUser.avatar}}">
+                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
+                    </span>
+                        <div class="welcome-left-author-data-sec">
+                            <h3>{{currentUser.username}}</h3>
+                            <span class="price-icon"> <img src="/assets/img/price-icon.png">
+              <h5>{{currentUser.credit.formatPrice()}}</h5>
+              </span> </span> </div>
+                    </div>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="openModal('video_play')"><img src="assets/img/chat-icon.png" class="img-sreponsive"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-mid-right-sec">
+                <div class="welcome-mid-right-top-sec">
+                    <div class="welcome-mid-right-top-left">
+                        <h2>{{currentRole.name}}</h2>
+                        <ul>
+                            <li>
+                                <h3>三圍 <strong>{{currentRole.measurement}}</strong></h3>
+                            </li>
+                            <li>
+                                <h3>身高 <strong>{{currentRole.height}} cm</strong></h3>
+                            </li>
+                            <li>
+                                <h3>體重 <strong>{{currentRole.weight}} kg</strong></h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="welcome-mid-right-top-right">
+                        <div class="wel-mid-right-top-right-innr" ng-bind-html="currentRole.narrative">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-mid-right-bottom-sec">
+                    <div class="welcome-mid-right-bottom-left"><img src="/assets/img/progress-bar.png" class="img-responsive">
+                        <h6>脱掉 {{currentUser.roleProgress[currentRole.id]}}/{{currentRole.maximumLevel}}</h6>
+                    </div>
+                    <div class="right-cstm-btn-circle"><a href="#!role-game/{{currentRole.id}}"><img src="/assets/img/btn-circle.png" class="img-responsive"
+                                                                                                       onmouseover="this.src='/assets/img/btn-circle_on.png';"
+                                                                                                       onmouseout="this.src='/assets/img/btn-circle.png';"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-bottom-sec">
+        <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
+                src="/assets/img/cstm-btn-img.png"></a></div>
+        <div class="container" ng-init="getListRoles()">
+            <div class="welcome-bottom-inner">
+
+                <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
+                    <div owl-carousel-item="" ng-repeat="item in roles" ng-if="item != null" class="slider-item">
+                        <div class="slider-item-inner">
+                            <a href="#" ng-click="setCurrentRole(item)">
+                                <img ng-src="{{path['role']}}{{item.thumbnail}}"
+                                     class="img-responsive">
+                                <div class="slidertxt-bar"><img src="/assets/img/progress-bar.png" class="img-responsive">
+                                    <h6>{{currentUser.roleProgress[item.id]}}/{{item.maximumLevel}}</h6>
+                                </div>
+                                <h4>{{item.name}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                </data-owl-carousel>
+
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,71 @@
+<section class="reward-collection-outer" id="container">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec"><a href="#!dashboard"><img
+                src="/assets/img/img-check-circle.png"/> 客服 </a></div>
+    </div>
+    <div class="container">
+        <div class="customer-service-mid-section">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="customer-service-left-form">
+                    <form class="customer-service-form" ng-submit="submitTicket()">
+                        <div class="form-group">
+                            <input type="text" ng-model="ticketIssue.issue" class="form-control" placeholder="請填寫問題主旨"
+                                   value="" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="textarea-1" ng-model="ticketIssue.description" class="form-control"
+                                      placeholder="請詳實填寫您的問題" rows="5"></textarea>
+                        </div>
+                        <div class="send-a-question-btn">
+                            <button type="submit" class="send-a-question-btn"><img
+                                    src="/assets/img/send-a-question-btn.png" class="img-responsive"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="customer-service-record">
+                    <h3>客服紀錄</h3>
+                    <div class="customer-service-record-table">
+                        <table class="customer-service-table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>主旨</th>
+                                <th>回覆</th>
+                            </tr>
+                            </thead>
+                            <tbody ng-init="getTickets()">
+                            <tr ng-repeat="item in tickets.content">
+                                <td>{{item.datetime.toDate().toLocaleDateString()}}</td>
+                                <td>{{item.issue}}</td>
+                                <td><a href="#" ng-click="setSelectedTicket(item); openModal('ticket_reply')"><img
+                                        src="/assets/img/view-reply.png"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item" ng-class="{'active' : tickets.first}"><a class="page-link"
+                                                                                               ng-click="getTickets(0)"
+                                                                                               href="#" tabindex="-1">上一頁</a>
+                                </li>
+
+                                <li class="page-item" ng-class="{'active' : page === tickets.number}"
+                                    ng-repeat="page  in [] | range:0:tickets.totalPages"><a class="page-link"
+                                                                                            ng-click="getTickets(page)"
+                                                                                            href="#">{{page+1}}<span
+                                        class="sr-only" ng-if="page === tickets.number">(current)</span></a></li>
+
+                                <li class="page-item" ng-class="{'active' : tickets.last}"><a class="page-link"
+                                                                                              ng-click="getTickets(tickets.totalPages-1)"
+                                                                                              href="#">下一頁></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

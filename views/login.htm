@@ -1,0 +1,31 @@
+<section class="login-page-outer">
+    <div class="container">
+        <div class="login-welcome-page">
+            <form class="form-signin" ng-submit="login()">
+                <div class="login-header">
+                    <h2>遊戲登入</h2>
+                    <span class="login-close" ng-click="goto('/')">x</span> </div>
+                <div class="form-group">
+                    <label id="status-msg"></label>
+                </div>
+                <div class="form-group">
+                    <label>暱稱</label>
+                    <input type="text" ng-model="user.username" name="username" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label>密碼</label>
+                    <input type="password" ng-model="user.password" name="password" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group"> <a href="#" class="forgot-pass-link">忘記密碼？</a> </div>
+                <div class="button-group">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6"> <a class="btn-registered-link" href="#"><img alt="register" src="/assets/img/btn-register.png"></a> </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <button class="btn btn-login-btn" type="submit"><img alt="login" src="/assets/img/btn-login.png"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

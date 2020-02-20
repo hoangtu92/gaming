@@ -1,0 +1,48 @@
+<section class="uniformsister uniformsister-03" style="height:auto;">
+    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img src="/assets/img/img-check-circle.png"/>
+        <h1>道具</h1></a>
+
+        <div class="booksthree_btn">
+            <button class="bookbtn pull-right">購買道具</button>
+            <button class="bookbtn pull-right">配置牌組</button>
+            <button class="bookbtn pull-right">販賣模式</button>
+        </div>
+    </div>
+
+    <div class="gamelist">
+        <div class="gamelist_top none">
+            <div class="list_ratings" style="max-width:100%;">
+                <button class="bookbtn"><img src="/assets/images/toglelist.png"/></button>
+
+                <h2>篩選</h2>
+
+                <ul class="list-unstyled list-inline">
+                    <li class="active">
+                        <button class="rate" ng-click="getListCards(1)"><i class="fa fa-star" aria-hidden="true"></i><span>1</span></button>
+                    </li>
+                    <li>
+                        <button class="rate" ng-click="getListCards(2)"><i class="fa fa-star" aria-hidden="true"></i><span>2</span></button>
+                    </li>
+                    <li>
+                        <button class="rate" ng-click="getListCards(3)"><i class="fa fa-star" aria-hidden="true"></i><span>3</span></button>
+                    </li>
+                    <li class="active">
+                        <button class="rate" ng-click="getListCards(4)"><i class="fa fa-star" aria-hidden="true"></i><span>4</span></button>
+                    </li>
+                    <li class="active">
+                        <button class="rate" ng-click="getListCards(5)"><i class="fa fa-star" aria-hidden="true"></i><span>5</span></button>
+                    </li>
+                </ul>
+            </div>
+
+            <ul ng-init="getListUserCards()" class="gamelist_inner">
+                <li ng-repeat="item in levels">
+                    <button class="listimg" ng-click="getCardLevels(item)" ng-click="openModal('card_detail')"><img
+                            ng-src="{{path['card']}}{{item.thumbnail}}"/></button>
+                </li>
+            </ul>
+            <!-- Modal -->
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Gaming-Babay</title>
+
+<!-- Bootstrap -->
+
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+<link href="../assets/css/owl.carousel.min.css" rel="stylesheet">
+<link href="../assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+         <style>
+  #container:fullscreen {
+      width: 100%;
+      height: 100%;
+      background-color: green;
+  }
+
+  #container:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+      background-color: green;
+  }
+
+  #unlock-button {
+      display: none;
+  }
+</style> 
+</head>
+<body>
+<section class="reward-collection-outer"id="container">
+<p id="orientation-status"></p>
+  <div class="reward-collection-header">
+    <div class="reward-collection-header-left-sec"> <a href="#"><img src="../assets/img/img-check-circle.png"/> 消費記錄 </a> </div>
+  </div>
+  <div class="container">
+    <div class="reward-collection-mid-section">
+      <div class="expensec-record-table-outer">
+        <table class="expensex-record-list" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+          <tbody>
+            <tr>
+              <td>2019-07-23</td>
+              <td><span>+1,000 G幣</span></td>
+              <td>儲值</td>
+            </tr>
+            <tr>
+              <td>2019-07-23</td>
+              <td><strong>-2,000 G幣</strong></td>
+              <td>下注[制服妹妹小米]</td>
+            </tr>
+            <tr>
+              <td>2019-07-23</td>
+              <td><span>+100 G幣</span></td>
+              <td>使用FunPay儲值20%回饋</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="buttons-container">
+    <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
+    <!-- <button id="unlock-button">Unlock</button> -->
+  </div>
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/owl.carousel.min.js"></script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script> 
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:15,
+	nav:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:3,
+            nav:true
+        },
+        768:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:6,
+            nav:true,
+            loop:false
+        }
+    }
+})
+</script>
+<script>
+            
+  var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
+          // _UNLOCK_BUTTON = document.querySelector("#unlock-button"),
+          _STATUS = document.querySelector("#orientation-status");
+
+  // _STATUS.innerHTML = screen.orientation.type + ' mode';
+
+  // upon lock to landscape-primary mode
+  function landScapeMode() {
+      
+      if (document.documentElement.requestFullscreen)
+      {
+          document.querySelector("#container").requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullScreen)
+      {
+          document.querySelector("#container").webkitRequestFullScreen();
+      }
+
+      screen.orientation.lock("landscape-primary")
+              .then(function () {
+                  _LOCK_BUTTON.style.display = 'none';
+                  // _UNLOCK_BUTTON.style.display = 'block';
+              })
+              .catch(function (error) {
+                  alert(error);
+              });
+  }
+  // upon unlock
+  /*document.querySelector("#unlock-button").addEventListener('click', function () {
+      screen.orientation.unlock();
+
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });*/
+  // when screen orientation changes
+  screen.orientation.addEventListener("change", function () {
+      // _STATUS.innerHTML = screen.orientation.type + ' mode';
+  });
+  // on exiting full-screen lock is automatically released
+  document.addEventListener("fullscreenchange", function () {
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });
+  document.addEventListener("webkitfullscreenchange", function () {
+      _LOCK_BUTTON.style.display = 'block';
+      // _UNLOCK_BUTTON.style.display = 'none';
+  });
+  function myFunction() {
+      document.getElementById("lock-landscape-button").click();
+    }
+  //etTimeout(myFunction, 2000);
+</script>
+</body>
+</html>

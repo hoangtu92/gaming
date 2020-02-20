@@ -1,0 +1,137 @@
+@media (min-width: 1400px) {
+
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+
+}
+
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
+    .uniform_boxes ul li { min-height: 315px;}
+    .uniformbox_inner { min-height: 315px;}
+    ul.gamelist_inner li .listbox { padding: 15px;}
+    .uniformsister { height: auto;}
+    body.uniform_maingame { overflow: unset;}
+    section.uniformsister-02 { height: 100vh;}
+    button.prpulbtn img { max-width: 140px;}
+    button.prpulbtn h3 { top: 2px; font-size: 18px;}
+    .jointsbotm_btn h3.txt01 { left: 19%;}
+
+}
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .uniform_boxes ul li { min-height: 415px;}
+    .uniformbox_inner { min-height: 415px;}
+    .uniformbox_inner .bookname { width: 100%;}
+    .uniformbox_inner .bookname h2 { margin-top: 5px;}
+    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
+    .uniformsister { height: auto;}
+    ul.gamelist_inner li {/* width: 33.33%; *//* padding: 15px; */}
+    .img_inner { padding: 26px 25px;}
+    body.uniform_maingame { overflow: unset;}
+    section.uniformsister-02 { height: 100vh;}
+    .mark180 ul li img { max-width: 32px;}
+    .yellowshed .pull-left.text-right { bottom: 78px;}
+    .topstart_block h1 { font-size: 25px;}
+    .topstart_block h2 { font-size: 20px;}
+    .toprate_block img.girlimg { max-width: 145px;}
+    .yellowshed .pull-left.text-right h1.ratetxt { font-size: 20px;}
+    .markchina h2 { font-size: 23px;}
+    .markchina span.bigsign img { max-width: 90px;}
+    ul.usernmber_list li p { font-size: 16px;}
+    ul.usernmber_list li h1 { font-size: 25px;}
+    .circleimgs_botm .nmbrten { bottom: -5px; right: -5px;}
+    button.prpulbtn img { max-width: 100px;}
+    button.prpulbtn h3 { top: -5px; font-size: 13px;}
+    .jointsbotm_btn h3.txt01 { left: 15%; top: 32px;}
+    .jointsbotm_btn h3.txt02 { top: 31px;}
+    .infowith_pinkbg h1 { font-size: 30px;}
+    .infowith_pinkbg { padding: 10px 20px;}
+    .uniformvedio_section { margin-top: -35px;}
+    .infowith_pinkbg { margin-top: 8%;}
+    .booksthree_btn { width: 58%;}
+
+
+
+}
+
+
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    .uniform_boxes ul li { width: 100%; margin-bottom: 20px;}
+    .uniformbox_inner .imgg { max-width: 100%;}
+    .uniform_boxes ul li img { padding-bottom: 10px;}
+    .uniformbox_inner .bookname h2 { margin-top: 5px;}
+    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
+    .uniformsister { height: 100%;}
+    ul.gamelist_inner li { width: 50%; text-align: center; padding: 10px 15px; min-height: 280px;}
+    ul.gameseries li { width: 50%;}
+    .img_inner { padding: 22px 25px;}
+    .top_sec_one { display: inline-block;}
+    .box-011 { display: inline-block;}
+    .gametable_block .col-md-4.col-sm-4 { border-left: 0; box-shadow: none;}
+    body.uniform_maingame { overflow: auto;}
+    .infowith_pinkbg { padding: 15px; margin-bottom: 15px;}
+    .vedio_slider .nowplay { width: 30%;}
+    .infowith_pinkbg h1 { font-size: 32px;}
+    .booksthree_btn { width: 100%;}
+    .booksthree_btn button.bookbtn { margin: 0px 0px 8px 5px; padding: 6px 15px;}
+    .list_ratings button.bookbtn { padding: 0 5px;}
+    .list_ratings h2 { font-size: 23px;}
+    .list_ratings ul li button.rate { padding: 3px 7px; font-size: 14px;}
+    .list_ratings { text-align: center;}
+    .vedio .vedioicon img {
+        max-width: 65px;
+    }
+
+
+
+
+}
+
+
+
+@media (max-width: 479px){
+
+    ul.gamelist_inner li { width: 100%; padding: 10px 0px;}
+    .img_inner { padding: 40px 25px;}
+    .vedio_slider .nowplay { width: 40%;}
+
+
+
+}
+
+
+@media (max-width: 810px) {
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
