@@ -433,6 +433,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         xhttp.open("GET", localStorage.base_api + "game/closeGame?sessionId=" + $scope.gaming.id, false);
         xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
         xhttp.setRequestHeader("Authorization", "Bearer " + localStorage.session_token);
+        xhttp.setRequestHeader("sessionId", $scope.gaming.id);
         xhttp.send();
 
     });

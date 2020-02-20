@@ -192,15 +192,15 @@
             </div>
 
             <div class="gamelastpoint">
-                <div class="col-md-4 col-sm-4">
+                <div class="">
                     <button ng-click="applySavedBets()" class="prpulbtn">
-                        <h3>使用記憶組合</h3>
-                    </button>
+                    <h3>使用記憶組合</h3>
+                </button>
                     <button class="prpulbtn" ng-click="saveBet()">
                         <h3>記憶目前組合</h3>
                     </button>
                 </div>
-                <div class="col-md-4 col-sm-4 flex flex-row flex-space-between flex-center">
+                <div class="flex flex-row flex-space-between flex-center">
 
                     <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_1}">
                         <a class="bet-unit" id="betUnit1" href="#" ng-click="selectBet(units.bet_1)">
@@ -227,13 +227,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="vol-md-4 col-sm-4">
+                <div class="">
                     <div class="jointsbotm_btn">
-                        <a href="#" ng-click="resetGame()" class="lastbtnimg01"><img
-                                src="/assets/images/lastbtnbgr02.png">
+                        <a href="#" ng-click="resetGame()" class="lastbtnimg01 reset-btn">
                             <h3 class="txt01">清除</h3></a>
-                        <a href="#" ng-click="startGame()" class="lastbtnimg02"><img
-                                src="/assets/images/lastbtnbgr01.png">
+                        <a href="#" ng-click="startGame()" class="lastbtnimg02 start-btn">
                             <h3 class="txt01">開牌</h3></a>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: '微軟正黑體', sans-serif;
+    font-family: "微軟正黑體", sans-serif;
     font-weight: normal;
 }
 
@@ -789,9 +789,9 @@ section.uniformsister-02 {
 
 .gametable_blocktop {
     width: 100%;
-    height: 80%;
+    height: 100%;
     max-width: 95%;
-    display: inline-flex;
+    display: flex;
     margin: auto;
     align-items: center;
     border-radius: 23px;
@@ -802,11 +802,18 @@ section.uniformsister-02 {
     width: 100%;
     border-radius: 23px;
     box-shadow: inset 0px 0px 10px rgba(255, 94, 166, 0.69);
-    float: left;
+    flex-basis: 90%;
+    height: 90%;
+    max-height: calc(100% - 149px);
+    display: block;
 }
 
 .gametableinner {
     padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .top_sec_one {
@@ -1028,7 +1035,7 @@ ul.diseboxs_list li img {
 
 button.prpulbtn {
     border: 0;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     position: relative;
     float: left;
     display: flex;
@@ -1056,7 +1063,7 @@ button.prpulbtn h3 {
 }
 
 .circleimgs_botm {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     position: relative;
     transition: .5s;
     padding: 10px;
@@ -1095,25 +1102,23 @@ button.prpulbtn h3 {
 
 .jointsbotm_btn {
     text-align: right;
-    position: relative;
+    /* position: absolute; */
     width: 100%;
     height: auto;
-    display: inline-block;
+    display: flex;
+    /* left: 0; */
+    /* top: 0; */
+    /* margin-top: 60px; */
+    margin-top: 10px;
 }
 
 .jointsbotm_btn h3.txt01 {
-    position: absolute;
-    left: 0;
     color: #fff;
     margin: 0;
-    top: 0;
-    bottom: 0;
     display: inline-flex;
-    right: 0;
     font-size: 35px;
     font-weight: 600;
-    justify-content: center;
-    align-items: center;
+    text-shadow: 0 0 2px white;
 }
 
 .jointsbotm_btn a + a img {
@@ -1126,12 +1131,11 @@ button.prpulbtn h3 {
 }
 
 .jointsbotm_btn a {
-    display: inline-block;
     position: relative;
 }
 
 .jointsbotm_btn a.lastbtnimg01 {
-    margin-right: -35px;
+    margin-right: -37px;
 }
 
 body.uniform_maingame {
@@ -1702,8 +1706,12 @@ section.uniformsister_vedio .uniformheader h1 {
 
 .gamelastpoint {
     width: 100%;
-    height: auto;
-    display: inline-block;
+    display: flex;
+    flex-basis: 10%;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100px;
 }
 
 .vedio video {
