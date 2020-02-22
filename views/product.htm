@@ -8,21 +8,21 @@
         <div class="container">
             <div class="mall-category-header-menu"><span class="mall-cat-name"><img src="/assets/img/category-icon.png"
                                                                                     class="img-responsive"> 類別</span>
-                <ul class="mall-category-menu" ng-init="getListProductTags()">
+                <ul class="mall-category-menu" ng-init="getListProductCats()">
                     <li ng-class="{active : currentFilter === undefined}">
                         <button ng-click="getProducts()" class="btn btn-default filter-button"
-                                data-filter="all-category">全部類別
+                        >全部類別
                         </button>
                     </li>
-                    <li ng-class="{active: currentFilter === tag.name}" ng-repeat="tag in productTags">
-                        <button ng-click="getProducts(tag.name)" class="btn btn-default filter-button"
-                                data-filter="{{tag.name}}">{{tag.name}}
+                    <li ng-class="{active: currentFilter === cat.name}" ng-repeat="cat in productCats">
+                        <button ng-click="getProducts(cat.id)" class="btn btn-default filter-button"
+                                type="button">{{cat.name}}
                         </button>
                     </li>
                 </ul>
             </div>
             <div class="mall-category-products" ng-init="getProducts()">
-                <div ng-repeat="product in products" ng-show="checkItemTags(product, tag)"
+                <div ng-repeat="product in products"
                      class="gallery_product filter" ng-click="setCurrentProduct(product);">
                     <a class="mall-product-inner" href="#">
                         <div class="image-box"><img ng-src="{{path['product']}}{{product.thumbnail}}"

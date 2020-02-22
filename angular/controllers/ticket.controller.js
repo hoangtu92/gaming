@@ -15,7 +15,7 @@ gamingApp.controller("ticketController", function ($scope, $route, $http, $infoM
     };
 
     $scope.setSelectedTicket = function (item) {
-        $scope.selectedTicket = item;
+        $scope.$parent.selectedTicket = item;
     };
 
     $scope.ticketIssue = {issue: "", description: ""};

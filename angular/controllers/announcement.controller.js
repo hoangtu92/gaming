@@ -1,7 +1,7 @@
 gamingApp.controller("announcementController", function ($scope, $route, $http, $infoModal, $timeout) {
 
     $scope.sliderOptions = {
-        loop: true,
+        loop: false,
         margin: 0,
         nav: true,
         responsiveClass: true,

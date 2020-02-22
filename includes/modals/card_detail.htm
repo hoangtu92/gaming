@@ -4,11 +4,11 @@
 </div>
 
 <div class="modal-body">
-    <div class="babyimg"><img src="/assets/images/seriesimg01.png"/></div>
+    <div class="babyimg"><img ng-src="{{path['card']}}{{viewingLevel.thumbnail}}"/></div>
 
     <div class="babyimg_info">
         <div class="tpname">
-            <h2>{{viewingLevel.name}}</h2>
+            <h2>{{viewingLevel.card.name}}</h2>
             <div class="star-glowing" style="margin-left: 25px" ng-class="'star-'+viewingLevel.level"></div>
         </div>
 
@@ -16,7 +16,7 @@
             <div class="ratings_info">
                 <h3>- 星數說明 -</h3>
 
-                <div class="menu"><a id="showall">全部星等</a>
+                <div class="menu select-level"><a id="showall">全部星等</a>
                     <a ng-repeat="level in cardLevels | orderBy: 'level'" class="showSingle" ng-click="setCurrentLevel(level)">{{level.level}}星</a>
                 </div>
 
@@ -29,11 +29,10 @@
             </div>
         </div>
     </div>
-
-    <div class="modal-footer">
-        <button class="popupprple_btn" data-dismiss="modal"><img src="/assets/images/puprleimgbtn.png"/><span>出售</span>
-        </button>
-        <button class="popupprple_btn" data-dismiss="modal"><img
-                src="/assets/images/pinkbtnbgr.png"/><span>升級</span></button>
-    </div>
+</div>
+<div class="modal-footer text-right">
+    <button class="popupprple_btn" data-dismiss="modal"><img src="/assets/images/puprleimgbtn.png"/><span>出售</span>
+    </button>
+    <button class="popupprple_btn" data-dismiss="modal"><img
+            src="/assets/images/pinkbtnbgr.png"/><span>升級</span></button>
 </div>

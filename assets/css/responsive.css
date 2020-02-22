@@ -76,7 +76,7 @@
     .uniformbox_inner .bookname h2 { margin-top: 5px;}
     .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
     .uniformsister { height: 100%;}
-    ul.gamelist_inner li { width: 50%; text-align: center; padding: 10px 15px; min-height: 280px;}
+    ul.gamelist_inner li {/* width: 50%; */text-align: center;/* padding: 10px 15px; */min-height: 280px;}
     ul.gameseries li { width: 50%;}
     .img_inner { padding: 22px 25px;}
     .top_sec_one { display: inline-block;}
@@ -105,7 +105,7 @@
 
 @media (max-width: 479px){
 
-    ul.gamelist_inner li { width: 100%; padding: 10px 0px;}
+    ul.gamelist_inner li {width: auto;padding: 10px 0px;}
     .img_inner { padding: 40px 25px;}
     .vedio_slider .nowplay { width: 40%;}
 

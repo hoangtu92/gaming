@@ -131,7 +131,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'AV play',
             view: 'av_play',
             layout: 'non-sidebar',
-            bodyClass: 'uniform_maingame av-play',
+            bodyClass: 'uniform_maingame uniformsister av-play',
             templateUrl: 'views/av-play.htm',
             controller: 'videoController',
             resolve: {
@@ -144,7 +144,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'AV short',
             view: 'av_short',
             layout: 'non-sidebar',
-        bodyClass: 'uniform_maingame av-play',
+        bodyClass: 'uniform_maingame uniformsister av-play',
             templateUrl: 'views/av-short.htm',
             controller: 'videoController',
             resolve: {
@@ -169,6 +169,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'Card List',
             view: 'card_list',
             layout: 'non-sidebar',
+            bodyClass: 'uniformsister',
             templateUrl: 'views/card-list.htm',
             controller: 'cardController',
             resolve: {

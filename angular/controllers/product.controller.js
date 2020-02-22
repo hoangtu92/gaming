@@ -9,6 +9,11 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
             $scope.productTags = res.data;
         });
     };
+    $scope.getListProductCats = function () {
+        $http.get(base_api + "product/categories").then(function (res) {
+            $scope.productCats = res.data;
+        });
+    };
 
     $scope.getTagsClass = function (product) {
         return product.tags.reduce(function (t, e) {
@@ -26,13 +31,13 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
 
     };
 
-    $scope.getProducts = function (tag) {
+    $scope.getProducts = function (cat_id) {
 
-        $scope.currentFilter = tag;
+        $scope.currentFilter = cat_id;
 
         $http.get(base_api + "product/filter", {
             params: {
-                tagName: tag
+                cat_id: cat_id
             }
         }).then(function (res) {
             $scope.products = res.data.model;

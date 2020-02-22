@@ -1,4 +1,4 @@
-<section class="welcome-page" id="container" ng-init="getCurrentUser()">
+<section class="welcome-page" id="container">
     <p id="orientation-status"></p>
     <div class="gaming-header">
         <div class="container-fluid">
@@ -17,9 +17,9 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img style="width: 400px; height: auto" ng-src="{{path['role']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img"><img style="width: 400px; height: auto" ng-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
-                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{path['user']}}{{currentUser.avatar}}">
+                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{'files/users/' + currentUser.avatar}}">
                         <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
@@ -58,7 +58,7 @@
                     <div class="welcome-mid-right-bottom-left"><img src="/assets/img/progress-bar.png" class="img-responsive">
                         <h6>脱掉 {{currentUser.roleProgress[currentRole.id]}}/{{currentRole.maximumLevel}}</h6>
                     </div>
-                    <div class="right-cstm-btn-circle"><a href="#!role-game/{{currentRole.id}}"><img src="/assets/img/btn-circle.png" class="img-responsive"
+                    <div class="right-cstm-btn-circle"><a href="#" ng-click="openModal('enter_game')"><img src="/assets/img/btn-circle.png" class="img-responsive"
                                                                                                        onmouseover="this.src='/assets/img/btn-circle_on.png';"
                                                                                                        onmouseout="this.src='/assets/img/btn-circle.png';"></a>
                     </div>
@@ -76,7 +76,7 @@
                     <div owl-carousel-item="" ng-repeat="item in roles" ng-if="item != null" class="slider-item">
                         <div class="slider-item-inner">
                             <a href="#" ng-click="setCurrentRole(item)">
-                                <img ng-src="{{path['role']}}{{item.thumbnail}}"
+                                <img ng-src="{{path['role_image']}}{{item.thumbnail}}"
                                      class="img-responsive">
                                 <div class="slidertxt-bar"><img src="/assets/img/progress-bar.png" class="img-responsive">
                                     <h6>{{currentUser.roleProgress[item.id]}}/{{item.maximumLevel}}</h6>

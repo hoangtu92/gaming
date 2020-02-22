@@ -10,7 +10,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         3: "/assets/images/threeblack_box.png",
         4: "/assets/images/fourred_box.png",
         5: "/assets/images/fiveblack_box.png",
-        6: "/assets/images/sixblack_box.png",
+        6: "/assets/images/sixblack_box.png"
     };
 
     function getAllBets(){
@@ -161,7 +161,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      */
     $scope.restoreGame = function () {
 
-
         if(typeof $scope.gaming === 'undefined') return;
 
         var bets = getAllBets();
@@ -194,6 +193,12 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Save current bet to the local machine
      */
     $scope.saveBet = function(){
+
+        if(typeof $scope.gaming === 'undefined'){
+            $scope.openModal("enter_game")
+            return false;
+        }
+
         var bets = getAllBets();
         var gamingSession = {};
         bets.forEach(function (value) {
@@ -206,6 +211,11 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Restore bets from local machine
      */
     $scope.applySavedBets = function(){
+
+        if(typeof $scope.gaming === 'undefined'){
+            $scope.openModal("enter_game");
+            return false;
+        }
 
         if(typeof localStorage["game_session_" + $scope.gaming.id] === "undefined") return;
 
@@ -226,9 +236,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             });
 
         }
-
-
-
     };
 
     $scope.resetGameState = function(){
@@ -252,6 +259,11 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      */
     $scope.placeBet = function (el, amount) {
 
+        if(typeof $scope.gaming === 'undefined'){
+            $scope.openModal("enter_game")
+            return false;
+        }
+
         $scope.resetGameState();
 
         //Check bet unit is selected
@@ -259,6 +271,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             $infoModal.open("請先選擇壓注籌碼");
             return false;
         }
+        amount = parseInt(amount);
 
         //Get bet area key
         var bet_area = el.getAttribute('data-bet');
@@ -266,12 +279,16 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         //Initialize bet are amount 0
         if (typeof $scope.gaming[bet_area] === 'undefined') $scope.gaming[bet_area] = 0;
 
+        $scope.gaming[bet_area] = parseInt($scope.gaming[bet_area]);
+
+        console.log($scope.gaming[bet_area], amount)
+
+        $scope.gaming[bet_area] +=  amount;
+
+
+
         //Placing bet
-        $http.post(localStorage.base_api + "game/placeBet", JSON.stringify({
-            sessionId: $scope.gaming.id,
-            amount: amount,
-            area: bet_area
-        })).then(function (res) {
+        $http.post(localStorage.base_api + "game/updateGame", JSON.stringify($scope.gaming)).then(function (res) {
             if (res.data.status) {
 
                 //New gaming model with updated bet value and user credit
@@ -326,19 +343,17 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
 
     /**
-     * Initializing game session
+     * Check ticket available
      */
     $scope.initGame = function () {
-        $http({
-            url: localStorage.base_api + "game/initializeGame",
-            method: "POST",
-            headers: {
-                sessionId: sessionStorage.session_id
-            }
-        }).then(function (res) {
+        $http.get(localStorage.base_api + "game/checkTicket", {params: {roleId: $routeParams.id}}).then(function (res) {
             $scope.gaming = res.data.model;
-            sessionStorage.session_id = $scope.gaming.id;
+            $http.defaults.headers.common['Session-ID'] = $scope.gaming.id;
             $scope.restoreGame();
+        },function (reason) {
+            if(reason.status === 423){
+                $scope.openModal("enter_game")
+            }
         })
     };
 
@@ -348,14 +363,14 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      */
     $scope.resetGame = function () {
 
-        $http.get(localStorage.base_api + "game/resetGame", {
-            params: {
-                sessionId: $scope.gaming.id
-            }
-        }).then(function (res) {
+        $http.get(localStorage.base_api + "game/resetGame").then(function (res) {
             $scope.gaming = res.data.model;
             angular.element(".bet-icon").remove();
             $scope.resetGameState();
+        }, function (reason) {
+            if(reason.status === 423){
+                $scope.openModal("enter_game")
+            }
         });
 
     };
@@ -364,7 +379,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Exit current game
      */
     $scope.exitGame = function(){
-        $http.get(localStorage.base_api + "game/closeGame", {params: {sessionId: $scope.gaming.id}}).finally(function () {
+        $http.get(localStorage.base_api + "game/closeSession").finally(function () {
             $location.url("dashboard");
         })
     };
@@ -377,7 +392,8 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
         $scope.resetGameState();
 
-        $http.get(localStorage.base_api + "game/shake", {params: {sessionId: $scope.gaming.id}}).then(function (res) {
+        $http.post(localStorage.base_api + "game/shake").then(function (res) {
+
             $scope.gaming = res.data.model;
 
             var win = Object.keys($scope.gaming['win']),
@@ -400,8 +416,10 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
 
             $scope.hasUnsavedChange = false;
-        }, function () {
-            //$scope.resetGame();
+        }, function (reason) {
+            if(reason.status === 423){
+                $scope.openModal("enter_game")
+            }
         });
     };
 
@@ -424,18 +442,21 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         $scope.restoreGame();
     });
 
+    $scope.$on("ticketObtained", function (evt, value) {
+        $scope.initGame();
+    });
 
-    //Close the game when user close tab
-    window.addEventListener('beforeunload', function (e) {
+
+    $scope.$on("close_window", function (evt, e) {
 
         var xhttp = new XMLHttpRequest();
 
-        xhttp.open("GET", localStorage.base_api + "game/closeGame?sessionId=" + $scope.gaming.id, false);
+        xhttp.open("GET", localStorage.base_api + "game/closeSession", false);
         xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
         xhttp.setRequestHeader("Authorization", "Bearer " + localStorage.session_token);
-        xhttp.setRequestHeader("sessionId", $scope.gaming.id);
+        xhttp.setRequestHeader("Session-ID", $scope.gaming.id);
         xhttp.send();
 
-    });
+    })
 
 });

@@ -2,13 +2,21 @@
  * Gaming app main file
  */
 var gamingApp = angular.module("gaming", ['ngRoute', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngSanitize']);
+gamingApp.version = "1.0.0";
 gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';
     $http.defaults.cache = false;
 
+    if(typeof sessionStorage.gaming_session === 'undefined')
+        sessionStorage.gaming_session = new Date().getTime();
+
+    $http.defaults.headers.common['Session-Token'] = sessionStorage.gaming_session;
+
     if (typeof localStorage.session_token != 'undefined')
         $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
+
+
 
     $rootScope.$on('$locationChangeStart', function () {
         $uibModalStack.dismissAll();

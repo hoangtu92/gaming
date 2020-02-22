@@ -1395,6 +1395,8 @@ section.uniformsister-03 .modal-dialog .modal-footer {
 
 .gamelist-03 .list_ratings {
     max-width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .gamelist-03 .list_ratings h2 {

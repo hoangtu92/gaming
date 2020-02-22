@@ -16,7 +16,7 @@
                                 <p>{{item.content}}</p>
                             </div>
                             <div class="announcement-slider-right-sec">
-                                <img alt="{{item.title}}" ng-src="{{path['announcement'] + item.image || '/assets/img/annoucement-slidr-img.png'}}" class="img-responsive">
+                                <img alt="{{item.title}}" ng-src="{{config.api_domain + '/files/news/' + item.image || '/assets/img/annoucement-slidr-img.png'}}" class="img-responsive">
                             </div>
                         </div>
                     </div>

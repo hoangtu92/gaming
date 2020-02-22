@@ -1,11 +1,12 @@
-gamingApp.controller("cardController", function ($scope, $route, $location, $http, $infoModal, $timeout) {
+gamingApp.controller("cardController", function ($scope, $rootScope, $route, $location, $http, $infoModal, $timeout) {
 
     /**
      * Card
      */
-    $scope.getListCards = function () {
-        $http.get(base_api + "card/getCards").then(function (res) {
-            $scope.cards = res.data.model;
+    $scope.getListCards = function (level) {
+        $http.get(base_api + "card/getLevels", {params: {level: level}}).then(function (res) {
+            $scope.levels = res.data.model;
+
         });
 
     };
@@ -45,23 +46,21 @@ gamingApp.controller("cardController", function ($scope, $route, $location, $htt
         });
 
     };
-    $scope.setCurrentLevel = function (level) {
-        $scope.selectedLevel = level;
-    };
+
 
     $scope.setCurrentCard = function (card) {
         $scope.currentCard = card;
     };
 
     $scope.getCardLevels = function (item) {
-        $scope.viewingLevel = item;
+        $scope.$parent.viewingLevel = item;
         $http.get(base_api + "card/cardLevels", {
             params: {
                 card_id: item.card.id
             }
         }).then(function (res) {
 
-            $scope.cardLevels = res.data.model;
+            $scope.$parent.cardLevels = res.data.model;
 
         })
     };

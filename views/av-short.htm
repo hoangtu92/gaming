@@ -30,14 +30,16 @@
                         <li ng-repeat="video in videos" ng-show="checkItemTags(video, currentFilter)">
                             <div class="shadow">
                                 <div class="listbox" ng-click="setCurrentVideo(video); openModal('video_detail', 'fullpage_popup')"><a href="#">
-                                    <div class="image-box"><img class="eyebaby" ng-if="video.thumbnail !== null"
-                                                                ng-src="{{path['video']}}{{video.thumbnail}}"/>
+                                    <div class="image-box"><img class="eyebaby"
+                                                                ng-src="{{path['video_image']}}{{video.thumbnail}}"/>
                                     </div>
                                 </a>
 
                                     <h4><a href="#">{{video.name}}</a></h4>
                                     <h5><a href="#">{{video.actress}}</a></h5>
-                                </div>
+                                    <div class="product-price"><span><img src="/assets/img/price-icon.png"> <b>{{video.price}}</b></span>
+
+                                    </div>
                             </div>
                         </li>
                     </ul>

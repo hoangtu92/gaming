@@ -12,10 +12,7 @@ gamingApp.controller("videoController", function ($scope, $route, $http, $infoMo
 
 
 
-    $scope.setCurrentVideo = function (video) {
-        $scope.currentVideo = video;
 
-    };
 
     $scope.getVideos = function (cat, tag) {
 
@@ -31,13 +28,7 @@ gamingApp.controller("videoController", function ($scope, $route, $http, $infoMo
         });
     };
 
-    $scope.buyVideo = function (video) {
-        $http.get(base_api + "product/buy", {
-            params: {video_id: video.id}
-        }).then(function (res) {
 
-        })
-    };
 
 
 

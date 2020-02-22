@@ -2,9 +2,9 @@
     <h4 class="modal-title">遊戲登入</h4>
 </div>
 
-<div class="modal-body">將花費 <span>{{currentUser.credit}}</span> G幣購買 <span>爆乳女神亮亮5星</span></div>
+<div class="modal-body">將花費 <span>{{currentUser.credit.formatPrice()}}</span> G幣購買 <span>爆乳女神亮亮5星</span></div>
 
-<div class="modal-footer">
-    <button class="btn cancal" data-dismiss="modal" type="button">取消</button>
-    <button ng-click="buyCard(currentCard)" class="btn save" type="button">確認購買</button>
+<div class="modal-footer flex flex-row flex-center justify-content-center">
+    <button type="reset" ng-click="modal.card_buy.close()">取消</button>
+    <button typeof="button" ng-click="buyCard(currentCard)">確認購買</button>
 </div>

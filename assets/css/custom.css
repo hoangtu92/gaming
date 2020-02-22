@@ -552,7 +552,7 @@ span.price-icon h5 {
 	text-align: center;
 	background: rgba(87,39,140, 0.8);
 	color: #fff;
-	font-size: 24px;
+	font-size: 18px;
 	padding: 10px;
 	border-bottom-left-radius: 18px;
 	border-bottom-right-radius: 18px;
@@ -1355,6 +1355,10 @@ section .modal {
 	border: 3px solid #ffabf0;
 }
 
+.ticket_reply .modal-content{
+	padding: 25px;
+}
+
 .reward-collection-modal {
 	width: 100%;
 	padding: 15px;
@@ -1363,6 +1367,7 @@ section .modal {
 	border-radius: 15px;
 	float: left;
 	width: 100%;
+	margin-bottom: 20px;
 }
 
 .reward-collection-modal ul {
@@ -2089,7 +2094,7 @@ h3.product-title {
 }
 
 .product-price span img {
-	max-width: 30px;
+	max-width: 30px !important;
 	margin: 0;
 	padding: 0;
 	margin-right: 10px;
@@ -2215,6 +2220,8 @@ h3.product-title {
 .announcement-slider .slider-item-inner .announcement-slider-left-sec {
 	width: 40%;
 	float: left;
+	max-height: 450px;
+	overflow-y: auto;
 }
 
 .announcement-slider .slider-item-inner .announcement-slider-right-sec {
@@ -4019,8 +4026,10 @@ h3.product-title {
 	transition: all 0.3s;
 	display: block;
 	width: 100%;
-	height: auto;
 	transform: scale(1);
+	min-width: 170px;
+	min-height: 170px;
+	object-fit: cover;
 }
 
 .image-box:hover img {
@@ -4300,9 +4309,13 @@ body {
 .flex-space-between{
 	justify-content: space-between;
 }
+.justify-content-center{
+	justify-content: center;
+}
 .flex-center{
 	align-items: center;
 }
+
 
 body.page-game {
 	position: fixed;
@@ -4374,4 +4387,68 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+button.popupprple_btn img, .babyimg img{
+	width: 100%;
+}
+.card_detail .modal-content{
+	background: rgba(0, 0, 0, 0.55);
+	border: 0 !important;
+	box-shadow: none;
+	padding: 15px;
+}
+.card_detail .modal-header{
+	padding: 15px;
+}
+
+div.menu{
+
+	margin: 5% 10%;
+	background: transparent;
+}
+
+.select-level a{
+	margin: 5px;
+}
+
+.showSingle{
+	background:#F1FAEE;
+	color: #222;
+	cursor:pointer;
+}
+
+
+.cnt{
+	margin: 5% 10%;
+	background: transparent;
+}
+
+.align-left{
+	text-align: left;
+}
+
+button{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 5px 40px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	margin-left: 30px;
+	display: block;
+	text-decoration: none;
+	background: #fd3779;
+
+}
+
+button[type="button"]{
+	background: #fd3779;
+}
+button[type="reset"] {
+	background: #563f47;
+
+}
+
+.modal-footer button{
+
 }

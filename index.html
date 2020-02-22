@@ -48,7 +48,7 @@
     </style>
 
 </head>
-<body ng-class="route.current.bodyClass" class="page-{{route.current.view}}">
+<body ng-class="route.current.bodyClass" class="page-{{route.current.view}}" ng-init="getCurrentUser()">
 
 <section ng-view id="routedContent"></section>
 

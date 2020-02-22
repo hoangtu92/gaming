@@ -18,17 +18,17 @@
 
         <div class="col-md-7 col-sm-7">
             <div class="vedio">
-                <video id="videoPlay" src="/assets/images/{{selectedVideo.src | trustUrl}}" class="video" onclick="this.paused ? this.play() : this.pause();" controls=""
-                       controlslist="nodownload" muted="" width="400" poster="baby/images/{{selectedVideo.cover}}">
+                <video id="videoPlay" class="video" onclick="this.paused ? this.play() : this.pause();" controls=""
+                       controlslist="nodownload" muted="" width="400">
                 </video>
                 <!--<button class="vedioicon"><img src="images/vedioicon.png" id="playbutton"></button> --></div>
         </div>
     </div>
 
     <div class="vedio_slider">
-        <div class="nowplay" ng-class="{fullpaly: currentUser.roleVideosArr.indexOf(video.id) < 0 || video.playing}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
-            <img ng-if="video.playing || currentUser.roleVideosArr.indexOf(video.id) < 0" ng-src="{{path['role']}}{{video.cover}}"/>
-            <img ng-if="!video.playing && currentUser.roleVideosArr.indexOf(video.id) >= 0" ng-click="playVideo(video)" ng-src="{{path['role']}}{{video.cover}}"/>
+        <div class="nowplay" ng-class="{fullpaly: gaming.earnedCredit < video.requiredScore || video.playing}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
+            <img ng-if="video.playing || gaming.earnedCredit < video.requiredScore" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+            <img ng-if="!video.playing && gaming.earnedCredit >= video.requiredScore" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
             <!--Playing-->
             <div ng-if="video.playing" class="blackoverlay">
                 <div>
@@ -38,7 +38,7 @@
             </div>
 
             <!--Locked video -->
-            <div ng-if="currentUser.roleVideosArr.indexOf(video.id) < 0" ng-click="unlockVideo(video.id)" class="blackoverlay">
+            <div ng-if="gaming.earnedCredit < video.requiredScore" ng-click="unlockVideo(video.id)" class="blackoverlay">
                 <div>
                     <p></p>
                     <span class="noramal">達 <span class="rps">{{video.price.formatPrice()}}分</span> 即可解鎖</span>

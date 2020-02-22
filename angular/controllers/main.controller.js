@@ -46,6 +46,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         localStorage.base_api = config.base_api;
         localStorage.version = config.version;
 
+
         $http.get(localStorage.base_api + "setting/get", {params: {key: "_path"}}).then(function (res) {
             $rootScope.path = res.data;
         })
@@ -111,6 +112,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
     $scope.getRole = function () {
         $http.get(localStorage.base_api + "role/getRole", {params: {id: $routeParams.id}}).then(function (res) {
             $scope.currentRole = res.data.model;
+            $scope.$broadcast("role_loaded", $scope.currentRole);
         });
     };
 
@@ -118,6 +120,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         $http.get(base_api + "user/currentUser").then(function (res) {
             $scope.currentUser = res.data.model;
             if (cb) cb();
+            $scope.$broadcast("user_loaded", $scope.currentUser);
         })
     };
 
@@ -158,6 +161,15 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         $scope.currentRole = role;
     };
 
+    $scope.setCurrentVideo = function (video) {
+        $scope.currentVideo = video;
+
+    };
+    $scope.setCurrentLevel = function (level) {
+        $scope.selectedLevel = level;
+    };
+
+
     $scope.getListPrizeLogs = function () {
         $http.get(base_api + "prize/logs", {params: {uid: localStorage.uid}}).then(function (res) {
             $scope.prizeLogs = res.data.model;
@@ -168,9 +180,38 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         $http.get(base_api + "product/buy", {
             params: {product_id: product.id}
         }).then(function (res) {
-
+            $scope.modal['product_buy'].close();
         })
     };
+    $scope.buyVideo = function (video) {
+        $http.get(base_api + "video/buy", {
+            params: {video_id: video.id}
+        }).then(function (res) {
+            $scope.currentVideo = res.data.model;
+            $scope.modal['video_buy'].close();
+        })
+    };
+
+    $scope.enterGame = function (role) {
+        $http.get(base_api + "game/obtainTicket", {
+            params: {roleId: role.id}
+        }).then(function (res) {
+            $scope.modal['enter_game'].close();
+            $scope.$broadcast("ticketObtained", res.data)
+
+        }).finally(function () {
+            $location.url("role-game/" + role.id)
+        })
+    };
+
+
+    //Close the game when user close tab
+    window.addEventListener('beforeunload', function (e) {
+
+        $scope.$broadcast("close_window", e);
+
+    });
+
 
 
 });
