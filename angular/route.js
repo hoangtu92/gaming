@@ -16,6 +16,19 @@ gamingApp.config(function ($routeProvider) {
                 }
             }
         })
+        .when('/login/:username/:code', {
+            title: 'Login',
+            view: 'login',
+            layout: 'non-sidebar',
+            templateUrl: 'views/login.htm',
+            controller: 'userController',
+            resolve: {
+                'ConfigServiceData': function (ConfigService) {
+                    // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                    return ConfigService.promise;
+                }
+            }
+        })
         //Home Page
         .when('/', {
             title: 'Home',

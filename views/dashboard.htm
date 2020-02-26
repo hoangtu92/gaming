@@ -1,4 +1,4 @@
-<section class="welcome-page" id="container">
+<section class="welcome-page" id="container" >
     <p id="orientation-status"></p>
     <div class="gaming-header">
         <div class="container-fluid">
@@ -55,10 +55,21 @@
                     </div>
                 </div>
                 <div class="welcome-mid-right-bottom-sec">
-                    <div class="welcome-mid-right-bottom-left"><img src="/assets/img/progress-bar.png" class="img-responsive">
-                        <h6>脱掉 {{currentUser.roleProgress[currentRole.id]}}/{{currentRole.maximumLevel}}</h6>
+                    <div class="welcome-mid-right-bottom-left">
+
+                        <div class="progress-level">
+                            <div class="progress-level-outer"></div>
+                            <div class="progress-level-inner" ng-style="{width: (currentRole.userProgress > 0 ? (currentRole.userProgress/currentRole.maximumLevel)*100 : 0) + '%'}"></div>
+                            <h6 style="position:relative; z-index: 999;">脱掉 {{currentRole.userProgress}}/{{currentRole.maximumLevel}}</h6>
+                        </div>
                     </div>
-                    <div class="right-cstm-btn-circle"><a href="#" ng-click="openModal('enter_game')"><img src="/assets/img/btn-circle.png" class="img-responsive"
+                    <div ng-if="!currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#" ng-click="openModal('enter_game')">
+                        <img src="/assets/img/btn-circle.png" class="img-responsive"
+                                                                                                       onmouseover="this.src='/assets/img/btn-circle_on.png';"
+                                                                                                       onmouseout="this.src='/assets/img/btn-circle.png';"></a>
+                    </div>
+                    <div ng-if="currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#!role-game/{{currentRole.id}}">
+                        <img src="/assets/img/btn-circle.png" class="img-responsive"
                                                                                                        onmouseover="this.src='/assets/img/btn-circle_on.png';"
                                                                                                        onmouseout="this.src='/assets/img/btn-circle.png';"></a>
                     </div>
@@ -78,8 +89,12 @@
                             <a href="#" ng-click="setCurrentRole(item)">
                                 <img ng-src="{{path['role_image']}}{{item.thumbnail}}"
                                      class="img-responsive">
-                                <div class="slidertxt-bar"><img src="/assets/img/progress-bar.png" class="img-responsive">
-                                    <h6>{{currentUser.roleProgress[item.id]}}/{{item.maximumLevel}}</h6>
+                                <div class="slidertxt-bar">
+                                    <div class="progress-level small">
+                                        <div class="progress-level-outer"></div>
+                                        <div class="progress-level-inner" ng-style="{width: (item.userProgress > 0 ? (item.userProgress/item.maximumLevel)*100 : 0) + '%'}"></div>
+                                        <h6 style="position:relative; z-index: 999;">脱掉 {{item.userProgress}}/{{item.maximumLevel}}</h6>
+                                    </div>
                                 </div>
                                 <h4>{{item.name}}</h4>
                             </a>

@@ -2,10 +2,10 @@
     <div class="uniformheader text-right hover-button" style="display: inline-block">
 
         <div class="game-statistic">
-            <h4>下注: {{gaming.total}}</h4>
+            <h4>本局押注: {{gaming.total}}</h4>
             <h4>贏: {{gaming.gain}}</h4>
             <h4>輸: {{gaming.loss}}</h4>
-            <h4>壓注後剩: {{gaming.availableBet}}</h4>
+            <h4>剩餘籌碼: {{gaming.availableBet}}</h4>
             <!--<h4>您的G幣: {{gaming.user.credit}}</h4>-->
         </div>
 
@@ -67,8 +67,13 @@
                                     </div>
                                 </div>
                                 <div class="pull-left text-right">
-                                    <h1 class="ratetxt">10,000/{{currentRole.maxThreshold.formatPrice()}}</h1>
-                                    <img class="rangeslider" src="/assets/images/slidebar.png">
+                                    <h4>您的G幣: {{currentUser.credit.formatPrice()}}</h4>
+                                    <h1 class="ratetxt">{{gaming.earnedCredit.formatPrice()}}/{{currentRole.maxThreshold.formatPrice()}}</h1>
+                                    <div class="progress-container">
+                                        <div class="progress-outer"></div>
+                                        <div class="progress-inner" ng-style="{width: (gaming.earnedCredit/currentRole.maxThreshold)*100 + '%'}"></div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

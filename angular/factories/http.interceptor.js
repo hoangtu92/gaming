@@ -27,7 +27,7 @@ gamingApp.config(function ($httpProvider, $qProvider) {
         },
         responseError: function (rejection) {
 
-            if(!rejection.config.url.match(/signIn/)){
+            if(!rejection.config.url.match(/signIn/) && !rejection.config.url.match(/signUp/)){
                 if(rejection.status === 302 || rejection.status === 307){
                     window.location.href = "/#!dashboard";
                 }
@@ -35,18 +35,19 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                     window.location.href = "/#!login";
                 }
                 else if(rejection.status === 500){ //INTERNAL SERVER ERROR
-                    window.location.href = "/#!dashboard";
+                    //window.location.href = "/";
                 }
                 else if(rejection.status === 402){ //PAYMENT_REQUIRED
-
                     $injector.get("$infoModal").open(rejection.data.message, openDepositPage);
-
                 }
                 else if(rejection.status === 423 ){//Locked
-
+                    //Handle in controller
+                }
+                else if(rejection.status === 406){//406 NOT_ACCEPTABLE
+                    //Handle in controller
                 }
                 //400 BAD_REQUEST
-                //406 NOT_ACCEPTABLE
+
                 else{
                     $injector.get("$infoModal").open(rejection.data.message)
                 }

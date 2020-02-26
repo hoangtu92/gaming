@@ -27,6 +27,7 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
             $scope.selectedVideo.src = res.data.model;
             $scope.selectedVideo.playing = true;
 
+            //localStorage.base_api + "roleVideo/play/" + $scope.selectedVideo.uid + "?t=" + localStorage.session_token
             $scope.videoElement.setAttribute('src', $scope.path['role_video'] + $scope.selectedVideo.src);
             $scope.videoElement.play();
 

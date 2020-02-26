@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="modal.verify_user.close()">&times;</button>
+</div>
+<div class="modal-body" id="mobile-registration-outer3">
+    <div class="login-welcome-page">
+        <form class="newsletter-verification-form" name="formVerify" ng-submit="verifyUser()" id="formVerify">
+            <div class="login-header">
+                <h2>簡訊驗證</h2>
+            </div>
+            <div class="form-group">
+                <span class="cstm-text-number">手機驗證碼已傳送至 <strong id="userPhone">{{user.phone}}</strong> 請至手機確認</span>
+            </div>
+            <div class="form-group">
+                <label>驗證碼</label>
+                <input name="code" type="text" class="form-control" ng-model="user.code" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <p class="newsletter-not-recve-cntnt">沒收到簡訊？<strong id="retryInterval">{{retryInterval}}</strong>秒後重試
+                </p></div>
+
+            <div class="button-group">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <button ng-disabled="retryInterval >0"  type="reset" class="btn-newsletter-send-again-link" id="resendSMS" ng-click="resendSMS()"
+                                href="#"><img alt="send-again" ng-src="{{retryInterval > 0 && '/assets/img/newsletter-send-again-btn.png' || retryInterval == 0 && '/assets/img/newsletter-send-again-btn-red.png'}}"></button>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <button type="submit" id="verifySMS" class="btn btn-newsletter-confirm-btn"><img
+                                src="/assets/img/newsletter-confirmation-btn.png" alt="confirm"></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

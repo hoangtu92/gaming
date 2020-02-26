@@ -12,9 +12,7 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
         sessionStorage.gaming_session = new Date().getTime();
 
     $http.defaults.headers.common['Session-Token'] = sessionStorage.gaming_session;
-
-    if (typeof localStorage.session_token != 'undefined')
-        $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
+    $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
 
 
 
@@ -51,8 +49,34 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
         return q.promise;
     };
 
+}).directive('appendVersion', function () {
+    return {
+        restrict: 'A',
+        replace: false,
+        link: function (scope, elem, attr) {
+            if (attr.href)
+                attr.$set("href", attr.href + "#v=" + localStorage.version);
+
+            if (attr.src)
+                attr.$set("src", attr.src + "#v=" + localStorage.version);
+        }
+    };
 });
 
+angular.module('app', []).run(function($localStorage) {
+
+    var _beforeRequest = videojs.Hls.xhr.beforeRequest;
+    videojs.Hls.xhr.beforeRequest = function(options) {
+        if (_.isFunction(_beforeRequest)) {
+            options = _beforeRequest(options);
+        }
+        if ($localStorage.token) {
+            options.headers = options.headers || {};
+            options.headers.Authorization = 'Token ' + $localStorage.token;
+        }
+        return options;
+    };
+});
 
 
 

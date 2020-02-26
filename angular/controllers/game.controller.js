@@ -195,7 +195,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.saveBet = function(){
 
         if(typeof $scope.gaming === 'undefined'){
-            $scope.openModal("enter_game")
+            $location.url("dashboard");
             return false;
         }
 
@@ -207,13 +207,30 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         localStorage["game_session_" + $scope.gaming.id] = JSON.stringify(gamingSession);
     };
 
+    $scope.buyMoreBet = function(){
+        var creditNeed = $scope.gaming.total - $scope.gaming.betQuota;
+        $infoModal.open("您的籌碼不足，您尚有" + $scope.currentUser.credit.formatPrice() + "G幣，<br>是否要花費" + $scope.currentRole.betQuotaFee.formatPrice() + "G幣 兌換" + $scope.currentRole.betQuota.formatPrice() + "點籌碼", function () {
+            var vm = this;
+            $http.post(localStorage.base_api + "game/requestBets", JSON.stringify($scope.gaming)).then(function (res) {
+                $scope.gaming = res.data;
+                $scope.restoreGame();
+                $scope.getCurrentUser(function () {
+                    vm.close()
+                });
+
+            })
+        }, "Buy", function () {
+            $scope.initGame();
+        })
+    };
+
     /**
      * Restore bets from local machine
      */
     $scope.applySavedBets = function(){
 
         if(typeof $scope.gaming === 'undefined'){
-            $scope.openModal("enter_game");
+            $location.url("dashboard");
             return false;
         }
 
@@ -232,7 +249,10 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 $scope.gaming = res.data.model;
                 $scope.restoreGame();
             }, function (reason) {
-
+                $scope.gaming = reason.data.model;
+                if(reason.status === 406){
+                    $scope.buyMoreBet()
+                }
             });
 
         }
@@ -260,7 +280,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.placeBet = function (el, amount) {
 
         if(typeof $scope.gaming === 'undefined'){
-            $scope.openModal("enter_game")
+            $location.url("dashboard");
             return false;
         }
 
@@ -293,7 +313,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
                 //New gaming model with updated bet value and user credit
                 $scope.gaming = res.data.model;
-                $scope.hasUnsavedChange = true;
 
                 //place the icon
                 $scope.drawIcon(el);
@@ -303,7 +322,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             }
         }, function (res) {
             $scope.gaming = res.data.model;
-
+            if(res.status === 406){
+                $scope.buyMoreBet()
+            }
         });
 
         return true;

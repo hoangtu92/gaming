@@ -4,14 +4,14 @@
 <div class="modal-body">
     <div class="login-welcome-page">
         <div class="form-group">
-            <label class="warning-message">{{vm.message}}</label>
+            <label class="warning-message" ng-bind-html="vm.message"></label>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
-<div class="modal-footer" ng-if="vm.cb">
-    <div class="flex flex-row flex-space-between">
-        <button type="reset" ng-click="vm.close()">取消</button>
+<div class="modal-footer" ng-if="vm.cb || vm.cb2">
+    <div class="flex flex-row justify-content-center">
+        <button type="reset" ng-click="vm.cb2(); vm.close()">{{vm.cancelText}}</button>
         <button type="button" ng-click="vm.cb()">{{vm.buttonText}}</button>
     </div>
 </div>

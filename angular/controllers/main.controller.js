@@ -1,4 +1,4 @@
-gamingApp.controller("mainController", function ($rootScope, $location, $scope, $route, $routeParams, $http, $infoModal, $uibModal, ConfigService, $timeout) {
+gamingApp.controller("mainController", function ($rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, ConfigService, $timeout) {
 
     $rootScope.route = $route;
 
@@ -41,6 +41,10 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
             license: "b2e98"
         };
 
+    $scope.$on('$locationChangeSuccess', function () {
+        $scope.getCurrentUser();
+    });
+
     ConfigService.getConfig().then(function (config) {
         $rootScope.config = config;
         localStorage.base_api = config.base_api;
@@ -49,7 +53,9 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
 
         $http.get(localStorage.base_api + "setting/get", {params: {key: "_path"}}).then(function (res) {
             $rootScope.path = res.data;
-        })
+
+        });
+
     });
 
     $scope.modal = {};
@@ -84,25 +90,133 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         $location.url(url);
     };
 
+    $scope.validationRules = {
+        "+886": 9,
+        "+86": 11,
+        "+852": 8,
+        "+853": 8,
+        "+60": 9,
+        "+63": 10
+    };
+
+    $scope.validatePhone = function(phone){
+        return phone.match(/\+8869\d{0,9}|\+86\d{0,11}|\+852\d{0,8}|\+853\d{0,8}|\+60\d{0,9}|\+63\d{0,10}/);
+    };
+
+    $scope.$watch("user.phone", function (phone) {
+        if(typeof phone === "undefined") return;
+        if(phone.match(/^0/)){
+            $scope.user.phone = phone.replace(/^0/, "");
+        }
+        /*if($scope.user.phone.length == $scope.validationRules[$scope.user.countryCode]){
+            if($scope.validatePhone($scope.user.countryCode + $scope.user.phone)){
+
+            }
+        }*/
+    });
+
     $scope.login = function () {
         $http.post(localStorage.base_api + "user/signIn", JSON.stringify($scope.user)).then(function (res) {
             if (res.data.accessToken) {
                 localStorage.uid = res.data.uid;
                 localStorage.session_token = res.data.accessToken;
-                $location.url("dashboard");
+
+                $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';
+                $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
+
+                $timeout(function () {
+                    $location.url("dashboard");
+                })
             } else {
-                $infoModal.open("操作錯誤，請洽客服")
+                $infoModal.open("此帳號尚未註冊，請先註冊")
             }
         }, function (res) {
             if (res.data.status === 403) {
-                $infoModal.open("帳戶狀態未啟用或停用中，請洽客服")
+                $infoModal.open("帳號或密碼錯誤，請重新輸入")
             } else {
-                $infoModal.open("操作錯誤，請洽客服");
+                $infoModal.open("此帳號尚未註冊，請先註冊");
             }
         });
 
         return false;
     };
+
+    $scope.cellUser = {};
+    $scope.mailUser = {};
+
+    $scope.cellSignUp = function(){
+        var phone = $scope.user.countryCode + $scope.user.phone;
+        if($scope.user.phone.length < $scope.validationRules[$scope.user.countryCode]){
+            $infoModal.open("手機號碼格式錯誤，請輸入正確" +$scope.validationRules[$scope.user.countryCode]+ "碼數字");
+        }
+        else if($scope.validatePhone(phone)){
+            $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
+                if(res.data.status){
+                    $scope.modal["cell_register"].close();
+                    $scope.openModal("verify_user")
+                }
+            });
+        }
+        else{
+            $infoModal.open("您輸入的手機號碼錯誤，請確認後重新輸入")
+        }
+
+    };
+    $scope.verifyUser = function(){
+        var username = $scope.user.phone === null ? $scope.user.email : $scope.user.phone;
+        $http.post(localStorage.base_api + "user/verify", JSON.stringify({
+            username: username,
+            code: $scope.user.code
+        })).then(function () {
+            $infoModal.open("驗證成功，請登錄以繼續", function () {
+                window.location.reload();
+            });
+        });
+    };
+
+    $scope.mailSignUp = function(){
+        $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
+            $scope.modal["mail_register"].close();
+            $infoModal.open("Email驗證信已送出，請確認信箱")
+        });
+    };
+    $scope.retryInterval =0;
+    $scope.resendSMS = function(){
+        $scope.retryInterval = 60;
+        $http.post(localStorage.base_api + "user/resend", JSON.stringify({
+            username: $scope.user.username
+        })).finally(function () {
+            $scope.retryIntervalObj = $interval(function () {
+                if($scope.retryInterval === 0) {
+                    $interval.cancel($scope.retryIntervalObj);
+                }
+                else{
+                    $scope.retryInterval--;
+                }
+
+            }, 1000)
+        });
+    };
+
+    $scope.requestForgetPWCode = function(){
+        $http.get(localStorage.base_api + "user/requestForgetPWCode", {params: {u: $scope.user.username}}).then(function (value) {
+            $scope.openModal("change_password")
+        });
+    };
+
+    $scope.changePassword = function(){
+        $http.post(localStorage.base_api + "user/changePassword", JSON.stringify($scope.user)).then(function (value) {
+            $scope.user = {};
+            $scope.cancel();
+            $infoModal.open("密碼修改成功，請登錄");
+            $timeout(function () {
+                $location.url("login");
+            }, 3000)
+
+
+        });
+    };
+
 
     $scope.logout = function () {
         delete (localStorage.session_token);
@@ -117,6 +231,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
     };
 
     $scope.getCurrentUser = function (cb) {
+        if($route.current.view === "login" || $route.current.view === "index") return;
         $http.get(base_api + "user/currentUser").then(function (res) {
             $scope.currentUser = res.data.model;
             if (cb) cb();
@@ -150,8 +265,10 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
     /**
      * Role
      */
+
+    $scope.filter = {};
     $scope.getListRoles = function () {
-        $http.get(localStorage.base_api + "role/list").then(function (res) {
+        $http.post(localStorage.base_api + "role/filter", JSON.stringify($scope.filter)).then(function (res) {
             $scope.roles = res.data;
             $scope.currentRole = $scope.roles[0];
         })

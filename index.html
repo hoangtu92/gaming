@@ -19,9 +19,9 @@
 
     <link href="assets/css/slick.css" rel="stylesheet">
     <link href="assets/css/slick-theme.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" append-version>
     <link href="assets/css/responsive.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet" append-version>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +48,7 @@
     </style>
 
 </head>
-<body ng-class="route.current.bodyClass" class="page-{{route.current.view}}" ng-init="getCurrentUser()">
+<body ng-class="route.current.bodyClass" class="page-{{route.current.view}}">
 
 <section ng-view id="routedContent"></section>
 
@@ -65,6 +65,8 @@
 <script src="assets/js/ninja-slider.js"></script>
 <script src="assets/js/thumbnail-slider.js" type="text/javascript"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
 <script src="assets/js/angular.min.js"></script>
 
 <!--Angular dependencies-->
@@ -78,12 +80,12 @@
 
 
 <!--Angular controller, script-->
-<script src="angular/main.js"></script>
+<script src="angular/main.js" append-version></script>
 
 <script src="angular/filter.js"></script>
-<script src="angular/route.js"></script>
+<script src="angular/route.js" append-version></script>
 
-<script src="angular/factories/http.interceptor.js"></script>
+<script src="angular/factories/http.interceptor.js" append-version></script>
 <script src="angular/factories/info.modal.js"></script>
 
 <script src="angular/directives/anchor.js"></script>
@@ -91,19 +93,19 @@
 <script src="angular/directives/thumbnail.slider.js"></script>
 <script src="angular/directives/image.slider.js"></script>
 
-<script src="angular/controllers/main.controller.js"></script>
-<script src="angular/controllers/front.controller.js"></script>
-<script src="angular/controllers/dashboard.controller.js"></script>
-<script src="angular/controllers/announcement.controller.js"></script>
-<script src="angular/controllers/game.controller.js"></script>
-<script src="angular/controllers/role.controller.js"></script>
-<script src="angular/controllers/user.controller.js"></script>
-<script src="angular/controllers/price.controller.js"></script>
-<script src="angular/controllers/product.controller.js"></script>
-<script src="angular/controllers/prize.controller.js"></script>
-<script src="angular/controllers/video.controller.js"></script>
-<script src="angular/controllers/card.controller.js"></script>
-<script src="angular/controllers/ticket.controller.js"></script>
+<script src="angular/controllers/main.controller.js" append-version></script>
+<script src="angular/controllers/front.controller.js" append-version></script>
+<script src="angular/controllers/dashboard.controller.js" append-version></script>
+<script src="angular/controllers/announcement.controller.js" append-version></script>
+<script src="angular/controllers/game.controller.js" append-version></script>
+<script src="angular/controllers/role.controller.js" append-version></script>
+<script src="angular/controllers/user.controller.js" append-version></script>
+<script src="angular/controllers/price.controller.js" append-version></script>
+<script src="angular/controllers/product.controller.js" append-version></script>
+<script src="angular/controllers/prize.controller.js" append-version></script>
+<script src="angular/controllers/video.controller.js" append-version></script>
+<script src="angular/controllers/card.controller.js" append-version></script>
+<script src="angular/controllers/ticket.controller.js" append-version></script>
 
 </body>
 </html>

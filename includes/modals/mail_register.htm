@@ -3,27 +3,27 @@
 </div>
 <div class="modal-body" id="mobile-registration-outer2">
     <div class="login-welcome-page">
-        <form class="form-mobile-registration form-signup" name="mailsignup" id="mailsignup">
+        <form class="form-mobile-registration form-signup" name="mailsignup" id="mailsignup" ng-submit="mailSignUp()">
             <div class="login-header">
                 <h2>註冊</h2></div>
             <div class="form-group"><label class="status-msg"></label></div>
             <div class="form-group">
                 <label class="cstm-label">電子信箱</label>
-                <input name="email" type="email" class="form-control cstm-input-mailbox"
+                <input name="email" type="email" ng-model="user.email" class="form-control cstm-input-mailbox"
                        placeholder="請輸入您的信箱" required autofocus>
             </div>
             <div class="form-group">
                 <label class="cstm-label">設定暱稱</label>
-                <input name="username" type="text" class="form-control" placeholder="" required>
+                <input name="username" type="text" ng-model="user.username" class="form-control" placeholder="" required>
             </div>
             <div class="form-group">
                 <label class="cstm-label">設定密碼</label>
-                <input name="password" type="password" class="form-control" placeholder="密碼必須至少由8個字元組成"
+                <input name="password" type="password" ng-model="user.password" class="form-control" placeholder="密碼必須至少由8個字元組成"
                        required>
             </div>
             <div class="form-group">
                 <label class="cstm-label">確認密碼</label>
-                <input name="password_2" type="password" class="form-control" placeholder="請再次輸入您的密碼"
+                <input name="password_2" type="password" ng-model="user.password2" class="form-control" placeholder="請再次輸入您的密碼"
                        required>
             </div>
             <div class="form-group">
