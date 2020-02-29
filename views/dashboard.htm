@@ -19,7 +19,7 @@
             <div class="welcome-mid-left-sec">
                 <div class="welcome-mid-left-girl-img"><img style="width: 400px; height: auto" ng-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
-                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{'files/users/' + currentUser.avatar}}">
+                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
                         <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
@@ -28,7 +28,7 @@
               <h5>{{currentUser.credit.formatPrice()}}</h5>
               </span> </span> </div>
                     </div>
-                    <div class="right-author-chat-icon"><a href="#" ng-click="openModal('video_play')"><img src="assets/images/chat-icon.png" class="img-sreponsive"></a>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="openModal('video_play')"><img src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
                     </div>
                 </div>
             </div>

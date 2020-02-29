@@ -327,11 +327,14 @@ span.img-sec {
 	position: relative;
 	left: 0;
 	top: -10px;
+	overflow: hidden;
 }
 
 span.img-sec img {
 	width: 100%;
 	height: auto;
+	border: 3px solid #fff;
+	border-radius: 100%;
 }
 
 .welcome-left-author-data-sec {
