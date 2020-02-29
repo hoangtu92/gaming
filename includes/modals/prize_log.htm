@@ -5,10 +5,10 @@
     <div class="popup_innr_list">
         <div class="row" ng-repeat="log in prizeLogs">
             <div class="col-md-3">
-                <h3>{{log.coin || log.card}} G幣</h3>
+                <h3>{{log.amount}} G幣</h3>
             </div>
             <div class="col-md-6">
-                <h4>{{log.description}}</h4>
+                <h4>{{log.notes}}</h4>
             </div>
             <div class="col-md-3">
                 <div class="date">{{log.redeemedAt.toDate().toLocaleDateString()}}</div>

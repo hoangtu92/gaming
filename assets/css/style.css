@@ -23,8 +23,8 @@ button {
 }
 
 .uniformsister {
-    background: url(../images/unifornslider.jpg) fixed repeat;
-    background-size: cover;
+    background: url(../images/grid-purple-bg2.png) fixed repeat;
+    background-size: auto;
     color: #fff;
     height: 100%;
 }
@@ -60,13 +60,13 @@ button {
 .uniformheader {
     width: 100%;
     height: auto;
-    background: url(../images/transparent_bg.png) no-repeat left top;
     padding: 5px 0px 10px 10px;
-    background-size: contain;
     margin-bottom: 30px;
     position: relative;
     z-index: 9;
-
+    background: url(../images/transparent_bg.png) no-repeat left top;
+    background-size: contain;
+    background: linear-gradient(169deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,0.028470763305322166) 25%, rgba(225,52,110,0) 100%);
 }
 
 .gamepage .uniformheader{
@@ -206,7 +206,8 @@ button {
 }
 
 .modal-content {
-    background: url(../images/popupbgr.png) no-repeat center;
+    background: rgb(192,81,176);
+    background: linear-gradient(183deg, rgba(192,81,176,1) 0%, rgba(192,81,176,0.72875087535014) 100%);
     text-align: center;
     background-size: cover;
     border: 2px solid #fff !important;
@@ -215,6 +216,11 @@ button {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.67);
+}
+
+.gradient-red-bg{
+    background: rgb(192,81,176);
+    background: linear-gradient(183deg, rgba(192,81,176,1) 0%, rgba(192,81,176,0.72875087535014) 100%);
 }
 
 .modal-backdrop {
@@ -578,6 +584,7 @@ button.popupprple_btn img {
     height: 305px;
     overflow-y: auto;
     box-shadow: inset 0px 0px 30px rgba(66, 38, 91, 0.34);
+    color: white;
 }
 
 .popup_innr_list h3 {
@@ -766,8 +773,7 @@ section.uniformsister-02 .uniformheader .crosslink span a {
 }
 
 section.uniformsister-02 {
-    background: url(../images/layersbgr.jpg) fixed ;
-    background-size: cover;
+    background: none;
     text-align: center;
 }
 
@@ -885,6 +891,7 @@ section.uniformsister-02 {
     max-width: 173px;
     padding-left: 10%;
     margin-top: -38px;
+    min-height: 200px;
 }
 
 .yellowshed {
@@ -1046,6 +1053,9 @@ button.prpulbtn {
     height: 65px;
     background-size: contain;
     background-repeat: no-repeat;
+    background: linear-gradient(65deg, rgba(101,51,185,1) 0%, rgba(196,63,183,1) 100%);
+    border: 3px solid white;
+    box-shadow: 0 0 4px white;
 }
 
 button.prpulbtn img {
@@ -1060,6 +1070,8 @@ button.prpulbtn h3 {
     font-weight: 700;
     font-size: 2rem;
     margin: 0;
+    /* background-color: #6533b9; */
+    /* background-color: #c43fb7; */
 }
 
 .circleimgs_botm {
@@ -1443,6 +1455,7 @@ ul.gamelist_inner li .listbox h5 {
     box-shadow: none;
     border-radius: 0;
     border: none !important;
+    background: url(../images/grid-purple-bg.png) repeat;
 }
 
 section.uniformsister-03 .uniformheader img {
@@ -1476,7 +1489,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
     padding: 15px 0 0 15px;
 }
 .modal.fullpage_popup .modal-dialog{
-    width: 650px;
+    /* width: 650px; */
 }
 
 .modal.fullpage_popup .modal-dialog .modal-content .vedio {
@@ -1491,8 +1504,10 @@ section.uniformsister-03 .uniformheader .crosslink span a {
     background: transparent;
     border: 0;
     position: absolute;
-    top: 35%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 .vedio .vedioicon img {
@@ -1532,6 +1547,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
     border-radius: 30px;
     padding: 6px 20px;
     margin: 5px;
+    float: left;
 }
 
 section.uniformsister_vedio {
@@ -1738,7 +1754,7 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 .av-play {
-    overflow: scroll!important;
+    overflow-y: auto !important;
 }
 
 .start1 {

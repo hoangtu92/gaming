@@ -3,7 +3,7 @@
     <div class="gaming-header">
         <div class="container-fluid">
             <div class="row">
-                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#"><img src="/assets/img/logo.png"
+                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#"><img src="/assets/images/logo.png"
                                                                                       class="img-responsive"></a></div>
                 <div class="menu-section col-md-9 col-sm-9 col-xs-9" ng-init="getListPrizes()">
                     <div ng-include="'/includes/sidebar.htm'">
@@ -24,15 +24,15 @@
                     </span>
                         <div class="welcome-left-author-data-sec">
                             <h3>{{currentUser.username}}</h3>
-                            <span class="price-icon"> <img src="/assets/img/price-icon.png">
+                            <span class="price-icon"> <img src="/assets/images/price-icon.png">
               <h5>{{currentUser.credit.formatPrice()}}</h5>
               </span> </span> </div>
                     </div>
-                    <div class="right-author-chat-icon"><a href="#" ng-click="openModal('video_play')"><img src="assets/img/chat-icon.png" class="img-sreponsive"></a>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="openModal('video_play')"><img src="assets/images/chat-icon.png" class="img-sreponsive"></a>
                     </div>
                 </div>
             </div>
-            <div class="welcome-mid-right-sec">
+            <div class="welcome-mid-right-sec gradient-red-bg">
                 <div class="welcome-mid-right-top-sec">
                     <div class="welcome-mid-right-top-left">
                         <h2>{{currentRole.name}}</h2>
@@ -64,14 +64,14 @@
                         </div>
                     </div>
                     <div ng-if="!currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#" ng-click="openModal('enter_game')">
-                        <img src="/assets/img/btn-circle.png" class="img-responsive"
-                                                                                                       onmouseover="this.src='/assets/img/btn-circle_on.png';"
-                                                                                                       onmouseout="this.src='/assets/img/btn-circle.png';"></a>
+                        <img src="/assets/images/btn-circle.png" class="img-responsive"
+                             onmouseover="this.src='/assets/images/btn-circle_on.png';"
+                             onmouseout="this.src='/assets/images/btn-circle.png';"></a>
                     </div>
                     <div ng-if="currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#!role-game/{{currentRole.id}}">
-                        <img src="/assets/img/btn-circle.png" class="img-responsive"
-                                                                                                       onmouseover="this.src='/assets/img/btn-circle_on.png';"
-                                                                                                       onmouseout="this.src='/assets/img/btn-circle.png';"></a>
+                        <img src="/assets/images/btn-circle.png" class="img-responsive"
+                             onmouseover="this.src='/assets/images/btn-circle_on.png';"
+                             onmouseout="this.src='/assets/images/btn-circle.png';"></a>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
     </div>
     <div class="welcome-bottom-sec">
         <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
-                src="/assets/img/cstm-btn-img.png"></a></div>
+                src="/assets/images/cstm-btn-img.png"></a></div>
         <div class="container" ng-init="getListRoles()">
             <div class="welcome-bottom-inner">
 

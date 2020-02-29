@@ -52,9 +52,19 @@
 
 <section ng-view id="routedContent"></section>
 
+
 <div id="buttons-container">
     <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
     <!-- <button id="unlock-button">Unlock</button> -->
+</div>
+
+<div ng-if="!applicationLoaded" class="loadingPage">
+
+    <div class="loadingPageLoader">
+        <md-progress-linear md-mode="determinate" value="{{(responsesCounter / requestsCounter) * 100}}"></md-progress-linear>
+        <div class="percents" ng-bind-html="(responsesCounter / requestsCounter * 100).toFixed(0) + ' %'"></div>
+    </div>
+
 </div>
 
 <script src="assets/js/jquery-3.4.1.min.js"></script>
@@ -64,8 +74,6 @@
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/ninja-slider.js"></script>
 <script src="assets/js/thumbnail-slider.js" type="text/javascript"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script src="assets/js/angular.min.js"></script>
 

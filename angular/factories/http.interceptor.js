@@ -20,12 +20,63 @@ gamingApp.config(function ($httpProvider, $qProvider) {
 
     $qProvider.errorOnUnhandledRejections(false);
 
-}).factory('httpInterceptor', function ($q, $injector) {
+}).factory('httpInterceptor', function ($q, $injector, $timeout, $rootScope) {
+
+    var applicationLoaded = false,
+        requestsCounter = 0,
+        responsesCounter = 0,
+        applicationSeemsToBeLoaded;
+
     return {
+        request: function(config) {
+
+            if (config.beforeSend)
+                config.beforeSend();
+
+
+            if (!applicationLoaded) {
+
+                requestsCounter++;
+
+                if (applicationSeemsToBeLoaded) {
+                    $timeout.cancel(applicationSeemsToBeLoaded);
+                }
+
+                $rootScope.$broadcast('application_loading', {
+                    requests: requestsCounter,
+                    responses: responsesCounter
+                });
+
+            }
+
+            return config || $q.when(config);
+        },
         response: function (response) {
+            if (!applicationLoaded) {
+
+                responsesCounter++;
+
+                $rootScope.$broadcast('application_loading', {
+                    requests: requestsCounter,
+                    responses: responsesCounter
+                });
+
+                if (requestsCounter - responsesCounter < 1) {
+                    applicationSeemsToBeLoaded = $timeout(function () {
+                        $rootScope.$broadcast('application_loaded');
+                        applicationLoaded = true;
+                    }, 200);
+                }
+
+            }
+
             return response || $q.when(response);
         },
+        requestError: function(){
+            $rootScope.$broadcast('application_loaded');
+        },
         responseError: function (rejection) {
+            $rootScope.$broadcast('application_loaded');
 
             if(!rejection.config.url.match(/signIn/) && !rejection.config.url.match(/signUp/)){
                 if(rejection.status === 302 || rejection.status === 307){
@@ -53,18 +104,16 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                 }
             }
             else{
-                $injector.get("$infoModal").open(rejection.data.message)
+                if (rejection.status === 403) { //FORBIDDEN
+
+                }
+                else{
+                    $injector.get("$infoModal").open(rejection.data.message)
+                }
+
             }
 
             return $q.reject(rejection);
-        },
-        // if beforeSend is defined call it
-        request: function (request) {
-
-            if (request.beforeSend)
-                request.beforeSend();
-
-            return request;
         }
     };
 });

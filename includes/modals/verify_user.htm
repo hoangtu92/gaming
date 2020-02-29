@@ -8,7 +8,7 @@
                 <h2>簡訊驗證</h2>
             </div>
             <div class="form-group">
-                <span class="cstm-text-number">手機驗證碼已傳送至 <strong id="userPhone">{{user.phone}}</strong> 請至手機確認</span>
+                <span class="cstm-text-number">手機驗證碼已傳送至 <strong id="userPhone">0{{user.phone}}</strong> 請至手機確認</span>
             </div>
             <div class="form-group">
                 <label>驗證碼</label>
@@ -22,11 +22,11 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <button ng-disabled="retryInterval >0"  type="reset" class="btn-newsletter-send-again-link" id="resendSMS" ng-click="resendSMS()"
-                                href="#"><img alt="send-again" ng-src="{{retryInterval > 0 && '/assets/img/newsletter-send-again-btn.png' || retryInterval == 0 && '/assets/img/newsletter-send-again-btn-red.png'}}"></button>
+                                href="#"><img alt="send-again" ng-src="{{retryInterval > 0 && '/assets/images/newsletter-send-again-btn.png' || retryInterval == 0 && '/assets/images/newsletter-send-again-btn-red.png'}}"></button>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <button type="submit" id="verifySMS" class="btn btn-newsletter-confirm-btn"><img
-                                src="/assets/img/newsletter-confirmation-btn.png" alt="confirm"></button>
+                                src="/assets/images/newsletter-confirmation-btn.png" alt="confirm"></button>
                     </div>
                 </div>
             </div>

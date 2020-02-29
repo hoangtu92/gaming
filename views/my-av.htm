@@ -1,0 +1,49 @@
+<section ng-init="currentPage = 'videos'" class="uniformsister uniformsister-03" style="height:auto;">
+    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img src="/assets/images/img-check-circle.png"/>
+        <h1>AV區</h1></a>
+
+        <div class="booksthree_btn">
+            <button class="active bookbtn booklinebtn pull-right">已購買</button>
+            <button class="bookbtn booklinebtn pull-right" ng-click="goto('av-play')">長片</button>
+            <button class="bookbtn booklinebtn pull-right" ng-click="goto('av-short')">短片</button>
+        </div>
+    </div>
+
+    <div class="gamelist gamelist-03">
+        <div class="gamelist_top" ng-init="getCurrentUserVideos()">
+            <div class="list_ratings">
+                <button class="bookbtn"><img src="/assets/images/toglelist2.png"/></button>
+
+                <h2>類別</h2>
+
+                <ul class="nav nav-tabs gamelistul" ng-init="getListVideoTags()">
+                    <li ng-class="{'active': currentFilter === undefined}" role="presentation"><a
+                            ng-click="getCurrentUserVideos()">全部類別</a></li>
+                    <li ng-class="{'active': currentFilter === tag.name}" ng-repeat="tag in videoTags"><a
+                            ng-click="getCurrentUserVideos(tag.name)" href="#">{{tag.name}}</a></li>
+
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="all" role="tabpanel">
+                    <ul class="gamelist_inner">
+                        <li ng-repeat="video in userVideos" ng-show="checkItemTags(video, currentFilter)">
+                            <div class="shadow">
+                                <div class="listbox" ng-click="setCurrentVideo(video); openModal('video_detail', 'fullpage_popup')">
+                                    <div class="image-box"><a href="#"><img
+                                            class="eyebaby" ng-if="video.thumbnail !== null"
+                                            ng-src="{{path['video_image']}}{{video.thumbnail}}"/></a></div>
+
+                                    <h4><a href="#">{{video.name}}</a></h4>
+                                    <h5><a href="#">{{video.actress}}</a></h5>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

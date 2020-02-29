@@ -13,11 +13,11 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
         })
     });
 
-    $scope.videoElement = null;
+    $scope.videoElement = document.querySelector("#videoPlay");
 
     $scope.playVideo = function (video) {
 
-        $scope.videoElement = document.querySelector("#videoPlay");
+
         $scope.videoElement.setAttribute("poster", $scope.path['role_video_image'] + video.cover);
         $scope.selectedVideo = video;
         $http.get(localStorage.base_api + "roleVideo/getPlayableSource", {
@@ -33,6 +33,18 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
 
             });
 
+    };
+
+    $scope.pauseVideo = function(video){
+        if($scope.videoElement.paused){
+            $scope.videoElement.play();
+            video.playing = true;
+        }
+
+        else {
+            $scope.videoElement.pause();
+            video.playing = false;
+        }
     };
 
     $scope.$on("close_window", function (evt, e) {

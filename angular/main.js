@@ -1,8 +1,9 @@
 /**
  * Gaming app main file
  */
+
 var gamingApp = angular.module("gaming", ['ngRoute', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngSanitize']);
-gamingApp.version = "1.0.0";
+gamingApp.version = "1.1.0";
 gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';
@@ -55,10 +56,10 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
         replace: false,
         link: function (scope, elem, attr) {
             if (attr.href)
-                attr.$set("href", attr.href + "#v=" + localStorage.version);
+                attr.$set("href", attr.href + "?v=" + gamingApp.version);
 
             if (attr.src)
-                attr.$set("src", attr.src + "#v=" + localStorage.version);
+                attr.$set("src", attr.src + "?v=" + gamingApp.version);
         }
     };
 });

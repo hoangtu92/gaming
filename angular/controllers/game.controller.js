@@ -209,9 +209,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
     $scope.buyMoreBet = function(){
         var creditNeed = $scope.gaming.total - $scope.gaming.betQuota;
-        $infoModal.open("您的籌碼不足，您尚有" + $scope.currentUser.credit.formatPrice() + "G幣，<br>是否要花費" + $scope.currentRole.betQuotaFee.formatPrice() + "G幣 兌換" + $scope.currentRole.betQuota.formatPrice() + "點籌碼", function () {
+        $scope.buyMoreBetModal = $infoModal.open("您的籌碼不足，您尚有" + $scope.currentUser.credit.formatPrice() + "G幣，<br>是否要花費" + $scope.currentRole.betQuotaFee.formatPrice() + "G幣 兌換" + $scope.currentRole.betQuota.formatPrice() + "點籌碼", function () {
             var vm = this;
-            $http.post(localStorage.base_api + "game/requestBets", JSON.stringify($scope.gaming)).then(function (res) {
+            $http.post(localStorage.base_api + "game/requestBets").then(function (res) {
                 $scope.gaming = res.data;
                 $scope.restoreGame();
                 $scope.getCurrentUser(function () {
@@ -219,10 +219,16 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 });
 
             })
-        }, "Buy", function () {
+        }, "確定").result.then(function (value) {
+            //console.log("Closure")
+        }, function (reason) {
+            //console.log("Dismiss");
+            angular.element(".bet-icon").remove();
             $scope.initGame();
-        })
+        });
     };
+
+
 
     /**
      * Restore bets from local machine
@@ -279,6 +285,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      */
     $scope.placeBet = function (el, amount) {
 
+
         if(typeof $scope.gaming === 'undefined'){
             $location.url("dashboard");
             return false;
@@ -301,7 +308,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
         $scope.gaming[bet_area] = parseInt($scope.gaming[bet_area]);
 
-        console.log($scope.gaming[bet_area], amount)
+        //console.log($scope.gaming[bet_area], amount)
 
         $scope.gaming[bet_area] +=  amount;
 
@@ -331,6 +338,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
     };
 
+
     /**
      * Draw icon on screen
      * @param area
@@ -357,8 +365,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         //Insert to document
         angular.element('body .gamepage').append(html);
 
+        html.show();
         $timeout(function () {
-            html.show();
+
         }, 300);
     };
 
@@ -373,7 +382,12 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             $scope.restoreGame();
         },function (reason) {
             if(reason.status === 423){
-                $scope.openModal("enter_game")
+                $scope.openModal("enter_game");
+                $scope.modal['enter_game'].result(function () {
+
+                }, function () {
+                    $location.url("dashboard");
+                })
             }
         })
     };
@@ -440,6 +454,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         }, function (reason) {
             if(reason.status === 423){
                 $scope.openModal("enter_game")
+            }
+            else if(reason.status === 406){
+                $scope.buyMoreBet()
             }
         });
     };

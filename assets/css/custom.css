@@ -12,6 +12,7 @@ body {
 	font-size: 15px;
 	font-family: "微軟正黑體", sans-serif;
 	font-weight: normal;
+	background-color: transparent;
 }
 
 a, button {
@@ -36,7 +37,7 @@ button[type="submit"] {
 
 /******************************Welcom Page**********************************/
 .welcome-page {
-	background: url(../img/welcome-bg.jpg) no-repeat center center;
+	/* background: url(../images/welcome-bg.jpg) no-repeat center center; */
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
@@ -90,7 +91,7 @@ button[type="submit"] {
 	margin: 0 auto;
 	text-align: center;
 	content: "";
-	background: url(../img/top-btn-light-effect.png) no-repeat center center;
+	background: url(../images/top-btn-light-effect.png) no-repeat center center;
 	width: 55px;
 	height: 10px;
 	background-size: 100%;
@@ -167,9 +168,9 @@ button[type="submit"] {
 }
 
 .reward-collection-outer {
-	background: url(../img/reward-collection-bg.jpg) no-repeat center center;
+	background: url(../images/grid-purple-bg2.png) repeat center center;
 	height: 100vh;
-	background-size: cover;
+	background-size: auto;
 	width: 100%;
 	padding: 5px;
 }
@@ -234,12 +235,13 @@ p#orientation-status {
 
 .slider-item-inner .slidertxt-bar h6 {
 	position: absolute;
-	top: 0px;
+	top: 0;
 	left: 0;
 	right: 0;
 	text-align: center;
 	color: #fff;
 	font-size: 12px;
+	line-height: 10px;
 	margin: 0;
 }
 
@@ -334,7 +336,7 @@ span.img-sec img {
 
 .welcome-left-author-data-sec {
 	float: left;
-	background: url(../img/pink-bg.png) no-repeat;
+	background: url(../images/pink-bg.png) no-repeat;
 	position: relative;
 	left: -47px;
 	padding-left: 50px;
@@ -342,6 +344,8 @@ span.img-sec img {
 	z-index: 0;
 	background-size: 100%;
 	min-width: 374px;
+	background: rgb(225,52,110);
+	background: linear-gradient(130deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 15%, rgba(225,52,110,1) 15%, rgba(225,52,110,0.028470763305322166) 77%, rgba(225,52,110,0) 100%);
 }
 
 .welcome-left-author-data-sec h3 {
@@ -382,7 +386,7 @@ span.price-icon h5 {
 .right-author-chat-icon {
 	position: absolute;
 	right: 3%;
-	bottom: 32%;
+	bottom: 20%;
 }
 
 .right-author-chat-icon img {
@@ -392,7 +396,6 @@ span.price-icon h5 {
 .welcome-mid-right-sec {
 	float: left;
 	border: 3px solid #fff;
-	background: url(../img/bg-welcome-right.png) no-repeat center;
 	background-size: cover;
 	box-shadow: 1px 1px 10px rgba(234,133,178,1);
 	border-radius: 20px;
@@ -531,7 +534,7 @@ span.price-icon h5 {
 	width: 100%;
 	bottom: 0;
 	position: absolute;
-	background: url(../img/bottom-slider-bg.png) no-repeat;
+	background: url(../images/bottom-slider-bg.png) no-repeat;
 	background-position: center bottom;
 	background-size: 100%;
 }
@@ -557,6 +560,7 @@ span.price-icon h5 {
 	border-bottom-left-radius: 18px;
 	border-bottom-right-radius: 18px;
 	font-weight: 600;
+	white-space: nowrap;
 }
 
 .welcome-bottom-sec .owl-dots {
@@ -605,10 +609,9 @@ span.price-icon h5 {
 }*/
 .slider-item-inner img {
 	width: 80px;
-	height: 80px;
 	object-fit: cover;
-	border-radius: 15px;
 	opacity: 0.9;
+	height: 109px;
 }
 
 .slider-item-inner a {
@@ -617,14 +620,15 @@ span.price-icon h5 {
 	border-radius: 20px;
 	border: 4px solid #fff;
 	opacity: 1;
+	overflow: hidden;
 }
 
 .welcome-bottom-inner .owl-nav button:focus {
 	outline: none;
 }
 
-.slider-item-inner a:hover img {
-	border: 5px solid #ff5ea6;
+.slider-item-inner a:hover {
+	border: 4px solid #ff5ea6;
 }
 
 .slider-item-inner a:before {
@@ -655,7 +659,7 @@ span.price-icon h5 {
 	content: "";
 	left: -50px;
 	top: -50px;
-	background: url(../img/heart-icon.png) no-repeat;
+	background: url(../images/heart-icon.png) no-repeat;
 	width: 150px;
 	height: 150px;
 	background-size: 100%;
@@ -706,7 +710,7 @@ span.numbers {
 }
 
 .login-page-outer {
-	background: url(../img/login-bg.png) no-repeat center;
+	background: url(../images/login-bg.png) no-repeat center;
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
@@ -1022,7 +1026,7 @@ input.form-control.cstm-input-one {
 }
 
 .login-home-page-outer {
-	background: url(../img/login-homepage-bg.jpg) no-repeat left top;
+	background: url(../images/login-homepage-bg.jpg) no-repeat left top;
 	background-size: cover;
 	padding: 20px;
 	height: 100vh;
@@ -1104,10 +1108,11 @@ input.form-control.cstm-input-one {
 	line-height: 50px;
 	color: #fff;
 	font-weight: bold;
-	background: url(../img/pink-bg.png) no-repeat;
+	background: url(../images/pink-bg.png) no-repeat;
 	background-size: cover;
 	padding-right: 15px;
 	padding-left: 20px;
+	background: linear-gradient(166deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 27%, rgba(225,52,110,1) 31%, rgba(225,52,110,0.028470763305322166) 50%, rgba(225,52,110,0) 100%);
 }
 
 .reward-collection-header-left-sec a img {
@@ -1334,12 +1339,12 @@ button.receive-btn img {
 	top: -10px;
 	width: 50px;
 	height: 50px;
-	background: url(../img/cstm-check-mark.png) no-repeat center;
+	background: url(../images/cstm-check-mark.png) no-repeat center;
 	background-size: 100%;
 }
 
 section .modal {
-	background: url(../img/pattern-option-1.png) repeat center;
+	background: url(../images/pattern-option-1.png) repeat center;
 }
 
 .modal.middle .modal-dialog {
@@ -1348,7 +1353,6 @@ section .modal {
 }
 
 .modal-content {
-	background: url(../img/login-popup-bg.png) no-repeat center;
 	background-size: cover;
 	border-radius: 20px;
 	padding: 10px;
@@ -2134,14 +2138,14 @@ h3.product-title {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 30px 10px;
 }
 
 .monthly-stored-value-bottom-sec ul li {
-	float: left;
-	width: 19%;
-	margin: 1% .5%;
-	background: url(../img/monthly-stored-value-bottom-img.png) no-repeat;
-	background-size: cover;
+	background: url(../images/monthly-stored-value-bottom-img.png) no-repeat;
+	background-size: contain;
 	text-align: center;
 	min-height: 294px;
 	position: relative;
@@ -2203,7 +2207,7 @@ h3.product-title {
 .announcement-slider {
 	float: left;
 	width: 100%;
-	background: url(../img/pattern-option-1.png);
+	background: url(../images/pattern-option-1.png);
 	background-size: auto;
 	padding: 50px;
 	border-radius: 15px;
@@ -2526,7 +2530,7 @@ ul.filter-mid-left-selection li label .checkmark:after {
 	top: -10px;
 	width: 50px;
 	height: 50px;
-	background: url(../img/cstm-check-mark.png) no-repeat center;
+	background: url(../images/cstm-check-mark.png) no-repeat center;
 	background-size: 100%;
 }
 
@@ -3342,7 +3346,7 @@ h3.product-title {
 	}
 
 	#buttons-container {
-		background: url(../img/login-homepage-bg.jpg) no-repeat left top;
+		background: url(../images/login-homepage-bg.jpg) no-repeat left top;
 		background-size: cover;
 		padding: 20px;
 		position: fixed;
@@ -3746,7 +3750,7 @@ h3.product-title {
 		width: 31.33%;
 		margin: 1%;
 		margin-bottom: 20px;
-		background: url(../img/monthly-value-bg-mobile.png) no-repeat;
+		background: url(../images/monthly-value-bg-mobile.png) no-repeat;
 		background-size: cover;
 		border: 2px solid #fff;
 		border-radius: 10px;
@@ -4188,8 +4192,6 @@ div.starImg {
 }
 
 body {
-	background: url(../img/welcome-bg.jpg) no-repeat center center;
-	background-size: cover;
 	-webkit-touch-callout: none;
 	/* iOS Safari */
 	-webkit-user-select: none;
@@ -4275,27 +4277,27 @@ body {
 
 #routedContent.ng-enter {
 	opacity: 0;
-	transform: scale(0);
-	-webkit-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-moz-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-ms-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-o-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	transition: all 400ms cubic-bezier(1,.01,0,.99);
+	/*transform: scale(0);*/
+	-webkit-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-moz-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-ms-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-o-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	transition: all 500ms cubic-bezier(1,.01,0,.99);
 }
 
 #routedContent.ng-enter-active {
 	opacity: 1;
-	transform: scale(1);
+	/*transform: scale(1);*/
 }
 
 #routedContent.ng-leave {
 	opacity: 1;
-	transform: scale(1);
-	-webkit-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-moz-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-ms-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	-o-transition: all 400ms cubic-bezier(1,.01,0,.99);
-	transition: all 400ms cubic-bezier(1,.01,0,.99);
+	/*transform: scale(1);*/
+	-webkit-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-moz-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-ms-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	-o-transition: all 500ms cubic-bezier(1,.01,0,.99);
+	transition: all 500ms cubic-bezier(1,.01,0,.99);
 }
 
 #routedContent.ng-leave-active {
@@ -4474,7 +4476,7 @@ button.btn-newsletter-send-again-link{
 
 .progress-container {
 	width: 305px;
-	height: 22px;
+	height: 25.5px;
 	position: relative;
 }
 
@@ -4488,13 +4490,13 @@ button.btn-newsletter-send-again-link{
 }
 
 .progress-container .progress-outer {
-	background-image: url(/assets/images/progress-bar-outer.png);
+	background-image: url(/assets/images/progress-bar-outer-2.png);
 	position: absolute;
 	width: 100%;
 }
 
 .progress-container .progress-inner {
-	background-image: url(/assets/images/progress-bar-inner.png);
+	background-image: url(/assets/images/progress-bar-inner-2.png);
 	position: absolute;
 	transition: 600ms;
 	animation: anim 3s;
@@ -4506,7 +4508,7 @@ button.btn-newsletter-send-again-link{
 
 .progress-level {
 	width: 100%;
-	height: 35px;
+	height: 30px;
 	position: relative;
 }
 
@@ -4525,40 +4527,95 @@ button.btn-newsletter-send-again-link{
 	border-radius: 25px;
 	background-color: rgb( 66, 38, 91 );
 	opacity: 0.302;
-	height: 35px;
+	height: 100%;
 	border: 2px solid rgba(0, 0, 0, 0.47);
 	z-index: 2;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
 }
 
 .progress-level .progress-level-inner {
 	position: absolute;
 	transition: 600ms;
 	animation: anim 3s;
-	border-radius: 40px;
-	height: 35px;
+	border-radius: 15px;
+	height: 100%;
 	z-index: 15;
-	padding: 7px;
+	padding: 2px 0;
 	background: rgb(253,55,121);
 	background: linear-gradient(180deg, rgba(253,55,121,1) 0%, rgba(253,55,121,1) 18%, rgba(181,45,91,1) 61%, rgba(168,46,85,1) 74%, rgba(181,43,89,1) 87%, rgba(201,47,98,1) 100%);
 	background-clip: content-box;
+	padding-left: 4px;
 }
 
-.progress-level.small{height: 20px;}
+.progress-level h6{
+	line-height: 24px;
+}
+
+.progress-level.small{height: 10px;width: 95%;margin: 0 auto;}
 
 .progress-level.small .progress-level-outer{
-	padding: 9px 10px;
+	padding: 0;
 	background-clip: content-box;
 	border: none;
-	height: 25px;
+	height: 10px;
+	box-sizing: content-box;
 }
-.progress-level.small .progress-level-inner{height: 24px;}
+.progress-level.small .progress-level-inner{height: 10px;padding: 0;}
 
 .slider-item-inner .slidertxt-bar .progress-level.small  h6{
-	top: 4px;
+}
+
+.loadingPage{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999999;
+	background: rgb(0, 0, 0);
+}
+
+.loadingPage .loadingPageLoader {
+	z-index: 10001;
+}
+
+.loadingPage .loadingPageLoader .percents {
+	margin-top: 6px;
+
+	font-size: 5rem;
+	color: white;
+}
+
+.loadingPage .informations {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 10000;
+	background-color: whitesmoke;
+	top: 0;
+	text-align: center;
+	box-shadow: inset 0 0 200px rgba(0, 0, 0, .5);
+	padding-top: 125px;
 }
 
 @keyframes anim {
 	from {
 		width: 0;
 	}
+}
+
+html{
+	height: 100%;
+	background: url(../images/welcome-bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.popover-content {
+	background: rgba(255, 94, 166, 0.72);
+	box-shadow: inset 0px 0px 23px #ff5ea6;
 }

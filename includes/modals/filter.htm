@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body" id="mobile-registration-outer">
     <div class="login-welcome-page">
-        <form class="newsletter-verification-form" ng-submit="getListRoles()">
+        <form class="newsletter-verification-form" name="filterForm" id="filterForm" ng-submit="getListRoles()">
             <div class="login-header">
                 <h2>篩選</h2>
             </div>
@@ -55,12 +55,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="button-group">
 
-                <button class="btn btn-newsletter-confirm-btn" type="submit" ng-click="modal.filter.close()"><img
-                        src="/assets/img/determine-btn.png"></button>
-
-            </div>
         </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="button-group" style="margin-top:10px">
+
+        <button class="btn btn-newsletter-confirm-btn" form="filterForm" type="submit" ng-click="modal.filter.close()"><img
+                src="/assets/images/determine-btn.png" alt="確定"></button>
+
     </div>
 </div>

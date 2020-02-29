@@ -3,7 +3,7 @@ gamingApp.factory('$infoModal', function ($uibModal) {
         open: function (errorMessage, cb, txt, cb2, txt2) {
             if(typeof txt === 'undefined') txt = "確認";
             if(typeof txt2 === 'undefined') txt2 = "取消";
-            $uibModal.open({
+            return $uibModal.open({
                 templateUrl: 'includes/modals/info.htm',
                 controller: function ($scope, message, $uibModalInstance) {
                     var vm = this;

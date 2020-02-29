@@ -1,4 +1,4 @@
-gamingApp.controller("mainController", function ($rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, ConfigService, $timeout) {
+gamingApp.controller("mainController", function ($window, $rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, ConfigService, $timeout) {
 
     $rootScope.route = $route;
 
@@ -41,6 +41,15 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
             license: "b2e98"
         };
 
+    $scope.$on('$locationChangeStart', function (e, destination, previous) {
+
+        if(destination.match(/role-game/)){
+            if(!previous.match(/dashboard/)){
+                $location.url("dashboard")
+            }
+        }
+
+    });
     $scope.$on('$locationChangeSuccess', function () {
         $scope.getCurrentUser();
     });
@@ -57,6 +66,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         });
 
     });
+
 
     $scope.modal = {};
     $scope.user = {};
@@ -103,16 +113,16 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
         return phone.match(/\+8869\d{0,9}|\+86\d{0,11}|\+852\d{0,8}|\+853\d{0,8}|\+60\d{0,9}|\+63\d{0,10}/);
     };
 
-    $scope.$watch("user.phone", function (phone) {
+    $scope.$watch("user.displayPhone", function (phone) {
         if(typeof phone === "undefined") return;
-        if(phone.match(/^0/)){
-            $scope.user.phone = phone.replace(/^0/, "");
-        }
-        /*if($scope.user.phone.length == $scope.validationRules[$scope.user.countryCode]){
-            if($scope.validatePhone($scope.user.countryCode + $scope.user.phone)){
 
-            }
-        }*/
+        if(phone.match(/^0/)){
+            $scope.user.phone = angular.copy(phone);
+            $scope.user.displayPhone = phone.replace(/^0/, "");
+        }
+        else{
+            $scope.user.phone = "0" + angular.copy(phone);
+        }
     });
 
     $scope.login = function () {
@@ -145,8 +155,8 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
     $scope.mailUser = {};
 
     $scope.cellSignUp = function(){
-        var phone = $scope.user.countryCode + $scope.user.phone;
-        if($scope.user.phone.length < $scope.validationRules[$scope.user.countryCode]){
+        var phone = $scope.user.countryCode + $scope.user.displayPhone;
+        if($scope.user.displayPhone.length < $scope.validationRules[$scope.user.countryCode]){
             $infoModal.open("手機號碼格式錯誤，請輸入正確" +$scope.validationRules[$scope.user.countryCode]+ "碼數字");
         }
         else if($scope.validatePhone(phone)){
@@ -232,7 +242,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
 
     $scope.getCurrentUser = function (cb) {
         if($route.current.view === "login" || $route.current.view === "index") return;
-        $http.get(base_api + "user/currentUser").then(function (res) {
+        $http.get(localStorage.base_api + "user/currentUser").then(function (res) {
             $scope.currentUser = res.data.model;
             if (cb) cb();
             $scope.$broadcast("user_loaded", $scope.currentUser);
@@ -240,7 +250,7 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
     };
 
     $scope.getListPrizes = function () {
-        $http.get(base_api + "prize/list", {params: {uid: localStorage.uid}}).then(function (res) {
+        $http.get(localStorage.base_api + "prize/list").then(function (res) {
             $scope.prizes = res.data.model;
         })
     };
@@ -288,29 +298,106 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
 
 
     $scope.getListPrizeLogs = function () {
-        $http.get(base_api + "prize/logs", {params: {uid: localStorage.uid}}).then(function (res) {
+        $http.get(localStorage.base_api + "prize/logs").then(function (res) {
             $scope.prizeLogs = res.data.model;
         })
     };
 
     $scope.buyProduct = function (product) {
-        $http.get(base_api + "product/buy", {
+        $http.get(localStorage.base_api + "product/buy", {
             params: {product_id: product.id}
         }).then(function (res) {
             $scope.modal['product_buy'].close();
-        })
-    };
-    $scope.buyVideo = function (video) {
-        $http.get(base_api + "video/buy", {
-            params: {video_id: video.id}
-        }).then(function (res) {
-            $scope.currentVideo = res.data.model;
-            $scope.modal['video_buy'].close();
+            $scope.get
         })
     };
 
+    $scope.playVideo = function(){
+
+        if($scope.videoPlayer.src !== ''){
+            $scope.$broadcast("playVideo");
+        }
+        else{
+            $http.get(localStorage.base_api + "video/getPlayableUrl", {params: {id: $scope.currentVideo.id}}).then(function (res) {
+                $scope.$broadcast("playVideo", $scope.path['video'] + res.data.model)
+            }, function (reason) {
+                $scope.openModal("video_buy")
+            })
+        }
+
+    };
+
+    $scope.buyVideo = function () {
+
+        $http.get(localStorage.base_api + "video/buy", {
+            params: {video_id: $scope.currentVideo.id}
+        }).then(function () {
+            $scope.modal['video_buy'].close();
+            $scope.playVideo();
+        })
+    };
+
+    $scope.$on("videoPlay", function (e, elem) {
+        //console.log("Angular event: Play", elem);
+        $scope.currentVideo.playing = true;
+        $scope.$apply();
+    });
+
+    $scope.$on("videoBegin", function (e, elem) {
+        $scope.currentVideo.playing = false;
+        $scope.videoPlayer = elem[0];
+    });
+
+    $scope.$on("videoPause", function (e, elem) {
+        //console.log("Angular event: Pause", elem);
+        $scope.currentVideo.playing = false;
+        $scope.$apply();
+    });
+
+    $scope.$on("videoLoading", function (e, elem) {
+        //console.log("Angular event: Loading", elem);
+        $scope.currentVideo.showLoading = true;
+        $scope.$apply();
+    });
+
+    $scope.$on("videoLoaded", function (e, elem) {
+        //console.log("Angular event: Loaded", elem);
+        $scope.currentVideo.showLoading = false;
+        $scope.$apply();
+    });
+
+    $scope.getCurrentUserVideos = function(tag){
+        $scope.currentFilter = tag;
+        $http.get(localStorage.base_api + "video/getUserVideos", {
+            params: {
+                tagName: tag
+            }
+        }).then(function (res) {
+            $scope.userVideos = res.data.model;
+            $scope.userVideosID = res.data.model.map(function (value) {
+                return value.id;
+            });
+            console.log($scope.userVideos)
+        })
+    };
+
+    $scope.getVideos = function (cat, tag) {
+        $scope.videos = [];
+        $scope.currentFilter = tag;
+
+        $http.get(base_api + "video/filter", {
+            params: {
+                tagName: tag,
+                catName: cat
+            }
+        }).then(function (res) {
+            $scope.videos = res.data.model;
+
+        });
+    };
+
     $scope.enterGame = function (role) {
-        $http.get(base_api + "game/obtainTicket", {
+        $http.get(localStorage.base_api + "game/obtainTicket", {
             params: {roleId: role.id}
         }).then(function (res) {
             $scope.modal['enter_game'].close();
@@ -327,6 +414,37 @@ gamingApp.controller("mainController", function ($rootScope, $location, $scope, 
 
         $scope.$broadcast("close_window", e);
 
+    });
+
+    var loadingProgress;
+    var INACTIVITY_TO_PROPOSE_RELOAD = 5000;
+
+    $scope.applicationLoaded = false;
+    $scope.requestsCounter = 0;
+    $scope.responsesCounter = 0;
+    $scope.proposeReload = false;
+
+    function resetWaitingTime () {
+        if (loadingProgress) {
+            $timeout.cancel(loadingProgress);
+        }
+        loadingProgress = $timeout(function () {
+            $scope.proposeReload = true;
+        }, INACTIVITY_TO_PROPOSE_RELOAD);
+    }
+
+    $scope.reload = function () {
+        $window.location.reload();
+    };
+
+    $scope.$on('application_loaded', function () {
+        $scope.applicationLoaded = true;
+    });
+
+    $scope.$on('application_loading', function (event, counts) {
+        resetWaitingTime();
+        $scope.requestsCounter = counts.requests;
+        $scope.responsesCounter = counts.responses;
     });
 
 

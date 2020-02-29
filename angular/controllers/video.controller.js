@@ -14,20 +14,6 @@ gamingApp.controller("videoController", function ($scope, $route, $http, $infoMo
 
 
 
-    $scope.getVideos = function (cat, tag) {
-
-        $scope.currentFilter = tag;
-
-        $http.get(base_api + "video/filter", {
-            params: {
-                tagName: tag,
-                catName: cat
-            }
-        }).then(function (res) {
-            $scope.videos = res.data.model;
-        });
-    };
-
 
 
 

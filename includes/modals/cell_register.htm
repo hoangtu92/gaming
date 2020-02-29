@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="selectCountry" class="cstm-label">手機號碼</label>
-                <select id="selectCountry" class="country-code" ng-model="user.countryCode" name="country_code">
+                <select id="selectCountry" class="country-code" ng-model="user.countryCode" name="country_code" ng-required="true">
                     <option value="" style=" background-color:rgba(168,90,244,.8); color:#fff;">國碼
                     </option>
                     <option value="+886" style=" background-color:rgba(168,90,244,.8); color:#fff;">
@@ -29,7 +29,7 @@
                         菲律賓(+63)
                     </option>
                 </select>
-                <input name="phone" type="text" ng-model="user.phone" class="form-control cstm-input-phone" placeholder=""
+                <input name="phone" type="text" ng-model="user.displayPhone" class="form-control cstm-input-phone" placeholder=""
                        required autofocus>
             </div>
             <div class="form-group">
@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-newsletter-verificaion-btn"><img
-                        src="/assets/img/newsletter-verification-btn1.png"></button>
+                        src="/assets/images/newsletter-verification-btn1.png"></button>
             </div>
         </form>
     </div>

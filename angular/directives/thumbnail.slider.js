@@ -91,5 +91,13 @@ gamingApp.directive("thumbnailSlider", function () {
             }
         }
     };
-}]);
+}]).directive("videoPlayer", function () {
+    return {
+        restrict: 'E',
+        transclude: false,
+        link: function (scope) {
+
+        }
+    }
+});
 
