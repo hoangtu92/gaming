@@ -49,4 +49,18 @@ gamingApp.directive('a', function() {
             }
         }
     }
-});
+}).directive('fileUpload', [function () {
+    return {
+        restrict: "A",
+        link: function ($scope, element, attrs) {
+            element.on('change', function (evt) {
+                var files = evt.target.files;
+
+                //console.log(files[0])
+
+                $scope.$emit("uploadFile", files);
+                $scope.$apply();
+            });
+        }
+    }
+}]);

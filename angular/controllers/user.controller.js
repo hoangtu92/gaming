@@ -11,4 +11,27 @@ gamingApp.controller("userController", function ($scope, $route, $routeParams, $
         });
     }
 
+    $scope.$on("uploadFile", function (evt, files) {
+
+        console.log(files)
+        if(typeof files[0] === 'undefined') return;
+
+        var data = new FormData();
+
+        data.append("id", $scope.currentUser.id);
+        data.append("avatar", files[0]);
+
+        $http({
+            url: localStorage.base_api + 'user/update',
+            method: 'POST',
+            data: data,
+            headers: {
+                'Content-Type': undefined
+            }
+        }).then(function () {
+            $scope.getCurrentUser();
+        })
+
+    });
+
 });
