@@ -13,7 +13,6 @@ gamingApp.controller("userController", function ($scope, $route, $routeParams, $
 
     $scope.$on("uploadFile", function (evt, files) {
 
-        console.log(files)
         if(typeof files[0] === 'undefined') return;
 
         var data = new FormData();

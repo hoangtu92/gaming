@@ -56,8 +56,6 @@ gamingApp.directive('a', function() {
             element.on('change', function (evt) {
                 var files = evt.target.files;
 
-                //console.log(files[0])
-
                 $scope.$emit("uploadFile", files);
                 $scope.$apply();
             });
