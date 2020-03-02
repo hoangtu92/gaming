@@ -100,6 +100,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $location.url(url);
     };
 
+    $scope.broadcast = function(event, arg){
+        $scope.$broadcast(event, arg);
+    };
+
     $scope.validationRules = {
         "+886": 9,
         "+86": 11,
@@ -284,6 +288,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         })
     };
 
+    $scope.showAllLevels = true;
+    $scope.showAll = function(){
+        $scope.showAllLevels = true;
+    };
+
     $scope.setCurrentRole = function (role) {
         $scope.currentRole = role;
     };
@@ -293,7 +302,14 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     };
     $scope.setCurrentLevel = function (level) {
+        $scope.showAllLevels = false;
         $scope.selectedLevel = level;
+    };
+    $scope.setCurrentPool = function (pool) {
+        $scope.currentPool = pool;
+    };
+    $scope.setCurrentCard = function (card) {
+        $scope.currentCard = card;
     };
 
 
@@ -308,7 +324,47 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             params: {product_id: product.id}
         }).then(function (res) {
             $scope.modal['product_buy'].close();
-            $scope.get
+        })
+    };
+    $scope.drawCard = function (pool) {
+        $http.get(localStorage.base_api + "card/draw", {
+            params: {id: pool.id}
+        }).then(function (res) {
+            $scope.modal['card_pool_buy'].close();
+            $scope.luckyLevels = res.data.model;
+            $scope.openModal("lucky_draw");
+
+        })
+    };
+
+    $scope.buyCard = function (card) {
+
+        $http.post(base_api + "card/buy", JSON.stringify({
+            id: card.id,
+            token: ""
+        })).then(function () {
+            $location.url("card-list")
+        }).finally(function () {
+            $scope.modal["card_buy"].close();
+        });
+
+    };
+
+
+
+
+
+
+    $scope.getCardLevels = function (item) {
+        $scope.$parent.viewingLevel = item;
+        $http.get(base_api + "card/cardLevels", {
+            params: {
+                card_id: item.cardId
+            }
+        }).then(function (res) {
+
+            $scope.$parent.cardLevels = res.data.model;
+
         })
     };
 

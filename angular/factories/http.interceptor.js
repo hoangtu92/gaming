@@ -107,6 +107,9 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                 if (rejection.status === 403) { //FORBIDDEN
 
                 }
+                if (rejection.status === 500) { //INTERNAL SERVER ERROR
+
+                }
                 else{
                     $injector.get("$infoModal").open(rejection.data.message)
                 }

@@ -1,6 +1,6 @@
 <div class="modal-header">
     <h4 class="modal-title">遊戲登入</h4>
-    <button type="button" class="close" ng-click="modal.card_buy.close()">&times;</button>
+    <button type="button" class="close" ng-click="modal.card_pool_buy.close()">&times;</button>
 </div>
 
 <div class="modal-body">
@@ -8,13 +8,13 @@
         <div class="form-group">
             <label class="warning-message">
                 您的剩餘點數：{{currentUser.credit.formatPrice()}}<br>
-                確認扣點{{currentCard.limitedTimePrice}}點嗎？
+                確認扣點{{currentPool.price}}點嗎？
         </label>
         </div>
     </div>
 </div>
 
 <div class="modal-footer flex flex-row flex-center justify-content-center">
-    <button type="reset" ng-click="modal.card_buy.close()">取消</button>
-    <button typeof="button" ng-click="buyCard(currentCard)">確認購買</button>
+    <button type="reset" ng-click="modal.card_pool_buy.close()">取消</button>
+    <button typeof="button" ng-click="drawCard(currentPool)">確認購買</button>
 </div>

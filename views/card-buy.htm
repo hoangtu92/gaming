@@ -1,22 +1,53 @@
-<section ng-init="getCurrentUser()" class="uniformsister uniformsister06">
-    <div class="uniformheader title-arrow"><a href="#!card-list"> <img src="/assets/images/img-check-circle.png"/>
+<section class="uniformsister uniformsister06">
+    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img src="/assets/images/img-check-circle.png"/>
         <h1>普通抽牌</h1></a>
     </div>
 
     <div class="uniform_boxes">
-        <ul class="list-unstyled" ng-init="getListCards()">
-            <li ng-repeat="card in cards">
+        <ul class="list-unstyled card-pools" ng-init="getCardPools()">
+            <li ng-repeat="item in cardPools">
                 <div class="uniformbox_inner">
-                    <div class="imgg"><img alt="book" height="" ng-src="{{path['card']}}{{card.thumbnail}}" width=""/></div>
+                    <div class="imgg">
+                        <img alt="book" height="" ng-src="/assets/images/{{
+                        (item.category.name === '普通抽卡' && !item.multiplyTen) && 'gamebook01.png' ||
+                        (item.category.name === '普通抽卡' && item.multiplyTen) && 'gamebook02.png' ||
+                        (item.category.name === '限制級抽卡' && !item.multiplyTen) && 'gamebook03.png' ||
+                        (item.category.name === '限制級抽卡' && item.multiplyTen) && 'gamebook04.png'
+                        }}" width=""/>
+                    </div>
 
                     <div class="bookname">
-                        <h2>{{card.name}}</h2>
-                        <button class="bookbtn" id="myButton">抽卡機率</button>
+                        <h2>{{item.category.name}} <span ng-if="item.multiplyTen">x10</span></h2>
+                        <button class="bookbtn" popover-trigger="'mouseenter'" popover-placement="right" uib-popover="{{item.levelPercents.toString()}}">抽卡機率</button>
                     </div>
 
                     <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
-                        <h3>{{card.preSalePrice}}</h3>
-                        <button class="pinkbtn" ng-click="setCurrentCard(card); openModal('card_buy')"><img
+                        <h3>{{item.price}}</h3>
+                        <button class="pinkbtn" ng-click="setCurrentPool(item); openModal('card_pool_buy')"><img
+                                src="/assets/images/button01.png"/></button> <!-- Modal -->
+
+                    </div>
+                </div>
+            </li>
+
+            <li ng-repeat="item in limitedTimeCards" ng-hide="item.timeLimit.toDate().getTime() - now.getTime() <= 0">
+                <div class="uniformbox_inner">
+                    <div class="imgg">
+                        <img alt="book" height="" ng-src="{{path['card']}}{{item.thumbnail}}" width=""/>
+                    </div>
+
+                    <div class="bookname">
+                        <h2>{{item.name}}</h2>
+                        <div class="timebox">
+                            <p class="pull-left">限時販賣</p>
+                            <p class="pull-right">{{getRemainTime(item.timeLimit, now)}}</p>
+                        </div>
+                        <button class="bookbtn" popover-trigger="'mouseenter'" popover-placement="right" uib-popover="{{item.levelPercents.toString()}}">抽卡機率</button>
+                    </div>
+
+                    <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
+                        <h3>{{item.limitedTimePrice}}</h3>
+                        <button class="pinkbtn" ng-click="setCurrentCard(item); openModal('card_buy')"><img
                                 src="/assets/images/button01.png"/></button> <!-- Modal -->
 
                     </div>

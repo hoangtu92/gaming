@@ -19,7 +19,7 @@ a, button {
 	opacity: 0.9;
 }
 
-a:hover, button:hover {
+a:hover, button:hover, .active {
 	filter: brightness(120%);
 	opacity: 1;
 	text-decoration: none;
@@ -4621,4 +4621,5 @@ html{
 .popover-content {
 	background: rgba(255, 94, 166, 0.72);
 	box-shadow: inset 0px 0px 23px #ff5ea6;
+	white-space: pre-wrap;
 }

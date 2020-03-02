@@ -204,6 +204,19 @@ gamingApp.config(function ($routeProvider) {
                 return ConfigService.promise;
             }
         }
+    }).when('/card-select', {
+        title: 'Card Select',
+        view: 'card_select',
+        layout: 'non-sidebar',
+        bodyClass: 'uniformsister',
+        templateUrl: 'views/card-select.htm',
+        controller: 'cardController',
+        resolve: {
+            'ConfigServiceData': function (ConfigService) {
+                // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                return ConfigService.promise;
+            }
+        }
     }).when('/customer-service', {
         title: 'Customer service',
         view: 'customer_service',

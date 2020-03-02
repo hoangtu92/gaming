@@ -76,8 +76,6 @@ button {
 }
 
 .uniform_boxes ul li {
-    width: 50%;
-    float: left;
     padding: 10px 15px;
     position: relative;
 }
@@ -86,6 +84,12 @@ button {
     width: 100%;
     margin-top: -25px;
     padding-bottom: 10px;
+}
+
+.card-pools{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 15px;
 }
 
 .uniform_boxes {
@@ -163,6 +167,7 @@ button {
     background: transparent;
     border: 0;
     display: inline-block;
+    padding: 5px;
 }
 
 .uniformbox_inner .coinbtn button.pinkbtn img {
@@ -244,6 +249,7 @@ button {
     font-size: 35px;
     font-weight: 600;
     text-shadow: 0px 0px 8px #000;
+    color: white;
 }
 
 .card-modal .modal-body {
@@ -364,7 +370,7 @@ button {
     padding: 10px 30px 0px;
     border-radius: 7px;
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 button.bookbtn {
@@ -385,6 +391,10 @@ ul.gamelist_inner {
     margin-top: 30px;
     padding: 0;
     list-style: none;
+}
+
+ul.gamelist_inner img{
+    width: 100%;
 }
 
 ul.gamelist_inner li {
@@ -1224,6 +1234,7 @@ body.uniform_maingame {
     border: 0;
     vertical-align: text-top;
     padding: 0 15px;
+    display: inline-block;
 }
 
 .list_ratings h2 {
@@ -1265,6 +1276,15 @@ ul.gamelist_inner li button.listimg {
     background: transparent;
     border: 0;
     padding: 0;
+}
+
+.scroll-y{
+    overflow-y: auto;
+    height: 600px;
+}
+
+ul.gamelist_inner li button.listimg img{
+    width:100%;
 }
 
 section.uniformsister-03 .modal-dialog {
@@ -1317,6 +1337,7 @@ section.uniformsister-03 .modal-content {
     width: 100%;
     height: auto;
     display: inline-block;
+    color: white;
 }
 
 .babyimg_info .tpname img.starimg {
@@ -1347,6 +1368,7 @@ section.uniformsister-03 .modal-content {
     font-size: 18px;
     padding-left: 40px;
     position: relative;
+    min-height: 30px;
 }
 
 .babyimg_info .ratings_info p::after {
@@ -1768,8 +1790,8 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 .none .list_ratings ul li.active button.rate {
-    text-shadow: initial !important;
-    box-shadow: initial !important;
+    /* text-shadow: initial !important; */
+    /* box-shadow: initial !important; */
 }
 
 .ratings_select .active {
@@ -1799,6 +1821,7 @@ section.uniformsister_vedio .uniformheader h1 {
 
 .gamelistinner {
     height: auto;
+    width: 100%;
 }
 
 .listbox a:hover {
@@ -1876,3 +1899,22 @@ section.uniformsister_vedio .uniformheader h1 {
     margin-top: 0 !important;
 }
 
+.gamelist_inner.small{
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    grid-gap: 20px 0px;
+    margin: 10px 0;
+}
+
+ul.gamelist_inner.card-select {
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    grid-gap: 15px;
+}
+
+ul.gamelist_inner.card-select img{
+    width: 100%;
+}
+
+ul.gamelist_inner.card-select li {
+    padding: 0px 15px;
+    margin-bottom: 30px;
+}

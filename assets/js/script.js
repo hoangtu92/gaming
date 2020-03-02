@@ -73,6 +73,19 @@ String.prototype.formatUnit = function () {
 Number.prototype.formatUnit = function () {
     return this/1000 + "K";
 };
+Date.prototype.getRemainTime = function (now) {
+    var diff = this.getTime() - now.getTime();
+    var hour = diff / (1000*60*60),
+        minutes = (hour - (Math.floor(hour)) ) * 60,
+        seconds = (minutes - (Math.floor(minutes)) ) * 60;
+    return Math.floor(hour) + ":" + Math.floor(minutes) + ":" + Math.floor(seconds);
+
+};
+
+String.prototype.formatPhone = function () {
+    return this.match(/^0/) == null ? "0" + this : this;
+};
+
 
 var base_api = "http://gaming.dev.ml-codesign.com:8080/api/";
 

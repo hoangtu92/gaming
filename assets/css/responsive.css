@@ -35,7 +35,7 @@
     .uniformbox_inner .bookname { width: 100%;}
     .uniformbox_inner .bookname h2 { margin-top: 5px;}
     .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
-    .uniformsister { height: auto;}
+    .uniformsister {/* height: auto; */}
     ul.gamelist_inner li {/* width: 33.33%; *//* padding: 15px; */}
     .img_inner { padding: 26px 25px;}
     body.uniform_maingame { overflow: unset;}

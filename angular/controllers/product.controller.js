@@ -4,11 +4,7 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
     /**
      * Products
      */
-    $scope.getListProductTags = function () {
-        $http.get(base_api + "product/tags").then(function (res) {
-            $scope.productTags = res.data;
-        });
-    };
+
     $scope.getListProductCats = function () {
         $http.get(base_api + "product/categories").then(function (res) {
             $scope.productCats = res.data;
