@@ -43,9 +43,22 @@ gamingApp.controller("cardController", function ($scope, $rootScope, $route, $lo
     $scope.$on("use_card", function (evt, cardLevel) {
         $scope.useCard(cardLevel);
     });
+    $scope.$on("sell_card", function (evt, cardLevel) {
+        $scope.sellCard(cardLevel);
+    });
 
     $scope.useCard = function (cardLevel) {
         $http.get(localStorage.base_api + "card/use", {
+            params: {id: cardLevel.id}
+        }).then(function (res) {
+            $scope.modal['card_detail'].close();
+            $scope.getListUserCards();
+        }, function (reason) {
+
+        })
+    };
+    $scope.sellCard = function (cardLevel) {
+        $http.get(localStorage.base_api + "card/sell", {
             params: {id: cardLevel.id}
         }).then(function (res) {
             $scope.modal['card_detail'].close();

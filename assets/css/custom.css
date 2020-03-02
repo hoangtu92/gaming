@@ -389,7 +389,7 @@ span.price-icon h5 {
 .right-author-chat-icon {
 	position: absolute;
 	right: 3%;
-	bottom: 20%;
+	top: 55%;
 }
 
 .right-author-chat-icon img {
@@ -776,7 +776,7 @@ span.numbers {
 	float: left;
 	width: 100%;
 	text-align: center;
-	margin: 0;
+	/* margin: 0; */
 }
 
 .login-welcome-page .form-group label {
@@ -1461,6 +1461,7 @@ span.right-side {
 	width: 100%;
 	min-height: 70vh;
 	overflow-y: scroll;
+	height: 500px;
 }
 
 table.expensex-record-list {
@@ -2731,7 +2732,7 @@ h3.product-title {
 	}
 
 	.slider-item-inner img {
-		height: 120px;
+		height: 160px;
 	}
 
 	.welcome-bottom-inner .owl-nav img {
@@ -4622,4 +4623,8 @@ html{
 	background: rgba(255, 94, 166, 0.72);
 	box-shadow: inset 0px 0px 23px #ff5ea6;
 	white-space: pre-wrap;
+}
+a.btn{
+	margin-left: 30px;
+	padding: 5px 40px;
 }

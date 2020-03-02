@@ -8,7 +8,11 @@
 
     <div class="babyimg_info">
         <div class="tpname">
-            <h2>{{viewingLevel.card.name}}</h2>
+            <h2>{{viewingLevel.cardName}}
+                <span style="width: auto; float: right" class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{viewingLevel.salePrice.formatPrice()}}</b></span>
+                </span>
+            </h2>
+
             <div class="star-glowing" style="margin-left: 25px" ng-class="'star-'+viewingLevel.level"></div>
         </div>
 
@@ -34,7 +38,7 @@
     </div>
 </div>
 <div class="modal-footer text-right">
-    <button class="popupprple_btn" ng-click="modal.card_detail.close()"><img src="/assets/images/puprleimgbtn.png"/><span>配置</span>
+    <button class="popupprple_btn" ng-click="broadcast('sell_card', viewingLevel)"><img src="/assets/images/puprleimgbtn.png"/><span>配置</span>
     </button>
     <button class="popupprple_btn" ng-click="broadcast('use_card', viewingLevel)"><img
             src="/assets/images/pinkbtnbgr.png"/><span>升級</span></button>

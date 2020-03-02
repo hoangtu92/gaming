@@ -229,6 +229,18 @@ gamingApp.config(function ($routeProvider) {
                 return ConfigService.promise;
             }
         }
+    }).when('/expenses-record', {
+        title: 'Expenses Records',
+        view: 'expenses_record',
+        layout: 'non-sidebar',
+        templateUrl: 'views/expenses-record.htm',
+        controller: 'userController',
+        resolve: {
+            'ConfigServiceData': function (ConfigService) {
+                // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                return ConfigService.promise;
+            }
+        }
     }).otherwise({
         redirectTo: '/dashboard'
     });

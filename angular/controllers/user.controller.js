@@ -33,4 +33,10 @@ gamingApp.controller("userController", function ($scope, $route, $routeParams, $
 
     });
 
+    $scope.getCredits = function () {
+        $http.get(localStorage.base_api + "user/transactions").then(function (res) {
+            $scope.credits = res.data;
+        })
+    };
+
 });
