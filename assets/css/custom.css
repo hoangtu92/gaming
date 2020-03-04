@@ -3295,7 +3295,7 @@ h3.product-title {
 	}
 
 	.welcome-mid-left-girl-img img.girl-img {
-		max-width: 65% !important;
+		/* max-width: 65% !important; */
 		margin-top: 0;
 	}
 

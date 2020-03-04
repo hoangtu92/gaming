@@ -84,21 +84,19 @@
             <div class="welcome-bottom-inner">
 
                 <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
-                    <div owl-carousel-item="" ng-repeat="item in roles" ng-if="item != null" class="slider-item">
-                        <div class="slider-item-inner">
-                            <a href="#" ng-click="setCurrentRole(item)">
-                                <img ng-src="{{path['role_image']}}{{item.thumbnail}}"
-                                     class="img-responsive">
-                                <div class="slidertxt-bar">
-                                    <div class="progress-level small">
-                                        <div class="progress-level-outer"></div>
-                                        <div class="progress-level-inner" ng-style="{width: (item.userProgress > 0 ? (item.userProgress/item.maximumLevel)*100 : 0) + '%'}"></div>
-                                        <h6 style="position:relative; z-index: 999;">脱掉 {{item.userProgress}}/{{item.maximumLevel}}</h6>
-                                    </div>
+                    <div class="slider-item-inner">
+                        <a href="#" ng-click="setCurrentRole(item)">
+                            <img ng-src="{{path['role_image']}}{{item.thumbnail}}"
+                                 class="img-responsive">
+                            <div class="slidertxt-bar">
+                                <div class="progress-level small">
+                                    <div class="progress-level-outer"></div>
+                                    <div class="progress-level-inner" ng-style="{width: (item.userProgress > 0 ? (item.userProgress/item.maximumLevel)*100 : 0) + '%'}"></div>
+                                    <h6 style="position:relative; z-index: 999;">脱掉 {{item.userProgress}}/{{item.maximumLevel}}</h6>
                                 </div>
-                                <h4>{{item.name}}</h4>
-                            </a>
-                        </div>
+                            </div>
+                            <h4>{{item.name}}</h4>
+                        </a>
                     </div>
                 </data-owl-carousel>
 

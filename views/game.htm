@@ -2,10 +2,10 @@
     <div class="uniformheader text-right hover-button" style="display: inline-block">
 
         <div class="game-statistic">
-            <h4>本局押注: {{gaming.total}}</h4>
-            <h4>贏: {{gaming.gain}}</h4>
-            <h4>輸: {{gaming.loss}}</h4>
-            <h4>剩餘籌碼: {{gaming.availableBet}}</h4>
+            <h4>本局押注: {{gaming.total.formatPrice()}}</h4>
+            <h4>贏: {{gaming.gain.formatPrice()}}</h4>
+            <h4>輸: {{gaming.loss.formatPrice()}}</h4>
+            <h4>剩餘籌碼: {{gaming.availableBet.formatPrice()}}</h4>
             <!--<h4>您的G幣: {{gaming.user.credit}}</h4>-->
         </div>
 
@@ -26,6 +26,7 @@
                                     <h2>豹子通殺</h2>
                                     <span class="bigsign"><img src="/assets/images/sign01.png"></span>
                                     <h2>1賠{{ratio.big}}</h2>
+                                    <h2 ng-class="{'boost-up' : gaming.effects.INCREASE_BIG_RATE}"></h2>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -68,7 +69,7 @@
                                 </div>
                                 <div class="pull-left text-right">
                                     <h4>您的G幣: {{currentUser.credit.formatPrice()}}</h4>
-                                    <h1 class="ratetxt">{{gaming.earnedCredit.formatPrice()}}/{{currentRole.maxThreshold.formatPrice()}}</h1>
+                                    <h1 class="ratetxt">{{gaming.availableBet.formatPrice()}}/{{gaming.nextGoal.formatPrice()}}</h1>
                                     <div class="progress-container">
                                         <div class="progress-outer"></div>
                                         <div class="progress-inner" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
@@ -185,13 +186,13 @@
 
                 <div class="totalpoints">
                     <div class="col-md-4 col-sm-4 text-center single_dice">
-                        <h3>單骰 1賠{{ratio.single_dice}}</h3>
+                        <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_SINGE_DICE_RATE}">單骰 1賠{{ratio.single_dice}}</h3>
                     </div>
                     <div class="col-md-4 col-sm-4 text-center double_dice">
-                        <h3>雙骰 1賠{{ratio.double_dice}}</h3>
+                        <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_DOUBLE_DICE_RATE}">雙骰 1賠{{ratio.double_dice}}</h3>
                     </div>
                     <div class="col-md-4 col-sm-4 text-center triple_dice">
-                        <h3>圍骰 1賠{{ratio.triple_dice}}</h3>
+                        <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_TRIPLE_DICE_RATE}">圍骰 1賠{{ratio.triple_dice}}</h3>
                     </div>
                 </div>
             </div>

@@ -1918,3 +1918,21 @@ ul.gamelist_inner.card-select li {
     padding: 0px 15px;
     margin-bottom: 30px;
 }
+/*
+.boost-up{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.boost-up:after {
+    content: "";
+    display: block;
+    position: relative;
+    background-image: url(/assets/images/boost-up.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 15px;
+    height: 15px;
+    float: right;
+}*/

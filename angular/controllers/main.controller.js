@@ -43,11 +43,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.$on('$locationChangeStart', function (e, destination, previous) {
 
-        if(destination.match(/role-game/)){
+        /*if(destination.match(/role-game/)){
             if(!previous.match(/dashboard/)){
                 $location.url("dashboard")
             }
-        }
+        }*/
 
     });
     $scope.$on('$locationChangeSuccess', function () {
@@ -55,6 +55,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     });
 
     ConfigService.getConfig().then(function (config) {
+        if(typeof localStorage.development !== 'undefined' && localStorage.development === "1"){
+            config.base_api = "http://gaming.dev.ml-codesign.com:8080/api/";
+            config.api_domain = "http://gaming.dev.ml-codesign.com:8080"
+        }
         $rootScope.config = config;
         localStorage.base_api = config.base_api;
         localStorage.version = config.version;
@@ -282,9 +286,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.filter = {};
     $scope.getListRoles = function () {
+        $scope.$broadcast("request_list_role");
         $http.post(localStorage.base_api + "role/filter", JSON.stringify($scope.filter)).then(function (res) {
+            $scope.$broadcast("list_role_loaded", res.data);
             $scope.roles = res.data;
-            $scope.currentRole = $scope.roles[0];
+            $scope.currentRole = res.data[0];
         })
     };
 
@@ -318,6 +324,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.prizeLogs = res.data.model;
         })
     };
+
+    $http.get(localStorage.base_api + "card/getEffectMapper");
 
     $scope.buyProduct = function (product) {
         $http.get(localStorage.base_api + "product/buy", {

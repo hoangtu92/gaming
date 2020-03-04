@@ -13,6 +13,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         6: "/assets/images/sixblack_box.png"
     };
 
+
+
+
     function getAllBets(){
 
         var bets = [];
@@ -324,7 +327,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 //place the icon
                 $scope.drawIcon(el);
 
-                console.log($scope.gaming);
+                //console.log($scope.gaming);
 
             }
         }, function (res) {
@@ -483,6 +486,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.$on("ticketObtained", function (evt, value) {
         $scope.initGame();
     });
+
 
 
     $scope.$on("close_window", function (evt, e) {

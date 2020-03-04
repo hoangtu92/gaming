@@ -82,36 +82,29 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                 if(rejection.status === 302 || rejection.status === 307){
                     window.location.href = "/#!dashboard";
                 }
-                else if (rejection.status === 403) { //FORBIDDEN
+                if (rejection.status === 403) { //FORBIDDEN
                     window.location.href = "/#!login";
                 }
-                else if(rejection.status === 500){ //INTERNAL SERVER ERROR
-                    //window.location.href = "/";
+                if(rejection.status === 500){ //INTERNAL SERVER ERROR
+                    $injector.get("$infoModal").open("發生未知錯誤")
                 }
-                else if(rejection.status === 402){ //PAYMENT_REQUIRED
+                if(rejection.status === 402){ //PAYMENT_REQUIRED
                     $injector.get("$infoModal").open(rejection.data.message, openDepositPage);
                 }
-                else if(rejection.status === 423 ){//Locked
+                if(rejection.status === 423 ){//Locked
                     //Handle in controller
                 }
-                else if(rejection.status === 406){//406 NOT_ACCEPTABLE
+                if(rejection.status === 406){//406 NOT_ACCEPTABLE
                     //Handle in controller
                 }
                 //400 BAD_REQUEST
-
-                else{
+                if(rejection.status === 400){
                     $injector.get("$infoModal").open(rejection.data.message)
                 }
             }
             else{
-                if (rejection.status === 403) { //FORBIDDEN
-
-                }
-                if (rejection.status === 500) { //INTERNAL SERVER ERROR
-
-                }
-                else{
-                    $injector.get("$infoModal").open(rejection.data.message)
+                if (rejection.status !== 403) { //FORBIDDEN
+                    $injector.get("$infoModal").open("發生未知錯誤")
                 }
 
             }
