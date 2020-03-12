@@ -585,6 +585,12 @@ button.popupprple_btn span {
 
 button.popupprple_btn img {
     max-width: 175px;
+
+}
+
+button.popupprple_btn img.popup_close_icon{
+    width: 60px;
+    height: 60px;
 }
 
 .popup_innr_list {
@@ -1912,8 +1918,9 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 ul.gamelist_inner.card-select {
-    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 15px;
+    justify-content: center;
 }
 
 ul.gamelist_inner.card-select img{
@@ -1923,6 +1930,10 @@ ul.gamelist_inner.card-select img{
 ul.gamelist_inner.card-select li {
     padding: 0px 15px;
     margin-bottom: 30px;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
 }
 /*
 .boost-up{

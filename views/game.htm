@@ -70,10 +70,11 @@
                                     </div>
                                     <div class="pull-left text-right">
                                         <h4>您的G幣: {{currentUser.credit.formatPrice()}}</h4>
-                                        <h1 class="ratetxt">{{gaming.availableBet.formatPrice()}}/{{gaming.nextGoal.formatPrice()}}</h1>
+                                        <h1 class="ratetxt">{{gaming.betQuota.formatPrice()}}/{{gaming.nextGoal.formatPrice()}}</h1>
                                         <div class="progress-container">
                                             <div class="progress-outer"></div>
-                                            <div class="progress-inner" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
+                                            <div class="progress-inner inner-line" ng-style="{width: (gaming.betQuota/gaming.nextGoal)*100 + '%'}"></div>
+                                            <div class="progress-inner inner-point" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
                                         </div>
 
                                     </div>

@@ -390,6 +390,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.initGame = function () {
         $http.get(localStorage.base_api + "game/checkTicket", {params: {roleId: $routeParams.id}}).then(function (res) {
             $scope.gaming = res.data.model;
+            if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
+                $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
+            }
             $http.defaults.headers.common['Session-ID'] = $scope.gaming.id;
             $scope.restoreGame();
         },function (reason) {
@@ -442,6 +445,11 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         $http.post(localStorage.base_api + "game/shake").then(function (res) {
 
             $scope.gaming = res.data.model;
+
+            if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
+                $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
+            }
+
 
             console.log($scope.gaming);
 

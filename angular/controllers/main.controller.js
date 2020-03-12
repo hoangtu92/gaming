@@ -376,7 +376,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.openModal('payment_method');
     };
 
-
     $scope.getListPrizeLogs = function () {
         $http.get(localStorage.base_api + "prize/logs").then(function (res) {
             $scope.prizeLogs = res.data.model;
@@ -422,19 +421,108 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     };
 
+    $scope.useCard = function (cardLevel) {
+        $http.get(localStorage.base_api + "card/use", {
+            params: {id: cardLevel.id}
+        }).then(function () {
+            $scope.modal['card_detail'].close();
+            $scope.modal['user_cards'].close();
+            $scope.getInUsedCards();
+            $scope.getListUserCards();
+        })
+    };
+
+    $scope.removeCard = function(cardLevel){
+        $http.get(localStorage.base_api + "card/removeCard", {params: {id: cardLevel.id}}).then(function (value) {
+            $scope.inUsedCardlevels = value.data;
+        })
+    };
+
+    $scope.getListUserCards = function (level) {
+
+        $scope.currentFilter = level;
+
+        $http.get(localStorage.base_api + "card/getUserCardLevels", {
+            params: {
+                level: level
+            }
+        }).then(function (res) {
+            $scope.levels = res.data.model;
+        });
+
+    };
+
+    $scope.$on("use_card", function (evt, cardLevel) {
+        $scope.useCard(cardLevel);
+    });
+    $scope.$on("sell_card", function (evt, cardLevel) {
+        $scope.sellCard(cardLevel);
+    });
+
+    $scope.sellCard = function (cardLevel) {
+        $http.get(localStorage.base_api + "card/sell", {
+            params: {id: cardLevel.id}
+        }).then(function (res) {
+            $scope.modal['card_detail'].close();
+            $scope.getListUserCards();
+            $scope.getCurrentUser(function () {
+                $infoModal.open("道具牌已以" + $scope.viewingLevel.salePrice.formatPrice() + "G幣成功售出，您目前的餘額為" + $scope.currentUser.credit.formatPrice())
+            })
+
+        }, function (reason) {
+
+        })
+    };
+
 
     $scope.getCardLevels = function (item) {
-        $scope.$parent.viewingLevel = item;
+        $scope.viewingLevel = item;
         $http.get(localStorage.base_api + "card/cardLevels", {
             params: {
                 card_id: item.cardId
             }
         }).then(function (res) {
 
-            $scope.$parent.cardLevels = res.data.model;
+            $scope.cardLevels = res.data.model;
 
         })
     };
+
+    $scope.getInUsedCards = function(){
+        $http.get(localStorage.base_api + "card/getInUsedCards").then(function (res) {
+            $scope.inUsedCardlevels = res.data.model;
+        });
+    };
+
+    $scope.openCardDetail = function(item){
+        $scope.getCardLevels(item);
+        $scope.openModal('card_detail');
+    };
+
+    $scope.selectCard = function(){
+        $scope.openModal("user_cards")
+    };
+
+    $scope.playGame = function(){
+        if(!$scope.currentRole.userHasTicket){
+            $scope.openModal('enter_game')
+        }
+        else{
+            $scope.openModal("card_select", "fullwidth");
+        }
+    };
+
+    $scope.enterGame = function () {
+        $http.get(localStorage.base_api + "game/obtainTicket", {
+            params: {roleId: $scope.currentRole.id}
+        }).then(function (res) {
+            $scope.modal['enter_game'].close();
+            $scope.$broadcast("ticketObtained", res.data);
+        }).finally(function () {
+            $scope.openModal('card_select', 'fullwidth')
+        })
+    };
+
 
     $scope.playVideo = function () {
 
@@ -517,16 +605,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.videos = res.data.model;
 
         });
-    };
-
-    $scope.enterGame = function (role) {
-        $http.get(localStorage.base_api + "game/obtainTicket", {
-            params: {roleId: role.id}
-        }).then(function (res) {
-            $scope.modal['enter_game'].close();
-            $scope.$broadcast("ticketObtained", res.data)
-            $location.url("role-game/" + role.id);
-        })
     };
 
 

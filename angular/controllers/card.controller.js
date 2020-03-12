@@ -34,18 +34,12 @@ gamingApp.controller("cardController", function ($scope, $rootScope, $route, $lo
 
     $scope.getListCards = function (level) {
         $scope.filterLevel = level;
-        $http.get(base_api + "card/getLevels", {params: {level: level}}).then(function (res) {
+        $http.get(localStorage.base_api + "card/getLevels", {params: {level: level}}).then(function (res) {
             $scope.levels = res.data.model;
         });
 
     };
 
-    $scope.$on("use_card", function (evt, cardLevel) {
-        $scope.useCard(cardLevel);
-    });
-    $scope.$on("sell_card", function (evt, cardLevel) {
-        $scope.sellCard(cardLevel);
-    });
 
     $scope.useCard = function (cardLevel) {
         $http.get(localStorage.base_api + "card/use", {
@@ -58,43 +52,6 @@ gamingApp.controller("cardController", function ($scope, $rootScope, $route, $lo
             $location.url("card-select")
         })
     };
-    $scope.sellCard = function (cardLevel) {
-        $http.get(localStorage.base_api + "card/sell", {
-            params: {id: cardLevel.id}
-        }).then(function (res) {
-            $scope.modal['card_detail'].close();
-            $scope.getListUserCards();
-            $scope.getCurrentUser(function () {
-                $infoModal.open("道具牌已以" + $scope.viewingLevel.salePrice.formatPrice() + "G幣成功售出，您目前的餘額為" + $scope.currentUser.credit.formatPrice())
-            })
-
-        }, function (reason) {
-
-        })
-    };
-
-
-    $scope.getListUserCards = function (level) {
-
-        $scope.currentFilter = level;
-
-        $http.get(localStorage.base_api + "card/getUserCardLevels", {
-            params: {
-                level: level
-            }
-        }).then(function (res) {
-            $scope.levels = res.data.model;
-        });
-
-    };
-
-    $scope.getInUsedCards = function(){
-        $http.get(localStorage.base_api + "card/getInUsedCards").then(function (res) {
-            $scope.inUsedCardlevels = res.data.model;
-        });
-    };
-
-
 
 
     /**

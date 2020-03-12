@@ -1,12 +1,12 @@
-<section class="uniformsister" ng-init="getInUsedCards()">
-    <div class="uniformheader02">
-        <h1>牌組配置</h1>
-    </div>
-
+<div class="modal-header">
+        <button type="button" class="close" ng-click="modal.card_select.close()">&times;</button>
+</div>
+<div class="modal-body">
     <div class="gamelist gamelist-02 mt0">
         <div class="gamelistinner">
             <div class="gamelist_top">
-                <ul class="gamelist_inner card-select">
+                <ul class="gamelist_inner card-select" ng-init="getInUsedCards()">
+
                     <li ng-repeat="item in inUsedCardlevels">
                         <a href="#" ng-click="removeCard(item)" class="card-remove"><i class="fa fa-close"></i> </a>
                         <img src="/assets/images/ggg_bgr01.png"/>
@@ -19,9 +19,11 @@
                     </li>
                 </ul>
             </div>
-            <button class="popupprple_btn" ng-click="goto('card-list')"><img src="../assets/images/puprleimgbtn.png"/><span>確認</span></button>
         </div>
         <!-- Modal -->
-
     </div>
-</section>
+</div>
+<div class="modal-footer  flex flex-row flex-center justify-content-center">
+    <button type="reset" ng-click="modal.card_select.close()">取消</button>
+    <button type="button"  ng-click="goto('role-game/' + currentRole.id)">配置</button>
+</div>

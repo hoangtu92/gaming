@@ -63,12 +63,7 @@
                             <h6 style="position:relative; z-index: 999;">脱掉 {{currentRole.userProgress}}/{{currentRole.maximumLevel}}</h6>
                         </div>
                     </div>
-                    <div ng-if="!currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#" ng-click="openModal('enter_game')">
-                        <img src="/assets/images/btn-circle.png" class="img-responsive"
-                             onmouseover="this.src='/assets/images/btn-circle_on.png';"
-                             onmouseout="this.src='/assets/images/btn-circle.png';"></a>
-                    </div>
-                    <div ng-if="currentRole.userHasTicket" class="right-cstm-btn-circle"><a href="#!role-game/{{currentRole.id}}">
+                    <div class="right-cstm-btn-circle"><a href="#" ng-click="playGame()">
                         <img src="/assets/images/btn-circle.png" class="img-responsive"
                              onmouseover="this.src='/assets/images/btn-circle_on.png';"
                              onmouseout="this.src='/assets/images/btn-circle.png';"></a>

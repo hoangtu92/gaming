@@ -4493,18 +4493,26 @@ button.btn-newsletter-send-again-link{
 }
 
 .progress-container .progress-outer {
-	background-image: url(/assets/images/progress-bar-outer-2.png);
+	background-image: url(/assets/images/progress-bar-outer-line.png);
 	position: absolute;
 	width: 100%;
 }
 
 .progress-container .progress-inner {
-	background-image: url(/assets/images/progress-bar-inner-2.png);
+
 	position: absolute;
 	transition: 600ms;
 	animation: anim 3s;
 }
 
+.progress-inner.inner-line{
+	max-width: 100%;
+	background-image: url(/assets/images/progress-bar-inner-line.png);
+}
+.progress-inner.inner-point{
+	max-width: 100%;
+	background-image: url(/assets/images/progress-bar-inner-point.png);
+}
 /**
 
  */
@@ -4745,6 +4753,29 @@ form.order-form .form-control{
 	color: #cec7c7;
 }
 
+.modal.fullwidth .modal-dialog{
+	width: 100%;
+}
+
+.card-remove{
+	line-height: 27px;
+	position: absolute;
+	right: 10px;
+	font-size: 2rem;
+	border: 3px solid white;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	z-index: 999;
+	background: #bf50af;
+	top: 0;
+	text-align: center;
+}
+
+.user_cards .modal-body{
+	max-height: 600px;
+	overflow-y: auto;
+}
 
 
 @media all and (min-width: 992px) {
