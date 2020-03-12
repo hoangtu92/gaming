@@ -64,7 +64,7 @@ button {
     margin-bottom: 30px;
     position: relative;
     z-index: 9;
-    background: url(../images/transparent_bg.png) no-repeat left top;
+    /*background: url(../images/transparent_bg.png) no-repeat left top;*/
     background-size: contain;
     background: linear-gradient(169deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,0.028470763305322166) 25%, rgba(225,52,110,0) 100%);
 }
@@ -788,7 +788,6 @@ section.uniformsister-02 {
 }
 
 .gametable_block {
-    background: linear-gradient(#c156ce, #3a273a);
 }
 
 .toprate_block {
@@ -814,22 +813,29 @@ section.uniformsister-02 {
 }
 
 .gametable_block {
-    border: 3px solid #fff;
     width: 100%;
-    border-radius: 23px;
-    box-shadow: inset 0px 0px 10px rgba(255, 94, 166, 0.69);
     flex-basis: 90%;
-    height: 90%;
-    max-height: calc(100% - 149px);
-    display: block;
-}
-
-.gametableinner {
-    padding-top: 40px;
+    height: auto;
+    max-height: calc(100% - 110px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.gametable_block_inner{
+    border: 3px solid #fff;
+    box-shadow: inset 0px 0px 10px rgba(255, 94, 166, 0.69);
+    background: linear-gradient(#c156ce, #3a273a);
+    border-radius: 23px;
+}
+
+.gametableinner {
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .top_sec_one {
@@ -1473,7 +1479,7 @@ ul.gamelist_inner li .listbox h5 {
     padding: 0;
     width: 100%;
     height: 100vh;
-    background: url(../images/purpulbgr.png) no-repeat;
+    /*background: url(../images/purpulbgr.png) no-repeat;*/
     box-shadow: none;
     border-radius: 0;
     border: none !important;

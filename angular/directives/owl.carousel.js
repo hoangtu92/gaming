@@ -6,22 +6,21 @@ gamingApp.directive("owlCarousel", function () {
 
             var children = tElement.children();
 
-            var template = angular.element('<div ng-repeat="item in roles" class="slider-item"></div>');
+            var template = angular.element('<div ng-repeat="item in items" class="slider-item"></div>');
             template.append(children);
             tElement.html(template);
 
             return function(scope, iElement, iAttrs, controller, $timeout) {
 
-                scope.$on("request_list_role", function () {
+                scope.$on("before_load_item", function () {
                     iElement.owlCarousel('destroy');
-
                 });
-                scope.$on("list_role_loaded", function () {
 
+                scope.$on("after_load_item", function () {
                     setTimeout(function () {
-                        iElement.owlCarousel(scope.carouselOptions);
+                        iElement.owlCarousel(scope.owlOptions);
                     }, 500)
-                });
+                })
 
             }
         }

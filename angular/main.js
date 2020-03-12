@@ -3,7 +3,7 @@
  */
 
 var gamingApp = angular.module("gaming", ['ngRoute', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngSanitize']);
-gamingApp.version = "1.1.0";
+gamingApp.version = "1.1.6";
 gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';
@@ -14,7 +14,6 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     $http.defaults.headers.common['Session-Token'] = sessionStorage.gaming_session;
     $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
-
 
 
     $rootScope.$on('$locationChangeStart', function () {
@@ -64,20 +63,6 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
     };
 });
 
-angular.module('app', []).run(function($localStorage) {
-
-    var _beforeRequest = videojs.Hls.xhr.beforeRequest;
-    videojs.Hls.xhr.beforeRequest = function(options) {
-        if (_.isFunction(_beforeRequest)) {
-            options = _beforeRequest(options);
-        }
-        if ($localStorage.token) {
-            options.headers = options.headers || {};
-            options.headers.Authorization = 'Token ' + $localStorage.token;
-        }
-        return options;
-    };
-});
 
 
 

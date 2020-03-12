@@ -3,6 +3,9 @@
     <div class="reward-collection-header">
         <div class="reward-collection-header-left-sec"><a href="#!dashboard"><img
                 src="/assets/images/img-check-circle.png"/> 商城 </a></div>
+        <div class="header-right">
+            <a href="#!shopping-cart" class="cart-icon"><i class="fa fa-shopping-cart"></i><span>{{cartTotals}}</span> </a>
+        </div>
     </div>
     <div class="mall-product-outer">
         <div class="container">
@@ -28,7 +31,7 @@
                         <div class="image-box"><img ng-src="{{path['product']}}{{product.thumbnail}}"
                                                     class="img-responsive"></div>
                         <h3 class="product-title">{{product.name}}</h3>
-                        <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{product.price}}</b></span>
+                        <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{product.price.formatPrice()}}</b></span>
                         </div>
                     </a></div>
 

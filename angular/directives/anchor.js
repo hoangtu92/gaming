@@ -20,4 +20,18 @@ gamingApp.directive('a', function() {
             });
         }
     }
-}]);
+}]).directive("gamingForm", function () {
+    return {
+        restrict: "A",
+        compile: function(element){
+            angular.element(element).append(angular.element('<input type="hidden" name="data" value="">'));
+
+            return function(scope, element, iAttrs, controller, $timeout) {
+                scope.$on("payment_ready", function (evt, data) {
+                    element[0].data.value = data;
+                    element.submit();
+                })
+            }
+        }
+    }
+});

@@ -26,9 +26,9 @@
     </div>
 
     <div class="vedio_slider">
-        <div class="nowplay" ng-class="{fullpaly: gaming.earnedCredit < video.threshold || video.playing}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
-            <img ng-if="video.playing || gaming.earnedCredit < video.threshold" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
-            <img ng-if="!video.playing && gaming.earnedCredit >= video.threshold" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+        <div class="nowplay" ng-class="{fullpaly: gaming.progressLevel < video.level || video.playing}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
+            <img ng-if="video.playing || gaming.progressLevel < video.level" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+            <img ng-if="!video.playing && gaming.progressLevel >= video.level" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
             <!--Playing-->
             <div ng-if="video.playing" class="blackoverlay" ng-click="pauseVideo(video);">
                 <div>
@@ -38,7 +38,7 @@
             </div>
 
             <!--Locked video -->
-            <div ng-if="gaming.earnedCredit < video.threshold" ng-click="unlockVideo(video.id)" class="blackoverlay">
+            <div ng-if="gaming.progressLevel < video.level" ng-click="unlockVideo(video.id)" class="blackoverlay">
                 <div>
                     <span class="noramal">達 <span class="rps">{{video.threshold.formatPrice()}}分</span> 即可解鎖</span>
                     <span class="hovertxt">討厭，想偷看我嗎？ 點數還不夠喔！</span>

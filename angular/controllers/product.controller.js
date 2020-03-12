@@ -6,7 +6,7 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
      */
 
     $scope.getListProductCats = function () {
-        $http.get(base_api + "product/categories").then(function (res) {
+        $http.get(localStorage.base_api + "product/categories").then(function (res) {
             $scope.productCats = res.data;
         });
     };
@@ -31,7 +31,7 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
 
         $scope.currentFilter = cat_id;
 
-        $http.get(base_api + "product/filter", {
+        $http.get(localStorage.base_api + "product/filter", {
             params: {
                 cat_id: cat_id
             }

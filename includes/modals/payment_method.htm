@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h4 class="modal-title">付款方式</h4>
+    <button type="button" class="close" ng-click="modal.payment_method.close()">&times;</button>
+</div>
+
+<div class="modal-body">
+    <form gaming-form="" method="post" action="https://api.eg.gashplus.com/CP_Module/order.aspx"></form>
+    <div class="login-welcome-page">
+        <div class="row">
+            <div class="col-xs-6 col-md-4 col-xs-offset-3 col-md-offset-4">
+                <div class="form-group">
+                    <label class="warning-message">請選擇付款方式</label>
+                    <select ng-init="getPaymentMethods()" class="form-control" ng-model="currentPlan.paymentMethod" ng-options="n.code as n.name for n in payment_methods"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer flex flex-row flex-center justify-content-center">
+    <button type="reset" ng-click="modal.payment_method.close()">取消</button>
+    <button typeof="button" ng-click="requestPlan(currentPlan)">確認購買</button>
+</div>

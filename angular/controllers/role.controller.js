@@ -6,7 +6,7 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
      */
 
     $scope.$on("role_loaded", function (evt, role) {
-        $http.get(base_api + "game/getSession", {params: {roleId: role.id}}).then(function (res) {
+        $http.get(localStorage.base_api + "game/getSession", {params: {roleId: role.id}}).then(function (res) {
             $scope.gaming = res.data;
         }, function () {
             $location.url("role-game/" + role.id)

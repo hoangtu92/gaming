@@ -1,0 +1,61 @@
+<section class="reward-collection-outer" id="container">
+    <p id="orientation-status"></p>
+    <div class="reward-collection-header">
+        <div class="reward-collection-header-left-sec"><a href="#!mall"><img
+                src="/assets/images/img-check-circle.png"/> 客服 </a></div>
+    </div>
+    <div class="container">
+        <div class="customer-service-mid-section">
+            <div class="col-xs-12">
+                <form class="customer-service-form" name="cartForm" ng-submit="updateCart()">
+                    <div class="customer-service-record">
+                        <h3>去購物車</h3>
+                        <div class="customer-service-record-table">
+                            <table class="customer-service-table" border="0" cellpadding="0" cellspacing="0"
+                                   width="100%">
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="40%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th class="text-left">項目</th>
+                                    <th>價錢</th>
+                                    <th>數量</th>
+                                    <th>總</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in carts">
+                                    <td>{{$index + 1}}</td>
+                                    <td class="text-left">{{item.name}}</td>
+                                    <td>{{item.price.formatPrice()}}</td>
+                                    <td><label>
+                                        <input type="number" min="0" class="form-control" ng-model="item.qty"
+                                               ng-change="updateCart()">
+                                    </label></td>
+                                    <td>{{(item.price*item.qty).formatPrice()}}</td>
+                                    <td><a href="#" class="cart-delete-icon" ng-click="deleteItem(item)"><i
+                                            class="fa fa-trash"></i> </a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="pull-right" style="margin-top: 20px">
+                <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{order.cartTotal.formatPrice()}}</b></span>
+                </div>
+                <button type="button" style="margin-top: 20px" ng-click="goto('checkout')">去結賬</button>
+            </div>
+        </div>
+    </div>
+</section>

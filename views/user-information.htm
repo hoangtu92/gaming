@@ -22,12 +22,12 @@
                     <a href="#!monthly-stored-value"><img src="/assets/images/go-to-stored-value-btn.png"
                                                               class="img-responsive"></a></div>
                 <div class="user-info-coulmn">
-                    <div class="progress" data-percentage="{{currentUser.gameProgress}}"><span class="progress-left"> <span
+                    <div class="progress" data-percentage="{{currentUser.gameProgress.round()}}"><span class="progress-left"> <span
                             class="progress-bar"></span> </span> <span class="progress-right"> <span
                             class="progress-bar"></span> </span>
                         <div class="progress-value">
                             <div><span>遊戲進度</span><br>
-                                {{currentUser.gameProgress}}%
+                                {{currentUser.gameProgress.round()}}%
                             </div>
                         </div>
                     </div>

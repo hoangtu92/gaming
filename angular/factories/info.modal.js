@@ -17,7 +17,7 @@ gamingApp.factory('$infoModal', function ($uibModal) {
                     }
                 },
                 controllerAs: "vm",
-                size: 'lg',
+                size: 'xs',
                 resolve: {
                     message: function () {
                         return errorMessage;

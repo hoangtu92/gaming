@@ -41,6 +41,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             license: "b2e98"
         };
 
+
     $scope.$on('$locationChangeStart', function (e, destination, previous) {
 
         /*if(destination.match(/role-game/)){
@@ -49,13 +50,38 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }*/
 
+        $scope.previousPage = previous;
+        $scope.destinationPage = destination;
+
     });
+
+    $scope.goBack = function () {
+        if (typeof $scope.previousPage === 'undefined' || $scope.previousPage.length === 0 || $scope.previousPage === $scope.destinationPage) $location.url("dashboard");
+
+        window.location.href = $scope.previousPage;
+    };
+
+    $scope.retrieveCartInfo = function (cartItems) {
+        if (cartItems == null) return;
+        $http.post(localStorage.base_api + "order/cartItems", JSON.stringify(cartItems)).then(function (res) {
+            $scope.carts = res.data;
+            $scope.$broadcast("cart_loaded", $scope.carts);
+            $scope.cartTotals = $scope.carts.reduce(function (t, e) {
+                t += e.qty;
+                return t;
+            }, 0);
+            console.log("Cart", $scope.carts);
+        })
+    };
+
+
     $scope.$on('$locationChangeSuccess', function () {
         $scope.getCurrentUser();
+        $scope.getCarts();
     });
 
     ConfigService.getConfig().then(function (config) {
-        if(typeof localStorage.development !== 'undefined' && localStorage.development === "1"){
+        if (typeof localStorage.development !== 'undefined' && localStorage.development === "1") {
             config.base_api = "http://gaming.dev.ml-codesign.com:8080/api/";
             config.api_domain = "http://gaming.dev.ml-codesign.com:8080"
         }
@@ -64,12 +90,29 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         localStorage.version = config.version;
 
 
+        //Get path setting
         $http.get(localStorage.base_api + "setting/get", {params: {key: "_path"}}).then(function (res) {
             $rootScope.path = res.data;
-
         });
 
+
     });
+
+    $scope.$on("cart_updated", function (e, cartItems) {
+        $scope.retrieveCartInfo(cartItems);
+        setCookie("cart", JSON.stringify(cartItems), 10);
+    });
+
+    $scope.getCarts = function () {
+        if ($route.current.view === "login" || $route.current.view === "index") return;
+        //get cart
+        var cookie = getCookie("cart");
+        $scope.cartItems = cookie !== "" ? JSON.parse(cookie) : {};
+
+        if (typeof $scope.cartItems !== 'object' || $scope.cartItems == null) $scope.cartItems = {};
+
+        $scope.retrieveCartInfo($scope.cartItems);
+    };
 
 
     $scope.modal = {};
@@ -77,7 +120,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.openModal = function (modal, className) {
 
-        if(typeof className === "undefined") className = "";
+        if (typeof className === "undefined") className = "";
 
         if (typeof modal === 'undefined') return false;
 
@@ -104,7 +147,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $location.url(url);
     };
 
-    $scope.broadcast = function(event, arg){
+    $scope.broadcast = function (event, arg) {
         $scope.$broadcast(event, arg);
     };
 
@@ -117,18 +160,17 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         "+63": 10
     };
 
-    $scope.validatePhone = function(phone){
+    $scope.validatePhone = function (phone) {
         return phone.match(/\+8869\d{0,9}|\+86\d{0,11}|\+852\d{0,8}|\+853\d{0,8}|\+60\d{0,9}|\+63\d{0,10}/);
     };
 
     $scope.$watch("user.displayPhone", function (phone) {
-        if(typeof phone === "undefined") return;
+        if (typeof phone === "undefined") return;
 
-        if(phone.match(/^0/)){
+        if (phone.match(/^0/)) {
             $scope.user.phone = angular.copy(phone);
             $scope.user.displayPhone = phone.replace(/^0/, "");
-        }
-        else{
+        } else {
             $scope.user.phone = "0" + angular.copy(phone);
         }
     });
@@ -162,25 +204,23 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.cellUser = {};
     $scope.mailUser = {};
 
-    $scope.cellSignUp = function(){
+    $scope.cellSignUp = function () {
         var phone = $scope.user.countryCode + $scope.user.displayPhone;
-        if($scope.user.displayPhone.length < $scope.validationRules[$scope.user.countryCode]){
-            $infoModal.open("手機號碼格式錯誤，請輸入正確" +$scope.validationRules[$scope.user.countryCode]+ "碼數字");
-        }
-        else if($scope.validatePhone(phone)){
+        if ($scope.user.displayPhone.length < $scope.validationRules[$scope.user.countryCode]) {
+            $infoModal.open("手機號碼格式錯誤，請輸入正確" + $scope.validationRules[$scope.user.countryCode] + "碼數字");
+        } else if ($scope.validatePhone(phone)) {
             $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
-                if(res.data.status){
+                if (res.data.status) {
                     $scope.modal["cell_register"].close();
                     $scope.openModal("verify_user")
                 }
             });
-        }
-        else{
+        } else {
             $infoModal.open("您輸入的手機號碼錯誤，請確認後重新輸入")
         }
 
     };
-    $scope.verifyUser = function(){
+    $scope.verifyUser = function () {
         var username = $scope.user.phone === null ? $scope.user.email : $scope.user.phone;
         $http.post(localStorage.base_api + "user/verify", JSON.stringify({
             username: username,
@@ -192,23 +232,22 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         });
     };
 
-    $scope.mailSignUp = function(){
+    $scope.mailSignUp = function () {
         $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
             $scope.modal["mail_register"].close();
             $infoModal.open("Email驗證信已送出，請確認信箱")
         });
     };
-    $scope.retryInterval =0;
-    $scope.resendSMS = function(){
+    $scope.retryInterval = 0;
+    $scope.resendSMS = function () {
         $scope.retryInterval = 60;
         $http.post(localStorage.base_api + "user/resend", JSON.stringify({
             username: $scope.user.username
         })).finally(function () {
             $scope.retryIntervalObj = $interval(function () {
-                if($scope.retryInterval === 0) {
+                if ($scope.retryInterval === 0) {
                     $interval.cancel($scope.retryIntervalObj);
-                }
-                else{
+                } else {
                     $scope.retryInterval--;
                 }
 
@@ -216,13 +255,13 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         });
     };
 
-    $scope.requestForgetPWCode = function(){
+    $scope.requestForgetPWCode = function () {
         $http.get(localStorage.base_api + "user/requestForgetPWCode", {params: {u: $scope.user.username}}).then(function (value) {
             $scope.openModal("change_password")
         });
     };
 
-    $scope.changePassword = function(){
+    $scope.changePassword = function () {
         $http.post(localStorage.base_api + "user/changePassword", JSON.stringify($scope.user)).then(function (value) {
             $scope.user = {};
             $scope.cancel();
@@ -249,7 +288,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.getCurrentUser = function (cb) {
-        if($route.current.view === "login" || $route.current.view === "index") return;
+        if ($route.current.view === "login" || $route.current.view === "index") return;
         $http.get(localStorage.base_api + "user/currentUser").then(function (res) {
             $scope.currentUser = res.data.model;
             if (cb) cb();
@@ -286,16 +325,16 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.filter = {};
     $scope.getListRoles = function () {
-        $scope.$broadcast("request_list_role");
+        $scope.$broadcast("before_load_item");
         $http.post(localStorage.base_api + "role/filter", JSON.stringify($scope.filter)).then(function (res) {
-            $scope.$broadcast("list_role_loaded", res.data);
-            $scope.roles = res.data;
+            $scope.$broadcast("after_load_item", res.data);
+            $scope.items = res.data;
             $scope.currentRole = res.data[0];
         })
     };
 
     $scope.showAllLevels = true;
-    $scope.showAll = function(){
+    $scope.showAll = function () {
         $scope.showAllLevels = true;
     };
 
@@ -318,6 +357,25 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.currentCard = card;
     };
 
+    $scope.getPaymentMethods = function(){
+        $http.get(localStorage.base_api + "transactions/getPaymentMethods").then(function (value) {
+            $scope.payment_methods = value.data;
+        })
+    };
+
+    $scope.requestPlan = function (pricePlan) {
+        $http.get(localStorage.base_api + "transactions/create", {params: {id: pricePlan.id, paymentMethod: pricePlan.paymentMethod}}).then(function (res) {
+            $scope.$broadcast("payment_ready", res.data.model);
+            $scope.modal['payment_method'].close();
+        })
+    };
+
+    $scope.selectPlan = function (item) {
+        $scope.currentPlan = item;
+        $scope.currentPlan.paymentMethod = "BNK82201";
+        $scope.openModal('payment_method');
+    };
+
 
     $scope.getListPrizeLogs = function () {
         $http.get(localStorage.base_api + "prize/logs").then(function (res) {
@@ -325,15 +383,21 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         })
     };
 
-    $http.get(localStorage.base_api + "card/getEffectMapper");
 
-    $scope.buyProduct = function (product) {
-        $http.get(localStorage.base_api + "product/buy", {
-            params: {product_id: product.id}
-        }).then(function (res) {
-            $scope.modal['product_buy'].close();
-        })
+    $scope.addToCart = function (product) {
+
+        if ($scope.cartItems[product.id] === 'undefined' || isNaN($scope.cartItems[product.id])) $scope.cartItems[product.id] = 0;
+
+        $scope.cartItems[product.id]++;
+
+        setCookie("cart", JSON.stringify($scope.cartItems), 10);
+
+        $scope.getCarts();
+        $scope.openModal("cart")
+
     };
+
+
     $scope.drawCard = function (pool) {
         $http.get(localStorage.base_api + "card/draw", {
             params: {id: pool.id}
@@ -347,7 +411,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.buyCard = function (card) {
 
-        $http.post(base_api + "card/buy", JSON.stringify({
+        $http.post(localStorage.base_api + "card/buy", JSON.stringify({
             id: card.id,
             token: ""
         })).then(function () {
@@ -359,13 +423,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
 
-
-
-
-
     $scope.getCardLevels = function (item) {
         $scope.$parent.viewingLevel = item;
-        $http.get(base_api + "card/cardLevels", {
+        $http.get(localStorage.base_api + "card/cardLevels", {
             params: {
                 card_id: item.cardId
             }
@@ -376,12 +436,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         })
     };
 
-    $scope.playVideo = function(){
+    $scope.playVideo = function () {
 
-        if($scope.videoPlayer.src !== ''){
+        if ($scope.videoPlayer.src !== '') {
             $scope.$broadcast("playVideo");
-        }
-        else{
+        } else {
             $http.get(localStorage.base_api + "video/getPlayableUrl", {params: {id: $scope.currentVideo.id}}).then(function (res) {
                 $scope.$broadcast("playVideo", $scope.path['video'] + res.data.model)
             }, function (reason) {
@@ -430,7 +489,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.$apply();
     });
 
-    $scope.getCurrentUserVideos = function(tag){
+    $scope.getCurrentUserVideos = function (tag) {
         $scope.currentFilter = tag;
         $http.get(localStorage.base_api + "video/getUserVideos", {
             params: {
@@ -449,7 +508,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.videos = [];
         $scope.currentFilter = tag;
 
-        $http.get(base_api + "video/filter", {
+        $http.get(localStorage.base_api + "video/filter", {
             params: {
                 tagName: tag,
                 catName: cat
@@ -466,9 +525,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function (res) {
             $scope.modal['enter_game'].close();
             $scope.$broadcast("ticketObtained", res.data)
-
-        }).finally(function () {
-            $location.url("role-game/" + role.id)
+            $location.url("role-game/" + role.id);
         })
     };
 
@@ -488,7 +545,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.responsesCounter = 0;
     $scope.proposeReload = false;
 
-    function resetWaitingTime () {
+    function resetWaitingTime() {
         if (loadingProgress) {
             $timeout.cancel(loadingProgress);
         }
@@ -510,7 +567,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.requestsCounter = counts.requests;
         $scope.responsesCounter = counts.responses;
     });
-
 
 
 });

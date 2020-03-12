@@ -1,6 +1,6 @@
-gamingApp.controller("dashboardController", function ($scope, $route, $http, $infoModal, $timeout) {
+gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout) {
 
-    $scope.carouselOptions = {
+    $scope.owlOptions = {
         loop: false,
         margin: 15,
         nav: true,
@@ -22,6 +22,15 @@ gamingApp.controller("dashboardController", function ($scope, $route, $http, $in
         }
     };
 
+    function b64DecodeUnicode(str) {
+        return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+        }).join(''))
+    }
+
+    if(typeof $routeParams.msg !== "undefined"){
+        $infoModal.open(b64DecodeUnicode($routeParams.msg));
+    }
 
 
 

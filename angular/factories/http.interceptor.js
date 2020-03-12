@@ -1,5 +1,5 @@
 var openDepositPage = function(){
-    window.pricePlanTab = window.open("/#!monthly-stored-value", '_blank');
+    /*window.pricePlanTab = window.open("/#!monthly-stored-value", '_blank');
 
     window.pricePlanInterval = window.setInterval(function() {
         try {
@@ -11,7 +11,8 @@ var openDepositPage = function(){
         }
         catch (e) {
         }
-    }, 1000);
+    }, 1000);*/
+    window.location.href = "/#!monthly-stored-value"
 };
 
 gamingApp.config(function ($httpProvider, $qProvider) {

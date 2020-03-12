@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="modal.cart.close()">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="login-welcome-page">
+        <div class="form-group"><label class="warning-message">
+            產品已添加到購物車
+        </label></div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="modal-footer flex flex-row flex-center justify-content-center">
+    <button type="reset" ng-click="modal.cart.close()">取消</button>
+    <button type="button" ng-click="goto('shopping-cart')">去購物車</button>
+    <button type="button" ng-click="goto('checkout')">去結賬</button>
+</div>

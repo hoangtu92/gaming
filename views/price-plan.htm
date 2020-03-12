@@ -4,13 +4,13 @@
         <div class="reward-collection-header-left-sec"> <a href="#!dashboard"><img src="/assets/images/img-check-circle.png"/> 包月/儲值 </a> </div>
     </div>
     <div class="container">
-        <div class="monthly-stored-value" ng-repeat="item in pricePlans" ng-if="item.type == 0"> <a href="#"><img src="/assets/images/monthly-value-top-img.png"></a> </div>
+        <div class="monthly-stored-value" ng-repeat="item in pricePlans" ng-if="item.type == 0"> <a href="#" ng-click="selectPlan(item)"><img src="/assets/images/monthly-value-top-img.png"></a> </div>
         <div class="monthly-stored-value-bottom-sec">
             <ul>
-                <a href="#"  ng-repeat="item in pricePlans" ng-if="item.type == 1">
+                <a href="#" ng-click="selectPlan(item)" ng-repeat="item in pricePlans" ng-if="item.type == 1">
                     <li><div class="img-outer-cstm"><img ng-src="{{'/assets/images/' + item.image || '/assets/images/gold-icon-2.png'}}" class="img-responsive"></div>
-                        <h4>{{item.credit}} G幣</h4>
-                        <span> NT {{item.cash}} </span> </li>
+                        <h4>{{item.credit.formatPrice()}} G幣</h4>
+                        <span> NT {{item.cash.formatPrice()}} </span> </li>
                 </a>
             </ul>
         </div>

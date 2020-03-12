@@ -73,6 +73,10 @@ String.prototype.formatUnit = function () {
 Number.prototype.formatUnit = function () {
     return this/1000 + "K";
 };
+
+Number.prototype.round =function(){
+    return Math.round(this)
+};
 Date.prototype.getRemainTime = function (now) {
     var diff = this.getTime() - now.getTime();
     var hour = diff / (1000*60*60),
@@ -85,11 +89,6 @@ Date.prototype.getRemainTime = function (now) {
 String.prototype.formatPhone = function () {
     return this.match(/^0/) == null ? "0" + this : this;
 };
-
-
-var base_api = "http://gaming.dev.ml-codesign.com:8080/api/";
-
-
 
 /**
  * Read image from input
@@ -105,4 +104,38 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+/**
+ *
+ * @param cname
+ * @param cvalue
+ * @param exdays
+ */
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+/**
+ *
+ * @param cname
+ * @returns {string}
+ */
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

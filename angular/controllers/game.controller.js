@@ -211,6 +211,12 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     };
 
     $scope.buyMoreBet = function(){
+
+        if($scope.gaming.availableBet >= $scope.units.bet_1){
+            $infoModal.open("剩餘籌碼不足，請先結束此局");
+            return;
+        }
+
         var creditNeed = $scope.gaming.total - $scope.gaming.betQuota;
         $scope.buyMoreBetModal = $infoModal.open("您的籌碼不足，您尚有" + $scope.currentUser.credit.formatPrice() + "G幣，<br>是否要花費" + $scope.currentRole.betQuotaFee.formatPrice() + "G幣 兌換" + $scope.currentRole.betQuota.formatPrice() + "點籌碼", function () {
             var vm = this;
@@ -335,6 +341,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             if(res.status === 406){
                 $scope.buyMoreBet()
             }
+            else if(res.status === 400){
+
+            }
         });
 
         return true;
@@ -433,6 +442,8 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         $http.post(localStorage.base_api + "game/shake").then(function (res) {
 
             $scope.gaming = res.data.model;
+
+            console.log($scope.gaming);
 
             var win = Object.keys($scope.gaming['win']),
                 lost = Object.keys($scope.gaming['lost']);

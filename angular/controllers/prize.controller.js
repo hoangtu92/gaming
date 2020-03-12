@@ -14,7 +14,7 @@ gamingApp.controller("prizeController", function ($scope, $route, $http, $infoMo
         }, []);
         console.log(selectedPrize);
 
-        $http.post(base_api + "prize/redeem", JSON.stringify(selectedPrize)).then(function (res) {
+        $http.post(localStorage.base_api + "prize/redeem", JSON.stringify(selectedPrize)).then(function (res) {
             $infoModal.open("獎勵已成功領取");
             $scope.getListPrizeLogs();
             $scope.getListPrizes();

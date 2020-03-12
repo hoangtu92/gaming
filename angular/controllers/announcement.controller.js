@@ -1,6 +1,6 @@
 gamingApp.controller("announcementController", function ($scope, $route, $http, $infoModal, $timeout) {
 
-    $scope.sliderOptions = {
+    $scope.owlOptions = {
         loop: false,
         margin: 0,
         nav: true,
@@ -23,12 +23,13 @@ gamingApp.controller("announcementController", function ($scope, $route, $http, 
     };
 
     $scope.getListNews = function () {
+        $scope.$broadcast("before_load_item");
         $http.post(localStorage.base_api + "news/list", JSON.stringify({
             perPage: 10,
             page: 0
         })).then(function (res) {
-            $scope.news = res.data.content;
-
+            $scope.items = res.data.content;
+            $scope.$broadcast("after_load_item");
         })
     };
 

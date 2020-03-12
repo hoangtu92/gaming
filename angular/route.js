@@ -42,7 +42,7 @@ gamingApp.config(function ($routeProvider) {
                     return ConfigService.promise;
                 }
             }
-        }).when('/dashboard', {
+        }).when('/dashboard/:msg?', {
         title: 'Dashboard',
         view: 'dashboard',
         layout: 'sidebar',
@@ -104,7 +104,7 @@ gamingApp.config(function ($routeProvider) {
                 return ConfigService.promise;
             }
         }
-    }).when('/monthly-stored-value', {
+    }).when('/monthly-stored-value/:msg?', {
         title: 'Monthly Stored Value',
         view: 'price_plan',
         layout: 'non-sidebar',
@@ -122,6 +122,30 @@ gamingApp.config(function ($routeProvider) {
         layout: 'non-sidebar',
         templateUrl: 'views/product.htm',
         controller: 'productController',
+        resolve: {
+            'ConfigServiceData': function (ConfigService) {
+                // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                return ConfigService.promise;
+            }
+        }
+    }).when('/shopping-cart', {
+        title: 'Cart',
+        view: 'shopping_cart',
+        layout: 'non-sidebar',
+        templateUrl: 'views/shopping_cart.htm',
+        controller: 'orderController',
+        resolve: {
+            'ConfigServiceData': function (ConfigService) {
+                // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                return ConfigService.promise;
+            }
+        }
+    }).when('/checkout', {
+        title: 'Checkout',
+        view: 'checkout',
+        layout: 'non-sidebar',
+        templateUrl: 'views/checkout.htm',
+        controller: 'orderController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
                 // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service

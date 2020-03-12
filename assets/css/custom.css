@@ -100,6 +100,7 @@ button[type="submit"] {
 .header-top-left-menu {
 	margin-left: 10%;
 	margin-top: 0;
+	position: relative;
 }
 
 .logo-section img {
@@ -118,7 +119,7 @@ button[type="submit"] {
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 8em;
-	border: 1px solid rgba(66, 38, 91);
+	/*border: 1px solid rgba(66, 38, 91);*/
 }
 
 .sidenav-inner {
@@ -137,7 +138,6 @@ button[type="submit"] {
 	text-align: center;
 	line-height: 55px;
 	padding: 0;
-	display: block;
 	margin-top: 0;
 	top: 20px !important;
 	right: 45px !important;
@@ -1115,7 +1115,8 @@ input.form-control.cstm-input-one {
 	background-size: cover;
 	padding-right: 15px;
 	padding-left: 20px;
-	background: linear-gradient(166deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 27%, rgba(225,52,110,1) 31%, rgba(225,52,110,0.028470763305322166) 50%, rgba(225,52,110,0) 100%);
+	background: linear-gradient(166deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 29%, rgba(225,52,110,1) 37%, rgba(225,52,110,0.028470763305322166) 58%, rgba(225,52,110,0) 100%);
+	min-width: 320px;
 }
 
 .reward-collection-header-left-sec a img {
@@ -1624,6 +1625,7 @@ li.page-item.active a {
 .customer-reply-popup-content p {
 	font-size: 21px;
 	color: #f2f2f2;
+	word-break: break-all;
 }
 
 #replyModal .reward-collection-modal {
@@ -1750,8 +1752,8 @@ li.page-item.active a {
 	border-top-right-radius: 150px;
 	border-bottom-right-radius: 150px;
 	border-left: 0;
-	-webkit-transform-origin: center left;
-	transform-origin: center left;
+	-webkit-transform-origin: center;
+	transform-origin: center;
 }
 
 .progress .progress-right {
@@ -1769,8 +1771,8 @@ li.page-item.active a {
 	border-top-left-radius: 150px;
 	border-bottom-left-radius: 150px;
 	border-right: 0;
-	-webkit-transform-origin: center right;
-	transform-origin: center right;
+	-webkit-transform-origin: center;
+	transform-origin: center;
 }
 
 .progress .progress-value {
@@ -1782,7 +1784,6 @@ li.page-item.active a {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	font-weight: 300;
 	color: #fff;
 	opacity: 1;
 	font-weight: 500;
@@ -1798,7 +1799,6 @@ li.page-item.active a {
 }
 
 .progress .progress-value div {
-	margin-top: 10px;
 	line-height: 20px;
 	margin: 0;
 }
@@ -1901,7 +1901,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 
 	100% {
-		-webkit-transform: rotate(36);
+		-webkit-transform: rotate(36deg);
 		transform: rotate(36deg);
 	}
 }
@@ -1913,7 +1913,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 
 	100% {
-		-webkit-transform: rotate(72);
+		-webkit-transform: rotate(72deg);
 		transform: rotate(72deg);
 	}
 }
@@ -1925,7 +1925,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 
 	100% {
-		-webkit-transform: rotate(108);
+		-webkit-transform: rotate(108deg);
 		transform: rotate(108deg);
 	}
 }
@@ -1937,7 +1937,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 
 	100% {
-		-webkit-transform: rotate(144);
+		-webkit-transform: rotate(144deg);
 		transform: rotate(144deg);
 	}
 }
@@ -1949,7 +1949,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 
 	100% {
-		-webkit-transform: rotate(180);
+		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
 	}
 }
@@ -4215,7 +4215,7 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	max-width: 500px;
+	max-width: 520px;
 	position: absolute;
 	left: 0px;
 	top: 0;
@@ -4229,8 +4229,8 @@ body {
 
 .game-statistic h4 {
 	margin: 0;
-	font-size: 1.5rem;
-	max-width: 150px;
+	font-size: 1.6rem;
+	max-width: 400px;
 	font-weight: bold;
 }
 
@@ -4475,8 +4475,7 @@ button.btn-newsletter-send-again-link{
 	border: none;
 }
 
-.modal-footer button {
-}
+.modal-footer button {}
 
 .progress-container {
 	width: 305px;
@@ -4614,7 +4613,7 @@ button.btn-newsletter-send-again-link{
 }
 
 html{
-	height: 100%;
+	min-height: 100%;
 	background: url(../images/welcome-bg.jpg) no-repeat center center;
 	background-size: cover;
 }
@@ -4627,4 +4626,149 @@ html{
 a.btn{
 	margin-left: 30px;
 	padding: 5px 40px;
+}
+
+.modal.fade{
+	display: flex !important;
+	align-items:center;
+}
+
+.modal .modal-dialog.modal-xs{
+	width: auto;
+	min-width: initial;
+	max-width: 600px;
+}
+
+.modal.in .modal-dialog.modal-xs .modal-body{
+	padding-top: 70px;
+}
+.cart-delete-icon{
+	color: white;
+}
+
+.cart-delete-icon:hover{
+	color: white;
+}
+
+.header-right{
+	float: right;
+	padding-top: 5px;
+	padding-right: 20px;
+}
+
+a.cart-icon{
+	font-size: 3.5rem;
+	color: white;
+	position: relative;
+	float: right;
+	width: 45px;
+	height: 45px;
+}
+
+a.cart-icon span{
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 1.5rem;
+	border-radius: 50%;
+	background: #d1306a;
+	text-align: center;
+	top: 0;
+	right: 0;
+}
+
+.form-row{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.order-form label, .order-form input, .order-form select,
+.order-form textarea{
+	color: white;
+}
+
+.order-form select{
+	padding: 5px 10px !important;
+}
+
+.order-form input, .order-form .form-row .form-group{
+	width: 50%;
+}
+
+.order-form input, .order-form .form-group label{
+	width: 100%;
+	padding: 0 10px;
+}
+
+form.customer-service-form.order-form textarea{
+	min-height: initial !important;
+}
+
+.checkout h2, .text-white{
+	color: white;
+}
+
+.checkout-table{
+
+}
+
+table.checkout-table tr td:first-child, table.checkout-table tr th:first-child{
+	text-align: left;
+}
+
+table.checkout-table tr td:last-child, table.checkout-table tr th:last-child{
+	text-align: right;
+}
+
+form.order-form .form-control{
+	background: rgba(204, 193, 193, 0.3);
+	color: #ffffff;
+}
+
+.order-form select option{
+	background:#861d96
+}
+
+.order-form *::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #cec7c7;
+	opacity: 1; /* Firefox */
+}
+
+.order-form *:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #cec7c7;
+}
+
+.order-form *::-ms-input-placeholder { /* Microsoft Edge */
+	color: #cec7c7;
+}
+
+
+
+@media all and (min-width: 992px) {
+	.checkout-left{
+		border-right: 2px solid rgba(255,255,255,0.3);
+		padding-right: 25px;
+	}
+	.checkout-right{
+		padding-left: 25px;
+	}
+}
+
+
+@media all and (max-width: 1024px) {
+	html, .reward-collection-outer{
+		height: auto;
+	}
+	body{
+		overflow: auto;
+	}
+
+	.gamelastpoint button{
+		padding: 0 5px;
+		width: 100px;
+		height: 50px;
+	}
 }
