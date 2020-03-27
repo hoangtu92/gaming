@@ -10,7 +10,9 @@
             <div class="col-xs-6 col-md-4 col-xs-offset-3 col-md-offset-4">
                 <div class="form-group">
                     <label class="warning-message">請選擇付款方式</label>
-                    <select ng-init="getPaymentMethods()" class="form-control" ng-model="currentPlan.paymentMethod" ng-options="n.code as n.name for n in payment_methods"></select>
+                </div>
+                <div class="form-group">
+                    <select ng-init="getPaymentMethods()" class="payment_method_select" ng-model="currentPlan.paymentMethod" ng-options="n.code as n.name for n in payment_methods"></select>
                 </div>
             </div>
         </div>

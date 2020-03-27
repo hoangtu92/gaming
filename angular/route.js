@@ -16,7 +16,7 @@ gamingApp.config(function ($routeProvider) {
                 }
             }
         })
-        .when('/login/:username/:code', {
+        .when('/login/:action/:uid/:code', {
             title: 'Login',
             view: 'login',
             layout: 'non-sidebar',
@@ -168,7 +168,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'AV play',
         view: 'av_play',
         layout: 'non-sidebar',
-        bodyClass: 'uniform_maingame uniformsister av-play',
+        bodyClass: 'uniform_maingame av-play',
         templateUrl: 'views/av-play.htm',
         controller: 'videoController',
         resolve: {
@@ -181,7 +181,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'AV short',
         view: 'av_short',
         layout: 'non-sidebar',
-        bodyClass: 'uniform_maingame uniformsister av-play',
+        bodyClass: 'uniform_maingame av-play',
         templateUrl: 'views/av-short.htm',
         controller: 'videoController',
         resolve: {
@@ -194,7 +194,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'My AV',
         view: 'my_av',
         layout: 'non-sidebar',
-        bodyClass: 'uniform_maingame uniformsister av-play',
+        bodyClass: 'uniform_maingame  av-play',
         templateUrl: 'views/my-av.htm',
         controller: 'videoController',
         resolve: {
@@ -219,7 +219,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Card List',
         view: 'card_list',
         layout: 'non-sidebar',
-        bodyClass: 'uniformsister',
+        bodyClass: '',
         templateUrl: 'views/card-list.htm',
         controller: 'cardController',
         resolve: {
@@ -232,7 +232,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Card Select',
         view: 'card_select',
         layout: 'non-sidebar',
-        bodyClass: 'uniformsister',
+        bodyClass: '',
         templateUrl: 'views/card-select.htm',
         controller: 'cardController',
         resolve: {

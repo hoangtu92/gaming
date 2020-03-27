@@ -1,15 +1,28 @@
 gamingApp.controller("userController", function ($scope, $route, $routeParams, $location, $http, $infoModal, $timeout) {
 
 
-    if($routeParams.username){
-        $http.post(localStorage.base_api + "user/verify", JSON.stringify({
-            username: $routeParams.username,
-            code: $routeParams.code
-        })).then(function () {
-            $infoModal.open("驗證成功，請登錄以繼續");
+    if($routeParams.action){
 
-        });
+        if($routeParams.action === "verify"){
+            $http.post(localStorage.base_api + "user/verify", JSON.stringify({
+                uid: $routeParams.uid,
+                code: $routeParams.code
+            })).then(function () {
+                $infoModal.open("驗證成功，請登錄以繼續");
+            });
+        }
+
+        else{
+            $scope.$parent.user = {
+                uid: $routeParams.uid,
+                code: $routeParams.code
+            };
+            $scope.openModal("email_change_password")
+        }
+
+
     }
+
 
     $scope.$on("uploadFile", function (evt, files) {
 

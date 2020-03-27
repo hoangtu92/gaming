@@ -40,15 +40,21 @@ gamingApp.controller("orderController", function ($scope, $route, $http, $infoMo
 
 
     $scope.placeOrder = function () {
-        $scope.order.carts = $scope.$parent.cartItems;
+        if($scope.checkoutForm.$invalid) return false;
+        $scope.order.carts = $scope.$parent.carts.map(function (value) {
+            return {
+                id: value.id,
+                qty: value.qty
+            }
+        });
         console.log("ORDER: ", $scope.order);
 
         $http.post(localStorage.base_api + "order/checkout", JSON.stringify($scope.order)).then(function (res) {
             setCookie("cart", null);
-            $infoModal.open("訂單已成功下達，將在幾天內交付給您");
+            $infoModal.open("已成功下單");
             $timeout(function () {
                 $location.url("dashboard");
-            }, 2000)
+            },4000)
         })
     }
 

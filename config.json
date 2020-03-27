@@ -1,5 +1,5 @@
 {
   "api_domain": "http://gaming.dev.ml-codesign.com:8088/gaming",
   "base_api": "http://gaming.dev.ml-codesign.com:8088/gaming/api/",
-  "version" : "1.0.2"
+  "version" : "1.0.3"
 }

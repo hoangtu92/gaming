@@ -156,6 +156,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.getBetUnits = function(){
       $http.get(localStorage.base_api + "game/getBetUnits").then(function (res) {
             $scope.units = res.data;
+            $scope.getInUsedCards();
       })
     };
 
@@ -390,6 +391,16 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.initGame = function () {
         $http.get(localStorage.base_api + "game/checkTicket", {params: {roleId: $routeParams.id}}).then(function (res) {
             $scope.gaming = res.data.model;
+
+            if(localStorage.showWelcome === '1'){
+                $infoModal.open("親愛的<br>" +
+                    "歡迎回來<br>" +
+                    "今天也要加油<br>" +
+                    "把我脫光喔!")
+            }
+
+            localStorage.showWelcome = '0';
+
             if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
                 $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
             }
@@ -445,11 +456,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         $http.post(localStorage.base_api + "game/shake").then(function (res) {
 
             $scope.gaming = res.data.model;
-
-            if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
-                $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
-            }
-
 
             console.log($scope.gaming);
 

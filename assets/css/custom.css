@@ -5,7 +5,7 @@
 
 body {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
@@ -13,6 +13,7 @@ body {
 	font-family: "微軟正黑體", sans-serif;
 	font-weight: normal;
 	background-color: transparent;
+	height: auto;
 }
 
 a, button {
@@ -141,6 +142,7 @@ button[type="submit"] {
 	margin-top: 0;
 	top: 20px !important;
 	right: 45px !important;
+	z-index: 99999999999;
 }
 
 .sidenav a {
@@ -169,10 +171,11 @@ button[type="submit"] {
 
 .reward-collection-outer {
 	background: url(../images/grid-purple-bg2.png) repeat center center;
-	height: 100vh;
+	min-height: 100vh;
 	background-size: auto;
 	width: 100%;
-	padding: 5px;
+	/* padding: 5px; */
+	padding-bottom: 15px;
 }
 
 .reward-collection-header {
@@ -315,7 +318,6 @@ span.side-menu-cstm-toogle {
 }
 
 span.img-sec {
-	display: inline-block;
 	border: 3px solid #fff;
 	border-radius: 100%;
 	padding: 5px;
@@ -331,10 +333,12 @@ span.img-sec {
 }
 
 span.img-sec img {
-	width: 100%;
-	height: auto;
 	border: 3px solid #fff;
 	border-radius: 100%;
+	width: 84px;
+	height: 84px;
+	object-fit: cover;
+	object-position: center;
 }
 
 .welcome-left-author-data-sec {
@@ -716,7 +720,7 @@ span.numbers {
 	background: url(../images/login-bg.png) no-repeat center;
 	background-size: cover;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	margin: 0;
 	padding: 15px 0;
 	position: relative;
@@ -861,7 +865,7 @@ a.btn-registered-link {
 	line-height: 60px;
 }
 
-#mobile-registration-outer select.country-code {
+#mobile-registration-outer select.country-code, .payment_method_select {
 	float: left;
 	width: 25%;
 	height: 60px;
@@ -870,6 +874,14 @@ a.btn-registered-link {
 	border-radius: 30px;
 	color: #c1c1c1;
 	padding: 5px 15px;
+}
+
+.payment_method_select{
+	width: 100%;
+}
+.payment_method_select option{
+	background-color: rgba(168,90,244,.8);
+	color: #fff;
 }
 
 #mobile-registration-outer input.form-control.cstm-input-phone {
@@ -1675,8 +1687,16 @@ li.page-item.active a {
 	box-shadow: 0 0 7px #fff;
 	margin-bottom: 30px;
 	display: block;
+	width: 160px;
+	height: 160px;
+	object-fit: cover;
+	object-position: center;
+	max-width: initial;
 }
 
+.gamelist_top .tab-content{
+	min-height: 500px;
+}
 .author-img {
 	margin-bottom: 30px;
 }
@@ -2448,7 +2468,7 @@ h3.product-title {
 	font-family: sans-serif;
 }
 
-.login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content, .filter.modal .modal-content {
+.login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content {
 	float: left;
 	padding: 30px;
 	width: 100%;
@@ -2498,11 +2518,11 @@ form.newsletter-verification-form input.form-control {
 .filter-mid-section ul.filter-mid-left-selection li {
 	float: left;
 	width: 100%;
-	margin: 0;
 	padding: 0;
 	background: none;
 	display: block;
 	margin: 15px 0;
+	padding-left: 65px;
 }
 
 .filter-mid-section ul.filter-mid-left-selection li .form-group-cstm {
@@ -3435,7 +3455,7 @@ h3.product-title {
 	}
 
 	.right-author-chat-icon img {
-		max-width: 100px;
+		max-width: 182px;
 	}
 
 	.right-author-chat-icon {
@@ -3482,7 +3502,7 @@ h3.product-title {
 	}
 
 	.right-cstm-btn-circle img {
-		max-width: 60px;
+		/* max-width: 60px; */
 	}
 
 	.right-cstm-btn-circle {
@@ -4345,7 +4365,8 @@ body.page-game {
 }
 
 section {
-	height: 100%;
+	min-height: 100vh;
+	height: auto;
 }
 
 .bet-unit {
@@ -4493,7 +4514,7 @@ button.btn-newsletter-send-again-link{
 }
 
 .progress-container .progress-outer {
-	background-image: url(/assets/images/progress-bar-outer-line.png);
+	background-image: url(/assets/images/progress-bar-outer.png);
 	position: absolute;
 	width: 100%;
 }
@@ -4507,11 +4528,11 @@ button.btn-newsletter-send-again-link{
 
 .progress-inner.inner-line{
 	max-width: 100%;
-	background-image: url(/assets/images/progress-bar-inner-line.png);
+	background-image: url(/assets/images/progress-bar-outer-line-point.png);
 }
 .progress-inner.inner-point{
 	max-width: 100%;
-	background-image: url(/assets/images/progress-bar-inner-point.png);
+	background-image: url(/assets/images/progress-bar-inner-point-transparent.png);
 }
 /**
 
@@ -4614,6 +4635,10 @@ button.btn-newsletter-send-again-link{
 	padding-top: 125px;
 }
 
+.page-shopping_cart{
+	overflow-y: auto;
+}
+
 @keyframes anim {
 	from {
 		width: 0;
@@ -4621,7 +4646,7 @@ button.btn-newsletter-send-again-link{
 }
 
 html{
-	min-height: 100%;
+	min-height: 100vh;
 	background: url(../images/welcome-bg.jpg) no-repeat center center;
 	background-size: cover;
 }
@@ -4710,6 +4735,13 @@ a.cart-icon span{
 	width: 100%;
 	padding: 0 10px;
 }
+.order-form .form-group label{
+	padding-bottom: 20px;
+	position: relative;
+	padding-left: 0;
+	margin-left: 10px;
+	margin-bottom: 0;
+}
 
 form.customer-service-form.order-form textarea{
 	min-height: initial !important;
@@ -4734,6 +4766,12 @@ table.checkout-table tr td:last-child, table.checkout-table tr th:last-child{
 form.order-form .form-control{
 	background: rgba(204, 193, 193, 0.3);
 	color: #ffffff;
+	height: 50px;
+	line-height: 50px;
+}
+
+form.order-form textarea.form-control{
+	height: auto;
 }
 
 .order-form select option{
@@ -4776,7 +4814,9 @@ form.order-form .form-control{
 	max-height: 600px;
 	overflow-y: auto;
 }
-
+.monthly-stored-value-bottom-sec a{
+	padding-bottom: 25px;
+}
 
 @media all and (min-width: 992px) {
 	.checkout-left{
@@ -4788,13 +4828,30 @@ form.order-form .form-control{
 	}
 }
 
+html.page-price_plan, html.page-price_plan .reward-collection-outer{
+	height: auto;
+}
+body.page-price_plan{
+	overflow: auto;
+	padding-right: 0 !important;
+}
+
+.validation-error{
+	color: red;
+	display: block;
+	margin-top: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
 
 @media all and (max-width: 1024px) {
-	html, .reward-collection-outer{
-		height: auto;
-	}
+
 	body{
 		overflow: auto;
+	}
+	html, .reward-collection-outer{
+		height: auto;
 	}
 
 	.gamelastpoint button{

@@ -87,7 +87,7 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                     window.location.href = "/#!login";
                 }
                 if(rejection.status === 500){ //INTERNAL SERVER ERROR
-                    $injector.get("$infoModal").open("發生未知錯誤")
+                    $injector.get("$infoModal").open("主機更新中，請稍候再試")
                 }
                 if(rejection.status === 402){ //PAYMENT_REQUIRED
                     $injector.get("$infoModal").open(rejection.data.message, openDepositPage);
@@ -104,9 +104,17 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                 }
             }
             else{
-                if (rejection.status !== 403) { //FORBIDDEN
-                    $injector.get("$infoModal").open("發生未知錯誤")
+                if(rejection.status === 500){
+                    $injector.get("$infoModal").open("主機更新中，請稍候再試")
                 }
+                else if(rejection.status === 403){
+
+                }
+                else{
+                    $injector.get("$infoModal").open(rejection.data.message)
+                }
+
+
 
             }
 

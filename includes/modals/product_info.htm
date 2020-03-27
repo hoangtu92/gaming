@@ -9,14 +9,14 @@
                 <data-thumbnail-slider id="thumbnail-slider" data-options="defaultOptions" style="float:left;">
                     <div class="inner">
                         <ul>
-                            <li thumbnail-slider-item ng-repeat="image in currentProduct.images"> <a class="thumb" ng-href="{{path['product']}}{{image.src}}"></a> </li>
+                            <li thumbnail-slider-item ng-repeat="image in currentProduct.images"> <a class="thumb" ng-href="{{path['product']}}{{image}}"></a> </li>
                         </ul>
                     </div>
                 </data-thumbnail-slider>
                 <data-image-slider id="ninja-slider" data-options="nsOptions" style="float:left;">
                     <div class="slider-inner">
                         <ul>
-                            <li image-slider-item ng-repeat="image in currentProduct.images"><a class="ns-img" ng-href="{{path['product']}}{{image.src}}"></a></li>
+                            <li image-slider-item ng-repeat="image in currentProduct.images"><a class="ns-img" ng-href="{{path['product']}}{{image}}"></a></li>
                         </ul>
                     </div>
                 </data-image-slider>

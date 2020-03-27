@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
-                        <h3>{{item.price}}</h3>
+                        <h3>{{item.price.formatPrice()}}</h3>
                         <button class="pinkbtn" ng-click="setCurrentPool(item); openModal('card_pool_buy')"><img
                                 src="/assets/images/button01.png"/></button> <!-- Modal -->
 
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
-                        <h3>{{item.limitedTimePrice}}</h3>
+                        <h3>{{item.limitedTimePrice.formatPrice()}}</h3>
                         <button class="pinkbtn" ng-click="setCurrentCard(item); openModal('card_buy')"><img
                                 src="/assets/images/button01.png"/></button> <!-- Modal -->
 

@@ -17,7 +17,7 @@
                     <div class="shadow">
                         <div class="listbox" uib-popover="{{prize.notes}}" popover-trigger="'mouseenter'">
                             <img ng-src="{{'/assets/images/coinicon-02.png'}}">
-                            <div class="price"><span>{{prize.amount}}</span>
+                            <div class="price"><span>{{prize.amount.formatPrice()}}</span>
                             </div>
                             <div class="boxcheck">
                                 <label class="pkcheckbox">

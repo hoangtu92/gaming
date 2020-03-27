@@ -11,8 +11,8 @@
                     <tr ng-repeat="item in credits">
                         <td>{{item.dateTime.toDate().toLocaleString()}}</td>
                         <td>
-                            <span ng-if="item.amount >= 0">+{{item.amount}} G幣</span>
-                            <strong ng-if="item.amount < 0">{{item.amount}} G幣</strong>
+                            <span ng-if="item.amount >= 0">+{{item.amount.formatPrice()}} G幣</span>
+                            <strong ng-if="item.amount < 0">{{item.amount.formatPrice()}} G幣</strong>
                         </td>
                         <td>{{item.notes}}</td>
                     </tr>

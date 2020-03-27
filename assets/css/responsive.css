@@ -1,137 +1,660 @@
 @media (min-width: 1400px) {
-
 }
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
-
-
 }
-
-
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
+    .uniformbox_inner .coinbtn {
+        position: unset;
+        width: 100%;
+        padding: 25px 0px;
+    }
 
-    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
-    .uniform_boxes ul li { min-height: 315px;}
-    .uniformbox_inner { min-height: 315px;}
-    ul.gamelist_inner li .listbox { padding: 15px;}
-    .uniformsister { height: auto;}
-    body.uniform_maingame { overflow: unset;}
-    section.uniformsister-02 { height: 100vh;}
-    button.prpulbtn img { max-width: 140px;}
-    button.prpulbtn h3 { top: 2px; font-size: 18px;}
-    .jointsbotm_btn h3.txt01 { left: 19%;}
+    .uniform_boxes ul li {
+        min-height: 315px;
+    }
 
+    .uniformbox_inner {
+        min-height: 315px;
+    }
+
+    ul.gamelist_inner li .listbox {
+        padding: 15px;
+    }
+
+    .uniformsister {
+        height: auto;
+    }
+
+    body.uniform_maingame {
+        overflow: unset;
+    }
+
+    section.uniformsister-02 {
+        height: 100vh;
+    }
+
+    button.prpulbtn img {
+        max-width: 140px;
+    }
+
+    button.prpulbtn h3 {
+        top: 2px;
+        font-size: 18px;
+    }
+
+    .jointsbotm_btn h3.txt01 {
+        left: 19%;
+    }
 }
-
 
 /* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
+@media all  and (max-width: 991px) {
+    .uniform_boxes ul li {
+        min-height: 415px;
+    }
 
-    .uniform_boxes ul li { min-height: 415px;}
-    .uniformbox_inner { min-height: 415px;}
-    .uniformbox_inner .bookname { width: 100%;}
-    .uniformbox_inner .bookname h2 { margin-top: 5px;}
-    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
-    .uniformsister {/* height: auto; */}
-    ul.gamelist_inner li {/* width: 33.33%; *//* padding: 15px; */}
-    .img_inner { padding: 26px 25px;}
-    body.uniform_maingame { overflow: unset;}
-    section.uniformsister-02 { height: 100vh;}
-    .mark180 ul li img { max-width: 32px;}
-    .yellowshed .pull-left.text-right { bottom: 78px;}
-    .topstart_block h1 { font-size: 25px;}
-    .topstart_block h2 { font-size: 20px;}
-    .toprate_block img.girlimg { max-width: 145px;}
-    .yellowshed .pull-left.text-right h1.ratetxt { font-size: 20px;}
-    .markchina h2 { font-size: 23px;}
-    .markchina span.bigsign img { max-width: 90px;}
-    ul.usernmber_list li p { font-size: 16px;}
-    ul.usernmber_list li h1 { font-size: 25px;}
-    .circleimgs_botm .nmbrten { bottom: -5px; right: -5px;}
-    button.prpulbtn img { max-width: 100px;}
-    button.prpulbtn h3 { top: -5px; font-size: 13px;}
-    .jointsbotm_btn h3.txt01 { left: 15%; top: 32px;}
-    .jointsbotm_btn h3.txt02 { top: 31px;}
-    .infowith_pinkbg h1 { font-size: 30px;}
-    .infowith_pinkbg { padding: 10px 20px;}
-    .uniformvedio_section { margin-top: -35px;}
-    .infowith_pinkbg { margin-top: 8%;}
-    .booksthree_btn { width: 58%;}
+    .uniformbox_inner {
+        min-height: 415px;
+    }
 
+    .uniformbox_inner .bookname {
+        width: 100%;
+    }
 
+    .uniformbox_inner .bookname h2 {
+        margin-top: 5px;
+    }
 
+    .uniformbox_inner .coinbtn {
+        position: unset;
+        width: 100%;
+        padding: 25px 0px;
+    }
+
+    .uniformsister {
+        /* height: auto; */
+    }
+
+    ul.gamelist_inner li {
+        /* width: 33.33%; */
+        /* padding: 15px; */
+    }
+
+    .img_inner {
+        /* padding: 26px 25px; */
+    }
+
+    body.uniform_maingame {
+        overflow: unset;
+    }
+
+    section.uniformsister-02 {
+        height: 100vh;
+    }
+
+    .mark180 ul li img {
+        max-width: 32px;
+    }
+
+    .yellowshed .pull-left.text-right {
+        bottom: 78px;
+    }
+
+    .topstart_block h1 {
+        font-size: 25px;
+    }
+
+    .topstart_block h2 {
+        font-size: 20px;
+    }
+
+    .toprate_block img.girlimg {
+        max-width: 145px;
+    }
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
+        font-size: 20px;
+    }
+
+    .markchina h2 {
+        font-size: 23px;
+    }
+
+    .markchina span.bigsign img {
+        max-width: 70px;
+    }
+
+    ul.usernmber_list li p {
+        font-size: 16px;
+    }
+
+    ul.usernmber_list li h1 {
+        font-size: 25px;
+    }
+
+    .circleimgs_botm .nmbrten {
+        bottom: -5px;
+        right: -5px;
+    }
+
+    button.prpulbtn img {
+        max-width: 100px;
+    }
+
+    button.prpulbtn h3 {
+        top: -5px;
+        font-size: 13px;
+    }
+
+    .jointsbotm_btn h3.txt01 {
+        left: 15%;
+        top: 32px;
+    }
+
+    .jointsbotm_btn h3.txt02 {
+        top: 31px;
+    }
+
+    .infowith_pinkbg h1 {
+        font-size: 30px;
+    }
+
+    .infowith_pinkbg {
+        padding: 10px 20px;
+    }
+
+    .uniformvedio_section {
+        margin-top: -35px;
+    }
+
+    .infowith_pinkbg {
+        margin-top: 8%;
+    }
+
+    .booksthree_btn {
+        width: 58%;
+    }
 }
-
-
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
+    .uniform_boxes ul li {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-    .uniform_boxes ul li { width: 100%; margin-bottom: 20px;}
-    .uniformbox_inner .imgg { max-width: 100%;}
-    .uniform_boxes ul li img { padding-bottom: 10px;}
-    .uniformbox_inner .bookname h2 { margin-top: 5px;}
-    .uniformbox_inner .coinbtn { position: unset; width: 100%; padding: 25px 0px;}
-    .uniformsister { height: 100%;}
-    ul.gamelist_inner li {/* width: 50%; */text-align: center;/* padding: 10px 15px; */min-height: 280px;}
-    ul.gameseries li { width: 50%;}
-    .img_inner { padding: 22px 25px;}
-    .top_sec_one { display: inline-block;}
-    .box-011 { display: inline-block;}
-    .gametable_block .col-md-4.col-sm-4 { border-left: 0; box-shadow: none;}
-    body.uniform_maingame { overflow: auto;}
-    .infowith_pinkbg { padding: 15px; margin-bottom: 15px;}
-    .vedio_slider .nowplay { width: 30%;}
-    .infowith_pinkbg h1 { font-size: 32px;}
-    .booksthree_btn { width: 100%;}
-    .booksthree_btn button.bookbtn { margin: 0px 0px 8px 5px; padding: 6px 15px;}
-    .list_ratings button.bookbtn { padding: 0 5px;}
-    .list_ratings h2 { font-size: 23px;}
-    .list_ratings ul li button.rate { padding: 3px 7px; font-size: 14px;}
-    .list_ratings { text-align: center;}
+    .uniformbox_inner .imgg {
+        max-width: 100%;
+    }
+
+    .uniform_boxes ul li img {
+        padding-bottom: 10px;
+    }
+
+    .uniformbox_inner .bookname h2 {
+        margin-top: 5px;
+    }
+
+    .uniformbox_inner .coinbtn {
+        position: unset;
+        width: 100%;
+        padding: 25px 0px;
+    }
+
+    .uniformsister {
+        height: 100%;
+    }
+
+    ul.gamelist_inner li {
+        /* width: 50%; */
+        text-align: center;
+        /* padding: 10px 15px; */
+        min-height: 280px;
+    }
+
+    ul.gameseries li {
+        width: 50%;
+    }
+
+    .img_inner {
+        /* padding: 22px 25px; */
+    }
+
+    .top_sec_one {
+        display: inline-block;
+    }
+
+    .box-011 {
+        display: inline-block;
+    }
+
+    .gametable_block .col-md-4.col-sm-4 {
+        border-left: 0;
+        box-shadow: none;
+    }
+
+    body.uniform_maingame {
+        overflow: auto;
+    }
+
+    .infowith_pinkbg {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .vedio_slider .nowplay {
+        width: 30%;
+    }
+
+    .infowith_pinkbg h1 {
+        font-size: 32px;
+    }
+
+    .booksthree_btn {
+        width: 100%;
+    }
+
+    .booksthree_btn button.bookbtn {
+        margin: 0px 0px 8px 5px;
+        padding: 6px 15px;
+    }
+
+    .list_ratings button.bookbtn {
+        padding: 0 5px;
+    }
+
+    .list_ratings h2 {
+        font-size: 23px;
+    }
+
+    .list_ratings ul li button.rate {
+        padding: 3px 7px;
+        font-size: 14px;
+    }
+
+    .list_ratings {
+        text-align: center;
+    }
+
     .vedio .vedioicon img {
         max-width: 65px;
     }
-
-
-
-
 }
 
+@media (max-width: 479px) {
+    ul.gamelist_inner li {
+        width: auto;
+        padding: 10px 0px;
+    }
 
+    .img_inner {
+        padding: 40px 25px;
+    }
 
-@media (max-width: 479px){
-
-    ul.gamelist_inner li {width: auto;padding: 10px 0px;}
-    .img_inner { padding: 40px 25px;}
-    .vedio_slider .nowplay { width: 40%;}
-
-
-
+    .vedio_slider .nowplay {
+        width: 40%;
+    }
 }
 
-
-@media (max-width: 810px) {
-
-
-
-
-
+@media all and (max-width: 1920px) {
 }
 
+@media (max-width: 1440px) {
+    .gametableinner {
+        padding-top:30px
+    }
 
+    ul.diseboxs_list li img {
+        padding: 20px 12px;
+    }
 
+    ul.usernmber_list li p {
+        margin-bottom: 15px;
+    }
+}
 
+@media (max-width: 1024px) {
+    .mark180 ul li img {
+        max-width: 43px;
+    }
 
+    .mark180 ul li {
+    }
 
+    .toprate_block img.girlimg {
+        max-width: 140px;
+        height: auto;
+        min-height: initial;
+    }
 
+    .yellowshed .pull-left.text-right {
+        width: calc(100% - 130px);
+        bottom: -9px;
+    }
 
+    .topstart_block h1 {
+        margin-top: 15px !important;
+    }
 
+    .gametableinner {
+        padding-top: 70px;
+    }
+}
 
+@media (max-width: 992px) {
+    .welcome-mid-left-girl-img img.girl-img {
+        max-width: 270px !important;
+        position: fixed;
+        z-index: 0 !important;
+        left: initial;
+        top: 40px;
+        right: 35%;
+    }
 
+    .logo-section img {
+        max-height: 65px;
+    }
 
+    .welcome-left-author-sec {
+        top: 0px;
+    }
 
+    .header-top-left-menu ul li a {
+        font-size: 1.4rem;
+    }
 
+    .welcome-bottom-inner {
+        width: 339px;
+        float: left;
+        padding-top: 0;
+        margin-bottom: -115px;
+    }
+
+    .welcome-mid-right-sec {
+        width: 329px;
+        float: none;
+        left: initial;
+        top: 142px;
+        right: 0;
+        position: fixed;
+        padding: 15px;
+    }
+
+    span.img-sec {
+        width: 43px;
+        height: 43px;
+        top: 0;
+        left: 10px;
+        border: none;
+    }
+
+    span.price-icon img {
+        max-width: 25px;
+    }
+
+    span.img-sec img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .welcome-left-author-data-sec h3 {
+        font-size: 1.8rem;
+    }
+
+    span.price-icon h5 {
+        font-size: 1.8rem;
+        padding-left: 34px;
+        line-height: 27px;
+    }
+
+    .welcome-left-author-data-sec {
+        width: 220px;
+        min-width: initial;
+        left: -33px;
+    }
+
+    .welcome-mid-left-sec {
+        float: none;
+    }
+
+    .right-author-chat-icon {
+        bottom: 25px;
+        position: fixed;
+        left: 50%;
+        top: initial;
+        width: 220px;
+    }
+
+    .menu-side-nav {
+        position: absolute;
+        right: 0;
+        z-index: 999999;
+    }
+
+    .header-top-left-menu {
+        margin-left: -55px;
+    }
+
+    .welcome-mid-right-top-right {
+        width: calc(100% - 155px);
+        margin-left: 0;
+    }
+
+    .welcome-mid-right-top-left li h3 {
+        font-size: 1.3rem;
+    }
+
+    .welcome-mid-right-top-left {
+        width: 149px;
+    }
+
+    .welcome-mid-right-bottom-sec {
+        bottom: 0;
+        position: fixed;
+        right: 0;
+        z-index: 999999999;
+        top: 50%;
+        left: initial;
+    }
+
+    .right-cstm-btn-circle {
+        bottom: 0;
+        z-index: 9999;
+    }
+
+    .welcome-mid-right-bottom-left {
+        position: absolute;
+        right: 0;
+        bottom: 8px;
+    }
+
+    .progress-level {
+        height: 20px;
+    }
+
+    .progress-level .progress-level-outer, .progress-level .progress-level-inner {
+    }
+
+    .progress-level .progress-level-inner {
+    }
+
+    .progress-level .progress-level-outer {
+    }
+
+    .progress-level h6 {
+        font-size: 1.5rem;
+        line-height: 100%;
+    }
+
+    .welcome-mid-right-top-left ul li {
+        margin-bottom: 7px;
+    }
+
+    .wel-mid-right-top-right-innr {
+        height: auto;
+        max-height: 83px;
+        font-size: 1.5rem;
+    }
+
+    .welcome-bottom-inner-btn {
+        top: -45px;
+        right: initial;
+        left: 27px;
+    }
+
+    .slider-item-inner h4 {
+        font-size: 1.3rem;
+        padding: 7px;
+    }
+
+    .slider-item-inner .slidertxt-bar {
+        margin-bottom: 36px;
+    }
+
+    .welcome-bottom-sec .container {
+        max-width: 100%;
+        width: 97%;
+    }
+
+    .welcome-bottom-inner-btn a img {
+        width: 90px;
+        max-height: initial;
+    }
+
+    body.page-dashboard {
+        overflow: hidden;
+    }
+
+    .mark180 ul li img{
+        max-width: 30px;
+    }
+    .game-statistic{
+        display: none;
+    }
+    section.uniformsister-02 .uniformheader img{
+        max-width: 150px;
+    }
+
+    .mark180 ul li{
+        padding: 10px 8px;
+    }
+
+    ul.diseboxs_list li img{
+        max-width: 44px;
+        padding: 10px 12px;
+    }
+    ul.usernmber_list li h1{
+        font-size: 1.3rem;
+        padding: 7px 0;
+    }
+    ul.usernmber_list li p{
+        font-size: 1.3rem;
+        margin-bottom: 7px;
+    }
+    .topstart_block{
+        padding: 10px;
+        flex-basis: initial;
+    }
+    .toprate_block img.girlimg{
+        max-width: 120px;
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        height: 82px;
+        margin-top: 0;
+        object-position: top;
+    }
+    .totalpoints h3{
+        font-size: 1.3rem;
+        padding: 6px;
+    }
+    .mark180 ul li h2{
+        font-size: 2rem;
+        margin: 5px;
+    }
+    .markchina span.bigsign img{
+        max-width: 40px;
+    }
+    .markchina h2{
+        font-size: 2rem;
+    }
+    .markchina{
+        margin-top: 50px;
+    }
+    .toprate_block{
+        width: 100%;
+        height: 83px;
+        overflow: hidden;
+    }
+    .yellowshed .pull-left.text-right{
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        text-align: left;
+    }
+    .progress-container{
+        width: 100%;
+    }
+    .yellowshed .pull-left.text-right h1.ratetxt{
+        margin: 2px;
+    }
+
+    .yellowshed .pull-left.text-right h4{
+        display: none;
+    }
+    section.uniformsister-02 .uniformheader{
+        width: auto;
+        right: 0;
+        left: initial;
+    }
+
+    .yellowshed .pull-right{
+        position: relative;
+        z-index: 9999;
+    }
+    .yellowshed .golimg{
+        max-width: 50px;
+    }
+    .yellowshed .golimg h1{
+        font-size: 1rem;
+        padding: 14px;
+        text-align: center;
+    }
+    .bet-unit{
+        width: 50px;
+        height:  50px;
+        font-size: 1.6rem;
+    }
+    .gametableinner{
+        padding-top: 60px;
+    }
+    .gamelastpoint{
+        flex-basis: 16%;
+    }
+    .gamelastpoint button{
+        width: 80px;
+        margin-left: 10px;
+    }
+    .start-btn{width: 130px;padding-bottom: 34px;}
+    .reset-btn{
+        width: 128px;
+        font-size: 2rem;
+        padding-bottom: 42px;
+    }
+    .jointsbotm_btn h3.txt01{
+        font-size: 2rem;
+    }
+    .jointsbotm_btn{
+        margin-top: 33px;
+    }
+    .redvlack_circle{
+        max-width:40px
+    }
+    .redvlack_circle .text {
+        font-size: 1.3rem;
+    }
+}

@@ -2,11 +2,11 @@
     <p id="orientation-status"></p>
     <div class="reward-collection-header">
         <div class="reward-collection-header-left-sec"><a href="#!mall"><img
-                src="/assets/images/img-check-circle.png"/> 客服 </a></div>
+                src="/assets/images/img-check-circle.png"/> 購物車 </a></div>
     </div>
 
     <div class="container checkout">
-        <form ng-submit="placeOrder()" class="customer-service-form order-form">
+        <form ng-submit="placeOrder()" novalidate name="checkoutForm" class="customer-service-form order-form">
             <div class="row">
                 <div class="col-xs-12 col-md-7 col-lg-8 checkout-left">
                     <h2>收件地址</h2>
@@ -14,14 +14,16 @@
                     <div class="form-row">
                         <p class="form-group">
                             <label>
-                                <input type="text" ng-model="order.name" placeholder="姓名" class="form-control">
+                                <input type="text" ng-required="true" name="customerName" ng-model="order.name" placeholder="姓名" class="form-control">
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.customerName.$invalid">請填寫必填欄位</span>
                             </label>
                         </p>
                         <p class="form-group">
                             <label>
-                                <select required="required" ng-init="getCountries()" ng-options="n for n in countries" ng-model="order.country" readonly disabled class="form-control">
+                                <select required="required" name="country" ng-init="getCountries()" ng-options="n for n in countries" ng-model="order.country" readonly disabled class="form-control">
                                     <option value="">國家</option>
                                 </select>
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.country.$invalid">請填寫必填欄位</span>
                             </label>
                         </p>
                     </div>
@@ -29,12 +31,14 @@
                     <div class="form-row">
                         <p class="form-group">
                             <label>
-                                <input type="text" ng-model="order.address" placeholder="地址" class="form-control">
+                                <input type="text" ng-required="true" ng-model="order.address" name="address" placeholder="地址" class="form-control">
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.address.$invalid">請填寫必填欄位</span>
                             </label>
                         </p>
                         <p class="form-group">
                             <label>
-                                <input type="text" ng-model="order.zipCode" placeholder="郵遞區號" class="form-control">
+                                <input type="text"  ng-required="true" ng-model="order.zipCode" maxlength="10"  name="zipCode" placeholder="郵遞區號" class="form-control">
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.zipCode.$invalid">請填寫必填欄位</span>
                             </label>
                         </p>
                     </div>
@@ -42,12 +46,16 @@
                     <div class="form-row">
                         <p class="form-group">
                             <label>
-                                <input type="text" ng-model="order.phone" placeholder="電話(*)" class="form-control">
+                                <input type="text"  ng-required="true" ng-model="order.phone" name="phone" placeholder="電話(*)" class="form-control">
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.phone.$invalid">請填寫必填欄位</span>
+
                             </label>
                         </p>
                         <p class="form-group">
                             <label>
-                                <input type="text" ng-model="order.email" placeholder="Email" class="form-control">
+                                <input type="email" ng-required="true" ng-model="order.email" name="email" placeholder="Email" class="form-control">
+                                <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.email.$invalid">請填寫必填欄位</span>
+
                             </label>
                         </p>
                     </div>

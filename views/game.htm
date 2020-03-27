@@ -20,9 +20,9 @@
             <div class="gametable_block">
                 <div class="gametable_block_inner">
                     <div class="top_sec_one">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-xs-4 col-md-4 col-sm-4">
                             <div class="box-011">
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-xs-6 col-md-6 col-sm-6">
                                     <div class="markchina bet-area" data-bet="big">
                                         <h2>豹子通殺</h2>
                                         <span class="bigsign"><img src="/assets/images/sign01.png"></span>
@@ -30,7 +30,7 @@
                                         <h2 ng-class="{'boost-up' : gaming.effects.INCREASE_BIG_RATE}"></h2>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-xs-6 col-md-6 col-sm-6">
                                     <div class="mark180">
                                         <ul class="list-unstyled">
                                             <li><h2>賠{{ratio.exact_triple_dice}}</h2></li>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 flex flex-column">
+                        <div class="col-xs-4 col-md-4 col-sm-4 flex flex-column">
                             <div class="toprate_block">
                                 <img class="girlimg"
                                      ng-src="{{path['role_image']}}{{currentRole.cover}}">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="topstart_block flex-basis-100 bet-area" data-bet="any_triple">
-                                <div class="col-md-4 col-sm-4">
+                                <div class="col-xs-4 col-md-4 col-sm-4">
                                     <ul class="list-unstyled">
                                         <li><img src="/assets/images/fourred_box.png"></li>
                                         <li><img src="/assets/images/fourred_box.png"></li>
@@ -94,11 +94,11 @@
                                         <li><img src="/assets/images/sixblack_box.png"></li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4 col-sm-4">
+                                <div class="col-xs-4 col-md-4 col-sm-4">
                                     <h1 style="margin-top: 60px;">全圍</h1>
                                     <h2>1賠{{ratio.any_triple_dice}}</h2>
                                 </div>
-                                <div class="col-md-4 col-sm-4">
+                                <div class="col-xs-4 col-md-4 col-sm-4">
                                     <ul class="list-unstyled">
                                         <li><img src="/assets/images/onered_box.png"></li>
                                         <li><img src="/assets/images/onered_box.png"></li>
@@ -113,9 +113,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-xs-4 col-md-4 col-sm-4">
                             <div class="box-011">
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-xs-6 col-md-6 col-sm-6">
                                     <div class="mark180">
                                         <ul class="list-unstyled">
                                             <li><h2>賠{{ratio.exact_triple_dice}}</h2></li>
@@ -137,7 +137,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-xs-6 col-md-6 col-sm-6">
                                     <div class="markchina bet-area" data-bet="small">
                                         <h2>豹子通殺</h2>
                                         <span class="bigsign"><img src="/assets/images/sign02.png"></span>
@@ -187,13 +187,13 @@
                     </ul>
 
                     <div class="totalpoints">
-                        <div class="col-md-4 col-sm-4 text-center single_dice">
+                        <div class="col-xs-4 col-md-4 col-sm-4 text-center single_dice">
                             <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_SINGE_DICE_RATE}">單骰 1賠{{ratio.single_dice}}</h3>
                         </div>
-                        <div class="col-md-4 col-sm-4 text-center double_dice">
+                        <div class="col-xs-4 col-md-4 col-sm-4 text-center double_dice">
                             <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_DOUBLE_DICE_RATE}">雙骰 1賠{{ratio.double_dice}}</h3>
                         </div>
-                        <div class="col-md-4 col-sm-4 text-center triple_dice">
+                        <div class="col-xs-4 col-md-4 col-sm-4 text-center triple_dice">
                             <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_TRIPLE_DICE_RATE}">圍骰 1賠{{ratio.triple_dice}}</h3>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
             <div class="gamelastpoint">
                 <div class="">
                     <button ng-click="applySavedBets()" class="prpulbtn">
-                    <h3>使用記憶組合</h3>
+                    <h3>重複下注</h3>
                 </button>
                     <button class="prpulbtn" ng-click="saveBet()">
                         <h3>記憶目前組合</h3>
@@ -253,6 +253,17 @@
                 <img ng-src="{{dices[gaming.dice.dice_2]}}">
                 <img ng-src="{{dices[gaming.dice.dice_3]}}">
             </div>
+        </div>
+
+        <div class="debug-card" style="position: fixed;
+    top: 1px;
+    right: 185px;
+    background: #10101073;">
+            <ul style="list-style: none;
+    text-align: left;
+    font-size: 12px;">
+                <li ng-repeat="item in $parent.inUsedCardlevels">{{item.cardName}}/{{item.effectName}}: {{item.value}}%</li>
+            </ul>
         </div>
 
 

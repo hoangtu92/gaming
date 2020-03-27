@@ -17,7 +17,7 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img style="width: auto; height: 100vh" ng-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
                         <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
                         <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">

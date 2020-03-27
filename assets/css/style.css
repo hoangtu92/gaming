@@ -810,7 +810,7 @@ section.uniformsister-02 {
 
 .gametable_blocktop {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     max-width: 95%;
     display: flex;
     margin: auto;

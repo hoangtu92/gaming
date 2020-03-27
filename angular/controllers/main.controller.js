@@ -128,7 +128,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             animation: true,
             ariaLabelledBy: 'modal-title-top',
             ariaDescribedBy: 'modal-body-top',
-            templateUrl: 'includes/modals/' + modal + '.htm',
+            templateUrl: 'includes/modals/' + modal + '.htm?ver=' + localStorage.version,
             backdropClass: modal + '_overlay',
             windowClass: modal + " " + className,
             size: 'lg',
@@ -193,8 +193,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }, function (res) {
             if (res.data.status === 403) {
                 $infoModal.open("帳號或密碼錯誤，請重新輸入")
-            } else {
-                $infoModal.open("此帳號尚未註冊，請先註冊");
             }
         });
 
@@ -212,6 +210,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
                 if (res.data.status) {
                     $scope.modal["cell_register"].close();
+                    $scope.user = res.data.model;
                     $scope.openModal("verify_user")
                 }
             });
@@ -221,9 +220,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     };
     $scope.verifyUser = function () {
-        var username = $scope.user.phone === null ? $scope.user.email : $scope.user.phone;
         $http.post(localStorage.base_api + "user/verify", JSON.stringify({
-            username: username,
+            uid: $scope.user.uid,
             code: $scope.user.code
         })).then(function () {
             $infoModal.open("驗證成功，請登錄以繼續", function () {
@@ -235,8 +233,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.mailSignUp = function () {
         $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
             $scope.modal["mail_register"].close();
-            $infoModal.open("Email驗證信已送出，請確認信箱")
+            $scope.user = res.data.model;
         });
+
+        $infoModal.open("Email驗證信已送出，請確認信箱")
     };
     $scope.retryInterval = 0;
     $scope.resendSMS = function () {
@@ -257,7 +257,13 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.requestForgetPWCode = function () {
         $http.get(localStorage.base_api + "user/requestForgetPWCode", {params: {u: $scope.user.username}}).then(function (value) {
-            $scope.openModal("change_password")
+            if(value.data.message === "phone"){
+                $scope.user.uid = value.data.model.uid;
+                $scope.openModal("change_password")
+            }
+            else{
+                $infoModal.open("請至您的 mail 信箱收件並點選連結即可重設密碼");
+            }
         });
     };
 
@@ -277,6 +283,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.logout = function () {
         delete (localStorage.session_token);
+        localStorage.showWelcome = '1';
         $location.url("login");
     };
 
@@ -323,9 +330,37 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
      * Role
      */
 
-    $scope.filter = {};
+    $scope.request = {
+        order: "latest",
+        filter: "all"
+    };
     $scope.getListRoles = function () {
         $scope.$broadcast("before_load_item");
+        $scope.filter = {};
+        switch($scope.request.filter){
+            case "userStarted":
+                $scope.filter.userStarted = true;
+                break;
+            case "userNotStarted":
+                $scope.filter.userNotStarted = true;
+                break;
+            default:
+                $scope.filter.all = true;
+                break;
+        }
+
+        switch($scope.request.order){
+            case "hottest":
+                $scope.filter.hottest = true;
+                break;
+            case "oldest":
+                $scope.filter.oldest = true;
+                break;
+            default:
+                $scope.filter.latest = true;
+                break;
+        }
+
         $http.post(localStorage.base_api + "role/filter", JSON.stringify($scope.filter)).then(function (res) {
             $scope.$broadcast("after_load_item", res.data);
             $scope.items = res.data;
@@ -518,7 +553,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function (res) {
             $scope.modal['enter_game'].close();
             $scope.$broadcast("ticketObtained", res.data);
-        }).finally(function () {
+
             $scope.openModal('card_select', 'fullwidth')
         })
     };
@@ -610,9 +645,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     //Close the game when user close tab
     window.addEventListener('beforeunload', function (e) {
-
         $scope.$broadcast("close_window", e);
-
+        localStorage.showWelcome = '1';
     });
 
     var loadingProgress;

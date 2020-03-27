@@ -12,21 +12,21 @@
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.all" type="checkbox" checked="checked" class="">
+                                <input ng-model="request.filter" value="all" name="filter" type="radio" checked="checked" class="">
                                 <span class="checkmark"></span> 全部角色</label>
                         </div>
                     </li>
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.userStarted" type="checkbox" class="">
+                                <input ng-model="request.filter" value="userStarted" name="filter" type="radio" class="">
                                 <span class="checkmark"></span> 已開局</label>
                         </div>
                     </li>
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.userNotStarted" type="checkbox" class="">
+                                <input ng-model="request.filter" value="userNotStarted" name="filter" type="radio" class="">
                                 <span class="checkmark"></span> 未開局</label>
                         </div>
                     </li>
@@ -35,21 +35,21 @@
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.latest" type="checkbox" checked="checked" class="">
+                                <input ng-model="request.order" value="latest" name="order" type="radio" checked="checked" class="">
                                 <span class="checkmark"></span> 新到舊</label>
                         </div>
                     </li>
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.oldest" type="checkbox" class="">
+                                <input ng-model="request.order" value="oldest" name="order" type="radio" class="">
                                 <span class="checkmark"></span> 舊到新</label>
                         </div>
                     </li>
                     <li>
                         <div class="form-group-cstm">
                             <label>
-                                <input ng-model="filter.hottest" type="checkbox" class="">
+                                <input ng-model="request.order" value="hottest" name="order" type="radio" class="">
                                 <span class="checkmark"></span> 熱門</label>
                         </div>
                     </li>

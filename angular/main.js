@@ -39,7 +39,7 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     this.getConfig = function () {
         var q = $q.defer();
-        $http.get('config.json').then(function (res) {
+        $http.get('config.json?ver=' + localStorage.version).then(function (res) {
             q.resolve(res.data)
         }, function (reason) {
             q.reject(reason)
