@@ -1,4 +1,4 @@
-gamingApp.controller("mainController", function ($window, $rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, ConfigService, $timeout) {
+gamingApp.controller("mainController", function ($window, $rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, $uibModalStack, ConfigService, $timeout) {
 
     $rootScope.route = $route;
 
@@ -118,9 +118,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.modal = {};
     $scope.user = {};
 
-    $scope.openModal = function (modal, className) {
+    $scope.openModal = function (modal, className, size) {
 
         if (typeof className === "undefined") className = "";
+        if (typeof size === "undefined") size = "lg";
 
         if (typeof modal === 'undefined') return false;
 
@@ -131,7 +132,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             templateUrl: 'includes/modals/' + modal + '.htm?ver=' + localStorage.version,
             backdropClass: modal + '_overlay',
             windowClass: modal + " " + className,
-            size: 'lg',
+            size: size,
             scope: $scope
         });
 
@@ -143,6 +144,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     };
 
+    $scope.closeModal = function(){
+        $uibModalStack.dismissAll();
+    }
     $scope.goto = function (url) {
         $location.url(url);
     };
@@ -211,7 +215,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 if (res.data.status) {
                     $scope.modal["cell_register"].close();
                     $scope.user = res.data.model;
-                    $scope.openModal("verify_user")
+                    $scope.openModal("verify_user", "", "md")
                 }
             });
         } else {
@@ -473,7 +477,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         })
     };
 
-    $scope.getListUserCards = function (level) {
+    $scope.getListUserCards = function (level, cb) {
 
         $scope.currentFilter = level;
 
@@ -483,6 +487,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }).then(function (res) {
             $scope.levels = res.data.model;
+            if(cb) cb();
         });
 
     };
@@ -538,13 +543,33 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.openModal("user_cards")
     };
 
+    $scope.cardConfiguration = function(cb){
+        $scope.getListUserCards(null, function () {
+            if($scope.levels.length > 0)
+                $scope.openModal("card_select", "fullwidth");
+            else{
+                if(cb) cb();
+            }
+        });
+
+    };
+
     $scope.playGame = function(){
         if(!$scope.currentRole.userHasTicket){
             $scope.openModal('enter_game')
         }
         else{
-            $scope.openModal("card_select", "fullwidth");
+            $scope.cardConfiguration(function () {
+                $scope.goto('role-game/' + $scope.currentRole.id);
+            });
         }
+    };
+    $scope.saveAndEnterGame = function(){
+        $infoModal.open("配置成功");
+        $timeout(function () {
+            $scope.goto('role-game/' + $scope.currentRole.id);
+        }, 2000)
+
     };
 
     $scope.enterGame = function () {
@@ -554,7 +579,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.modal['enter_game'].close();
             $scope.$broadcast("ticketObtained", res.data);
 
-            $scope.openModal('card_select', 'fullwidth')
+            $scope.cardConfiguration(function () {
+                $scope.goto('role-game/' + $scope.currentRole.id);
+            });
         })
     };
 
@@ -646,6 +673,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     //Close the game when user close tab
     window.addEventListener('beforeunload', function (e) {
         $scope.$broadcast("close_window", e);
+        //e.preventDefault();
+        //e.returnValue = "";
         localStorage.showWelcome = '1';
     });
 

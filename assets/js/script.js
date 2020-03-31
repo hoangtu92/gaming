@@ -67,11 +67,11 @@ String.prototype.toDate = function () {
 };
 
 String.prototype.formatUnit = function () {
-    return this/1000 + "K";
+    return this >= 10000 ? this/10000 + "萬" : this;
 };
 
 Number.prototype.formatUnit = function () {
-    return this/1000 + "K";
+    return this >= 10000 ? this/10000 + "萬" : this;
 };
 
 Number.prototype.round =function(){

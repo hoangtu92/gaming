@@ -26,7 +26,7 @@
             <div class="scroll-y">
                 <ul ng-init="getListUserCards()" class="gamelist_inner">
                     <li ng-repeat="item in levels">
-                        <button class="listimg" ng-click="getCardLevels(item); openModal('card_detail')"><img
+                        <button class="listimg" ng-click="openCardDetail(item)"><img
                                 ng-src="{{path['card']}}{{item.thumbnail}}"/></button>
                     </li>
                 </ul>

@@ -278,6 +278,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         angular.element(".dices-result-container").hide();
         angular.element(".win").removeClass("win");
         angular.element(".lost").removeClass("lost");
+        $(".gain-point").removeClass("active");
     };
 
     //Select bet amount
@@ -391,6 +392,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
     $scope.initGame = function () {
         $http.get(localStorage.base_api + "game/checkTicket", {params: {roleId: $routeParams.id}}).then(function (res) {
             $scope.gaming = res.data.model;
+            $http.defaults.headers.common['Session-ID'] = $scope.gaming.id;
 
             if(localStorage.showWelcome === '1'){
                 $infoModal.open("親愛的<br>" +
@@ -404,7 +406,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
                 $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
             }
-            $http.defaults.headers.common['Session-ID'] = $scope.gaming.id;
+
             $scope.restoreGame();
         },function (reason) {
             if(reason.status === 423){
@@ -440,6 +442,16 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Exit current game
      */
     $scope.exitGame = function(){
+        $infoModal.open("請愛的<br>" +
+            "你確定要離開，不再陪我玩一下嗎?", function () {
+            $scope.closeModal()
+        } , "再玩一下", function () {
+            $scope.closeSession()
+        }, "確定");
+
+    };
+
+    $scope.closeSession = function(){
         $http.get(localStorage.base_api + "game/closeSession").finally(function () {
             $location.url("dashboard");
         })
@@ -473,6 +485,10 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                     angular.element('[data-bet="'+lost[i]+'"]').addClass("lost");
                     angular.element("." + lost[i]).addClass("lost");
                 }
+            }
+
+            if($scope.gaming.gain > 0){
+                $(".gain-point").addClass("active");
             }
 
             angular.element(".dices-result-container").show();

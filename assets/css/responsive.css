@@ -318,6 +318,15 @@
 }
 
 @media (max-width: 1024px) {
+
+    .card-pools {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .uniform_boxes ul li, .uniformbox_inner{
+        min-height: initial;
+    }
+
     .mark180 ul li img {
         max-width: 43px;
     }

@@ -2,10 +2,10 @@
     <div class="uniformheader text-right hover-button" style="display: inline-block">
 
         <div class="game-statistic">
-            <h4>本局押注: {{gaming.total.formatPrice()}}</h4>
-            <h4>贏: {{gaming.gain.formatPrice()}}</h4>
-            <h4>輸: {{gaming.loss.formatPrice()}}</h4>
-            <h4>剩餘籌碼: {{gaming.availableBet.formatPrice()}}</h4>
+            <h4>本局押注: <span>{{gaming.total.formatPrice()}}點</span></h4>
+            <h4>贏: <span class="gain-point">{{gaming.gain.formatPrice()}}<span class="effect">{{gaming.gain.formatPrice()}}</span>點</span></h4>
+            <h4>輸: <span>{{gaming.loss.formatPrice()}}點</span></h4>
+            <h4>剩餘籌碼: <span>{{gaming.availableBet.formatPrice()}}點</span></h4>
             <!--<h4>您的G幣: {{gaming.user.credit}}</h4>-->
         </div>
 
@@ -205,9 +205,9 @@
                     <button ng-click="applySavedBets()" class="prpulbtn">
                     <h3>重複下注</h3>
                 </button>
-                    <button class="prpulbtn" ng-click="saveBet()">
+                    <!--<button class="prpulbtn" ng-click="saveBet()">
                         <h3>記憶目前組合</h3>
-                    </button>
+                    </button>-->
                 </div>
                 <div class="flex flex-row flex-space-between flex-center">
 

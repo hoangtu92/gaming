@@ -87,7 +87,8 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                     window.location.href = "/#!login";
                 }
                 if(rejection.status === 500){ //INTERNAL SERVER ERROR
-                    $injector.get("$infoModal").open("主機更新中，請稍候再試")
+                    $injector.get("$infoModal").open("喔~似乎發生了些小狀況!<br>" +
+                        "請重新確認或與客服聯繫")
                 }
                 if(rejection.status === 402){ //PAYMENT_REQUIRED
                     $injector.get("$infoModal").open(rejection.data.message, openDepositPage);
@@ -105,7 +106,8 @@ gamingApp.config(function ($httpProvider, $qProvider) {
             }
             else{
                 if(rejection.status === 500){
-                    $injector.get("$infoModal").open("主機更新中，請稍候再試")
+                    $injector.get("$infoModal").open("喔~似乎發生了些小狀況!<br>" +
+                        "請重新確認或與客服聯繫")
                 }
                 else if(rejection.status === 403){
 

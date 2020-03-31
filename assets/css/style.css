@@ -1071,7 +1071,7 @@ button.prpulbtn {
     align-items: center;
     justify-content: center;
     background: url(/assets/images/puplepivkbtnimg.png);
-    width: 162px;
+    width: 180px;
     height: 65px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1700,7 +1700,7 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 .modal.in .modal-dialog {
-    min-width: 650px;
+    min-width: initial;
 }
 
 @media screen and (min-width: 1400px) {
