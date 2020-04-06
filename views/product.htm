@@ -24,18 +24,21 @@
                     </li>
                 </ul>
             </div>
-            <div class="mall-category-products" ng-init="getProducts()">
-                <div ng-repeat="product in products"
-                     class="gallery_product filter" ng-click="setCurrentProduct(product);">
-                    <a class="mall-product-inner" href="#">
-                        <div class="image-box"><img ng-src="{{path['product']}}{{product.thumbnail}}"
-                                                    class="img-responsive"></div>
-                        <h3 class="product-title">{{product.name}}</h3>
-                        <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{product.price.formatPrice()}}</b></span>
-                        </div>
-                    </a></div>
+            <div class="scroll-y">
+                <div class="mall-category-products" ng-init="getProducts()">
+                    <div ng-repeat="product in products"
+                         class="gallery_product filter" ng-click="setCurrentProduct(product);">
+                        <a class="mall-product-inner" href="#">
+                            <div class="image-box"><img ng-src="{{path['product']}}{{product.thumbnail}}"
+                                                        class="img-responsive"></div>
+                            <h3 class="product-title">{{product.name}}</h3>
+                            <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{product.price.formatPrice()}}</b></span>
+                            </div>
+                        </a></div>
 
+                </div>
             </div>
+
         </div>
     </div>
 

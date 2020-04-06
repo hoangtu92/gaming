@@ -62,7 +62,9 @@
     }
 
     .uniformbox_inner .bookname {
-        width: 100%;
+        /* width: 100%; */
+        padding: 10px;
+        text-align: right;
     }
 
     .uniformbox_inner .bookname h2 {
@@ -665,5 +667,39 @@
     }
     .redvlack_circle .text {
         font-size: 1.3rem;
+    }
+    .list_ratings{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .list_ratings ul li button.rate{
+        padding: 5px 15px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .list_ratings button.bookbtn{
+        padding: 0px 5px;
+    }
+    .list_ratings h2{
+        margin-top: 0
+    }
+
+    .scroll-y{
+        height: auto;
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+    section{
+        padding-bottom: 20px;
+    }
+
+    span.numbers {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0;
     }
 }

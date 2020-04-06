@@ -4,13 +4,21 @@ var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
 
 // _STATUS.innerHTML = screen.orientation.type + ' mode';
 
-// upon lock to landscape-primary mode
-function landScapeMode() {
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
 
-    if (document.documentElement.requestFullscreen) {
-        document.querySelector("#container").requestFullscreen();
-    } else if (document.documentElement.webkitRequestFullScreen) {
-        document.querySelector("#container").webkitRequestFullScreen();
+// upon lock to landscape-primary mode
+
+/* View in fullscreen */
+function landScapeMode() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
     }
 
     screen.orientation.lock("landscape-primary")
@@ -19,9 +27,11 @@ function landScapeMode() {
             // _UNLOCK_BUTTON.style.display = 'block';
         })
         .catch(function (error) {
-            alert(error);
+            //alert(error);
         });
 }
+
+
 
 // upon unlock
 /*document.querySelector("#unlock-button").addEventListener('click', function () {

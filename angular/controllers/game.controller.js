@@ -394,15 +394,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             $scope.gaming = res.data.model;
             $http.defaults.headers.common['Session-ID'] = $scope.gaming.id;
 
-            if(localStorage.showWelcome === '1'){
-                $infoModal.open("親愛的<br>" +
-                    "歡迎回來<br>" +
-                    "今天也要加油<br>" +
-                    "把我脫光喔!")
-            }
-
-            localStorage.showWelcome = '0';
-
             if($scope.gaming.betQuota > $scope.currentRole.maxThreshold){
                 $scope.gaming.betQuota = $scope.currentRole.maxThreshold;
             }

@@ -386,11 +386,15 @@ ul.gamelist_inner {
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 25px;
     margin-top: 30px;
     padding: 0;
     list-style: none;
+}
+
+ul.gamelist_inner.grid-200{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 ul.gamelist_inner img{
@@ -462,7 +466,7 @@ ul.gamelist_inner li a {
     }
 
     .uniformsister ul.gamelist_inner li .listbox {
-        padding: 50px !important;
+        /* padding: 50px !important; */
     }
 
     .reward-collection-outer .customer-service-record h3 {
@@ -474,8 +478,8 @@ ul.gamelist_inner li a {
     }
 
     .uniform_boxes ul li {
-        width: 50%;
-        float: left;
+        /* width: 50%; */
+        /* float: left; */
         padding: 20px 20px;
         position: relative;
     }
@@ -495,7 +499,7 @@ ul.gamelist_inner li a {
     }
 
     .uniformbox_inner .bookname button.bookbtn {
-        font-size: 36px;
+        /* font-size: 36px; */
     }
 
     .uniformbox_inner .coinbtn {

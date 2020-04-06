@@ -1,5 +1,14 @@
 gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout) {
 
+    if(localStorage.showWelcome === '1'){
+        $infoModal.open("親愛的<br>" +
+            "歡迎回來<br>" +
+            "今天也要加油<br>" +
+            "把我脫光喔!")
+    }
+
+    localStorage.showWelcome = '0';
+
     $scope.owlOptions = {
         loop: false,
         margin: 15,

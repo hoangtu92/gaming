@@ -188,8 +188,14 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';
                 $http.defaults.headers.common['Authorization'] = "Bearer " + localStorage.session_token;
 
+                localStorage.showWelcome = '1';
+
                 $timeout(function () {
                     $location.url("dashboard");
+
+                    $timeout(function () {
+                        landScapeMode();
+                    })
                 })
             } else {
                 $infoModal.open("此帳號尚未註冊，請先註冊")
@@ -675,7 +681,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.$broadcast("close_window", e);
         //e.preventDefault();
         //e.returnValue = "";
-        localStorage.showWelcome = '1';
+
     });
 
     var loadingProgress;
