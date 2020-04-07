@@ -393,7 +393,8 @@ span.price-icon h5 {
 .right-author-chat-icon {
 	position: absolute;
 	right: 3%;
-	top: 55%;
+	top: initial;
+	bottom: 38vh;
 }
 
 .right-author-chat-icon img {
@@ -852,9 +853,10 @@ a.btn-registered-link {
 
 .button-group img {
 	max-width: 100%;
-	width: 220px;
+	width: auto;
 	margin: 0 auto;
 	text-align: center;
+	height: 65px;
 }
 
 #mobile-registration-outer label.cstm-label {
@@ -1045,7 +1047,7 @@ input.form-control.cstm-input-one {
 	background: url(../images/login-homepage-bg.jpg) no-repeat left top;
 	background-size: cover;
 	padding: 20px;
-	height: 100vh;
+	height: auto;
 }
 
 .login-home-page-logo-sec {
@@ -1061,6 +1063,7 @@ input.form-control.cstm-input-one {
 	max-width: 700px;
 	text-align: center;
 	margin: 0 auto;
+	max-height: 90vh;
 }
 
 .login-homepage-bottom-sec {
@@ -1374,6 +1377,10 @@ section .modal {
 	border-radius: 20px;
 	padding: 10px;
 	border: 3px solid #ffabf0;
+	max-height: 95vh;
+	max-width: 80vw;
+	margin: 0 auto;
+	position: relative;
 }
 
 .ticket_reply .modal-content {
@@ -2443,6 +2450,7 @@ h3.product-title {
 .modal-header {
 	padding: 0;
 	border: none;
+	position: relative;
 }
 
 .modal-header button.close {
@@ -2457,9 +2465,9 @@ h3.product-title {
 	border-radius: 100%;
 	text-align: center;
 	font-weight: 400;
-	position: fixed;
-	right: 20px;
-	top: 20px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
 	z-index: 99;
 	font-family: sans-serif;
 }
@@ -3604,11 +3612,9 @@ h3.product-title {
 
 	.button-group img {
 		max-width: 120px;
+		height: auto;
 	}
 
-	.login-home-page-logo-sec img {
-		max-height: 60vh;
-	}
 
 	.cstm-container .cstm-column a img {
 		max-width: 150px;
@@ -4330,33 +4336,7 @@ body {
 	transform: scale(0);
 }
 
-.flex {
-	display: flex;
-}
 
-.flex-column {
-	flex-direction: column;
-}
-
-.flex-basis-100 {
-	flex-basis: 100%;
-}
-
-.flex-row {
-	flex-direction: row;
-}
-
-.flex-space-between {
-	justify-content: space-between;
-}
-
-.justify-content-center {
-	justify-content: center;
-}
-
-.flex-center {
-	align-items: center;
-}
 
 body.page-game {
 	position: fixed;
@@ -4501,6 +4481,11 @@ button.btn-newsletter-send-again-link {
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: 0;
+}
+
+button.btn-login-btn{
+	padding: 0;
+	margin: 0;
 }
 
 .modal-footer button {
@@ -4677,8 +4662,8 @@ html {
 }
 
 a.btn {
-	margin-left: 30px;
-	padding: 5px 40px;
+	/* margin-left: 30px; */
+	/* padding: 5px 40px; */
 }
 
 .modal.fade {
@@ -4923,6 +4908,40 @@ body.page-price_plan {
 	text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00;
 	animation: win 1s;
 }
+
+
+.flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-basis-100 {
+	flex-basis: 100%;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-space-between {
+	justify-content: space-between;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-space-evenly{
+	justify-content: space-evenly;
+}
+
+.flex-center {
+	align-items: center;
+}
+
 
 @keyframes win {
 	from {

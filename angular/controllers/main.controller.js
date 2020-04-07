@@ -195,7 +195,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                     $location.url("dashboard");
                     $timeout(function () {
                         landScapeMode();
-                    })
+                    }, 500)
                 })
             } else {
                 $infoModal.open("此帳號尚未註冊，請先註冊")

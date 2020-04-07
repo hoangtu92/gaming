@@ -217,7 +217,7 @@ button {
     background-size: cover;
     border: 2px solid #fff !important;
     width: 100%;
-    display: inline-block;
+    /* display: inline-block; */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.67);
