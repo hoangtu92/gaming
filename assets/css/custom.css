@@ -786,7 +786,7 @@ span.numbers {
 
 .login-welcome-page .form-group label {
 	color: #fff;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 600;
 	margin: 0;
 }
@@ -880,6 +880,7 @@ a.btn-registered-link {
 
 .payment_method_select {
 	width: 100%;
+	color: #FFCC00;
 }
 
 .payment_method_select option {
@@ -4678,7 +4679,7 @@ a.btn {
 }
 
 .modal.in .modal-dialog.modal-xs .modal-body {
-	padding-top: 70px;
+	padding-top: 35px;
 }
 
 .cart-delete-icon {

@@ -27,6 +27,9 @@
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
+    .modal .modal-dialog.modal-xs{
+        min-width: initial;
+    }
 }
 
 @media (min-width: 1366px) {

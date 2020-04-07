@@ -2,7 +2,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $rootScope.route = $route;
 
-
     $scope.nsOptions =
         {
             sliderId: "ninja-slider",
@@ -41,6 +40,16 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             license: "b2e98"
         };
 
+
+    $rootScope.ajaxLoading = false;
+
+    $scope.$on("httpCallStarted", function () {
+        $rootScope.ajaxLoading = true;
+    });
+
+    $scope.$on("httpCallStopped", function () {
+        $rootScope.ajaxLoading = false;
+    });
 
     $scope.$on('$locationChangeStart', function (e, destination, previous) {
 
@@ -244,9 +253,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
             $scope.modal["mail_register"].close();
             $scope.user = res.data.model;
+
+            $infoModal.open("Email驗證信已送出，請確認信箱")
         });
 
-        $infoModal.open("Email驗證信已送出，請確認信箱")
     };
     $scope.retryInterval = 0;
     $scope.resendSMS = function () {
@@ -560,16 +570,18 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     };
 
+
     $scope.playGame = function(){
-        if(!$scope.currentRole.userHasTicket){
-            $scope.openModal('enter_game')
-        }
-        else{
+
+        $http.get(localStorage.base_api + "game/checkTicket", {params: {roleId: $scope.currentRole.id}}).then(function (res) {
             $scope.cardConfiguration(function () {
                 $scope.goto('role-game/' + $scope.currentRole.id);
             });
-        }
+        },function (reason) {
+            $scope.openModal('enter_game')
+        });
     };
+
     $scope.saveAndEnterGame = function(){
         $infoModal.open("配置成功");
         $timeout(function () {

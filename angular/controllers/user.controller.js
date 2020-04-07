@@ -11,7 +11,6 @@ gamingApp.controller("userController", function ($scope, $route, $routeParams, $
                 $infoModal.open("驗證成功，請登錄以繼續");
             });
         }
-
         else{
             $scope.$parent.user = {
                 uid: $routeParams.uid,
