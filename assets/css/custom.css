@@ -2363,8 +2363,10 @@ h3.product-title {
 .mall-modal-content .product-price span {
 	padding: 0 20px;
 	font-size: 28px;
-	line-height: 0;
-	margin-top: 10px;
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .mall-product-btn {
@@ -2450,6 +2452,7 @@ h3.product-title {
 	padding: 0;
 	width: 30px;
 	height: 30px;
+	line-height: 30px;
 	font-size: 30px;
 	border-radius: 100%;
 	text-align: center;
@@ -2457,7 +2460,6 @@ h3.product-title {
 	position: fixed;
 	right: 20px;
 	top: 20px;
-	line-height: 0;
 	z-index: 99;
 	font-family: sans-serif;
 }
@@ -4442,7 +4444,8 @@ button.popupprple_btn img, .babyimg img {
 }
 
 .card_detail .modal-header {
-	padding: 15px;
+	padding: 0px;
+	position: relative;
 }
 
 div.menu {
@@ -4494,8 +4497,14 @@ button.btn-newsletter-send-again-link {
 	background: none;
 	border: none;
 }
+.card_detail .modal-footer button.popupprple_btn {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
 
 .modal-footer button {
+
 }
 
 .progress-container {
@@ -4859,6 +4868,23 @@ body.page-price_plan {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
+
+@media all and (max-width: 1440px){
+	.babyimg{
+		top: 0;
+	}
+
+	.game-statistic {
+		max-width: 500px;
+	}
+	.game-statistic h4 {
+		font-size: 1.75rem;
+		max-width: 200px;
+	}
+	.welcome-mid-right-top-left h2{
+		font-size: 30px;
+	}
 }
 
 @media all and (max-width: 1024px) {

@@ -53,7 +53,7 @@
 <section ng-view id="routedContent"></section>
 
 
-<div id="buttons-container">
+<div id="buttons-container" ng-if="route.current.view !== 'login' && route.current.view !== 'index'">
     <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
     <!-- <button id="unlock-button">Unlock</button> -->
 </div>

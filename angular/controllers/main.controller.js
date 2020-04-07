@@ -76,6 +76,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
 
     $scope.$on('$locationChangeSuccess', function () {
+
         $scope.getCurrentUser();
         $scope.getCarts();
     });
@@ -192,7 +193,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
                 $timeout(function () {
                     $location.url("dashboard");
-
                     $timeout(function () {
                         landScapeMode();
                     })
@@ -418,7 +418,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.selectPlan = function (item) {
         $scope.currentPlan = item;
         $scope.currentPlan.paymentMethod = "BNK82201";
-        $scope.openModal('payment_method');
+        $scope.openModal('payment_method', '', 'md');
     };
 
     $scope.getListPrizeLogs = function () {
@@ -600,7 +600,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $http.get(localStorage.base_api + "video/getPlayableUrl", {params: {id: $scope.currentVideo.id}}).then(function (res) {
                 $scope.$broadcast("playVideo", $scope.path['video'] + res.data.model)
             }, function (reason) {
-                $scope.openModal("video_buy")
+                if(reason.status === 406)
+                    $scope.openModal("video_buy")
             })
         }
 

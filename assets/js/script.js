@@ -46,11 +46,11 @@ screen.orientation.addEventListener("change", function () {
 });
 // on exiting full-screen lock is automatically released
 document.addEventListener("fullscreenchange", function () {
-    _LOCK_BUTTON.style.display = 'block';
+    //_LOCK_BUTTON.style.display = 'block';
     // _UNLOCK_BUTTON.style.display = 'none';
 });
 document.addEventListener("webkitfullscreenchange", function () {
-    _LOCK_BUTTON.style.display = 'block';
+    //_LOCK_BUTTON.style.display = 'block';
     // _UNLOCK_BUTTON.style.display = 'none';
 });
 

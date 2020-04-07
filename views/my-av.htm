@@ -27,7 +27,7 @@
 
             <div class="tab-content">
                 <div class="tab-pane active" id="all" role="tabpanel">
-                    <ul class="gamelist_inner">
+                    <ul class="gamelist_inner grid-200">
                         <li ng-repeat="video in userVideos" ng-show="checkItemTags(video, currentFilter)">
                             <div class="shadow">
                                 <div class="listbox" ng-click="setCurrentVideo(video); openModal('video_detail', 'fullpage_popup')">

@@ -15,7 +15,4 @@ gamingApp.controller("videoController", function ($scope, $route, $http, $infoMo
 
 
 
-
-
-
 });
