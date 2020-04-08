@@ -22,14 +22,14 @@
 
                 <div class="menu select-level">
                     <a class="showSingle" ng-click="showAll()">全部星等</a>
-                    <a ng-hide="viewingLevel.level === level.level" ng-repeat="level in cardLevels | orderBy: 'level'" ng-class="{active: level.level === selectedLevel.level}" class="showSingle" ng-click="setCurrentLevel(level)">{{level.level}}星</a>
+                    <a ng-repeat="level in cardLevels | orderBy: 'level'" ng-class="{active: level.level === selectedLevel.level}" class="showSingle" ng-click="setCurrentLevel(level)">{{level.level}}星</a>
                 </div>
 
                 <section class="cnt">
                     <div class="targetDiv" ng-if="!showAllLevels">
                         <p ng-class="'star-'+ 1">{{selectedLevel.description}}</p>
                     </div>
-                    <div ng-hide="viewingLevel.level === level.level" class="targetDiv" ng-if="showAllLevels" ng-repeat="level in cardLevels | orderBy: 'level'" >
+                    <div class="targetDiv" ng-if="showAllLevels" ng-repeat="level in cardLevels | orderBy: 'level'" >
                         <p ng-class="'star-'+ 1">{{level.description}}</p>
                     </div>
                 </section>
@@ -37,9 +37,14 @@
         </div>
     </div>
 </div>
-<div class="modal-footer text-right" style="text-align: right">
+<div class="modal-footer text-right flex justify-content-center flex-center" style="text-align: right">
     <button class="popupprple_btn" ng-click="broadcast('sell_card', viewingLevel)"><img src="/assets/images/puprleimgbtn.png"/><span>出售換G幣</span>
     </button>
     <button class="popupprple_btn" ng-click="broadcast('use_card', viewingLevel)"><img
             src="/assets/images/pinkbtnbgr.png"/><span>配置</span></button>
+    <button ng-if="viewingLevel.upgradable" class="popupprple_btn" ng-click="broadcast('upgrade_card', viewingLevel)">
+        <img
+                src="/assets/images/pinkbtnbgr.png"/><span>升級</span>
+    </button>
 </div>
+<div class="clearfix"></div>

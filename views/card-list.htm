@@ -16,7 +16,7 @@
                 <h2>篩選</h2>
 
                 <ul class="list-unstyled list-inline">
-                    <li ng-class="{active : filterLevel == lv}" ng-repeat="lv in [1,2,3,4,5,6]">
+                    <li ng-class="{active : $parent.currentFilter == lv}" ng-repeat="lv in [1,2,3,4,5,6]">
                         <button class="rate" ng-click="getListUserCards(lv)"><i class="fa fa-star" aria-hidden="true"></i><span>{{lv}}</span></button>
                     </li>
                 </ul>
@@ -26,7 +26,7 @@
             <div class="scroll-y">
                 <ul ng-init="getListUserCards()" class="gamelist_inner grid-200">
                     <li ng-repeat="item in levels">
-                        <button class="listimg" ng-click="openCardDetail(item)"><img
+                        <button class="listimg" ng-class="{upgradable: item.upgradable}" ng-click="openCardDetail(item)"><img
                                 ng-src="{{path['card']}}{{item.thumbnail}}"/></button>
                     </li>
                 </ul>

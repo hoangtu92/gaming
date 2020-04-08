@@ -10,10 +10,16 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 15px;
-	font-family: "微軟正黑體", sans-serif;
 	font-weight: normal;
 	background-color: transparent;
 	height: auto;
+}
+
+.upgradable{
+	box-shadow: 0 0 29px #fff;
+}
+.m-0{
+	margin: 0 !important;
 }
 
 a, button {
@@ -1388,6 +1394,16 @@ section .modal {
 	padding: 25px;
 }
 
+.card_detail .modal-footer{
+	width: 70%;
+	float: right;
+}
+
+.menu.select-level a{
+	font-size: 18px;
+	white-space: nowrap;
+}
+
 .reward-collection-modal {
 	width: 100%;
 	padding: 15px;
@@ -1420,7 +1436,7 @@ section .modal {
 }
 
 .reward-confirmation-btn button {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	border: none;
 	border-radius: 0;
@@ -4430,7 +4446,7 @@ button.popupprple_btn img, .babyimg img {
 }
 
 div.menu {
-	margin: 5% 10%;
+	margin: 25px 0;
 	background: transparent;
 }
 

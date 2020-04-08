@@ -26,11 +26,11 @@
     </div>
 
     <div class="vedio_slider">
-        <div class="nowplay" ng-class="{fullpaly: gaming.progressLevel < video.level || video.playing}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
-            <img ng-if="video.playing || gaming.progressLevel < video.level" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
-            <img ng-if="!video.playing && gaming.progressLevel >= video.level" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+        <div class="nowplay" ng-class="{fullpaly: gaming.progressLevel < video.level || video.id === currentVideoPlaying}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
+            <img ng-if="video.id === currentVideoPlaying || gaming.progressLevel < video.level" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+            <img ng-if="video.id !== currentVideoPlaying && gaming.progressLevel >= video.level" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
             <!--Playing-->
-            <div ng-if="video.playing" class="blackoverlay" ng-click="pauseVideo(video);">
+            <div ng-if="video.id === currentVideoPlaying" class="blackoverlay" ng-click="pauseVideo(video);">
                 <div>
                     <p></p>
                     <span>播放</span>

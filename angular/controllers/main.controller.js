@@ -514,6 +514,23 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.$on("sell_card", function (evt, cardLevel) {
         $scope.sellCard(cardLevel);
     });
+    $scope.$on("upgrade_card", function (evt, cardLevel) {
+        $scope.upgradeCard(cardLevel);
+    });
+
+    $scope.upgradeCard = function(cardLevel){
+        $http.get(localStorage.base_api + "card/upgrade", {
+            params: {id: cardLevel.id}
+        }).then(function (res) {
+
+            $infoModal.open("恭喜您升級成功！", function () {
+                $scope.openCardDetail(res.data.model);
+            }, "確認", undefined, "", true);
+
+            $scope.getListUserCards();
+
+        });
+    };
 
     $scope.sellCard = function (cardLevel) {
         $http.get(localStorage.base_api + "card/sell", {
@@ -551,6 +568,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.openCardDetail = function(item){
+        if(typeof $scope.modal['card_detail'] !== "undefined")
+            $scope.modal['card_detail'].dismiss();
+
         $scope.getCardLevels(item);
         $scope.openModal('card_detail');
     };

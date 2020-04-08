@@ -1,5 +1,6 @@
 gamingApp.controller("roleController", function ($scope, $rootScope, $location, $route, $http, $infoModal, $timeout) {
 
+    $scope.currentVideoPlaying = false;
 
     /**
      * Unlock user video
@@ -25,7 +26,7 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
         }).then(function (res) {
 
             $scope.selectedVideo.src = res.data.model;
-            $scope.selectedVideo.playing = true;
+            $scope.currentVideoPlaying = $scope.selectedVideo.id;
 
             //localStorage.base_api + "roleVideo/play/" + $scope.selectedVideo.uid + "?t=" + localStorage.session_token
             $scope.videoElement.setAttribute('src', $scope.path['role_video'] + $scope.selectedVideo.src);
@@ -38,12 +39,11 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
     $scope.pauseVideo = function(video){
         if($scope.videoElement.paused){
             $scope.videoElement.play();
-            video.playing = true;
+            $scope.currentVideoPlaying = video.id;
         }
 
         else {
             $scope.videoElement.pause();
-            video.playing = false;
         }
     };
 

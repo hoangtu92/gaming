@@ -1,8 +1,9 @@
 gamingApp.factory('$infoModal', function ($uibModal) {
     return {
-        open: function (errorMessage, cb, txt, cb2, txt2) {
+        open: function (errorMessage, cb, txt, cb2, txt2, hideCancel) {
             if(typeof txt === 'undefined') txt = "確認";
             if(typeof txt2 === 'undefined') txt2 = "取消";
+            if(typeof hideCancel === 'undefined') hideCancel = false;
             return $uibModal.open({
                 templateUrl: 'includes/modals/info.htm',
                 controller: function ($scope, message, $uibModalInstance) {
@@ -10,6 +11,7 @@ gamingApp.factory('$infoModal', function ($uibModal) {
                     vm.message = message;
                     vm.cb = cb;
                     vm.cb2 = cb2;
+                    vm.hideCancel = hideCancel;
                     vm.buttonText = txt;
                     vm.cancelText = txt2;
                     vm.close = function () {

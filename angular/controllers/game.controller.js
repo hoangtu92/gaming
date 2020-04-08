@@ -189,7 +189,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             $scope.gaming[o] = $scope.gaming[o] * 2;
         });
 
-        $scope.restoreGame();
+        $scope.update_game(function () {
+            $scope.restoreGame();
+        });
 
     };
 
@@ -326,14 +328,24 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
 
         //Placing bet
+        $scope.update_game(function () {
+            //place the icon
+            $scope.drawIcon(el);
+        });
+
+        return true;
+
+    };
+
+    $scope.update_game = function(cb){
         $http.post(localStorage.base_api + "game/updateGame", JSON.stringify($scope.gaming)).then(function (res) {
             if (res.data.status) {
 
                 //New gaming model with updated bet value and user credit
                 $scope.gaming = res.data.model;
 
-                //place the icon
-                $scope.drawIcon(el);
+                if(cb) cb();
+
 
                 //console.log($scope.gaming);
 
@@ -347,10 +359,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
             }
         });
-
-        return true;
-
-    };
+    }
 
 
     /**

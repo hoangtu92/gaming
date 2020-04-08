@@ -11,7 +11,7 @@
 </div>
 <div class="modal-footer" ng-if="vm.cb || vm.cb2">
     <div class="flex flex-row justify-content-center">
-        <button type="reset" ng-click="vm.cb2(); vm.close()">{{vm.cancelText}}</button>
-        <button type="button" ng-click="vm.cb()">{{vm.buttonText}}</button>
+        <button ng-if="!vm.hideCancel" type="reset" ng-click="vm.cb2(); vm.close()">{{vm.cancelText}}</button>
+        <button type="button" ng-class="{'m-0': vm.hideCancel}" ng-click="vm.cb(); vm.close()">{{vm.buttonText}}</button>
     </div>
 </div>
