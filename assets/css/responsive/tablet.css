@@ -1,287 +1,11 @@
-/* ----------- iPhone 4 and 4S ----------- */
-
-
-/* Landscape */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
-    .babyimg_info .paragraph{
-        font-size: 1.5rem;
-    }
-    .product-price span img{
-        width: 21px;
-    }
-    .babyimg_info .tpname h2{
-        font-size: 2rem
-    }
-    .babyimg {
-        width: auto;
-        top: -33px;
-        left: -37px;
-    }
-
-    .babyimg img{
-        width: auto;
-        height: 86vh;
-    }
-
-    .card_detail .modal-content{
-        max-width: 90vw;
-        overflow: visible;
-    }
-
-    .babyimg_info {
-        height: 35vh;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn{
-        margin-left: 5px;
-        position: relative;
-        width: 97px;
-        height: 29px;
-    }
-    .card_detail .modal-footer {
-        justify-content: space-evenly;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn span{
-        font-size: 1.5rem;
-        height: 100%;
-        bottom: initial;
-        top: 0px;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn img{
-        display: block;
-    }
-    .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
-    }
-
-    button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
-    }
-}
-
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Landscape */
 @media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
-    .babyimg_info .paragraph{
-        font-size: 1.5rem;
-    }
-    .product-price span img{
-        width: 21px;
-    }
-    .babyimg_info .tpname h2{
-        font-size: 2rem
-    }
-    .babyimg {
-        width: auto;
-        top: -33px;
-        left: -37px;
-    }
-
-    .babyimg img{
-        width: auto;
-        height: 86vh;
-    }
-
-    .card_detail .modal-content{
-        max-width: 90vw;
-        overflow: visible;
-    }
-
-    .babyimg_info {
-        height: 35vh;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn{
-        margin-left: 5px;
-        position: relative;
-        width: 97px;
-        height: 29px;
-    }
-    .card_detail .modal-footer {
-        justify-content: space-evenly;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn span{
-        font-size: 1.5rem;
-        height: 100%;
-        bottom: initial;
-        top: 0px;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn img{
-        display: block;
-    }
-    .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
-    }
-
-    button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
-    }
-}
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-
-/* Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
-    .babyimg_info .paragraph{
-        font-size: 1.5rem;
-    }
-    .product-price span img{
-        width: 21px;
-    }
-    .babyimg_info .tpname h2{
-        font-size: 2rem
-    }
-    .babyimg {
-        width: auto;
-        top: -33px;
-        left: -37px;
-    }
-
-    .babyimg img{
-        width: auto;
-        height: 86vh;
-    }
-
-    .card_detail .modal-content{
-        max-width: 90vw;
-        overflow: visible;
-    }
-
-    .babyimg_info {
-        height: 35vh;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn{
-        margin-left: 5px;
-        position: relative;
-        width: 97px;
-        height: 29px;
-    }
-    .card_detail .modal-footer {
-        justify-content: space-evenly;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn span{
-        font-size: 1.5rem;
-        height: 100%;
-        bottom: initial;
-        top: 0px;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn img{
-        display: block;
-    }
-    .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
-    }
-
-    button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
-    }
-
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-
-/* Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
-    .babyimg_info .paragraph{
-        font-size: 1.5rem;
-    }
-    .product-price span img{
-        width: 21px;
-    }
-    .babyimg_info .tpname h2{
-        font-size: 2rem
-    }
-    .babyimg {
-        width: auto;
-        top: -33px;
-        left: -37px;
-    }
-
-    .babyimg img{
-        width: auto;
-        height: 86vh;
-    }
-
-    .card_detail .modal-content{
-        max-width: 90vw;
-        overflow: visible;
-    }
-
-    .babyimg_info {
-        height: 35vh;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn{
-        margin-left: 5px;
-        position: relative;
-        width: 97px;
-        height: 29px;
-    }
-    .card_detail .modal-footer {
-        justify-content: space-evenly;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn span{
-        font-size: 1.5rem;
-        height: 100%;
-        bottom: initial;
-        top: 0px;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn img{
-        display: block;
-    }
-    .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
-    }
-
-    button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
-    }
-}
-
-/* ----------- iPhone X ----------- */
-
-/* Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
     .babyimg_info .paragraph{
         font-size: 1.5rem;
     }
@@ -309,6 +33,420 @@ and (orientation: landscape) {
 
     .babyimg_info {
         height: 35vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -37px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 78vh;
+    }
+
+    .card_detail .modal-content{
+        max-width: 90vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 35vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -93px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 84vh;
+    }
+
+    .card_detail .modal-content{
+        max-width: 82vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 43vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 834px)
+and (max-device-width: 834px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -37px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 78vh;
+    }
+
+    .card_detail .modal-content{
+        max-width: 90vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 35vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1112px)
+and (max-device-width: 1112px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -37px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 78vh;
+    }
+
+    .card_detail .modal-content{
+        max-width: 90vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 35vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -74px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 33vh;
+        max-height: initial;
+    }
+
+    .card_detail .modal-content{
+        max-width: 82vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 21vh;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn{
+        margin-left: 5px;
+        position: relative;
+        width: 97px;
+        height: 29px;
+    }
+    .card_detail .modal-footer {
+        justify-content: space-evenly;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn span{
+        font-size: 1.5rem;
+        height: 100%;
+        bottom: initial;
+        top: 0px;
+    }
+
+    .card_detail .modal-footer button.popupprple_btn img{
+        display: block;
+    }
+    .modal-header button.popupprple_btn{
+        right: -31px;
+        top: -54px;
+    }
+
+    button.popupprple_btn img.popup_close_icon{
+        width:40px;
+        height: 40px;
+    }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1366px)
+and (max-device-width: 1366px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .babyimg_info .paragraph{
+        font-size: 1.5rem;
+    }
+    .product-price span img{
+        width: 21px;
+    }
+    .babyimg_info .tpname h2{
+        font-size: 2rem
+    }
+    .babyimg {
+        width: auto;
+        top: -33px;
+        left: -78px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 78vh;
+    }
+
+    .card_detail .modal-content{
+        max-width: 90vw;
+        overflow: visible;
+    }
+
+    .babyimg_info {
+        height: 32vh;
+        max-height: initial;
     }
 
     .card_detail .modal-footer button.popupprple_btn{

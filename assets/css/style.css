@@ -359,7 +359,7 @@ button {
 
 .gamelist {
     width: 100%;
-    height: 80%;
+    height: auto;
     padding: 0 5%;
     display: inline-flex;
     align-items: center;
@@ -1296,7 +1296,7 @@ ul.gamelist_inner li button.listimg {
 
 .scroll-y{
     overflow-y: auto;
-    height: 600px;
+    height: 80vh;
 }
 
 ul.gamelist_inner li button.listimg img{
