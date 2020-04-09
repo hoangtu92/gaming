@@ -33,13 +33,14 @@
 
     .babyimg {
         width: auto;
-        top: -40px;
-        left: -41px;
+        /* top: -40px; */
+        /* left: -41px; */
     }
 
     .babyimg img{
         width: auto;
         height: 74vh;
+        max-height: 400px;
     }
 
     .babyimg_info {
@@ -61,6 +62,7 @@
 
     .babyimg_info {
         height: 40vh;
+        max-height: 300px;
     }
 }
 
@@ -136,6 +138,50 @@
         left: 19%;
     }
 }
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (min-height: 600px) {
+    .babyimg {
+        width: auto;
+        top: -40px;
+        left: -91px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 61vh;
+        max-height: 500px;
+    }
+
+    .babyimg_info {
+        height: 32vh;
+    }
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-height: 590px) {
+    .babyimg {
+        width: auto;
+        top: -40px;
+        left: -50px;
+    }
+
+    .babyimg img{
+        width: auto;
+        height: 61vh;
+        max-height: 500px;
+    }
+
+    .modal-content{
+        max-width: 700px;
+    }
+
+    .babyimg_info {
+        height: 32vh;
+    }
+}
+
 
 @media all and (max-width: 1920px) {
 }
@@ -511,7 +557,9 @@
         max-width: 30px;
     }
     .game-statistic{
-        display: none;
+        position: fixed;
+        left: 5px;
+        top: 0;
     }
     section.uniformsister-02 .uniformheader img{
         max-width: 150px;
