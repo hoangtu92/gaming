@@ -459,6 +459,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.modal['card_pool_buy'].close();
             $scope.luckyLevels = res.data.model;
             $scope.openModal("lucky_draw");
+            $scope.getCurrentUser();
 
         })
     };
@@ -646,6 +647,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function () {
             $scope.modal['video_buy'].close();
             $scope.playVideo();
+
+            $scope.getCurrentUser();
+
         })
     };
 
