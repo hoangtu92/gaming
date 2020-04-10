@@ -4,6 +4,7 @@
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
+and (min-width : 1000px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 1) {
     .babyimg_info .paragraph{
@@ -73,6 +74,8 @@ and (-webkit-min-device-pixel-ratio: 1) {
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
+and (min-width : 700px)
+and (max-width: 1100px)
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{
@@ -139,6 +142,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
+and (min-width : 1000px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{
@@ -209,6 +213,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen
 and (min-device-width: 834px)
 and (max-device-width: 834px)
+and (min-width : 800px)
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{
@@ -277,6 +282,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen
 and (min-device-width: 1112px)
 and (max-device-width: 1112px)
+and (min-width : 1000px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{
@@ -348,6 +354,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen
 and (min-device-width: 1024px)
 and (max-device-width: 1024px)
+and (min-width : 1000px)
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{
@@ -417,6 +424,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen
 and (min-device-width: 1366px)
 and (max-device-width: 1366px)
+and (min-width : 1300px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
     .babyimg_info .paragraph{

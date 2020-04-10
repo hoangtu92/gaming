@@ -1095,7 +1095,7 @@ input.form-control.cstm-input-one {
 }
 
 .cstm-container .cstm-column a img {
-	max-width: 270px;
+	max-width: 232px;
 }
 
 .reward-collection-header {
@@ -3627,14 +3627,23 @@ h3.product-title {
 		height: 30px;
 	}
 
-	.button-group img {
-		max-width: 120px;
-		height: auto;
+	.button-group{
+		line-height: 30px
 	}
 
+	.button-group img {
+		max-width: 90px;
+		height: auto;
+		width: 100%;
+	}
+
+	.login.modal .modal-dialog{
+		width: auto;
+	}
 
 	.cstm-container .cstm-column a img {
-		max-width: 150px;
+		width: 100%;
+		max-width: 200px;
 	}
 
 	.login-homepage-bottom-sec {
