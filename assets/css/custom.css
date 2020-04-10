@@ -3706,6 +3706,8 @@ h3.product-title {
 
 	.reward-collection-header {
 		margin-top: 0;
+		position: relative;
+		z-index: 999;
 	}
 
 	.reward-collection-header-left-sec a img {
@@ -3904,7 +3906,7 @@ h3.product-title {
 	}
 
 	.gallery_product {
-		width: 31.33%;
+		/* width: 31.33%; */
 	}
 
 	a.mall-product-inner img {
@@ -4038,6 +4040,7 @@ h3.product-title {
 
 	.user-info-coulmn .author-img img {
 		max-width: 60px;
+		height: auto;
 	}
 
 	.user-info-coulmn h3 {

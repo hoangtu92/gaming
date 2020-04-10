@@ -133,6 +133,107 @@ and (orientation: landscape) {
         width:40px;
         height: 40px;
     }
+
+    /*Dashboard*/
+    .welcome-bottom-inner {
+        width: 275px;
+    }
+    .owl-carousel .owl-item img {
+        height: 50px;
+    }
+    .right-cstm-btn-circle img {
+        max-width: 98px;
+    }
+    .welcome-mid-right-sec {
+        width: 290px;
+        top: 58px;
+        padding: 5px;
+    }
+    .welcome-mid-left-girl-img img.girl-img{
+        right: 40%;
+    }
+    .booksthree_btn{
+        padding-top: 5px;
+        max-width: 325px;
+    }
+    .list_ratings{
+        padding: 0;
+    }
+    .uniformheader {
+        padding: 5px 0px 0 10px;
+        margin-bottom:5px;
+    }
+    ul.gamelist_inner li button.listimg{
+        margin: 0;
+    }
+
+    /*Card select*/
+    .card-remove {
+        line-height: 23px;
+        font-size: 1.8rem;
+        width: 31px;
+        height: 31px;
+        right: -10px;
+        top: -10px;
+    }
+    .img_inner{
+        padding: 0;
+    }
+    ul.gamelist_inner.card-select li{
+        min-height: initial;
+    }
+    button.popupprple_btn{
+        margin: 0;
+        padding: 0;
+    }
+    ul.gamelist_inner.grid-200 {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    ul.gamelist_inner li{
+        min-height: initial;
+    }
+    .booksthree_btn button.bookbtn{
+        font-size: 1.5rem;
+    }
+
+    .title-arrow a img {
+        max-width: 45px !important;
+    }
+    .title-arrow h1 {
+        font-size: 25px;
+    }
+    /*AV*/
+    ul.gamelist_inner li .listbox img.eyebaby{
+        min-width: initial;
+        min-height: initial;
+    }
+    ul.gamelist_inner li .listbox{
+        padding: 5px;
+    }
+
+    /*Mall*/
+    .mall-category-products{
+        max-height: initial;
+    }
+    .gallery_product{
+        width: 100%;
+    }
+
+    /*Monthly stored value*/
+    .monthly-stored-value-bottom-sec, .monthly-stored-value{
+        float: none;
+        height: auto;
+    }
+    .monthly-stored-value-bottom-sec ul{
+        height: auto;
+    }
+
+    .page-prize_redeem .gamelist_top{
+        overflow-x: visible;
+    }
+    button.bookbtn{
+        margin-left: 0;
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */

@@ -185,9 +185,16 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
         var bets = getAllBets();
 
-        bets.forEach(function (o) {
-            $scope.gaming[o] = $scope.gaming[o] * 2;
-        });
+        if(bets.length === 0){
+            $scope.applySavedBets();
+        }
+        else{
+            bets.forEach(function (o) {
+                $scope.gaming[o] = $scope.gaming[o] * 2;
+            });
+
+        }
+
 
         $scope.update_game(function () {
             $scope.restoreGame();
@@ -263,16 +270,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 }
             }
 
-            $http.post(localStorage.base_api + "game/updateGame", JSON.stringify($scope.gaming)).then(function (res) {
-                $scope.gaming = res.data.model;
-                $scope.restoreGame();
-            }, function (reason) {
-                $scope.gaming = reason.data.model;
-                if(reason.status === 406){
-                    $scope.buyMoreBet()
-                }
-            });
-
         }
     };
 
@@ -331,6 +328,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         $scope.update_game(function () {
             //place the icon
             $scope.drawIcon(el);
+            $scope.saveBet();
         });
 
         return true;
@@ -462,6 +460,8 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Open game result
      */
     $scope.startGame = function () {
+
+        $scope.saveBet();
 
         $scope.resetGameState();
 
