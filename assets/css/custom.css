@@ -1521,7 +1521,8 @@ form.customer-service-form .form-control {
 }
 
 form.customer-service-form textarea {
-	min-height: 60vh !important;
+	min-height: 500px !important;
+	height: 50vh;
 }
 
 form.customer-service-form button {
@@ -1569,6 +1570,7 @@ form.customer-service-form {
 table.customer-service-table {
 	width: 100%;
 	text-align: center;
+	table-layout: fixed;
 }
 
 table.customer-service-table th, table.customer-service-table td {
@@ -2808,6 +2810,7 @@ h3.product-title {
 
 	.button-group img {
 		width: auto;
+		max-width: initial;
 	}
 
 	.modal-header button.close {

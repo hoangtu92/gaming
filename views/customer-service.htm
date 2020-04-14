@@ -24,7 +24,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6 scroll-y">
                 <div class="customer-service-record">
                     <h3>客服紀錄</h3>
                     <div class="customer-service-record-table">
@@ -39,7 +39,7 @@
                             <tbody ng-init="getTickets()">
                             <tr ng-repeat="item in tickets.content">
                                 <td>{{item.datetime.toDate().toLocaleDateString()}}</td>
-                                <td>{{item.issue}}</td>
+                                <td class="one-line-content">{{item.issue}}</td>
                                 <td><a href="#" ng-click="setSelectedTicket(item); openModal('ticket_reply')"><img
                                         src="/assets/images/view-reply.png"></a></td>
                             </tr>

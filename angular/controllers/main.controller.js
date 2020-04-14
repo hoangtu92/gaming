@@ -426,9 +426,17 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.selectPlan = function (item) {
-        $scope.currentPlan = item;
-        $scope.currentPlan.paymentMethod = "BNK82201";
-        $scope.openModal('payment_method', '', 'md');
+
+        if(item.type === 0 && $scope.currentUser.vip){
+            $infoModal.open("您已經是VIP")
+        }
+        else{
+            $scope.currentPlan = item;
+            $scope.currentPlan.paymentMethod = "BNK82201";
+            $scope.openModal('payment_method', '', 'md');
+        }
+
+
     };
 
     $scope.getListPrizeLogs = function () {

@@ -8,7 +8,7 @@ gamingApp.controller("ticketController", function ($scope, $route, $http, $infoM
         if (typeof page === 'undefined') page = 0;
         $http.post(localStorage.base_api + "ticket/list", JSON.stringify({
             page: page,
-            perPage: 10
+            perPage: 5
         })).then(function (res) {
             $scope.tickets = res.data;
         })
