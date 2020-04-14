@@ -570,6 +570,7 @@
 
     body.page-dashboard {
         overflow: hidden;
+        position: fixed;
     }
 
     .mark180 ul li img{
