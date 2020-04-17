@@ -270,7 +270,9 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 }
             }
 
-            $scope.restoreGame();
+            $scope.update_game(function () {
+                $scope.restoreGame();
+            });
 
         }
     };
