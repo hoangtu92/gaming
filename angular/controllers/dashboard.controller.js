@@ -33,14 +33,8 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         }
     };
 
-    function b64DecodeUnicode(str) {
-        return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-        }).join(''))
-    }
-
     if(typeof $routeParams.msg !== "undefined"){
-        $infoModal.open(b64DecodeUnicode($routeParams.msg));
+        $infoModal.open($scope.b64DecodeUnicode($routeParams.msg));
     }
 
 

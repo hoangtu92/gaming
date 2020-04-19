@@ -444,7 +444,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
      * Exit current game
      */
     $scope.exitGame = function(){
-        $infoModal.open("請愛的<br>" +
+        $infoModal.open("親愛的<br>" +
             "你確定要離開，不再陪我玩一下嗎?", function () {
             $scope.closeModal()
         } , "再玩一下", function () {

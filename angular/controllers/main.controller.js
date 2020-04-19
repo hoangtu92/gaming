@@ -2,6 +2,13 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $rootScope.route = $route;
 
+    $scope.b64DecodeUnicode = function(str) {
+        return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+        }).join(''))
+    };
+
+
     $scope.nsOptions =
         {
             sliderId: "ninja-slider",

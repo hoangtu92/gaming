@@ -24,9 +24,9 @@ gamingApp.directive('ngPoster', function() {
             elem.on('loadeddata', function(e){
                 scope.$emit("videoLoaded", elem)
             });
-            elem.on('click', function(e){
+            /*elem.on('click', function(e){
                 elem[0].pause();
-            });
+            });*/
             scope.$on("playVideo", function (e, src) {
                 if(typeof src !== 'undefined')
                     elem.attr("src", src);
