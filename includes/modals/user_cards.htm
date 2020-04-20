@@ -4,7 +4,7 @@
 <div class="modal-body">
     <div class="gamelist_top none">
         <ul class="gamelist_inner small" ng-init="getListUserCards()">
-            <li ng-repeat="item in levels">
+            <li ng-repeat="item in levels" data-effect="{{item.effectName}}">
                 <button class="listimg" ng-click="openCardDetail(item)"><img
                         ng-src="{{path['card']}}{{item.thumbnail}}"/></button>
             </li>
