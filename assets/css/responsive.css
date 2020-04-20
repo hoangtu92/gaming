@@ -216,7 +216,14 @@
 }
 
 @media (max-width: 1190px) {
+    .header-top-left-menu{
+        padding: 0;
+    }
 
+    .header-top-left-menu ul li a {
+        font-size: 20px;
+        padding: 5px 30px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -258,6 +265,11 @@
 
 /* Portrait tablets and small desktops */
 @media all  and (max-width: 995px) {
+
+    .right-author-chat-icon img{
+        width: 100px;
+    }
+
     .login-homepage-bottom-sec{
         margin-top: 0;
     }
@@ -390,12 +402,9 @@
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        position: fixed;
-        z-index: 0 !important;
-        left: initial;
-        top: 40px;
-        right: 35%;
-        max-height: 90vh;
+        margin: 0;
+        margin-left: auto;
+        margin-top: -50px;
     }
 
     .logo-section img {
@@ -403,7 +412,7 @@
     }
 
     .welcome-left-author-sec {
-        top: 0px;
+        clear: both;
     }
 
     .header-top-left-menu ul li a {
@@ -411,18 +420,14 @@
     }
 
     .welcome-bottom-inner {
-        width: 339px;
-        float: left;
-        padding-top: 0;
-        margin-bottom: -115px;
+        margin-bottom: 0;
     }
 
     .welcome-mid-right-sec {
-        width: 329px;
         float: none;
         left: initial;
         top: 142px;
-        right: 0;
+        right: 10px;
         position: fixed;
         padding: 15px;
     }
@@ -461,15 +466,10 @@
     }
 
     .welcome-mid-left-sec {
-        float: none;
+        /* float: none; */
     }
 
     .right-author-chat-icon {
-        bottom: 25px;
-        position: fixed;
-        left: 50%;
-        top: initial;
-        width: 220px;
     }
 
     .menu-side-nav {
@@ -479,7 +479,7 @@
     }
 
     .header-top-left-menu {
-        margin-left: -55px;
+        /* margin-left: -55px; */
     }
 
     .welcome-mid-right-top-right {
@@ -496,23 +496,13 @@
     }
 
     .welcome-mid-right-bottom-sec {
-        bottom: 0;
-        position: fixed;
-        right: 0;
-        z-index: 999999999;
-        top: 50%;
-        left: initial;
+        margin-top: 0;
     }
 
     .right-cstm-btn-circle {
-        bottom: 0;
-        z-index: 9999;
     }
 
     .welcome-mid-right-bottom-left {
-        position: absolute;
-        right: 0;
-        bottom: 8px;
     }
 
     .progress-level {
@@ -544,9 +534,8 @@
     }
 
     .welcome-bottom-inner-btn {
-        top: -45px;
-        right: initial;
-        left: 27px;
+        top: -25px;
+        right: 16px;
     }
 
     .slider-item-inner h4 {
@@ -555,7 +544,7 @@
     }
 
     .slider-item-inner .slidertxt-bar {
-        margin-bottom: 36px;
+        padding-bottom: 36px;
     }
 
     .welcome-bottom-sec .container {

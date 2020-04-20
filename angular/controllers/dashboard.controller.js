@@ -17,19 +17,22 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         responsiveClass: true,
         responsive: {
             0: {
-                items: 2,
-                nav: false,
-                loop: false
+                items: 6,
+                nav: true,
+                loop: false,
+                margin: 10,
             },
             768: {
-                items: 3,
-                nav: false,
-                loop: false
+                items: 6,
+                nav: true,
+                loop: false,
+                margin: 10
             },
             1000: {
                 items: 6,
                 nav: true,
-                loop: false
+                loop: false,
+                margin: 20
             }
         }
     };
