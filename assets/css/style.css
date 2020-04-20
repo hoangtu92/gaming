@@ -959,7 +959,7 @@ section.uniformsister-02 {
 }
 
 .yellowshed .pull-left.text-right {
-    width: 70%;
+    width: 75%;
     position: relative;
     bottom: -28px;
 }
@@ -968,6 +968,7 @@ section.uniformsister-02 {
     font-size: 25px;
     font-weight: 700;
     text-shadow: 4px 3px 3px #623566;
+    margin: 0;
 }
 
 .topstart_block {
@@ -1246,10 +1247,14 @@ body.uniform_maingame {
 
 .list_ratings {
     background: rgba(0, 0, 0, 0.35);
-    padding: 15px;
+    padding: 10px;
     border-radius: 40px;
-    width: 100%;
-    max-width: 750px;
+    width: max-content;
+    max-width: initial;
+    display: flex;
+    align-items: center;
+    min-width: initial;
+    margin-top: 10px;
 }
 
 .list_ratings button.bookbtn {
@@ -1261,7 +1266,7 @@ body.uniform_maingame {
 
 .list_ratings h2 {
     margin: 0;
-    margin-top: 7px;
+    margin-top: 0;
     display: inline-block;
     vertical-align: middle;
 }
@@ -1276,16 +1281,25 @@ body.uniform_maingame {
 .list_ratings ul li button.rate {
     border: 2px solid #fff;
     background: transparent;
-    padding: 6px 16px;
+    padding: 2px 15px;
     font-size: 21px;
     border-radius: 30px;
     transition: .5s;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .list_ratings ul li.active button.rate {
     border: 2px solid #fff;
-    box-shadow: 0px 0px 8px #ff5ea6;
-    text-shadow: 0px 0px 4px #ff5ea6;
+    box-shadow: 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6,0px 0px 2px #ff5ea6,0px 0px 2px #ff5ea6,0px 0px 2px #ff5ea6,0px 0px 2px #ff5ea6,0px 0px 2px #ff5ea6,0px 0px 10px #ff5ea6;
+    text-shadow: 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 2px #ff5ea6, 0px 0px 10px #ff5ea6;
+}
+
+
+.list_ratings ul li button i{
+    font-size: 17px;
+    margin-right:5px;
 }
 
 .list_ratings ul li {

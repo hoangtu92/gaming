@@ -346,6 +346,8 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 //New gaming model with updated bet value and user credit
                 $scope.gaming = res.data.model;
 
+                $scope.previousLevel = $scope.gaming.progressLevel;
+
                 if(cb) cb();
 
 
@@ -493,6 +495,14 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
             if($scope.gaming.gain > 0){
                 $(".gain-point").addClass("active");
+            }
+
+            if(typeof $scope.previousLevel === 'undefined' || $scope.gaming.progressLevel > $scope.previousLevel){
+                $(".star-growing").addClass("active");
+                $infoModal.open("討厭啦~讓你贏了\n" +
+                    "可以看我脫一件囉!\n" +
+                    "\n" +
+                    "(點選上方脫衣影片觀看)");
             }
 
             angular.element(".dices-result-container").show();

@@ -442,6 +442,7 @@ span.price-icon h5 {
 	font-weight: bolder !important;
 	font-size: 36px;
 	text-shadow: 0 0 3px #000;
+	white-space: nowrap;
 }
 
 .welcome-mid-right-top-left ul {
@@ -635,6 +636,8 @@ span.price-icon h5 {
 	border: 4px solid #fff;
 	opacity: 1;
 	overflow: hidden;
+	transition: 500ms;
+	-webkit-transition: 500ms;
 }
 
 .welcome-bottom-inner .owl-nav button:focus {
@@ -642,7 +645,7 @@ span.price-icon h5 {
 }
 
 .slider-item-inner a:hover {
-	border: 4px solid #ff5ea6;
+	border: 4px double #ff5ea6;
 }
 
 .slider-item-inner a:before {
@@ -664,8 +667,53 @@ span.price-icon h5 {
 	display: none;
 }
 
-.slider-item-inner a:hover {
+.slider-item:hover > .slider-item-inner,
+.slider-item.selected > .slider-item-inner{
+	position: relative;
+}
+
+.slider-item:hover > .slider-item-inner:before,
+.slider-item.selected > .slider-item-inner:before,
+.slider-item:hover > .slider-item-inner:after,
+.slider-item.selected > .slider-item-inner:after{
+	content: '';
+	display: block;
+	position:absolute;
+	width: 100%;
+	height: 16px;
+	background-size: contain;
+	background-position: center top;
+	z-index: 99;
+	/* left: 50%; */
+	/* transform: translateX(-50%); */
+	background-repeat: no-repeat;
+	transition: 600ms;
+	animation: zoomIn 500ms;
+	transform-origin: center;
+}
+
+.slider-item:hover > .slider-item-inner:before,
+.slider-item.selected > .slider-item-inner:before{
+	background-image: url('../images/role-hover-1.png');
+	top: -7%;
+}
+
+.slider-item:hover > .slider-item-inner:after,
+.slider-item.selected > .slider-item-inner:after{
+	background-image: url(../images/role-hover-2.png);
+	bottom: -9%;
+	height: 33px;
+	width: 100%;
+	background-size: cover;
+}
+
+.slider-item-inner a:hover, .slider-item.selected a {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
 	box-shadow: 1px 1px 10px #ff5ea6;
+	border: 4px double #ff5ea6;
+	background-color: #fff;
+	padding: 0;
 }
 
 .welcome-mid-right-sec:before {
@@ -795,6 +843,7 @@ span.numbers {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 0;
+	white-space: pre-wrap;
 }
 
 .login-welcome-page .form-group input.form-control {
@@ -2687,7 +2736,7 @@ h3.product-title {
 	}
 
 	.welcome-mid-right-top-left h2 {
-		font-size: 54px;
+		font-size: 50px;
 		margin-bottom: 15px;
 	}
 
@@ -4523,12 +4572,14 @@ button.btn-login-btn{
 
 .progress-container {
 	width: 305px;
-	height: 25.5px;
+	height: 17px;
 	position: relative;
+	margin-right: 10px;
 }
 
 .progress-container .progress-outer, .progress-container .progress-inner {
 	height: 100%;
+	border-radius: 2px;
 	background-repeat: no-repeat;
 	background-size: auto 100%;
 	background-position: center left;
@@ -4537,7 +4588,7 @@ button.btn-login-btn{
 }
 
 .progress-container .progress-outer {
-	background-image: url(/assets/images/progress-bar-outer.png);
+	background-color: #595959;
 	position: absolute;
 	width: 100%;
 }
@@ -4551,12 +4602,40 @@ button.btn-login-btn{
 
 .progress-inner.inner-line {
 	max-width: 100%;
-	background-image: url(/assets/images/progress-bar-outer-line-point.png);
+	background-color: #f26498;
 }
 
 .progress-inner.inner-point {
 	max-width: 100%;
 	background-image: url(/assets/images/progress-bar-inner-point-transparent.png);
+}
+
+
+.progress-container-star,
+.progress-container-star .progress-inner.inner-star{
+	background-size: contain;
+	background-repeat: repeat-x;
+	background-position: left;
+}
+
+.progress-container-star{
+	width: 220px;
+	height: 35px;
+	position: relative;
+	margin-top: 10px;
+	float: right;
+	background-image: url(/assets/images/icon_star_off.png);
+}
+
+.progress-container-star .progress-inner{
+	height: 100%;
+	padding: 0;
+}
+
+.progress-inner.inner-star {
+	max-width: 100%;
+	background-image: url(/assets/images/icon_star_on.png);
+
 }
 
 /**
@@ -4975,6 +5054,23 @@ body.page-price_plan {
 	padding: 0;
 }
 
+.pl-1{
+	padding-left: 1rem;
+}
+.pr-1{
+	padding-right: 1rem;
+}
+
+.pl-2{
+	padding-left: 2rem;
+}
+.pr-2{
+	padding-right: 2rem;
+}
+.owl-carousel .owl-stage-outer{
+	padding: 10px 0;
+}
+
 @keyframes win {
 	from {
 		opacity: 1;
@@ -4985,5 +5081,36 @@ body.page-price_plan {
 		opacity: 0;
 		transform: scale(4, 4);
 		filter:brightness(10);
+	}
+}
+
+@keyframes zoomIn{
+	from{
+		transform: scale(0, 0);
+	}
+	to{
+		transform: scale(1,1);
+	}
+}
+
+@-webkit-keyframes win {
+	from {
+		opacity: 1;
+		-webkit-transform: scale(1, 1);
+		-webkit-filter: brightness(0)
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(4, 4);
+		-webkit-filter:brightness(10);
+	}
+}
+
+@-webkit-keyframes zoomIn{
+	from{
+		-webkit-transform: scale(0, 0);
+	}
+	to{
+		-webkit-transform: scale(1,1);
 	}
 }

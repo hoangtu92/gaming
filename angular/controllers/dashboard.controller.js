@@ -1,4 +1,4 @@
-gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout) {
+gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location) {
 
     if(localStorage.showWelcome === '1'){
         $infoModal.open("親愛的<br>" +
@@ -11,8 +11,9 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
 
     $scope.owlOptions = {
         loop: false,
-        margin: 15,
+        margin: 25,
         nav: true,
+        addClassActive: true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -35,6 +36,21 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
 
     if(typeof $routeParams.msg !== "undefined"){
         $infoModal.open($scope.b64DecodeUnicode($routeParams.msg));
+    }
+    $scope.setActiveItem = function(item){
+        console.log(item);
+        $scope.activeItem = item;
+    }
+
+    $scope.exit = function () {
+        $infoModal.open("請愛的\n" +
+            "你確定要離開，不再陪我玩一下嗎?", undefined, "再玩一下", function () {
+            //logout
+            $location.url("login");
+            $timeout(function () {
+                closeFullscreen();
+            }, 200);
+        }, "確定")
     }
 
 

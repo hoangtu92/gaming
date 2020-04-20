@@ -6,7 +6,7 @@ gamingApp.directive("owlCarousel", function () {
 
             var children = tElement.children();
 
-            var template = angular.element('<div ng-repeat="item in items" class="slider-item"></div>');
+            var template = angular.element('<div ng-repeat="item in items" ng-click="setActiveItem(item)" ng-class="{selected: activeItem.id == item.id}" class="slider-item"></div>');
             template.append(children);
             tElement.html(template);
 
@@ -18,6 +18,7 @@ gamingApp.directive("owlCarousel", function () {
 
                 scope.$on("after_load_item", function () {
                     setTimeout(function () {
+                        console.log(scope.owlOptions)
                         iElement.owlCarousel(scope.owlOptions);
                     }, 500)
                 })
