@@ -328,7 +328,7 @@ span.side-menu-cstm-toogle {
 }
 
 span.img-sec {
-	border: 3px solid #fff;
+	/* border: 3px solid #fff; */
 	border-radius: 100%;
 	padding: 5px;
 	width: 100px;

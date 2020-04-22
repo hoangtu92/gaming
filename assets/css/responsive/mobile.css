@@ -476,7 +476,7 @@ and (orientation: landscape) {
     }
 
     .yellowshed .pull-left.text-right {
-        bottom: 0;
+        bottom: 2px;
         width: 100%;
         position: absolute;
         text-align: left;
@@ -488,7 +488,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .yellowshed .pull-left.text-right h4 {
@@ -508,6 +508,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
+        padding-top: 1px;
     }
 
     .yellowshed .golimg h1 {
@@ -581,7 +582,7 @@ and (orientation: landscape) {
     }
 
     .progress-container {
-        height: 14px;
+        height: 10px;
     }
 
     .gametable_blocktop {
@@ -1132,7 +1133,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .yellowshed .pull-left.text-right h4 {
@@ -1152,6 +1153,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
+        padding-top: 0px;
     }
 
     .yellowshed .golimg h1 {
@@ -1225,7 +1227,7 @@ and (orientation: landscape) {
     }
 
     .progress-container {
-        height: 16px;
+        height: 10px;
     }
 
     .gametable_blocktop {
@@ -1251,6 +1253,11 @@ and (orientation: landscape) {
 
     .game-statistic h4 {
         font-size: 1.3rem;
+    }
+
+    .progress-container-star{
+        height:15px;
+        width: 94px;
     }
 
     /*Role play*/
@@ -1787,7 +1794,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .yellowshed .pull-left.text-right h4 {
@@ -1807,6 +1814,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
+        padding-top: 0px;
     }
 
     .yellowshed .golimg h1 {
@@ -1880,7 +1888,7 @@ and (orientation: landscape) {
     }
 
     .progress-container {
-        height: 16px;
+        height: 10px;
     }
 
     .gametable_blocktop {
@@ -1906,6 +1914,11 @@ and (orientation: landscape) {
 
     .game-statistic h4 {
         font-size: 1.3rem;
+    }
+
+    .progress-container-star{
+        height: 15px;
+        width: 95px;
     }
 
     /*Role play*/
@@ -2433,7 +2446,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .yellowshed .pull-left.text-right h4 {
@@ -2453,6 +2466,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
+        padding-top: 0;
     }
 
     .yellowshed .golimg h1 {
@@ -2526,7 +2540,7 @@ and (orientation: landscape) {
     }
 
     .progress-container {
-        height: 16px;
+        height: 10px;
     }
 
     .gametable_blocktop {
@@ -2552,6 +2566,11 @@ and (orientation: landscape) {
 
     .game-statistic h4 {
         font-size: 1.3rem;
+    }
+
+    .progress-container-star{
+        height:15px;
+        width: 92px;
     }
 
     /*Role play*/

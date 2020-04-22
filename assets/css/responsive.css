@@ -266,6 +266,13 @@
 /* Portrait tablets and small desktops */
 @media all  and (max-width: 995px) {
 
+    .progress-container-star{
+        height: 10px;
+        width: 66px;
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+
     .right-author-chat-icon img{
         width: 100px;
     }
