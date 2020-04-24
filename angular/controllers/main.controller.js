@@ -251,7 +251,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             code: $scope.user.code
         })).then(function () {
             $infoModal.open("驗證成功，請登錄以繼續", function () {
-                window.location.reload();
+                $location.url("login")
             });
         });
     };
