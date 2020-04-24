@@ -5078,6 +5078,21 @@ body.page-price_plan {
 .owl-carousel .owl-stage-outer{
 	padding: 10px 0;
 }
+input:-internal-autofill-selected,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 1px solid rgba(66, 38, 91, .6);
+	-webkit-text-fill-color: #fff1a9;
+	-webkit-box-shadow: 0 0 0px 1000px #954391 inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
 
 @keyframes win {
 	from {

@@ -8,6 +8,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).join(''))
     };
 
+    $scope.currentVideo = {};
+
 
     $scope.nsOptions =
         {
@@ -640,6 +642,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
 
+
     $scope.playVideo = function () {
 
         if ($scope.videoPlayer.src !== '') {
@@ -654,6 +657,14 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }
 
     };
+
+    $scope.playDashboardVideo = function () {
+
+        $scope.$broadcast("playVideo");
+
+    };
+
+
 
     $scope.buyVideo = function () {
 
@@ -677,6 +688,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.$on("videoBegin", function (e, elem) {
         $scope.currentVideo.playing = false;
         $scope.videoPlayer = elem[0];
+
     });
 
     $scope.$on("videoPause", function (e, elem) {

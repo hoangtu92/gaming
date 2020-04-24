@@ -18,11 +18,11 @@
 
         <div class="col-md-7 col-sm-7">
             <div class="vedio">
-                <video id="videoPlay" class="video" controls=""
+                <video id="videoPlay" ng-video="" class="video" controls="" ng-init="setCurrentVideo(currentRole)"
                        controlslist="nodownload" ng-src="{{path['role_video']}}{{currentRole.video}}" autoplay ng-poster="{{path['role_video_image']}}{{currentRole.videos[0].cover}}" muted="" width="400">
                 </video>
-                <!--<button class="vedioicon"><img src="images/vedioicon.png" id="playbutton"></button> --></div>
-        </div>
+                <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img src="/assets/images/vedioicon.png"/></button>
+            </div>
     </div>
 
     <div class="vedio_slider">
