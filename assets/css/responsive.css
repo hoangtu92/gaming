@@ -887,3 +887,244 @@
         max-width: 45px;
     }
 }
+
+@media all and (min-width: 1024px) and (max-width: 1250px){
+    .welcome-mid-right-top-left h2{
+        font-size: 20px;
+    }
+    .login-welcome-page .form-group label{
+        font-size: 24px;
+    }
+    .login-welcome-page .form-group input.form-control{
+        border: 1px solid #fcf8e36b;
+    }
+    .welcome-left-author-data-sec h3,
+    span.price-icon h5{
+        font-size: 28px;
+    }
+    .wel-mid-right-top-right-innr{
+        font-size: 1.4vw;
+    }
+    .welcome-mid-right-bottom-left h6{
+        font-size: 22px;
+    }
+    .slider-item-inner h4{
+        font-size: 1.5vw;
+    }
+    .slider-item-inner .slidertxt-bar h6{
+        font-size: 14px;
+    }
+    .product-price span b{
+        font-size: 18px;
+    }
+    .sidenav a{
+        font-size:30px;
+    }
+    .welcome-mid-right-top-left li h3{
+        font-size: 1.5vw;
+    }
+    .user-credit{
+        font-size: 20px;
+    }
+    .game-statistic{
+        max-width: 95%;
+    }
+    button.prpulbtn{
+        width: auto
+    }
+    button.prpulbtn h3{
+        font-size: 1.8vw;
+    }
+
+    .start-btn .jointsbotm_btn h3.txt01{
+        font-size: 2.3vw;
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01{
+        font-size: 1.7vw;
+    }
+    .yellowshed .pull-left.text-right h1.ratetxt{
+        font-size: 20px
+    }
+
+
+}
+
+@media all and (min-width: 1250px) and (max-width: 1440px){
+    .welcome-mid-right-top-left h2{
+        font-size: 30px;
+    }
+    .login-welcome-page .form-group label{
+        font-size: 24px;
+    }
+    .login-welcome-page .form-group input.form-control{
+        border: 1px solid #fcf8e36b;
+    }
+    .welcome-left-author-data-sec h3,
+    span.price-icon h5{
+        font-size: 28px;
+    }
+    .wel-mid-right-top-right-innr{
+        font-size: 1.4vw;
+    }
+    .welcome-mid-right-bottom-left h6{
+        font-size: 22px;
+    }
+    .slider-item-inner h4{
+
+    }
+    .slider-item-inner .slidertxt-bar h6{
+        font-size: 16px;
+    }
+    .product-price span b{
+        font-size: 20px;
+    }
+    .sidenav a{
+        font-size:30px;
+    }
+    .welcome-mid-right-top-left li h3{
+
+    }
+    .user-credit{
+        font-size: 20px;
+    }
+    .game-statistic{
+        max-width: 95%;
+    }
+    button.prpulbtn{
+
+    }
+    button.prpulbtn h3{
+
+    }
+    .start-btn .jointsbotm_btn h3.txt01{
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01{
+
+    }
+    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    }
+
+}
+
+@media all and (min-width: 1440px) and (max-width: 1600px){
+    .welcome-mid-right-top-left h2{
+        font-size: 36px;
+    }
+    .login-welcome-page .form-group label{
+        font-size: 24px;
+    }
+    .login-welcome-page .form-group input.form-control{
+        border: 1px solid #fcf8e36b;
+    }
+    .welcome-left-author-data-sec h3,
+    span.price-icon h5{
+        font-size: 28px;
+    }
+    .wel-mid-right-top-right-innr{
+
+    }
+    .welcome-mid-right-bottom-left h6{
+        font-size: 22px;
+    }
+    .slider-item-inner h4{
+
+    }
+    .slider-item-inner .slidertxt-bar h6{
+        font-size: 16px;
+    }
+    .product-price span b{
+        font-size: 22px;
+    }
+    .sidenav a{
+        font-size:30px;
+    }
+    .welcome-mid-right-top-left li h3{
+
+    }
+
+    .user-credit{
+        font-size: 20px;
+    }
+    .game-statistic{
+        max-width: 95%;
+    }
+    button.prpulbtn{
+
+    }
+    button.prpulbtn h3{
+
+    }
+    .start-btn .jointsbotm_btn h3.txt01{
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01{
+
+    }
+    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    }
+}
+
+@media all and (min-width: 1600px){
+    .welcome-mid-right-top-left h2{
+        font-size: 43px;
+    }
+    .login-welcome-page .form-group label{
+        font-size:30px;
+    }
+    .login-welcome-page .form-group input.form-control{
+        border: 1px solid #fcf8e36b;
+    }
+    .welcome-left-author-data-sec h3,
+    span.price-icon h5{
+        font-size: 28px;
+    }
+    .wel-mid-right-top-right-innr{
+
+    }
+    .welcome-mid-right-bottom-left h6{
+        font-size: 31px;
+    }
+    .slider-item-inner h4{
+
+    }
+    .slider-item-inner .slidertxt-bar h6{
+        font-size: 16px;
+    }
+    .product-price span b{
+        font-size: 22px;
+    }
+    .sidenav a{
+        font-size:30px;
+    }
+    .welcome-mid-right-top-left li h3{
+
+    }
+    .user-credit{
+        font-size: 20px;
+    }
+    .game-statistic{
+        max-width: 95%;
+    }
+    button.prpulbtn{
+
+    }
+    button.prpulbtn h3{
+
+    }
+    .start-btn .jointsbotm_btn h3.txt01{
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01{
+
+    }
+    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    }
+}
