@@ -1,6 +1,7 @@
 gamingApp.controller("mainController", function ($window, $rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, $uibModalStack, ConfigService, $timeout) {
 
     $rootScope.route = $route;
+    $rootScope.apply_card = true;
 
     $scope.b64DecodeUnicode = function(str) {
         return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
@@ -72,6 +73,17 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.destinationPage = destination;
 
     });
+
+    $scope.applyCard = function(useCard){
+
+        $rootScope.apply_card = useCard;
+    };
+
+    $scope.sellCardPopup = function(){
+        $infoModal.open("確認要出售嗎？", function () {
+            $scope.broadcast('sell_card', $scope.viewingLevel);
+        })
+    };
 
     $scope.goBack = function () {
         if (typeof $scope.previousPage === 'undefined' || $scope.previousPage.length === 0 || $scope.previousPage === $scope.destinationPage) $location.url("dashboard");

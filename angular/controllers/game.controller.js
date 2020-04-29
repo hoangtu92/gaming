@@ -1,4 +1,4 @@
-gamingApp.controller("gameController", function ($scope, $route, $routeParams, $http, $location, $infoModal, $timeout) {
+gamingApp.controller("gameController", function ($scope, $route, $routeParams, $http, $location, $infoModal, $timeout, $rootScope) {
 
     /**
      * Sic bo dice game
@@ -12,7 +12,6 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         5: "/assets/images/fiveblack_box.png",
         6: "/assets/images/sixblack_box.png"
     };
-
 
 
 
@@ -471,7 +470,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
         $scope.resetGameState();
 
-        $http.post(localStorage.base_api + "game/shake").then(function (res) {
+        $http.post(localStorage.base_api + "game/shake", JSON.stringify({apply_card: $rootScope.apply_card})).then(function (res) {
 
             $scope.gaming = res.data.model;
 
@@ -497,7 +496,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
                 $(".gain-point").addClass("active");
             }
 
-            if(typeof $scope.previousLevel === 'undefined' || $scope.gaming.progressLevel > $scope.previousLevel){
+            if(typeof $scope.previousLevel !== 'undefined' && $scope.gaming.progressLevel > $scope.previousLevel){
                 $(".star-growing").addClass("active");
                 $infoModal.open("討厭啦~讓你贏了\n" +
                     "可以看我脫一件囉!\n" +

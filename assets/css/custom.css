@@ -1459,6 +1459,7 @@ section .modal {
 .menu.select-level a{
 	font-size: 18px;
 	white-space: nowrap;
+	float: left;
 }
 
 .reward-collection-modal {
@@ -3976,7 +3977,7 @@ h3.product-title {
 	}
 
 	a.mall-product-inner img {
-		max-height: 70px;
+		/* max-height: 70px; */
 		margin: 0 auto;
 	}
 
@@ -4143,6 +4144,9 @@ h3.product-title {
 	display: block;
 	width: 100%;
 	transform: scale(1);
+	min-width: 236px;
+	min-height: 236px;
+	object-fit: cover;
 }
 
 .image-box:hover img {
@@ -4514,6 +4518,8 @@ button.popupprple_btn img, .babyimg img {
 div.menu {
 	margin: 25px 0;
 	background: transparent;
+	overflow: auto;
+	width: 100%;
 }
 
 .select-level a {
@@ -5092,6 +5098,21 @@ select:-webkit-autofill:focus {
 	-webkit-text-fill-color: #fff1a9;
 	-webkit-box-shadow: 0 0 0px 1000px #954391 inset;
 	transition: background-color 5000s ease-in-out 0s;
+}
+
+.vedio{
+	border: 3px solid rgba(255, 255, 255, 0.12156862745098039);
+	transition: 500ms;
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+
+}
+
+.vedio:hover{
+	border: 3px solid #fff !important;
+	/* border-radius: 10px; */
+	box-shadow: 0px 0px 23px #ffffff;
+	filter: brightness(1.2);
 }
 
 @keyframes win {

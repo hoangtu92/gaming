@@ -236,6 +236,10 @@
         min-height: initial;
     }
 
+    .menu.select-level a{
+        font-size: 14px;
+    }
+
     .mark180 ul li img {
         max-width: 43px;
     }
@@ -271,6 +275,16 @@
         width: 66px;
         margin-top: 0px;
         margin-right: 10px;
+    }
+
+    .menu.select-level a{
+        font-size: 12px;
+        margin: 1px;
+        padding: 3px;
+    }
+
+    .babyimg_info .ratings_info{
+        padding:10px;
     }
 
     .right-author-chat-icon img{
@@ -927,7 +941,7 @@
         font-size: 20px;
     }
     .game-statistic{
-        max-width: 95%;
+        margin:0;
     }
     button.prpulbtn{
         width: auto
@@ -989,7 +1003,7 @@
         font-size: 20px;
     }
     .game-statistic{
-        max-width: 95%;
+        margin:0;
     }
     button.prpulbtn{
 
@@ -1050,7 +1064,7 @@
         font-size: 20px;
     }
     .game-statistic{
-        max-width: 95%;
+        margin:0;
     }
     button.prpulbtn{
 
@@ -1109,7 +1123,7 @@
         font-size: 20px;
     }
     .game-statistic{
-        max-width: 95%;
+        margin:0;
     }
     button.prpulbtn{
 
