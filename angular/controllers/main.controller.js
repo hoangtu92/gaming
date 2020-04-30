@@ -105,8 +105,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
 
+
+
     $scope.$on('$locationChangeSuccess', function () {
 
+        $scope.checkFullScreen();
         $scope.getCurrentUser();
         $scope.getCarts();
     });
@@ -331,6 +334,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.getRole = function () {
         $http.get(localStorage.base_api + "role/getRole", {params: {id: $routeParams.id}}).then(function (res) {
             $scope.currentRole = res.data.model;
+            $scope.setCurrentVideo(res.data.model);
             $scope.$broadcast("role_loaded", $scope.currentRole);
         });
     };
@@ -420,6 +424,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.setCurrentVideo = function (video) {
         $scope.currentVideo = video;
+        console.log($scope.currentVideo)
 
     };
     $scope.setCurrentLevel = function (level) {
@@ -751,6 +756,19 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         });
     };
 
+    $scope.checkFullScreen = function(){
+        if (window.innerHeight === screen.height) {
+            //alert("device is in fullscreen mode")
+            $route.reload()
+        } else {
+            $("#fullscreen-btn-container").css({"display": "flex"});
+        }
+    };
+
+    window.addEventListener("resize", function (ev) {
+        $scope.checkFullScreen();
+    });
+
 
     //Close the game when user close tab
     window.addEventListener('beforeunload', function (e) {
@@ -759,6 +777,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         //e.returnValue = "";
 
     });
+
+
 
     var loadingProgress;
     var INACTIVITY_TO_PROPOSE_RELOAD = 5000;

@@ -383,7 +383,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             style = 'display: none; position: fixed; left: ' + pos.x + 'px; top: ' + pos.y + 'px;',
             icon = '<div class="bet-icon redvlack_circle ' + bet_area + '" style="' + style + '">\n' +
                 '                                    <img src="/assets/images/redblackbgr.png">\n' +
-                '                                    <div class="text">' + result + 'K</div>\n' +
+                '                                    <div class="text" data-target="' + bet_area + '">' + result + 'K</div>\n' +
                 '                                </div>';
 
         var html = angular.element(icon);
@@ -526,6 +526,13 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
             $scope.placeBet(o, $scope.selectedBet);
             $scope.$apply();
         }
+    });
+
+    angular.element(document).on("click", ".bet-icon", function (e) {
+       var o = document.querySelector('.bet-area[data-bet="'+$(e.target).data("target")+'"]');
+       console.log(o);
+        $scope.placeBet(o, $scope.selectedBet);
+        $scope.$apply();
     });
 
     //Re draw icon when window resize, scroll

@@ -503,7 +503,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-right {
         position: relative;
-        z-index: 9999;
+        z-index: 9;
     }
 
     .yellowshed .golimg {
@@ -1148,7 +1148,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-right {
         position: relative;
-        z-index: 9999;
+        z-index: 9;
     }
 
     .yellowshed .golimg {
@@ -1809,7 +1809,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-right {
         position: relative;
-        z-index: 9999;
+        z-index: 9;
     }
 
     .yellowshed .golimg {
@@ -2461,7 +2461,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-right {
         position: relative;
-        z-index: 9999;
+        z-index: 9;
     }
 
     .yellowshed .golimg {

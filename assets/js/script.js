@@ -17,14 +17,17 @@ function landScapeMode() {
         elem.mozRequestFullScreen();
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
         elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /*
+        elem.msRequestFullscreen(); IE/Edge */
     }
+
+    $("#fullscreen-btn-container").css({"display": "none"})
 
     screen.orientation.lock("landscape-primary")
         .then(function () {
             _LOCK_BUTTON.style.display = 'none';
             // _UNLOCK_BUTTON.style.display = 'block';
+            $("#fullscreen-btn-container").css({"display": "none"})
         })
         .catch(function (error) {
             //alert(error);
@@ -66,6 +69,9 @@ document.addEventListener("webkitfullscreenchange", function () {
     //_LOCK_BUTTON.style.display = 'block';
     // _UNLOCK_BUTTON.style.display = 'none';
 });
+
+
+
 
 function myFunction() {
     document.getElementById("lock-landscape-button").click();

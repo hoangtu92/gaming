@@ -1,52 +1,77 @@
 <section class="uniformsister uniformsister-03">
-    <div class="uniformheader title-arrow"><a href="#!role-game/{{currentRole.id}}"> <img src="/assets/images/img-check-circle.png"/>
+    <div class="uniformheader title-arrow"><a href="#!role-game/{{currentRole.id}}"> <img
+            src="/assets/images/img-check-circle.png"/>
         <h1>返回遊戲</h1></a>
     </div>
 
-    <div class="uniformvedio_section" ng-init="getRole(); getCurrentUser()">
-        <div class="col-md-5 col-sm-5">
-            <div class="infowith_pinkbg">
-                <h1>{{currentRole.name}}</h1>
+    <div class="uniformvedio_section video-section" ng-init="getRole(); getCurrentUser()">
 
-                <ul class="list-unstyled">
-                    <li>三圍 <span>{{currentRole.measurement}}</span></li>
-                    <li>身高 <span>{{currentRole.height}} cm</span></li>
-                    <li>體重 <span>{{currentRole.weight}} kg</span></li>
-                </ul>
-            </div>
-        </div>
+        <table>
+            <colgroup>
+                <col width="30%">
+                <col width="70%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="vertical-align-bottom">
+                    <div class="infowith_pinkbg">
+                        <h1>{{currentRole.name}}</h1>
 
-        <div class="col-md-7 col-sm-7">
-            <div class="vedio">
-                <video id="videoPlay" ng-video="" class="video" controls="" ng-init="setCurrentVideo(currentRole)"
-                       controlslist="nodownload" ng-src="{{path['role_video']}}{{currentRole.video}}" autoplay ng-poster="{{path['role_video_image']}}{{currentRole.videos[0].cover}}" muted="" width="400">
-                </video>
-                <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img src="/assets/images/vedioicon.png"/></button>
-            </div>
-    </div>
+                        <ul class="list-unstyled">
+                            <li>三圍 <span>{{currentRole.measurement}}</span></li>
+                            <li>身高 <span>{{currentRole.height}} cm</span></li>
+                            <li>體重 <span>{{currentRole.weight}} kg</span></li>
+                        </ul>
+                    </div>
 
-    <div class="vedio_slider">
-        <div class="nowplay" ng-class="{fullpaly: gaming.progressLevel < video.level || video.id === currentVideoPlaying}" ng-repeat="video in currentRole.videos | orderBy: 'level'">
-            <img ng-if="video.id === currentVideoPlaying || gaming.progressLevel < video.level" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
-            <img ng-if="video.id !== currentVideoPlaying && gaming.progressLevel >= video.level" ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
-            <!--Playing-->
-            <div ng-if="video.id === currentVideoPlaying" class="blackoverlay" ng-click="pauseVideo(video);">
-                <div>
-                    <p></p>
-                    <span>播放</span>
-                </div>
-            </div>
 
-            <!--Locked video -->
-            <div ng-if="gaming.progressLevel < video.level" ng-click="unlockVideo(video.id)" class="blackoverlay">
-                <div>
-                    <span class="noramal">達 <span class="rps">{{video.threshold.formatPrice()}}分</span> 即可解鎖</span>
-                    <span class="hovertxt">討厭，想偷看我嗎？ 點數還不夠喔！</span>
-                </div>
+                </td>
+                <td class="vertical-align-bottom">
+                    <div class="vedio">
+                        <video id="videoPlay" ng-video="" class="video" controls=""
+                               controlslist="nodownload" ng-src="{{path['role_video']}}{{currentRole.video}}" autoplay
+                               ng-poster="{{path['role_video_image']}}{{currentRole.videos[0].cover}}" muted="" width="400">
+                        </video>
+                        <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img
+                                src="/assets/images/vedioicon.png"/></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="vertical-align-bottom">
+                    <div class="vedio_slider">
+                        <div class="nowplay"
+                             ng-class="{fullpaly: gaming.progressLevel < video.level || video.id === currentVideoPlaying}"
+                             ng-repeat="video in currentRole.videos | orderBy: 'level'">
+                            <img ng-if="video.id === currentVideoPlaying || gaming.progressLevel < video.level"
+                                 ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+                            <img ng-if="video.id !== currentVideoPlaying && gaming.progressLevel >= video.level"
+                                 ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
+                            <!--Playing-->
+                            <div ng-if="video.id === currentVideoPlaying" class="blackoverlay" ng-click="pauseVideo(video);">
+                                <div>
+                                    <p></p>
+                                    <span>播放</span>
+                                </div>
+                            </div>
 
-            </div>
+                            <!--Locked video -->
+                            <div ng-if="gaming.progressLevel < video.level" ng-click="unlockVideo(video.id)" class="blackoverlay">
+                                <div>
+                                    <img src="/assets/images/lock-icon.png" class="locked-icon">
+                                    <span class="noramal">達 <span class="rps">{{video.threshold.formatPrice()}}分</span> 即可解鎖</span>
+                                    <span class="hovertxt">討厭，想偷看我嗎？ 點數還不夠喔！</span>
+                                </div>
 
-        </div>
+                            </div>
 
-    </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
 </section>

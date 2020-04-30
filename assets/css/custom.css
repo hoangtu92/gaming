@@ -851,7 +851,7 @@ span.numbers {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 0;
-	white-space: pre-wrap;
+	white-space: pre-line;
 }
 
 .login-welcome-page .form-group input.form-control {
@@ -2162,6 +2162,10 @@ span.mall-cat-name {
 .gallery_product {
 	border-radius: 15px;
 	box-shadow: 0 0 25px #eb3875;
+}
+
+.gallery_product:hover, ul.gamelist_inner li:hover{
+	filter: brightness(120%);
 }
 
 .mall-product-inner {
@@ -4129,7 +4133,7 @@ h3.product-title {
 }
 
 .mall-product-inner:hover, .slider-inner a:hover {
-	filter: brightness(100%) !important;
+	/* filter: brightness(100%) !important; */
 }
 
 .image-box {
@@ -5115,6 +5119,48 @@ select:-webkit-autofill:focus {
 	filter: brightness(1.2);
 }
 
+.uniform_maingame img.locked-icon{
+	width: 32px;
+	height: auto;
+	display: block;
+	margin: 0 auto
+}
+
+.uniformvedio_section.video-section{
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin: 0;
+	padding-top: 20px;
+	transform: translateY(-50%);
+}
+.uniformvedio_section.video-section table{
+	width:100%;
+	height: 100%;
+	border-spacing: 20px;
+	border-collapse: separate;
+}
+
+.vertical-align-bottom{
+	vertical-align: bottom;
+}
+.video-play{
+
+}
+
+#fullscreen-btn-container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.38);
+	z-index: 999999;
+	display: none;
+}
 @keyframes win {
 	from {
 		opacity: 1;

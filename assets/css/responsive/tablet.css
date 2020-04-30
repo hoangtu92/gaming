@@ -65,6 +65,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
         width:40px;
         height: 40px;
     }
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
+    }
 }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
@@ -136,6 +142,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
         width:40px;
         height: 40px;
     }
+
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
+    }
 }
 
 /* Landscape */
@@ -202,6 +215,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
     button.popupprple_btn img.popup_close_icon{
         width:40px;
         height: 40px;
+    }
+
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
     }
 }
 
@@ -274,6 +294,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
         width:40px;
         height: 40px;
     }
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
+    }
 }
 
 /* Landscape */
@@ -342,6 +368,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
     button.popupprple_btn img.popup_close_icon{
         width:40px;
         height: 40px;
+    }
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
     }
 }
 
@@ -416,6 +448,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
         width:40px;
         height: 40px;
     }
+
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
+    }
 }
 
 /* Landscape */
@@ -485,5 +524,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
     button.popupprple_btn img.popup_close_icon{
         width:40px;
         height: 40px;
+    }
+    .progress-container-star{
+
+        width: 150px;
+
+        height: 25px;
     }
 }

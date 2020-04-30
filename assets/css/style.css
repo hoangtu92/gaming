@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: "微軟正黑體", sans-serif;
+    font-family: "å¾®è»Ÿæ­£é»‘é«”", sans-serif;
     font-weight: normal;
 }
 
@@ -712,7 +712,7 @@ button.crossbtn {
     }
 
     .infowith_pinkbg {
-        margin-top: 20%;
+        /* margin-top: 20%; */
         background: url(../images/transparent_bg2.png) no-repeat left top;
         padding: 10px 40px;
         width: 100%;
@@ -1193,6 +1193,7 @@ body.uniform_maingame {
     position: absolute;
     top: 2px;
     display: flex;
+    cursor: pointer;
 }
 
 .redvlack_circle img {
@@ -1640,7 +1641,7 @@ section.uniformsister_vedio .uniformheader h1 {
     padding: 10px 40px;
     width: 100%;
     max-width: 430px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .infowith_pinkbg h1 {
@@ -1676,11 +1677,11 @@ section.uniformsister_vedio .uniformheader h1 {
 .vedio_slider {
     width: 100%;
     display: inline-block;
-    height: 200px;
-    margin-top: 55px;
+    height: auto;
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
+    margin-top: 0;
 }
 
 .vedio_slider .nowplay {
@@ -1690,11 +1691,12 @@ section.uniformsister_vedio .uniformheader h1 {
     vertical-align: top;
     position: relative;
     margin: 5px;
+    margin-bottom: 20px;
 }
 
 .vedio_slider .nowplay.fullpaly .blackoverlay:hover {
     transition: .5s;
-    background: rgba(254, 115, 162, 1);
+    background: rgba(253, 55, 121, 0.5);
     filter: brightness(120%);
 }
 
@@ -1718,7 +1720,6 @@ section.uniformsister_vedio .uniformheader h1 {
     height: 100%;
     text-align: center;
     padding: 10px;
-    padding-top: 25px;
 }
 
 .vedio_slider .nowplay span span.rps {
@@ -1803,6 +1804,8 @@ section.uniformsister_vedio .uniformheader h1 {
 .vedio_slider .nowplay.fullpaly .blackoverlay:hover span.hovertxt {
     display: block;
     filter: brightness(120%);
+    width: 100%;
+    white-space: break-spaces;
 }
 
 .vedio_slider .nowplay.fullpaly .blackoverlay:hover span.noramal {
