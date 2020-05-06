@@ -1700,6 +1700,12 @@ section.uniformsister_vedio .uniformheader h1 {
     filter: brightness(120%);
 }
 
+.vedio_slider .nowplay.halfplay:hover .blackoverlay {
+    transition: .5s;
+    background: rgba(253, 55, 121, 0.5);
+    filter: brightness(120%);
+}
+
 .vedio_slider .nowplay.fullpaly .pinkoverlay {
     height: 100%;
     white-space: normal;
@@ -1718,6 +1724,22 @@ section.uniformsister_vedio .uniformheader h1 {
     top: 0;
     transition: .5s;
     height: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.vedio_slider .nowplay.halfplay .blackoverlay{
+    background: rgba(0, 0, 0, 0.49);
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    transition: .5s;
+    height: 40px;
     text-align: center;
     padding: 10px;
 }

@@ -41,19 +41,32 @@
                 <td colspan="2" class="vertical-align-bottom">
                     <div class="vedio_slider">
                         <div class="nowplay"
-                             ng-class="{fullpaly: gaming.progressLevel < video.level || video.id === currentVideoPlaying}"
+                             ng-class="{fullpaly: video.id !== currentVideoPlaying, halfplay: video.id === currentVideoPlaying}"
                              ng-repeat="video in currentRole.videos | orderBy: 'level'">
                             <img ng-if="video.id === currentVideoPlaying || gaming.progressLevel < video.level"
                                  ng-src="{{path['role_video_image']}}{{video.cover}}"/>
                             <img ng-if="video.id !== currentVideoPlaying && gaming.progressLevel >= video.level"
                                  ng-click="playVideo(video)" ng-src="{{path['role_video_image']}}{{video.cover}}"/>
-                            <!--Playing-->
-                            <div ng-if="video.id === currentVideoPlaying" class="blackoverlay" ng-click="pauseVideo(video);">
-                                <div>
-                                    <p></p>
-                                    <span>播放</span>
+
+                            <div ng-if="gaming.progressLevel >= video.level" class="blackoverlay">
+
+                                <!--Not playing-->
+                                <div ng-if="video.id !== currentVideoPlaying" ng-click="playVideo(video);">
+                                    <div>
+                                        <img src="/assets/images/play-icon.png" class="locked-icon">
+                                        <span>播放</span>
+                                    </div>
                                 </div>
+
+                                <!--Playing-->
+                                <div ng-if="video.id === currentVideoPlaying" ng-click="pauseVideo(video);">
+
+                                        <span>正在播放</span>
+                                </div>
+
                             </div>
+
+
 
                             <!--Locked video -->
                             <div ng-if="gaming.progressLevel < video.level" ng-click="unlockVideo(video.id)" class="blackoverlay">

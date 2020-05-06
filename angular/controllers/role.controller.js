@@ -19,20 +19,28 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
     $scope.playVideo = function (video) {
 
 
-        $scope.videoElement.setAttribute("poster", $scope.path['role_video_image'] + video.cover);
-        $scope.selectedVideo = video;
-        $http.get(localStorage.base_api + "roleVideo/getPlayableSource", {
-            params: {uid : video.uid}
-        }).then(function (res) {
+        if(typeof video !== 'undefined'){
+            $scope.videoElement.setAttribute("poster", $scope.path['role_video_image'] + video.cover);
 
-            $scope.selectedVideo.src = res.data.model;
-            $scope.currentVideoPlaying = $scope.selectedVideo.id;
+            $scope.selectedVideo = video;
+            $http.get(localStorage.base_api + "roleVideo/getPlayableSource", {
+                params: {uid : video.uid}
+            }).then(function (res) {
 
-            //localStorage.base_api + "roleVideo/play/" + $scope.selectedVideo.uid + "?t=" + localStorage.session_token
-            $scope.videoElement.setAttribute('src', $scope.path['role_video'] + $scope.selectedVideo.src);
-            $scope.videoElement.play();
+                $scope.selectedVideo.src = res.data.model;
+                $scope.currentVideoPlaying = $scope.selectedVideo.id;
+
+                //localStorage.base_api + "roleVideo/play/" + $scope.selectedVideo.uid + "?t=" + localStorage.session_token
+                $scope.videoElement.setAttribute('src', $scope.path['role_video'] + $scope.selectedVideo.src);
+                $scope.videoElement.play();
 
             });
+        }
+        else{
+            $scope.videoElement.play();
+        }
+
+
 
     };
 

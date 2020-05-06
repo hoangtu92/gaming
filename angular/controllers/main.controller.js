@@ -12,6 +12,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.currentVideo = {};
 
 
+
+
     $scope.nsOptions =
         {
             sliderId: "ninja-slider",
@@ -100,7 +102,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 t += e.qty;
                 return t;
             }, 0);
-            console.log("Cart", $scope.carts);
+            //console.log("Cart", $scope.carts);
         })
     };
 
@@ -225,17 +227,39 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 localStorage.showWelcome = '1';
 
                 $timeout(function () {
-                    $location.url("dashboard");
+                    landScapeMode();
                     $timeout(function () {
-                        landScapeMode();
-                    }, 500)
+                        $location.url("dashboard");
+                    }, 1000)
                 })
             } else {
                 $infoModal.open("此帳號尚未註冊，請先註冊")
             }
         }, function (res) {
-            if (res.data.status === 403) {
-                $infoModal.open("帳號或密碼錯誤，請重新輸入")
+
+            if (res.status === 403) {
+                //Wrong credentials
+                $infoModal.open("帳號或密碼錯誤，請重新輸入");
+            }
+            if(res.status === 423){
+                //Not activated
+                //$infoModal.open(res.data.message);
+
+
+                $http.get(localStorage.base_api + "user/resendVerification", {params: {
+                        username: $scope.user.username
+                    }}).then(function (res) {
+                        console.log(res.data.model)
+                    if(res.data.model.phone.length > 0){
+                        $scope.openModal("verify_user", "", "md")
+                    }
+                    else{
+                        $infoModal.open("Email驗證信已送出，請確認信箱")
+                    }
+
+                })
+
+
             }
         });
 
@@ -424,7 +448,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.setCurrentVideo = function (video) {
         $scope.currentVideo = video;
-        console.log($scope.currentVideo)
+        //console.log($scope.currentVideo)
 
     };
     $scope.setCurrentLevel = function (level) {
@@ -737,7 +761,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.userVideosID = res.data.model.map(function (value) {
                 return value.id;
             });
-            console.log($scope.userVideos)
+            //console.log($scope.userVideos)
         })
     };
 
@@ -757,9 +781,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.checkFullScreen = function(){
-        if (window.innerHeight === screen.height) {
+        if(!is_full_screen) is_full_screen = window.innerHeight === screen.height;
+        if (is_full_screen) {
             //alert("device is in fullscreen mode")
-            $route.reload()
+            //$route.reload()
         } else {
             if(window.innerWidth <= 992){
                 $("#fullscreen-btn-container").css({"display": "flex"});
@@ -779,6 +804,38 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         //e.returnValue = "";
 
     });
+
+    // on exiting full-screen lock is automatically released
+    document.addEventListener("fullscreenchange", function (e) {
+        //_LOCK_BUTTON.style.display = 'block';
+        // _UNLOCK_BUTTON.style.display = 'none';
+        //is_full_screen = false;
+        if (document.fullscreenElement) {
+            is_full_screen = true;
+            $scope.$broadcast("enter_full_screen");
+        }
+        else{
+            is_full_screen = false;
+            $scope.$broadcast("exit_full_screen");
+        }
+
+        $scope.$broadcast("fullscreenchange")
+
+    });
+    document.addEventListener("webkitfullscreenchange", function () {
+        //_LOCK_BUTTON.style.display = 'block';
+        // _UNLOCK_BUTTON.style.display = 'none';
+        if (document.fullscreenElement) {
+            is_full_screen = true;
+            $scope.$broadcast("enter_full_screen");
+        }
+        else{
+            is_full_screen = false;
+            $scope.$broadcast("exit_full_screen");
+        }
+        $scope.$broadcast("fullscreenchange")
+    });
+
 
 
 

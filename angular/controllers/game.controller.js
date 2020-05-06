@@ -474,7 +474,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
             $scope.gaming = res.data.model;
 
-            console.log($scope.gaming);
+            console.log("Game Log", JSON.stringify($scope.gaming));
 
             var win = Object.keys($scope.gaming['win']),
                 lost = Object.keys($scope.gaming['lost']);
@@ -530,7 +530,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
     angular.element(document).on("click", ".bet-icon", function (e) {
        var o = document.querySelector('.bet-area[data-bet="'+$(e.target).data("target")+'"]');
-       console.log(o);
+       //console.log(o);
         $scope.placeBet(o, $scope.selectedBet);
         $scope.$apply();
     });

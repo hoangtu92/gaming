@@ -16,9 +16,18 @@ gamingApp.directive("owlCarousel", function () {
                     iElement.owlCarousel('destroy');
                 });
 
+                scope.$on("fullscreenchange", function () {
+                    iElement.owlCarousel('destroy');
+
+                    setTimeout(function () {
+                        //console.log(scope.owlOptions)
+                        iElement.owlCarousel(scope.owlOptions);
+                    }, 500)
+                });
+
                 scope.$on("after_load_item", function () {
                     setTimeout(function () {
-                        console.log(scope.owlOptions)
+                        //console.log(scope.owlOptions)
                         iElement.owlCarousel(scope.owlOptions);
                     }, 500)
                 })

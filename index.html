@@ -59,13 +59,13 @@
 <section ng-view id="routedContent"></section>
 
 
-<div id="buttons-container" ng-if="route.current.view !== 'login' && route.current.view !== 'index'">
+<!--<div id="buttons-container" ng-if="route.current.view !== 'login' && route.current.view !== 'index'">
     <button id="lock-landscape-button" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
-    <!-- <button id="unlock-button">Unlock</button> -->
-</div>
+    &lt;!&ndash; <button id="unlock-button">Unlock</button> &ndash;&gt;
+</div>-->
 
-<div id="fullscreen-btn-container">
-    <button id="full-screen-btn" onclick="landScapeMode();">請使用橫式螢幕瀏覽</button>
+<div id="fullscreen-btn-container" ng-if="route.current.view !== 'login' && route.current.view !== 'index'">
+    <button id="full-screen-btn" onclick="landScapeMode();">請點擊轉為全螢幕</button>
 </div>
 
 <div ng-if="!applicationLoaded" class="loadingPage">
