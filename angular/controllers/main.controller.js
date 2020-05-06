@@ -761,7 +761,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             //alert("device is in fullscreen mode")
             $route.reload()
         } else {
-            $("#fullscreen-btn-container").css({"display": "flex"});
+            if(window.innerWidth <= 992){
+                $("#fullscreen-btn-container").css({"display": "flex"});
+            }
         }
     };
 
