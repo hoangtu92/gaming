@@ -1,4 +1,12 @@
-
+@media (max-height: 950px){
+    .login-header h2 {
+        margin-bottom: 15px;
+        font-size: 46px;
+    }
+    .login-welcome-page .form-group{
+        margin-bottom: 20px;
+    }
+}
 @media (max-height: 750px){
     .welcome-mid-right-top-left li h3 {
         font-size: 18px;

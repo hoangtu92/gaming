@@ -2150,7 +2150,7 @@ span.mall-cat-name {
 	padding-right: 10px;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(204px, 1fr));
 	grid-gap: 25px;
 	margin-top: 30px;
 	padding: 10px 30px;
@@ -2168,7 +2168,7 @@ span.mall-cat-name {
 }
 
 .gallery_product:hover, ul.gamelist_inner li:hover{
-	filter: brightness(120%);
+	/* filter: brightness(120%); */
 }
 
 .mall-product-inner {
@@ -5124,7 +5124,7 @@ select:-webkit-autofill:focus {
 	border: 3px solid #fff !important;
 	/* border-radius: 10px; */
 	box-shadow: 0px 0px 23px #ffffff;
-	filter: brightness(1.2);
+	/* filter: brightness(1.2); */
 }
 
 .uniform_maingame img.locked-icon{
@@ -5169,6 +5169,7 @@ select:-webkit-autofill:focus {
 	z-index: 999999;
 	display: none;
 }
+
 @keyframes win {
 	from {
 		opacity: 1;

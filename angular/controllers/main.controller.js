@@ -182,7 +182,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.closeModal = function(){
         $uibModalStack.dismissAll();
-    }
+    };
     $scope.goto = function (url) {
         $location.url(url);
     };
@@ -198,6 +198,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         "+853": 8,
         "+60": 9,
         "+63": 10
+    };
+
+    $scope.resetUserData = function(){
+        $scope.user = {};
     };
 
     $scope.validatePhone = function (phone) {
@@ -227,7 +231,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 localStorage.showWelcome = '1';
 
                 $timeout(function () {
-                    landScapeMode();
+                    if(window.innerWidth <= 992){
+                        landScapeMode();
+                    }
+
                     $timeout(function () {
                         $location.url("dashboard");
                     }, 1000)
@@ -276,6 +283,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         } else if ($scope.validatePhone(phone)) {
             $http.post(localStorage.base_api + "user/signUp", JSON.stringify($scope.user)).then(function (res) {
                 if (res.data.status) {
+
+                    $scope.accountLogin = angular.copy($scope.user);
+
                     $scope.modal["cell_register"].close();
                     $scope.user = res.data.model;
                     $scope.openModal("verify_user", "", "md")
@@ -291,9 +301,11 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             uid: $scope.user.uid,
             code: $scope.user.code
         })).then(function () {
-            $infoModal.open("驗證成功，請登錄以繼續", function () {
+            $scope.user = $scope.accountLogin;
+            $scope.login();
+            /*$infoModal.open("驗證成功，請登錄以繼續", function () {
                 $location.url("login")
-            });
+            });*/
         });
     };
 

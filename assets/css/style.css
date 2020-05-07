@@ -539,18 +539,27 @@ ul.gamelist_inner li a {
     }
 }
 
-ul.gamelist_inner li .listbox {
+ul.gamelist_inner li .listbox{
     border: 3px solid #fff;
     border-radius: 10px;
-    box-shadow: inset 0px 0px 23px #ff5ea6;
     padding: 25px;
     background: rgba(255, 94, 166, 0.32);
     text-align: center;
 }
 
+ul.gamelist_inner :hover .listbox {
+
+
+    box-shadow: inset 0px 0px 23px #ff5ea6;
+
+}
+
 ul.gamelist_inner li .shadow {
-    box-shadow: 0px 0px 23px #ff5ea6;
+
     border-radius: 10px;
+}
+ul.gamelist_inner li:hover .shadow {
+    box-shadow: 0px 0px 23px #ff5ea6;
 }
 
 ul.gamelist_inner li .listbox img {
