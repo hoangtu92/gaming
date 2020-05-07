@@ -5170,6 +5170,18 @@ select:-webkit-autofill:focus {
 	display: none;
 }
 
+.wel-mid-right-top-right-innr{
+	font-size: 1.4vw;
+}
+
+.slider-item-inner h4{
+	font-size: 1.5vw
+
+}
+.welcome-mid-right-top-left li h3{
+	font-size: 1.5vw
+}
+
 @keyframes win {
 	from {
 		opacity: 1;
