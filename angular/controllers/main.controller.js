@@ -702,7 +702,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.$broadcast("playVideo");
         } else {
             $http.get(localStorage.base_api + "video/getPlayableUrl", {params: {id: $scope.currentVideo.id}}).then(function (res) {
-                $scope.$broadcast("playVideo", $scope.path['video'] + res.data.model)
+                $scope.$broadcast("playVideo", res.data.model + "?t=" + localStorage.session_token)
             }, function (reason) {
                 if(reason.status === 406)
                     $scope.openModal("video_buy")
