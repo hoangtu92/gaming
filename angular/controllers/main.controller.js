@@ -205,7 +205,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.validatePhone = function (phone) {
-        return phone.match(/\+8869\d{9}$|\+86\d{11}$|\+852\d{8}$|\+853\d{8}$|\+60\d{9}$|\+63\d{10}$/);
+        return phone.match(/\+8869\d{8}$|\+86\d{11}$|\+852\d{8}$|\+853\d{8}$|\+60\d{9}$|\+63\d{10}$/);
     };
 
     $scope.$watch("user.displayPhone", function (phone) {
