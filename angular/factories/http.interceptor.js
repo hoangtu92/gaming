@@ -112,7 +112,9 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                 else if(rejection.status === 403){
 
                 }
-
+                else if(rejection.status === 423 ){//Locked
+                    //Handle in controller
+                }
                 else{
                     $injector.get("$infoModal").open(rejection.data.message)
                 }
