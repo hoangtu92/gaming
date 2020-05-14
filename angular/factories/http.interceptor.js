@@ -119,8 +119,6 @@ gamingApp.config(function ($httpProvider, $qProvider) {
                     $injector.get("$infoModal").open(rejection.data.message)
                 }
 
-
-
             }
 
             return $q.reject(rejection);
