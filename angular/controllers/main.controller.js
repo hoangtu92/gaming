@@ -290,6 +290,16 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                     $scope.user = res.data.model;
                     $scope.openModal("verify_user", "", "md")
                 }
+            }, function (reason) {
+                if(reason.status === 423){
+                    //Not activated
+                    $http.get(localStorage.base_api + "user/resendVerification", {params: {
+                            username: $scope.user.username
+                        }}).then(function (res) {
+                        //console.log(res.data.model)
+                        $scope.openModal("verify_user", "", "md");
+                    })
+                }
             });
         } else {
             $infoModal.open("您輸入的手機號碼錯誤，請確認後重新輸入")
@@ -315,6 +325,19 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.user = res.data.model;
 
             $infoModal.open("Email驗證信已送出，請確認信箱")
+        }, function (reason) {
+            if(reason.status === 423){
+                //Not activated
+                //$infoModal.open(res.data.message);
+
+                $http.get(localStorage.base_api + "user/resendVerification", {params: {
+                        username: $scope.user.username
+                    }}).then(function (res) {
+                    //console.log(res.data.model)
+                    $infoModal.open("Email驗證信已送出，請確認信箱")
+
+                })
+            }
         });
 
     };
