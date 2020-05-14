@@ -256,7 +256,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 $http.get(localStorage.base_api + "user/resendVerification", {params: {
                         username: $scope.user.username
                     }}).then(function (res) {
-                        console.log(res.data.model)
+                        console.log(res.data.model);
+                    $scope.user = res.data.model;
                     if(res.data.model.phone.length > 0){
                         $scope.openModal("verify_user", "", "md")
                     }
@@ -296,7 +297,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                     $http.get(localStorage.base_api + "user/resendVerification", {params: {
                             username: $scope.user.username
                         }}).then(function (res) {
-                        //console.log(res.data.model)
+                            $scope.user = res.data.model;
+                        console.log(res.data.model)
                         $scope.openModal("verify_user", "", "md");
                     })
                 }
