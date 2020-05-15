@@ -1,31 +1,17 @@
-<section class="login-page-outer">
+<section class="login-home-page-outer" id="container">
+    <p id="orientation-status"></p>
     <div class="container">
-        <div class="login-welcome-page">
-            <form class="form-signin" ng-submit="login()">
-                <div class="login-header">
-                    <h2>遊戲登入</h2>
-                    <span class="login-close" ng-click="goto('/')">x</span> </div>
-                <div class="form-group">
-                    <label id="status-msg"></label>
+        <div class="login-homepage-inner-sec">
+            <div class="login-home-page-logo-sec"><img alt="logo" src="/assets/images/login-homepage-logo.png"
+                                                       class="login-homepage-mid-logo"></div>
+            <div class="login-homepage-bottom-sec">
+                <div class="cstm-container" ng-init="openModal('login')">
+                    <!--<div class="cstm-column"><a><img alt="login home" src="/assets/images/login-homepage-free-trail.png"></a></div>-->
+                    <div class="text-center cstm-column" style="float: none; width: 100%"><a href="#" ng-click="openModal('login')"><img
+                            src="/assets/images/Login-homepage-game-login-btn.png"></a></div>
                 </div>
-                <div class="form-group">
-                    <label>暱稱</label>
-                    <input type="text" ng-model="user.username" name="username" class="form-control" placeholder="" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label>密碼</label>
-                    <input type="password" ng-model="user.password" name="password" class="form-control" placeholder="" required>
-                </div>
-                <div class="form-group"> <a href="#" ng-click="openModal('forgot_password')" class="forgot-pass-link">忘記密碼？</a> </div>
-                <div class="button-group">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6"> <a class="btn-registered-link" href="#" ng-click="openModal('register')"><img alt="register" src="/assets/images/btn-register.png"></a> </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <button class="btn btn-login-btn" type="submit"><img alt="login" src="/assets/images/btn-login.png"></button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </section>
+
