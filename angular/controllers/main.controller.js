@@ -295,7 +295,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 if(reason.status === 423){
                     //Not activated
                     $http.get(localStorage.base_api + "user/resendVerification", {params: {
-                            username: $scope.user.username
+                            username: $scope.user.phone
                         }}).then(function (res) {
                             $scope.user = res.data.model;
                         console.log(res.data.model)
@@ -333,7 +333,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
                 //$infoModal.open(res.data.message);
 
                 $http.get(localStorage.base_api + "user/resendVerification", {params: {
-                        username: $scope.user.username
+                        username: $scope.user.email
                     }}).then(function (res) {
                     //console.log(res.data.model)
                     $infoModal.open("Email驗證信已送出，請確認信箱")
