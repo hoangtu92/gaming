@@ -890,12 +890,12 @@ span.numbers {
 
 a.forgot-pass-link {
 	color: #f2f2f2;
-	font-size: 30px;
 	text-decoration: none;
 	position: relative;
 	padding-bottom: 1px;
 	border-bottom: 2px solid #fff;
 	text-align: center;
+	font-size: 1.4vw;
 }
 
 .button-group {
@@ -3730,9 +3730,9 @@ h3.product-title {
 		height: 40px;
 	}
 
-	a.forgot-pass-link {
+	/*a.forgot-pass-link {
 		font-size: 20px;
-	}
+	}*/
 
 	.cstm-btn a img, button.btn.btn-newsletter-verificaion-btn img {
 		max-width: 150px;
@@ -5040,10 +5040,18 @@ body.page-price_plan {
 	animation: win 1s;
 }
 
+a.close{
+	opacity: 1;
+}
+
+a.close img{
+	width:32px;
+}
 
 .flex {
 	display: flex;
 }
+
 
 .flex-column {
 	flex-direction: column;

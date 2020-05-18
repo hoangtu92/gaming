@@ -10,7 +10,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
     localStorage.showWelcome = '0';
 
     $scope.owlOptions = {
-        loop: false,
+        loop: true,
         margin: 25,
         nav: true,
         addClassActive: true,
@@ -21,19 +21,16 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
             0: {
                 items: 6,
                 nav: true,
-                loop: false,
                 margin: 10,
             },
             768: {
                 items: 6,
                 nav: true,
-                loop: false,
                 margin: 10
             },
             1000: {
                 items: 6,
                 nav: true,
-                loop: false,
                 margin: 20
             }
         }

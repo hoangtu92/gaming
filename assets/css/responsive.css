@@ -968,12 +968,12 @@
     .yellowshed .pull-left.text-right h1.ratetxt{
         font-size: 20px
     }
-    a.forgot-pass-link{
+    /*a.forgot-pass-link{
         font-size: 1.4vw;
     }
     a.forgot-pass-link{
         font-size:1.4vw
-    }
+    }*/
 }
 
 @media all and (min-width: 1250px) and (max-width: 1440px){
