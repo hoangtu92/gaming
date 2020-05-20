@@ -3990,7 +3990,9 @@ and (orientation: landscape) {
 
 /* Larger mobile device*/
 /* Landscape */
-@media only screen and (min-device-width: 830px) and (orientation: landscape) {
+@media only screen and (min-device-width: 830px)
+and (        min-device-pixel-ratio: 2)
+and (orientation: landscape) {
     /*Card detail*/
     .babyimg_info .paragraph {
         font-size: 1.5rem;
