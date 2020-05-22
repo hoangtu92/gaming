@@ -624,6 +624,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }, "確認", undefined, "", true);
 
             $scope.getListUserCards();
+            $scope.getInUsedCards();
 
         });
     };
