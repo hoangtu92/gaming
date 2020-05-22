@@ -619,6 +619,10 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             params: {id: cardLevel.id}
         }).then(function (res) {
 
+            if($route.current.view === 'card_buy'){
+                $scope.modal['lucky_draw'].close();
+            }
+
             $infoModal.open("恭喜您升級成功！", function () {
                 $scope.openCardDetail(res.data.model);
             }, "確認", undefined, "", true);
