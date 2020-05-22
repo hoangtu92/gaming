@@ -752,6 +752,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function () {
             $scope.modal['video_buy'].close();
             $scope.playVideo();
+            $scope.getVideos();
 
             $scope.getCurrentUser();
 
