@@ -97,8 +97,17 @@ and (orientation: landscape) {
         margin-left: 5px;
     }
 
+    span.price-icon h5{
+        padding-left: 25px;
+        font-size: 14px;
+    }
+
+    .welcome-left-author-data-sec{
+        width:190px
+    }
     .welcome-left-author-sec{
         top: 46%;
+        left: -20px;
     }
 
     .booksthree_btn {
@@ -135,7 +144,8 @@ and (orientation: landscape) {
     }
 
     .right-author-chat-icon {
-        left: 70%;
+        left: 58%;
+        bottom: 37%;
     }
 
     button {
