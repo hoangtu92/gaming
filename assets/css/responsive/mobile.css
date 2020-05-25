@@ -97,6 +97,10 @@ and (orientation: landscape) {
         margin-left: 5px;
     }
 
+    .welcome-left-author-sec{
+        top: 46%;
+    }
+
     .booksthree_btn {
         padding-top: 5px;
         max-width: 325px;
