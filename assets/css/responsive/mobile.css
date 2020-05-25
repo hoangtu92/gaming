@@ -83,17 +83,18 @@ and (orientation: landscape) {
     }
 
     .right-cstm-btn-circle img {
-        max-width: 80px;
+        max-width: 65px;
     }
 
     .welcome-mid-right-sec {
         width: 280px;
         top: 72px;
         padding: 5px;
-        right: 32px;
+        right: 100px;
     }
 
     .welcome-mid-left-girl-img img.girl-img {
+        margin-left: 5px;
     }
 
     .booksthree_btn {
@@ -196,8 +197,8 @@ and (orientation: landscape) {
     }
 
     .right-cstm-btn-circle {
-        bottom: -53px;
-        right: 14px;
+        bottom: -39px;
+        right: 0px;
     }
 
     .welcome-mid-right-top-left ul {
