@@ -1,9 +1,16 @@
+
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
 /* Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    /*Card detail*/ .babyimg_info .paragraph {
-    font-size: 1.5rem;
-}
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    /*Card detail*/
+    .babyimg_info .paragraph {
+        font-size: 1.5rem;
+    }
 
     .product-price span img {
         width: 21px;
@@ -85,9 +92,12 @@
         right: 75px;
     }
 
-    span.side-menu-cstm-toogle {
+    span.side-menu-cstm-toogle{
+
         width: 38px;
+
         height: 38px;
+
         font-size: 18px !important;
     }
 
@@ -95,25 +105,25 @@
         margin-left: 25px;
     }
 
-    span.price-icon h5 {
+    span.price-icon h5{
         padding-left: 25px;
         font-size: 14px;
         line-height: 20px;
     }
 
-    span.price-icon img {
+    span.price-icon img{
+
         width: 20px;
     }
 
-    .welcome-left-author-data-sec h3 {
+    .welcome-left-author-data-sec h3{
         font-size: 1.5rem;
     }
 
-    .welcome-left-author-data-sec {
-        width: 190px
+    .welcome-left-author-data-sec{
+        width:190px
     }
-
-    .welcome-left-author-sec {
+    .welcome-left-author-sec{
         top: 47%;
         left: -20px;
     }
@@ -145,7 +155,9 @@
     }
 
     .sidenav a.closebtn {
+
         top: 25px !important;
+
         right: 10px !important;
     }
 
@@ -155,6 +167,7 @@
     }
 
     button {
+
         padding: 5px 20px;
         font-size: 1.5rem;
     }
@@ -180,22 +193,30 @@
     }
 
     .slider-item-inner h4 {
+
         font-size: 1rem;
+
         padding: 3px;
+
     }
 
     .slider-item-inner .slidertxt-bar {
+
         padding-bottom: 18px;
+
     }
 
     .right-author-chat-icon img {
+
     }
 
     .wel-mid-right-top-right-innr {
+
         font-size: 1rem;
     }
 
     .welcome-mid-right-top-left h3 strong {
+
         font-size: 1rem;
     }
 
@@ -209,10 +230,11 @@
 
     .right-cstm-btn-circle {
         bottom: -39px;
-        right: 15px;
+        right: 5px;
     }
 
     .welcome-mid-right-top-left ul {
+
         margin-top: 5px;
     }
 
@@ -225,14 +247,19 @@
     }
 
     .progress-level .progress-level-outer, .progress-level .progress-level-inner {
+
     }
 
     .welcome-bottom-inner-btn a img {
+
         width: 60px;
+
     }
 
-    .welcome-bottom-inner-btn {
+    .welcome-bottom-inner-btn{
+
         right: 10px;
+
     }
 
     /*Card select*/
@@ -288,6 +315,7 @@
         padding: 5px;
     }
 
+
     /*Mall*/
     .mall-category-products {
         max-height: initial;
@@ -320,7 +348,8 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    .uniform_boxes ul li, .uniformbox_inner {
+    .uniform_boxes ul li,
+    .uniformbox_inner {
         min-height: initial;
     }
 
@@ -377,6 +406,7 @@
     }
 
     .modal-header button.close {
+
         right: 0px;
         top: 0px;
     }
@@ -387,6 +417,7 @@
 
     /*Prize redeem*/
     .boxcheck {
+
         top: 10px;
         right: 5px;
     }
@@ -572,6 +603,7 @@
     }
 
     .topstart_block h1 {
+
         font-size: 1.5rem;
     }
 
@@ -597,11 +629,13 @@
     }
 
     .gametable_block {
+
         flex-basis: 99%;
         max-height: calc(100% - 50px);
     }
 
     .game-statistic {
+
         max-width: 407px;
         left: -10px;
         padding: 6px;
@@ -633,6 +667,7 @@
     }
 
     .infowith_pinkbg ul li {
+
         font-size: 1.5rem;
         margin-bottom: 5px;
     }

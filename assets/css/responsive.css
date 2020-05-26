@@ -558,6 +558,7 @@
 
     .wel-mid-right-top-right-innr {
         height: auto;
+        min-height: 65px;
         max-height: 83px;
         font-size: 1.5rem;
     }
