@@ -3,7 +3,7 @@
 
         <div class="game-statistic">
             <h4>本局押注: <span>{{gaming.total.formatPrice()}}點</span></h4>
-            <h4>贏: <span class="gain-point">{{(gaming.gain + gaming.earnedCreditBonus).formatPrice()}} <span class="effect">{{(gaming.gain + gaming.earnedCreditBonus).formatPrice()}}</span> 點</span></h4>
+            <h4>贏: <span class="gain-point">{{(gaming.gain).formatPrice()}} <span class="effect">{{(gaming.gain).formatPrice()}}</span> 點</span></h4>
             <h4>輸: <span>{{gaming.loss.formatPrice()}}點</span></h4>
             <h4>剩餘籌碼: <span>{{gaming.availableBet.formatPrice()}}點</span></h4>
             <!--<h4>您的G幣: {{gaming.user.credit}}</h4>-->
