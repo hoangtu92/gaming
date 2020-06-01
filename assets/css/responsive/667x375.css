@@ -261,7 +261,7 @@
     }
 
     ul.gamelist_inner.grid-200 {
-        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     ul.gamelist_inner li {
