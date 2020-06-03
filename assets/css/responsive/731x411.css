@@ -655,3 +655,13 @@
         height: auto;
     }
 }
+
+
+@media only screen and (max-device-width: 732px) and (min-device-height: 412px) and (orientation: landscape){
+    .header-top-left-menu ul{
+        flex-basis: 85%;
+    }
+    .welcome-mid-right-sec {
+        right: 58px;
+    }
+}
