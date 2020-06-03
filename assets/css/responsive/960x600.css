@@ -1,8 +1,15 @@
+
+/* ----------- Samsung A20 ----------- */
+
 /* Landscape */
-@media only screen and (min-device-height: 360px) and (max-device-width: 640px) and (orientation: landscape) {
-    /*Card detail*/ .babyimg_info .paragraph {
-    font-size: 1.5rem;
-}
+@media only screen
+and (device-height: 600px)
+and (device-width: 960px)
+and (orientation: landscape) {
+    /*Card detail*/
+    .babyimg_info .paragraph {
+        font-size: 1.5rem;
+    }
 
     .product-price span img {
         width: 21px;
@@ -20,7 +27,7 @@
 
     .babyimg img {
         width: auto;
-        height: 86vh;
+        height: 78vh;
     }
 
     .card_detail .modal-content {
@@ -55,8 +62,8 @@
     }
 
     .modal-header button.popupprple_btn {
-        right: -47px;
-        top: -35px;
+        right: -48px;
+        top: -37px;
     }
 
     button.popupprple_btn img.popup_close_icon {
@@ -66,56 +73,33 @@
 
     /*Dashboard*/
     .welcome-bottom-inner {
-        padding-bottom: 0;
+        padding-bottom: 30px;
     }
 
     .owl-carousel .owl-item img {
-        height: 45px;
+        height: 75px;
     }
 
     .right-cstm-btn-circle img {
-        max-width: 70px;
+        max-width: 80px;
     }
 
     .welcome-mid-right-sec {
-        width: 345px;
-        top: 84px;
-        padding: 10px;
-        right: 65px;
-    }
-
-    span.side-menu-cstm-toogle {
-        width: 38px;
-        height: 38px;
-        font-size: 18px !important;
+        width: 465px;
+        top: 137px;
+        padding: 20px;
+        right: 93px;
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: 15px;
     }
 
-    span.price-icon h5 {
-        padding-left: 25px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    span.price-icon img {
-        width: 20px;
-    }
-
-    .welcome-left-author-data-sec h3 {
-        font-size: 1.5rem;
-    }
-
-    .welcome-left-author-data-sec {
-        width: 160px;
-        padding-left: 45px;
+    .header-top-left-menu ul {
+        flex-basis: 68%;
     }
 
     .welcome-left-author-sec {
-        top: 49%;
-        left: -20px;
+        top: 50%;
     }
 
     .booksthree_btn {
@@ -137,24 +121,27 @@
     }
 
     .welcome-mid-right-top-left h2 {
-        font-size: 1.6rem;
+        font-size: 3rem;
     }
 
     .welcome-mid-right-top-left li h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .sidenav a.closebtn {
+
         top: 25px !important;
+
         right: 10px !important;
     }
 
     .right-author-chat-icon {
-        left: 50%;
-        bottom: 35%;
+        left: 70%;
+        bottom: 36%;
     }
 
     button {
+
         padding: 5px 20px;
         font-size: 1.5rem;
     }
@@ -172,32 +159,43 @@
     }
 
     .header-top-left-menu ul li a {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .header-top-left-menu ul li a {
-        padding: 5px 23px;
+        padding: 7px 25px;
     }
 
     .slider-item-inner h4 {
-        font-size: 1rem;
+
+        font-size: 0.8rem;
+
         padding: 3px;
+
     }
 
     .slider-item-inner .slidertxt-bar {
+
         padding-bottom: 18px;
+
     }
 
     .right-author-chat-icon img {
-        width: 110px;
+
+        width: 150px;
+
     }
 
     .wel-mid-right-top-right-innr {
-        font-size: 1.2rem;
+
+        font-size: 1.5rem;
+
     }
 
     .welcome-mid-right-top-left h3 strong {
-        font-size: 1.2rem;
+
+        font-size: 1.65rem;
+
     }
 
     .slider-item-inner .slidertxt-bar .progress-level.small h6 {
@@ -209,32 +207,43 @@
     }
 
     .right-cstm-btn-circle {
-        bottom: -31px;
-        right: 10px;
+        bottom: -45px;
+        right: 14px;
     }
 
     .welcome-mid-right-top-left ul {
+
         margin-top: 5px;
     }
 
     .progress-level h6 {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .progress-level {
-        height: 10px;
+        height: 20px;
     }
 
     .progress-level .progress-level-outer, .progress-level .progress-level-inner {
+
     }
 
     .welcome-bottom-inner-btn a img {
-        width: 59px;
+
+        width: 85px;
+
     }
 
     .welcome-bottom-inner-btn {
-        right: 10px;
+        top: -55px;
+        right: 16px;
     }
+
+    .welcome-mid-right-top-left{
+        width: 160px;
+    }
+
+
 
     /*Card select*/
     .card-remove {
@@ -260,7 +269,7 @@
     }
 
     ul.gamelist_inner.grid-200 {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
 
     ul.gamelist_inner li {
@@ -321,7 +330,8 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    .uniform_boxes ul li, .uniformbox_inner {
+    .uniform_boxes ul li,
+    .uniformbox_inner {
         min-height: initial;
     }
 
@@ -378,6 +388,7 @@
     }
 
     .modal-header button.close {
+
         right: 0px;
         top: 0px;
     }
@@ -388,6 +399,7 @@
 
     /*Prize redeem*/
     .boxcheck {
+
         top: 10px;
         right: 5px;
     }
@@ -405,7 +417,7 @@
     /*Game*/
     .mark180 ul li img {
         max-width: 25px;
-        padding: 3px 3px;
+        padding: 5px 3px;
     }
 
     .game-statistic {
@@ -423,13 +435,13 @@
     }
 
     ul.diseboxs_list li img {
-        max-width: 37px;
+        max-width: 42px;
         padding: 5px 10px;
     }
 
     ul.usernmber_list li h1 {
         font-size: 1.5rem;
-        padding: 4px 0;
+        padding: 7px 0;
     }
 
     ul.usernmber_list li p {
@@ -454,7 +466,7 @@
 
     .totalpoints h3 {
         font-size: 1.5rem;
-        padding: 5px;
+        padding: 9px;
     }
 
     .mark180 ul li h2 {
@@ -463,15 +475,15 @@
     }
 
     .markchina span.bigsign img {
-        max-width: 35px;
+        max-width: 50px;
     }
 
     .markchina h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .markchina {
-        margin-top: 36px;
+        margin-top: 28px;
     }
 
     .toprate_block {
@@ -513,7 +525,7 @@
 
     .yellowshed .golimg {
         max-width: 50px;
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     .yellowshed .golimg h1 {
@@ -523,8 +535,8 @@
     }
 
     .bet-unit {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         font-size: 1.3rem;
     }
 
@@ -543,16 +555,16 @@
     }
 
     .start-btn {
-        width: 91px;
+        width: 100px;
         padding-bottom: 42px;
-        height: 91px;
+        height: 100px;
         padding-top: 7px;
     }
 
     .reset-btn {
-        width: 107px;
+        width: 103px;
         font-size: 2rem;
-        padding-bottom: 59px;
+        padding-bottom: 55px;
         padding-top: 24px;
     }
 
@@ -573,6 +585,7 @@
     }
 
     .topstart_block h1 {
+
         font-size: 1.7rem;
     }
 
@@ -582,7 +595,7 @@
     }
 
     .topstart_block ul li {
-        padding: 1px 2px;
+        padding: 3px 3px;
     }
 
     .progress-container {
@@ -598,11 +611,13 @@
     }
 
     .gametable_block {
+
         flex-basis: 99%;
         max-height: calc(100% - 50px);
     }
 
     .game-statistic {
+
         max-width: 407px;
         left: -10px;
         padding: 6px;
@@ -612,9 +627,9 @@
         font-size: 1.3rem;
     }
 
-    .progress-container-star {
-        height: 15px;
-        width: 94px;
+    .progress-container-star{
+        height:15px;
+        width: 92px;
     }
 
     /*Role play*/
@@ -624,27 +639,32 @@
 
     .infowith_pinkbg {
         position: relative;
-        margin-top: 0;
+        margin-top: 0px;
         margin-bottom: 0;
     }
 
     .infowith_pinkbg h1 {
-        font-size: 1.8rem;
-        margin: 0 0 10px 0;
+        font-size: 2.5rem;
+        margin: 0 0 25px 0;
     }
 
     .infowith_pinkbg ul {
-        margin-top: 10px;
+        margin-top: 15px;
         padding: 0;
     }
 
     .infowith_pinkbg ul li {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.7rem;
+        margin-bottom: 17px;
     }
 
     .vedio_slider {
         margin-top: 0;
         height: auto;
     }
+
+    .welcome-mid-right-top-right {
+        width: calc(100% - 165px);
+    }
+
 }

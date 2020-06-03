@@ -667,5 +667,16 @@
     .welcome-mid-left-girl-img img.girl-img {
         margin-left: 0px;
     }
+    .welcome-mid-right-sec {
+        right: 67px;
+        top: 85px;
+    }
+    .right-author-chat-icon {
+        bottom: 36%;
+    }
+    .welcome-bottom-inner-btn {
+        top: -25px;
+        right: 10px;
+    }
 }
 
