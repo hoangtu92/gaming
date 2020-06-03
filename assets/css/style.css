@@ -1322,6 +1322,7 @@ ul.gamelist_inner li button.listimg {
     background: transparent;
     border: 0;
     padding: 0;
+    margin: 0;
 }
 
 .scroll-y{
