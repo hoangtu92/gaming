@@ -1,10 +1,10 @@
 
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* ----------- Nokia Lumia 520 ----------- */
 
 /* Landscape */
 @media only screen
 and (min-device-width: 320px)
-and (max-device-width: 568px)
+and (max-device-width: 480px)
 and (orientation: landscape) {
     /*Card detail*/
     .babyimg_info .paragraph {
@@ -88,7 +88,7 @@ and (orientation: landscape) {
         width: 295px;
         top: 60px;
         padding: 15px;
-        right: 75px;
+        right: 45px;
     }
 
     span.side-menu-cstm-toogle{
@@ -101,7 +101,7 @@ and (orientation: landscape) {
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: 25px;
+        margin-left: -9px;
     }
 
     span.price-icon h5{
@@ -123,7 +123,7 @@ and (orientation: landscape) {
         width:190px
     }
     .welcome-left-author-sec{
-        top: 47%;
+        top: 50%;
         left: -20px;
     }
 
@@ -162,7 +162,7 @@ and (orientation: landscape) {
 
     .right-author-chat-icon {
         left: 60%;
-        bottom: 37%;
+        bottom: 34%;
     }
 
     button {
@@ -188,7 +188,7 @@ and (orientation: landscape) {
     }
 
     .header-top-left-menu ul li a {
-        padding: 5px 18px;
+        padding: 4px 15px;
     }
 
     .slider-item-inner h4 {

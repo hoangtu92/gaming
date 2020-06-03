@@ -1188,3 +1188,9 @@
 
     }
 }
+
+@media all and (max-width: 732px){
+    .header-top-left-menu ul{
+        flex-basis: 85%;
+    }
+}
