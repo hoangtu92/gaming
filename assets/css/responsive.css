@@ -6,6 +6,10 @@
     .login-welcome-page .form-group{
         margin-bottom: 20px;
     }
+
+    .image-box{
+        min-height: 70px;;
+    }
 }
 @media (max-height: 750px){
     .welcome-mid-right-top-left li h3 {
@@ -341,6 +345,27 @@
 
     .img_inner {
         /* padding: 26px 25px; */
+    }
+
+    ul.gamelist_inner li .listbox h4{
+        font-size: 14px;
+    }
+    ul.gamelist_inner li .listbox h5{
+        font-size: 14px;
+    }
+    ul.gamelist_inner li .listbox{
+        padding: 10px;
+    }
+    .product-price span b{
+        font-size: 14px;
+    }
+
+    ul.gamelist_inner li .listbox span img{
+        width: 15px;
+        margin-right: 0px;
+    }
+    .product-price span{
+        font-size: 16px;
     }
 
     body.uniform_maingame {
