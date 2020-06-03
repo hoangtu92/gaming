@@ -101,7 +101,7 @@ and (orientation: landscape) {
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: 25px;
+        margin-left: 12px;
     }
 
     span.price-icon h5{
@@ -674,5 +674,16 @@ and (orientation: landscape) {
     .vedio_slider {
         margin-top: 0;
         height: auto;
+    }
+}
+
+@media only screen and (device-width: 533px) and (device-height: 320px) and (orientation: landscape){
+
+    .welcome-mid-left-girl-img img.girl-img {
+        margin-left: -7px;
+    }
+
+    .header-top-left-menu ul{
+        flex-basis: 87%;
     }
 }

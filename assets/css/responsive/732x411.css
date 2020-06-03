@@ -92,7 +92,7 @@
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: 50px;
+        margin-left: 26px;
     }
 
     span.price-icon h5 {
@@ -657,11 +657,15 @@
 }
 
 
-@media only screen and (max-device-width: 732px) and (min-device-height: 412px) and (orientation: landscape){
+@media only screen and (device-width: 732px) and (device-height: 412px) and (orientation: landscape){
     .header-top-left-menu ul{
         flex-basis: 85%;
     }
     .welcome-mid-right-sec {
         right: 58px;
     }
+    .welcome-mid-left-girl-img img.girl-img {
+        margin-left: 0px;
+    }
 }
+
