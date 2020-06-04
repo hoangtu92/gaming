@@ -102,6 +102,8 @@ and (orientation: landscape) {
 
     .welcome-mid-left-girl-img img.girl-img {
         margin-left: 12px;
+        width: 191px !important;
+        margin-top: -28px;
     }
 
     span.price-icon h5{
@@ -123,7 +125,7 @@ and (orientation: landscape) {
         width:190px
     }
     .welcome-left-author-sec{
-        top: 47%;
+        top: 45%;
         left: -20px;
     }
 
