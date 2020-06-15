@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
     <div class="login-welcome-page vedio" ng-init="setCurrentVideo(currentRole)">
-        <video ng-video="" autoplay style="width:100%;" controls ng-src="{{path['role_video']}}{{currentRole.video}}"></video>
+        <video ng-video="" autoplay style="width:100%;" controls ng-src="{{currentRole.video}}"></video>
         <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img src="/assets/images/vedioicon.png"/></button>
 
     </div>

@@ -7,6 +7,8 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
             "把我脫光喔!")
     }
 
+    $scope.previewVideo = '';
+
     localStorage.showWelcome = '0';
 
     $scope.owlOptions = {
@@ -53,6 +55,21 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
                 closeFullscreen();
             }, 200);
         }, "確定")
+    };
+
+    $scope.playPreview = function () {
+
+        if($scope.currentRole.video != null){
+            $scope.openModal('video_play');
+        }
+        else{
+            $http.get(localStorage.base_api + "role/getPlayableUrl", {params: {id: $scope.currentRole.id}}).then(function (value) {
+                $scope.currentRole.video = value.data;
+                $scope.openModal('video_play');
+            });
+
+        }
+
     }
 
 
