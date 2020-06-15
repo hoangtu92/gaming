@@ -64,7 +64,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         }
         else{
             $http.get(localStorage.base_api + "role/getPlayableUrl", {params: {id: $scope.currentRole.id}}).then(function (value) {
-                $scope.currentRole.video = value.data.model;
+                $scope.currentRole.video = value.data.model + "?t=" + localStorage.session_token;
                 $scope.openModal('video_play');
             });
 
