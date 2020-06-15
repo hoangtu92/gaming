@@ -127,7 +127,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
 
         //Get path setting
-        $http.get(localStorage.base_api + "setting/get", {params: {key: "_path"}}).then(function (res) {
+        $http.get(localStorage.base_api + "setting/getPath", {params: {key: "_path"}}).then(function (res) {
             $rootScope.path = res.data;
         });
 
