@@ -9,6 +9,13 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
     $scope.$on("role_loaded", function (evt, role) {
         $http.get(localStorage.base_api + "game/getSession", {params: {roleId: role.id}}).then(function (res) {
             $scope.gaming = res.data;
+
+            if($scope.currentRole.video == null){
+                $http.get(localStorage.base_api + "role/getPlayableUrl", {params: {id: $scope.currentRole.id}}).then(function (value) {
+                    $scope.currentRole.video = value.data.model + "?t=" + localStorage.session_token;
+                });
+            }
+
         }, function () {
             $location.url("role-game/" + role.id)
         })
