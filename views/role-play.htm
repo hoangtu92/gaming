@@ -29,8 +29,8 @@
                 <td class="vertical-align-bottom">
                     <div class="vedio">
                         <video id="videoPlay" ng-video="" class="video" controls=""
-                               controlslist="nodownload" ng-src="{{path['role_video']}}{{currentRole.video}}" autoplay
-                               ng-poster="{{currentRole.videos[0].cover}}" muted="" width="400">
+                               controlslist="nodownload" ng-src="{{currentRole.video}}" autoplay
+                               ng-poster="{{path['role_video_image']}}{{currentRole.videos[0].cover}}" muted="" width="400">
                         </video>
                         <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img
                                 src="/assets/images/vedioicon.png"/></button>
