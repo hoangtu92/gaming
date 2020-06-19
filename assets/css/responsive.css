@@ -1,17 +1,77 @@
-@media (max-height: 950px){
-    .login-header h2 {
-        margin-bottom: 15px;
-        font-size: 46px;
-    }
-    .login-welcome-page .form-group{
-        margin-bottom: 20px;
+@media all and (max-height: 950px) {
+    .login .login-header h2 {
+        margin-bottom: 15px !important;
+        font-size: 25px;
     }
 
-    .image-box{
-        min-height: 70px;;
+    .forgot_password .login-header h2 {
+        margin-bottom: 10px !important;
+        font-size: 20px;
     }
+
+    a.close img {
+        width: 30px
+    }
+
+    .login-welcome-page .form-group {
+        margin-bottom: -10px;
+    }
+
+    .login .login-welcome-page .form-group {
+        margin-bottom: 10px;
+    }
+
+    .image-box {
+        min-height: 70px;
+    }
+
+    .modal-header .modal-title{
+        margin-left: 60px;
+
+    }
+
+    .modal.in .modal-dialog.modal-xs .modal-body{
+        padding-top: 0px;
+
+    }
+
+    button[type="reset"]{
+        background: #fd3779;
+
+    }
+
+    .modal-footer{
+        margin-top: -35px;
+
+    }
+
+    .modal.filter .login-header h2{
+        font-size: 30px;
+        margin-top: -17px;
+        margin-bottom: 10px;
+    }
+
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection.right-side-list-filter{
+        padding-left: 0%;
+
+    }
+
+    .modal.filter .modal-content{
+        max-width: 65vw;
+    }
+
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection li{
+        padding-left: 40px;
+    }
+
+    .modal.filter .modal-footer{
+        margin-top: -35px;
+    }
+
+
 }
-@media (max-height: 750px){
+
+@media (max-height: 750px) {
     .welcome-mid-right-top-left li h3 {
         font-size: 18px;
     }
@@ -25,8 +85,8 @@
     }
 }
 
-@media (max-width: 992px) and (max-height: 680px){
-    .modal-content{
+@media (max-width: 992px) and (max-height: 680px) {
+    .modal-content {
         overflow-y: auto;
         min-width: 40vw;
     }
@@ -39,7 +99,7 @@
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
-    .modal .modal-dialog.modal-xs{
+    .modal .modal-dialog.modal-xs {
         min-width: initial;
     }
 
@@ -49,7 +109,7 @@
         /* left: -41px; */
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 74vh;
         max-height: 400px;
@@ -67,7 +127,7 @@
         left: -41px;
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 74vh;
     }
@@ -86,7 +146,7 @@
         left: -104px;
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 65vh;
     }
@@ -99,13 +159,13 @@
         grid-template-columns: repeat(6, 1fr);
     }
 
-    .mall-category-products{
-        grid-template-columns:repeat(6, 1fr)
+    .mall-category-products {
+        grid-template-columns: repeat(6, 1fr)
     }
 
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1400px) {
 
 }
 
@@ -164,7 +224,7 @@
         left: -91px;
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 61vh;
         max-height: 500px;
@@ -183,13 +243,13 @@
         left: -50px;
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 61vh;
         max-height: 500px;
     }
 
-    .modal-content{
+    .modal-content {
         max-width: 700px;
     }
 
@@ -206,7 +266,7 @@
         left: -91px;
     }
 
-    .babyimg img{
+    .babyimg img {
         width: auto;
         height: 61vh;
         max-height: 500px;
@@ -219,7 +279,7 @@
 
 @media (max-width: 1440px) {
     .gametableinner {
-        padding-top:30px
+        padding-top: 30px
     }
 
     ul.diseboxs_list li img {
@@ -230,14 +290,15 @@
         margin-bottom: 15px;
     }
 }
+
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-    .welcome-mid-left-girl-img img.girl-img{
+    .welcome-mid-left-girl-img img.girl-img {
         margin-left: -20px;
     }
 }
 
 @media (max-width: 1190px) {
-    .header-top-left-menu{
+    .header-top-left-menu {
         padding: 0;
     }
 
@@ -253,11 +314,11 @@
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     }
 
-    .uniform_boxes ul li, .uniformbox_inner{
+    .uniform_boxes ul li, .uniformbox_inner {
         min-height: initial;
     }
 
-    .menu.select-level a{
+    .menu.select-level a {
         font-size: 14px;
     }
 
@@ -291,30 +352,31 @@
 /* Portrait tablets and small desktops */
 @media all  and (max-width: 995px) {
 
-    .progress-container-star{
+    .progress-container-star {
         height: 10px;
         width: 66px;
         margin-top: 0px;
         margin-right: 10px;
     }
 
-    .menu.select-level a{
+    .menu.select-level a {
         font-size: 12px;
         margin: 1px;
         padding: 3px;
     }
 
-    .babyimg_info .ratings_info{
-        padding:10px;
+    .babyimg_info .ratings_info {
+        padding: 10px;
     }
 
-    .right-author-chat-icon img{
+    .right-author-chat-icon img {
         width: 100px;
     }
 
-    .login-homepage-bottom-sec{
+    .login-homepage-bottom-sec {
         margin-top: 0;
     }
+
     .uniform_boxes ul li {
         min-height: 415px;
     }
@@ -352,28 +414,32 @@
         /* padding: 26px 25px; */
     }
 
-    ul.gamelist_inner li .listbox h4{
-        font-size: 14px;
-    }
-    ul.gamelist_inner li .listbox h5{
-        font-size: 14px;
-    }
-    ul.gamelist_inner li .listbox{
-        padding: 10px;
-    }
-    .product-price span b{
+    ul.gamelist_inner li .listbox h4 {
         font-size: 14px;
     }
 
-    ul.gamelist_inner.grid-200{
+    ul.gamelist_inner li .listbox h5 {
+        font-size: 14px;
+    }
+
+    ul.gamelist_inner li .listbox {
+        padding: 10px;
+    }
+
+    .product-price span b {
+        font-size: 14px;
+    }
+
+    ul.gamelist_inner.grid-200 {
         grid-gap: 30px;
     }
 
-    ul.gamelist_inner li .listbox span img{
+    ul.gamelist_inner li .listbox span img {
         width: 15px;
         margin-right: 0px;
     }
-    .product-price span{
+
+    .product-price span {
         font-size: 16px;
     }
 
@@ -630,39 +696,45 @@
         position: fixed;
     }
 
-    .mark180 ul li img{
+    .mark180 ul li img {
         max-width: 30px;
     }
-    .game-statistic{
+
+    .game-statistic {
         position: fixed;
         left: 5px;
         top: 0;
     }
-    section.uniformsister-02 .uniformheader img{
+
+    section.uniformsister-02 .uniformheader img {
         max-width: 150px;
     }
 
-    .mark180 ul li{
+    .mark180 ul li {
         padding: 10px 8px;
     }
 
-    ul.diseboxs_list li img{
+    ul.diseboxs_list li img {
         max-width: 44px;
         padding: 10px 12px;
     }
-    ul.usernmber_list li h1{
+
+    ul.usernmber_list li h1 {
         font-size: 1.3rem;
         padding: 7px 0;
     }
-    ul.usernmber_list li p{
+
+    ul.usernmber_list li p {
         font-size: 1.3rem;
         margin-bottom: 7px;
     }
-    .topstart_block{
+
+    .topstart_block {
         padding: 10px;
         flex-basis: initial;
     }
-    .toprate_block img.girlimg{
+
+    .toprate_block img.girlimg {
         max-width: 120px;
         position: absolute;
         top: 0;
@@ -671,124 +743,152 @@
         margin-top: 0;
         object-position: top;
     }
-    .totalpoints h3{
+
+    .totalpoints h3 {
         font-size: 1.3rem;
         padding: 6px;
     }
-    .mark180 ul li h2{
+
+    .mark180 ul li h2 {
         font-size: 2rem;
         margin: 5px;
     }
-    .markchina span.bigsign img{
+
+    .markchina span.bigsign img {
         max-width: 40px;
     }
-    .markchina h2{
+
+    .markchina h2 {
         font-size: 2rem;
     }
-    .markchina{
+
+    .markchina {
         margin-top: 50px;
     }
-    .toprate_block{
+
+    .toprate_block {
         width: 100%;
         height: 83px;
         overflow: hidden;
     }
-    .yellowshed .pull-left.text-right{
+
+    .yellowshed .pull-left.text-right {
         bottom: 0;
         width: 100%;
         position: absolute;
         text-align: left;
     }
-    .progress-container{
+
+    .progress-container {
         width: 100%;
     }
-    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
     }
 
-    .yellowshed .pull-left.text-right h4{
+    .yellowshed .pull-left.text-right h4 {
         display: none;
     }
-    section.uniformsister-02 .uniformheader{
+
+    section.uniformsister-02 .uniformheader {
         width: auto;
         right: 0;
         left: initial;
     }
 
-    .yellowshed .pull-right{
+    .yellowshed .pull-right {
         position: relative;
         z-index: 9;
     }
-    .yellowshed .golimg{
+
+    .yellowshed .golimg {
         max-width: 50px;
     }
-    .yellowshed .golimg h1{
+
+    .yellowshed .golimg h1 {
         font-size: 1rem;
         padding: 14px;
         text-align: center;
     }
-    .bet-unit{
+
+    .bet-unit {
         width: 50px;
-        height:  50px;
+        height: 50px;
         font-size: 1.6rem;
     }
-    .gametableinner{
+
+    .gametableinner {
         padding-top: 60px;
     }
-    .gamelastpoint{
+
+    .gamelastpoint {
         flex-basis: 16%;
     }
-    .gamelastpoint button{
+
+    .gamelastpoint button {
         width: 80px;
         margin-left: 10px;
     }
-    .start-btn{width: 130px;padding-bottom: 34px;}
-    .reset-btn{
+
+    .start-btn {
+        width: 130px;
+        padding-bottom: 34px;
+    }
+
+    .reset-btn {
         width: 128px;
         font-size: 2rem;
         padding-bottom: 42px;
     }
-    .jointsbotm_btn h3.txt01{
+
+    .jointsbotm_btn h3.txt01 {
         font-size: 2rem;
     }
-    .jointsbotm_btn{
+
+    .jointsbotm_btn {
         margin-top: 33px;
     }
-    .redvlack_circle{
-        max-width:40px
+
+    .redvlack_circle {
+        max-width: 40px
     }
+
     .redvlack_circle .text {
         font-size: 1.3rem;
     }
-    .list_ratings{
+
+    .list_ratings {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
     }
 
-    .list_ratings ul li button.rate{
+    .list_ratings ul li button.rate {
         padding: 5px 15px;
         font-size: 14px;
         margin-left: 10px;
     }
 
-    .list_ratings button.bookbtn{
+    .list_ratings button.bookbtn {
         padding: 0px 5px;
     }
-    .list_ratings h2{
+
+    .list_ratings h2 {
         margin-top: 0
     }
 
-    .scroll-y{
+    .scroll-y {
         height: auto;
         overflow: auto;
         padding-bottom: 20px;
     }
-    section{
+
+    section {
         padding-bottom: 20px;
     }
 
-    .page-index section{
+    .page-index section {
         padding-bottom: 0;
     }
 
@@ -805,7 +905,7 @@
     }
 
 
-    .login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content{
+    .login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content {
         min-height: initial;
     }
 
@@ -820,7 +920,10 @@
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
 
-    .list_ratings ul li button.rate{
+
+
+
+    .list_ratings ul li button.rate {
         margin-left: 0;
     }
 
@@ -926,6 +1029,44 @@
         max-width: 65px;
     }
 
+    .login-welcome-page .form-group input.form-control {
+        height: 30px;
+    }
+
+    a.forgot-pass-link {
+        font-size: 3.4vw;
+    }
+
+    .login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content {
+        padding: 10px;
+        width: 96%;
+    }
+
+    .modal-body  {
+        margin-top: -35px;
+    }
+
+    .forgot_password .login-welcome-page .form-group label {
+        font-size: 14px;
+        line-height: 15px;
+        margin-bottom: 20px;
+    }
+
+    .forgot_password .modal-footer  {
+        margin-top: -35px;
+
+    }
+
+    .sidenav a.closebtn{
+        width: 30px;
+        height: 30px;
+        line-height: 20px;
+        font-size: 21px;
+        top: 5px !important;
+        right: 15px !important;
+
+    }
+
 }
 
 @media (max-width: 479px) {
@@ -943,70 +1084,86 @@
     }
 }
 
-@media all and (min-width: 1024px) and (max-width: 1280px){
+@media all and (min-width: 1024px) and (max-width: 1280px) {
     .mark180 ul li img {
         max-width: 42px;
     }
 }
 
-@media all and (min-width: 1024px) and (max-width: 1250px){
-    .welcome-mid-right-top-left h2{
+@media all and (min-width: 1024px) and (max-width: 1250px) {
+    .welcome-mid-right-top-left h2 {
         font-size: 20px;
     }
-    .login-welcome-page .form-group label{
+
+    .login-welcome-page .form-group label {
         font-size: 24px;
     }
-    .login-welcome-page .form-group input.form-control{
+
+    .login-welcome-page .form-group input.form-control {
         border: 1px solid #fcf8e36b;
     }
+
     .welcome-left-author-data-sec h3,
-    span.price-icon h5{
+    span.price-icon h5 {
         font-size: 28px;
     }
-    .wel-mid-right-top-right-innr{
+
+    .wel-mid-right-top-right-innr {
         font-size: 1.4vw;
     }
-    .welcome-mid-right-bottom-left h6{
+
+    .welcome-mid-right-bottom-left h6 {
         font-size: 22px;
     }
-    .slider-item-inner h4{
+
+    .slider-item-inner h4 {
         font-size: 1.5vw;
     }
-    .slider-item-inner .slidertxt-bar h6{
+
+    .slider-item-inner .slidertxt-bar h6 {
         font-size: 14px;
     }
-    .product-price span b{
+
+    .product-price span b {
         font-size: 18px;
     }
-    .sidenav a{
-        font-size:30px;
+
+    .sidenav a {
+        font-size: 30px;
     }
-    .welcome-mid-right-top-left li h3{
+
+    .welcome-mid-right-top-left li h3 {
         font-size: 1.5vw;
     }
-    .user-credit{
+
+    .user-credit {
         font-size: 20px;
     }
-    .game-statistic{
-        margin:0;
+
+    .game-statistic {
+        margin: 0;
     }
-    button.prpulbtn{
+
+    button.prpulbtn {
         width: auto
     }
-    button.prpulbtn h3{
+
+    button.prpulbtn h3 {
         font-size: 1.8vw;
     }
 
-    .start-btn .jointsbotm_btn h3.txt01{
+    .start-btn .jointsbotm_btn h3.txt01 {
         font-size: 2.3vw;
     }
 
-    .reset-btn .jointsbotm_btn h3.txt01{
+    .reset-btn .jointsbotm_btn h3.txt01 {
         font-size: 1.7vw;
     }
-    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
         font-size: 20px
     }
+
     /*a.forgot-pass-link{
         font-size: 1.4vw;
     }
@@ -1015,183 +1172,255 @@
     }*/
 }
 
-@media all and (min-width: 1250px) and (max-width: 1440px){
-    .welcome-mid-right-top-left h2{
+@media all and (min-width: 1250px) and (max-width: 1440px) {
+    .welcome-mid-right-top-left h2 {
         font-size: 30px;
     }
-    .login-welcome-page .form-group label{
+
+    .login-welcome-page .form-group label {
         font-size: 24px;
     }
-    .login-welcome-page .form-group input.form-control{
+
+    .login-welcome-page .form-group input.form-control {
         border: 1px solid #fcf8e36b;
     }
+
     .welcome-left-author-data-sec h3,
-    span.price-icon h5{
+    span.price-icon h5 {
         font-size: 28px;
     }
-    .wel-mid-right-top-right-innr{
+
+    .wel-mid-right-top-right-innr {
         font-size: 1.4vw;
     }
-    .welcome-mid-right-bottom-left h6{
+
+    .welcome-mid-right-bottom-left h6 {
         font-size: 22px;
     }
-    .slider-item-inner h4{
+
+    .slider-item-inner h4 {
 
     }
-    .slider-item-inner .slidertxt-bar h6{
+
+    .slider-item-inner .slidertxt-bar h6 {
         font-size: 16px;
     }
-    .product-price span b{
+
+    .product-price span b {
         font-size: 20px;
     }
-    .sidenav a{
-        font-size:30px;
+
+    .sidenav a {
+        font-size: 30px;
     }
-    .welcome-mid-right-top-left li h3{
+
+    .welcome-mid-right-top-left li h3 {
 
     }
-    .user-credit{
+
+    .user-credit {
         font-size: 20px;
     }
-    .game-statistic{
-        margin:0;
-    }
-    button.prpulbtn{
 
+    .game-statistic {
+        margin: 0;
     }
-    button.prpulbtn h3{
 
-    }
-    .start-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn {
 
     }
 
-    .reset-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn h3 {
 
     }
-    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    .start-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
 
     }
 
 }
 
-@media all and (min-width: 1440px) and (max-width: 1600px){
-    .welcome-mid-right-top-left h2{
+@media all and (min-width: 1440px) and (max-width: 1600px) {
+    .welcome-mid-right-top-left h2 {
         font-size: 36px;
     }
-    .login-welcome-page .form-group label{
+
+    .login-welcome-page .form-group label {
         font-size: 24px;
     }
-    .login-welcome-page .form-group input.form-control{
+
+    .login-welcome-page .form-group input.form-control {
         border: 1px solid #fcf8e36b;
     }
+
     .welcome-left-author-data-sec h3,
-    span.price-icon h5{
+    span.price-icon h5 {
         font-size: 28px;
     }
-    .wel-mid-right-top-right-innr{
+
+    .wel-mid-right-top-right-innr {
 
     }
-    .welcome-mid-right-bottom-left h6{
+
+    .welcome-mid-right-bottom-left h6 {
         font-size: 22px;
     }
-    .slider-item-inner h4{
+
+    .slider-item-inner h4 {
 
     }
-    .slider-item-inner .slidertxt-bar h6{
+
+    .slider-item-inner .slidertxt-bar h6 {
         font-size: 16px;
     }
-    .product-price span b{
+
+    .product-price span b {
         font-size: 22px;
     }
-    .sidenav a{
-        font-size:30px;
+
+    .sidenav a {
+        font-size: 30px;
     }
-    .welcome-mid-right-top-left li h3{
+
+    .welcome-mid-right-top-left li h3 {
 
     }
 
-    .user-credit{
+    .user-credit {
         font-size: 20px;
     }
-    .game-statistic{
-        margin:0;
-    }
-    button.prpulbtn{
 
+    .game-statistic {
+        margin: 0;
     }
-    button.prpulbtn h3{
 
-    }
-    .start-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn {
 
     }
 
-    .reset-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn h3 {
 
     }
-    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    .start-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
 
     }
 }
 
-@media all and (min-width: 1600px){
-    .welcome-mid-right-top-left h2{
+@media all and (min-width: 1600px) {
+    .welcome-mid-right-top-left h2 {
         font-size: 43px;
     }
-    .login-welcome-page .form-group label{
-        font-size:30px;
+
+    .login-welcome-page .form-group label {
+        font-size: 30px;
     }
-    .login-welcome-page .form-group input.form-control{
+
+    .login-welcome-page .form-group input.form-control {
         border: 1px solid #fcf8e36b;
     }
+
     .welcome-left-author-data-sec h3,
-    span.price-icon h5{
+    span.price-icon h5 {
         font-size: 28px;
     }
-    .wel-mid-right-top-right-innr{
+
+    .wel-mid-right-top-right-innr {
 
     }
-    .welcome-mid-right-bottom-left h6{
+
+    .welcome-mid-right-bottom-left h6 {
         font-size: 31px;
     }
-    .slider-item-inner h4{
+
+    .slider-item-inner h4 {
 
     }
-    .slider-item-inner .slidertxt-bar h6{
+
+    .slider-item-inner .slidertxt-bar h6 {
         font-size: 16px;
     }
-    .product-price span b{
+
+    .product-price span b {
         font-size: 22px;
     }
-    .sidenav a{
-        font-size:30px;
+
+    .sidenav a {
+        font-size: 30px;
     }
-    .welcome-mid-right-top-left li h3{
+
+    .welcome-mid-right-top-left li h3 {
 
     }
-    .user-credit{
+
+    .user-credit {
         font-size: 20px;
     }
-    .game-statistic{
-        margin:0;
-    }
-    button.prpulbtn{
 
+    .game-statistic {
+        margin: 0;
     }
-    button.prpulbtn h3{
 
-    }
-    .start-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn {
 
     }
 
-    .reset-btn .jointsbotm_btn h3.txt01{
+    button.prpulbtn h3 {
 
     }
-    .yellowshed .pull-left.text-right h1.ratetxt{
+
+    .start-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .reset-btn .jointsbotm_btn h3.txt01 {
+
+    }
+
+    .yellowshed .pull-left.text-right h1.ratetxt {
 
     }
 }
 
+@media (max-height: 450px) {
+    .sidenav a {
+        font-size: 14px;
+    }
+    ul.filter-mid-left-selection li label{
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
 
+
+@media all and (max-width: 1000px) {
+    .page-role_play table colgroup > col:first-child{
+        width: 40%;
+    }
+}
+
+@media all and (max-width: 950px) {
+    div#mySidenav  {
+        max-width: 170px;
+
+    }
+
+
+
+}

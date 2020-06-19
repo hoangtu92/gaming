@@ -3722,8 +3722,8 @@ h3.product-title {
 
 	.login-welcome-page .form-group label {
 		font-size: 18px;
-		line-height: 20px;
-		margin: 5px;
+		line-height: 28px;
+		margin: 5px 5px 20px 5px;
 	}
 
 	.login-welcome-page .form-group input.form-control {
@@ -5187,6 +5187,15 @@ select:-webkit-autofill:focus {
 .welcome-mid-right-top-left li h3{
 	font-size: 1.5vw
 }
+
+.modal-body  {
+	margin-top: -35px;
+
+}
+.modal-open .modal{
+	overflow-y: hidden;
+}
+
 
 @keyframes win {
 	from {
