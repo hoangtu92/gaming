@@ -5196,6 +5196,25 @@ select:-webkit-autofill:focus {
 	overflow-y: hidden;
 }
 
+.ticket_reply .modal-content  {
+	padding: 20px;
+}
+.top-modal-section h2{
+font-size: 15px;
+}
+.top-modal-section span {
+	font-size: 15px;
+}
+.customer-reply-popup-content p {
+	font-size: 15px;
+}
+.customer-reply-popup-content h3{
+font-size: 15px;
+}
+.reward-confirmation-btn button img {
+	max-width: 100px;
+}
+
 
 @keyframes win {
 	from {

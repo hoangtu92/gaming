@@ -25,46 +25,46 @@
         min-height: 70px;
     }
 
-    .modal-header .modal-title{
+    .modal-header .modal-title {
         margin-left: 60px;
 
     }
 
-    .modal.in .modal-dialog.modal-xs .modal-body{
+    .modal.in .modal-dialog.modal-xs .modal-body {
         padding-top: 0px;
 
     }
 
-    button[type="reset"]{
+    button[type="reset"] {
         background: #fd3779;
 
     }
 
-    .modal-footer{
+    .modal-footer {
         margin-top: -35px;
 
     }
 
-    .modal.filter .login-header h2{
+    .modal.filter .login-header h2 {
         font-size: 30px;
         margin-top: -17px;
         margin-bottom: 10px;
     }
 
-    .modal.filter .filter-mid-section ul.filter-mid-left-selection.right-side-list-filter{
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection.right-side-list-filter {
         padding-left: 0%;
 
     }
 
-    .modal.filter .modal-content{
+    .modal.filter .modal-content {
         max-width: 65vw;
     }
 
-    .modal.filter .filter-mid-section ul.filter-mid-left-selection li{
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection li {
         padding-left: 40px;
     }
 
-    .modal.filter .modal-footer{
+    .modal.filter .modal-footer {
         margin-top: -35px;
     }
 
@@ -93,6 +93,19 @@
 
     .slider-item-inner img {
         height: 70px;
+    }
+
+    .ticket_reply .modal-content  {
+        min-width: 60vw;
+
+    }
+
+    .card_select .modal-content {
+        overflow-y: hidden;
+    }
+
+    .login-welcome-page .form-group label {
+        margin-bottom: 20px;
     }
 }
 
@@ -884,7 +897,7 @@
         padding-bottom: 20px;
     }
 
-    section {
+    body:not(.page-role_play) section {
         padding-bottom: 20px;
     }
 
@@ -919,8 +932,6 @@
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-
-
 
 
     .list_ratings ul li button.rate {
@@ -1057,7 +1068,7 @@
 
     }
 
-    .sidenav a.closebtn{
+    .sidenav a.closebtn {
         width: 30px;
         height: 30px;
         line-height: 20px;
@@ -1066,6 +1077,11 @@
         right: 15px !important;
 
     }
+
+    form.customer-service-form button img  {
+        max-width: 90px;
+    }
+
 
 }
 
@@ -1399,10 +1415,11 @@
 }
 
 @media (max-height: 450px) {
-    .sidenav a {
+    .sidenav a  {
         font-size: 14px;
     }
-    ul.filter-mid-left-selection li label{
+
+    ul.filter-mid-left-selection li label {
         font-size: 20px;
         line-height: 24px;
     }
@@ -1410,8 +1427,114 @@
 
 
 @media all and (max-width: 1000px) {
-    .page-role_play table colgroup > col:first-child{
+    .page-role_play table colgroup > col:first-child {
         width: 40%;
+    }
+
+    .user-info-coulmn h3 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .user-info-coulmn a img {
+        max-width: 120px;
+    }
+
+    .author-img img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .author-img {
+        margin-bottom: 0;
+    }
+
+    .user-info-coulmn h2 {
+        font-size: 2rem;
+    }
+
+    .user-info-coulmn span {
+        font-size: 1.5rem;
+    }
+
+    .user-information-outer .user-info-coulmn .progress {
+        margin-top: 0;
+    }
+
+    .progress {
+        margin-bottom: 0;
+    }
+
+    .user-information-outer {
+        margin: 0;
+    }
+
+    .page-user_information section {
+        padding-bottom: 0 !important;
+    }
+
+    .uniformheader02 {
+        padding: 0;
+    }
+    .uniformheader02 h1{
+        margin: 10px;
+    }
+
+    ul.gamelist_inner{
+        margin-top: 20px;
+    }
+
+    .page-card_select section{
+        padding-bottom: 0 !important;
+    }
+
+    .gamelist-02 .gamelist_top{
+        padding: 10px
+    }
+
+    .monthly-stored-value a img {
+        max-width: 400px;
+    }
+    .monthly-stored-value-bottom-sec img{
+        width: 94px;
+        margin: 0 auto;
+    }
+    .monthly-stored-value-bottom-sec ul li {
+        min-height: initial;
+        padding: 10px;
+    }
+
+    .img-outer-cstm {
+        height: 10em;
+    }
+    .monthly-stored-value-bottom-sec li span{
+        max-width: 115px;
+        font-size: 16px;
+        bottom: -28px;
+    }
+
+    .monthly-stored-value-bottom-sec ul{
+        grid-gap: 10px;
+    }
+    .monthly-stored-value-bottom-sec ul{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .monthly-stored-value-bottom-sec h4 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    #mobile-registration-outer select.country-code, .payment_method_select{
+        height: 40px;
+    }
+
+    .payment_method .modal-footer{
+        margin-top: 0;
+    }
+
+    .page-price_plan section{
+        padding-bottom: 0!important;
     }
 }
 
@@ -1421,6 +1544,19 @@
 
     }
 
+    .dices-result img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dices-result {
+        position: fixed;
+        width: 130px;
+        height: 55px;
+        padding: 5px 15px 5px 15px;
+        border-radius: 10px;
+        border: 3px solid white;
+    }
 
 
 }
