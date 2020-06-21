@@ -1,17 +1,9 @@
-
-/* ----------- Samsung A20 ----------- */
-
 /* Landscape */
-@media only screen
-and (min-device-width: 412px)
-and (max-device-width: 892px)
-and (min-width: 890px)
-and (-webkit-min-device-pixel-ratio: 1.75)
-and (orientation: landscape) {
-    /*Card detail*/
-    .babyimg_info .paragraph {
-        font-size: 1.5rem;
-    }
+@media only screen and (device-height: 384px)
+and (device-width: 640px) and (orientation: landscape) {
+    /*Card detail*/ .babyimg_info .paragraph {
+    font-size: 1.5rem;
+}
 
     .product-price span img {
         width: 21px;
@@ -23,13 +15,13 @@ and (orientation: landscape) {
 
     .babyimg {
         width: auto;
-        top: -33px;
+        top: -39px;
         left: -37px;
     }
 
     .babyimg img {
         width: auto;
-        height: 65vh;
+        height: 75vh;
     }
 
     .card_detail .modal-content {
@@ -64,8 +56,8 @@ and (orientation: landscape) {
     }
 
     .modal-header button.popupprple_btn {
-        right: -48px;
-        top: -37px;
+        right: -47px;
+        top: -35px;
     }
 
     button.popupprple_btn img.popup_close_icon {
@@ -75,7 +67,7 @@ and (orientation: landscape) {
 
     /*Dashboard*/
     .welcome-bottom-inner {
-        padding-bottom: 30px;
+        padding-bottom: 0;
     }
 
     .owl-carousel .owl-item img {
@@ -83,17 +75,48 @@ and (orientation: landscape) {
     }
 
     .right-cstm-btn-circle img {
-        max-width: 80px;
+        max-width: 70px;
     }
 
     .welcome-mid-right-sec {
-        width: 370px;
-        top: 100px;
+        width: 345px;
+        top: 84px;
         padding: 10px;
-        right: 50px;
+        right: 65px;
+    }
+
+    span.side-menu-cstm-toogle {
+        width: 38px;
+        height: 38px;
+        font-size: 18px !important;
     }
 
     .welcome-mid-left-girl-img img.girl-img {
+        margin-left: 15px;
+    }
+
+    span.price-icon h5 {
+        padding-left: 25px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    span.price-icon img {
+        width: 20px;
+    }
+
+    .welcome-left-author-data-sec h3 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-left-author-data-sec {
+        width: 160px;
+        padding-left: 45px;
+    }
+
+    .welcome-left-author-sec {
+        top: 49%;
+        left: -20px;
     }
 
     .booksthree_btn {
@@ -115,27 +138,24 @@ and (orientation: landscape) {
     }
 
     .welcome-mid-right-top-left h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .welcome-mid-right-top-left li h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .sidenav a.closebtn {
-
         top: 25px !important;
-
         right: 10px !important;
     }
 
     .right-author-chat-icon {
-        left: 70%;
-        bottom: 36%;
+        left: 50%;
+        bottom: 35%;
     }
 
     button {
-
         padding: 5px 20px;
         font-size: 1.5rem;
     }
@@ -153,41 +173,32 @@ and (orientation: landscape) {
     }
 
     .header-top-left-menu ul li a {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .header-top-left-menu ul li a {
-        padding: 5px 20px;
+        padding: 5px 23px;
     }
 
     .slider-item-inner h4 {
-
-        font-size: 0.8rem;
-
+        font-size: 1rem;
         padding: 3px;
-
     }
 
     .slider-item-inner .slidertxt-bar {
-
         padding-bottom: 18px;
-
     }
 
     .right-author-chat-icon img {
-
         width: 110px;
-
     }
 
     .wel-mid-right-top-right-innr {
-
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .welcome-mid-right-top-left h3 strong {
-
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .slider-item-inner .slidertxt-bar .progress-level.small h6 {
@@ -199,37 +210,32 @@ and (orientation: landscape) {
     }
 
     .right-cstm-btn-circle {
-        bottom: -45px;
-        right: 14px;
+        bottom: -31px;
+        right: 10px;
     }
 
     .welcome-mid-right-top-left ul {
-
         margin-top: 5px;
     }
 
     .progress-level h6 {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .progress-level {
-        height: 20px;
+        height: 10px;
     }
 
     .progress-level .progress-level-outer, .progress-level .progress-level-inner {
-
     }
 
     .welcome-bottom-inner-btn a img {
-
-        width: 60px;
+        width: 59px;
     }
 
-    .welcome-mid-right-top-left{
-        width: 150px;
+    .welcome-bottom-inner-btn {
+        right: 10px;
     }
-
-
 
     /*Card select*/
     .card-remove {
@@ -255,7 +261,7 @@ and (orientation: landscape) {
     }
 
     ul.gamelist_inner.grid-200 {
-        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     ul.gamelist_inner li {
@@ -316,8 +322,7 @@ and (orientation: landscape) {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    .uniform_boxes ul li,
-    .uniformbox_inner {
+    .uniform_boxes ul li, .uniformbox_inner {
         min-height: initial;
     }
 
@@ -374,7 +379,6 @@ and (orientation: landscape) {
     }
 
     .modal-header button.close {
-
         right: 0px;
         top: 0px;
     }
@@ -385,7 +389,6 @@ and (orientation: landscape) {
 
     /*Prize redeem*/
     .boxcheck {
-
         top: 10px;
         right: 5px;
     }
@@ -403,7 +406,7 @@ and (orientation: landscape) {
     /*Game*/
     .mark180 ul li img {
         max-width: 25px;
-        padding: 5px 3px;
+        padding: 3px 3px;
     }
 
     .game-statistic {
@@ -421,13 +424,13 @@ and (orientation: landscape) {
     }
 
     ul.diseboxs_list li img {
-        max-width: 42px;
+        max-width: 37px;
         padding: 5px 10px;
     }
 
     ul.usernmber_list li h1 {
         font-size: 1.5rem;
-        padding: 7px 0;
+        padding: 4px 0;
     }
 
     ul.usernmber_list li p {
@@ -452,7 +455,7 @@ and (orientation: landscape) {
 
     .totalpoints h3 {
         font-size: 1.5rem;
-        padding: 9px;
+        padding: 5px;
     }
 
     .mark180 ul li h2 {
@@ -461,15 +464,15 @@ and (orientation: landscape) {
     }
 
     .markchina span.bigsign img {
-        max-width: 50px;
+        max-width: 35px;
     }
 
     .markchina h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .markchina {
-        margin-top: 28px;
+        margin-top: 36px;
     }
 
     .toprate_block {
@@ -511,7 +514,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
-        padding-top: 0;
+        padding-top: 0px;
     }
 
     .yellowshed .golimg h1 {
@@ -521,8 +524,8 @@ and (orientation: landscape) {
     }
 
     .bet-unit {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 1.3rem;
     }
 
@@ -541,16 +544,16 @@ and (orientation: landscape) {
     }
 
     .start-btn {
-        width: 100px;
+        width: 91px;
         padding-bottom: 42px;
-        height: 100px;
+        height: 91px;
         padding-top: 7px;
     }
 
     .reset-btn {
-        width: 103px;
+        width: 107px;
         font-size: 2rem;
-        padding-bottom: 55px;
+        padding-bottom: 59px;
         padding-top: 24px;
     }
 
@@ -571,7 +574,6 @@ and (orientation: landscape) {
     }
 
     .topstart_block h1 {
-
         font-size: 1.7rem;
     }
 
@@ -581,7 +583,7 @@ and (orientation: landscape) {
     }
 
     .topstart_block ul li {
-        padding: 3px 3px;
+        padding: 1px 2px;
     }
 
     .progress-container {
@@ -597,13 +599,11 @@ and (orientation: landscape) {
     }
 
     .gametable_block {
-
         flex-basis: 99%;
         max-height: calc(100% - 50px);
     }
 
     .game-statistic {
-
         max-width: 407px;
         left: -10px;
         padding: 6px;
@@ -613,9 +613,9 @@ and (orientation: landscape) {
         font-size: 1.3rem;
     }
 
-    .progress-container-star{
-        height:15px;
-        width: 92px;
+    .progress-container-star {
+        height: 15px;
+        width: 94px;
     }
 
     /*Role play*/
@@ -625,28 +625,27 @@ and (orientation: landscape) {
 
     .infowith_pinkbg {
         position: relative;
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
     .infowith_pinkbg h1 {
-        font-size: 2.5rem;
-        margin: 0 0 25px 0;
+        font-size: 1.8rem;
+        margin: 0 0 10px 0;
     }
 
     .infowith_pinkbg ul {
-        margin-top: 15px;
+        margin-top: 10px;
         padding: 0;
     }
 
     .infowith_pinkbg ul li {
-        font-size: 1.7rem;
-        margin-bottom: 17px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
     }
 
     .vedio_slider {
         margin-top: 0;
         height: auto;
     }
-
 }

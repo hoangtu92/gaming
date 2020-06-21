@@ -18,13 +18,13 @@ and (-webkit-min-device-pixel-ratio: 1) {
     }
     .babyimg {
         width: auto;
-        top: -33px;
+        top: -72px;
         left: -37px;
     }
 
     .babyimg img{
         width: auto;
-        height: 78vh;
+        height: 423px;
     }
 
     .card_detail .modal-content{

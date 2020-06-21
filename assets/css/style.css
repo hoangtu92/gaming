@@ -405,6 +405,8 @@ ul.gamelist_inner.grid-200{
 
 ul.gamelist_inner img{
     width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 ul.gamelist_inner li {
