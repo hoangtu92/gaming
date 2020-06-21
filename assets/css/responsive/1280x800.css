@@ -4,8 +4,7 @@
 /* Landscape */
 @media only screen
 and (device-height: 800px)
-and (device-width: 1024px)
-and (orientation: landscape) {
+and (device-width: 1280px){
     .babyimg_info .paragraph{
         font-size: 1.5rem;
     }
@@ -17,8 +16,8 @@ and (orientation: landscape) {
     }
     .babyimg {
         width: auto;
-        top: -33px;
-        left: -37px;
+        top: -59px;
+        left: -92px;
     }
 
     .babyimg img{
@@ -35,40 +34,4 @@ and (orientation: landscape) {
         height: 35vh;
     }
 
-    .card_detail .modal-footer button.popupprple_btn{
-        margin-left: 5px;
-        position: relative;
-        width: 97px;
-        height: 29px;
-    }
-    .card_detail .modal-footer {
-        justify-content: space-evenly;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn span{
-        font-size: 1.5rem;
-        height: 100%;
-        bottom: initial;
-        top: 0px;
-    }
-
-    .card_detail .modal-footer button.popupprple_btn img{
-        display: block;
-    }
-    .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
-    }
-
-    button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
-    }
-
-    .progress-container-star{
-
-        width: 150px;
-
-        height: 25px;
-    }
 }

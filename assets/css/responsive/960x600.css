@@ -21,13 +21,13 @@ and (orientation: landscape) {
 
     .babyimg {
         width: auto;
-        top: -33px;
-        left: -37px;
+        top: -38px;
+        left: -78px;
     }
 
     .babyimg img {
         width: auto;
-        height: 78vh;
+        height: 60vh;
     }
 
     .card_detail .modal-content {
