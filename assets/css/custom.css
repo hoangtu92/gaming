@@ -849,7 +849,7 @@ span.numbers {
 	/* margin: 0; */
 }
 
-.login-welcome-page .form-group label {
+.form-group label {
 	color: #fff;
 	font-size: 24px;
 	font-weight: 600;
@@ -4565,6 +4565,10 @@ button {
 	background: #fd3779;
 }
 
+button:first-child{
+	margin-left:0
+}
+
 button[type="button"] {
 	background: #fd3779;
 }
@@ -5200,7 +5204,7 @@ select:-webkit-autofill:focus {
 	padding: 20px;
 }
 .top-modal-section h2{
-font-size: 15px;
+	font-size: 15px;
 }
 .top-modal-section span {
 	font-size: 15px;
@@ -5209,7 +5213,7 @@ font-size: 15px;
 	font-size: 15px;
 }
 .customer-reply-popup-content h3{
-font-size: 15px;
+	font-size: 15px;
 }
 .reward-confirmation-btn button img {
 	max-width: 100px;
