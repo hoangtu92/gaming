@@ -39,7 +39,7 @@ gamingApp.controller("roleController", function ($scope, $rootScope, $location, 
 
                     $scope.selectedVideo.src = res.data.model;
 
-                    $scope.videoElement.setAttribute('src', $scope.path['role_video'] + $scope.selectedVideo.src);
+                    $scope.videoElement.setAttribute('src', $scope.selectedVideo.src);
                     $scope.videoElement.play();
 
             });
