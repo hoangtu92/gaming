@@ -125,7 +125,7 @@ and (device-width: 640px) and (orientation: landscape) {
     }
 
     .list_ratings {
-        padding: 0;
+        padding: 0 10px;
     }
 
     .uniformheader {

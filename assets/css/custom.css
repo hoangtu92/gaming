@@ -5061,6 +5061,9 @@ body.page-price_plan {
 
 a.close{
 	opacity: 1;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 a.close img{

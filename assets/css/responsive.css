@@ -26,8 +26,7 @@
     }
 
     .modal-header .modal-title {
-        margin-left: 60px;
-
+        /* margin-left: 60px; */
     }
 
     .modal.in .modal-dialog.modal-xs .modal-body {
@@ -385,6 +384,20 @@
         margin-right: 10px;
     }
 
+    ul.gamelist_inner li .listbox h4 {
+        font-size: 1.3rem;
+        height: 25px;
+    }
+    ul.gamelist_inner li .listbox h5 {
+        font-size: 0.75rem;
+    }
+    ul.gamelist_inner li .listbox{
+        padding: 10px;
+    }
+    ul.gamelist_inner {
+        grid-gap: 10px;
+    }
+
     .menu.select-level a {
         font-size: 12px;
         margin: 1px;
@@ -441,11 +454,12 @@
     }
 
     ul.gamelist_inner li .listbox h4 {
-        font-size: 14px;
     }
 
     ul.gamelist_inner li .listbox h5 {
-        font-size: 14px;
+        position: absolute;
+        right: 13px;
+        bottom: 32px;
     }
 
     ul.gamelist_inner li .listbox {
@@ -457,12 +471,11 @@
     }
 
     ul.gamelist_inner.grid-200 {
-        grid-gap: 30px;
+        grid-gap: 10px;
     }
 
     ul.gamelist_inner li .listbox span img {
         width: 15px;
-        margin-right: 0px;
     }
 
     .product-price span {
@@ -1571,5 +1584,16 @@
         border: 3px solid white;
     }
 
+    ul.gamelist_inner.card-select li{
+        padding: 0;
+    }
+
+    .list_ratings ul.gamelistul li a,
+    .gamelist-03 .list_ratings h2{
+        font-size: 1.3rem;
+    }
+    .bookbtn img {
+        width: 18px;
+    }
 
 }

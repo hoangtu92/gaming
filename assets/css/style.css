@@ -542,7 +542,7 @@ ul.gamelist_inner li a {
 }
 
 ul.gamelist_inner li .listbox{
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     border-radius: 10px;
     padding: 25px;
     background: rgba(255, 94, 166, 0.32);
@@ -1484,12 +1484,14 @@ section.uniformsister-03 .modal-dialog .modal-footer {
 
 .gamelist-03 .list_ratings h2 {
     margin: 0;
-    font-size: 27px;
+    font-size: 18px;
 }
 
-.gamelist-03 .list_ratings button.bookbtn {
-    vertical-align: baseline;
+.bookbtn img{
+    width: 18px;
 }
+
+.gamelist-03 .list_ratings button.bookbtn {display: flex;}
 
 ul.gamelist_inner li .listbox img.eyebaby {
     max-width: 100%;
@@ -1793,6 +1795,7 @@ section.uniformsister_vedio .uniformheader h1 {
     border: 0;
     border-radius: 0;
     color: #bbb;
+    font-size: 18px;
 }
 
 .list_ratings ul.gamelistul li {
