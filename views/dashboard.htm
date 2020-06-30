@@ -17,9 +17,9 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-if="true" lazy-img="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
-                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-img="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
+                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
                         <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" ng-src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
@@ -82,7 +82,7 @@
                 <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
                     <div class="slider-item-inner">
                         <a href="#" ng-click="setCurrentRole(item)">
-                            <img lazy-img="{{path['role_image']}}{{item.thumbnail}}"
+                            <img lazy-src="{{path['role_image']}}{{item.thumbnail}}"
                                  class="img-responsive">
                             <div class="slidertxt-bar">
                                 <div class="progress-level small">

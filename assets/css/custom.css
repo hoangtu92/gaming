@@ -4960,6 +4960,14 @@ form.order-form textarea.form-control {
 	padding-bottom: 25px;
 }
 
+div.lazy-scroll {
+	background: #AAA;
+	height: 95vh;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 @media all and (min-width: 992px) {
 	.checkout-left {
 		border-right: 2px solid rgba(255, 255, 255, 0.3);
