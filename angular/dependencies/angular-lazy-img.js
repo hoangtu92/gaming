@@ -35,6 +35,7 @@ angular.module('angularLazyImg').factory('LazyImgMagic', [
     function checkImages(){
       for(var i = images.length - 1; i >= 0; i--){
         var image = images[i];
+        console.log(lazyImgHelpers.isElementInView(image.$elem[0], options.offset, winDimensions));
         if(image && lazyImgHelpers.isElementInView(image.$elem[0], options.offset, winDimensions)){
           loadImage(image);
           images.splice(i, 1);
@@ -99,7 +100,7 @@ angular.module('angularLazyImg').factory('LazyImgMagic', [
         });
       };
       img.src = photo.src;
-      console.log(img.src)
+
     }
 
     function setPhotoSrc($elem, src){
