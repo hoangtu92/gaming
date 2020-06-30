@@ -359,8 +359,11 @@ button {
     border-radius: 30px;
     padding: 7px 25px;
     font-size: 18px;
-    text-shadow: 0px 0px 4px #ff5ea6;
+
     margin-right: 5%;
+}
+.uniformheader button.bookbtn:hover, .uniformheader button.bookbtn.active{
+    text-shadow: 0px 0px 4px #ff5ea6;
 }
 
 .gamelist {
@@ -393,7 +396,7 @@ ul.gamelist_inner {
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 45px;
+    grid-gap: 25px;
     margin-top: 30px;
     padding: 0;
     list-style: none;
@@ -549,12 +552,7 @@ ul.gamelist_inner li .listbox{
     text-align: center;
 }
 
-ul.gamelist_inner :hover .listbox {
-
-
-    box-shadow: inset 0px 0px 23px #ff5ea6;
-
-}
+ul.gamelist_inner .listbox {box-shadow: inset 0px 0px 23px #ff5ea6;}
 
 ul.gamelist_inner li .shadow {
 

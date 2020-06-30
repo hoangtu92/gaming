@@ -2084,11 +2084,12 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	background: rgba(0, 0, 0, 0.5);
 	border-radius: 30px;
 	padding: 10px 30px;
+	display: flex;
+	align-items: center;
 }
 
 .mall-category-header-menu span {
 	display: inline-block;
-	float: left;
 	font-size: 24px;
 	color: #fff;
 	opacity: 1;
@@ -2096,7 +2097,6 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 .mall-category-header-menu span img {
-	float: left;
 	max-width: 25px;
 	line-height: normal;
 	margin-top: 5px;
@@ -2141,6 +2141,8 @@ ul.mall-category-menu li button:hover, ul.mall-category-menu li button:focus {
 
 span.mall-cat-name {
 	margin-right: 15px;
+	min-width: 100px;
+	display: flex;
 }
 
 .mall-category-products {
@@ -2197,7 +2199,7 @@ h3.product-title {
 	text-align: center;
 	background: rgba(0, 0, 0, 0.3);
 	border-radius: 20px;
-	padding: 2px 0;
+	padding: 2px 5px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -3970,16 +3972,19 @@ h3.product-title {
 	}
 
 	ul.mall-category-menu li button {
-		font-size: 15px;
+		font-size: 1.2rem;
 		padding: 0 7px;
 	}
 
 	.mall-category-header-menu span {
-		font-size: 16px;
+		font-size: 1.2rem;
+		min-width: 60px;
 	}
 
 	.mall-category-header-menu span img {
-		max-width: 18px;
+		max-width: 16px;
+		margin-top: 0;
+		height: auto;
 	}
 
 	.gallery_product {

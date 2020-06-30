@@ -94,7 +94,7 @@
         height: 70px;
     }
 
-    .ticket_reply .modal-content  {
+    .ticket_reply .modal-contentÂ  {
         min-width: 60vw;
 
     }
@@ -382,6 +382,9 @@
         width: 66px;
         margin-top: 0px;
         margin-right: 10px;
+    }
+    .list_ratings, .mall-category-header-menu {
+        padding: 3px 10px;
     }
 
     ul.gamelist_inner li .listbox h4 {
@@ -1050,12 +1053,17 @@
     }
 
     .list_ratings h2 {
-        font-size: 23px;
+        font-size: 1.2rem;
     }
 
     .list_ratings ul li button.rate {
-        padding: 3px 7px;
-        font-size: 14px;
+        padding: 2px 7px;
+        font-size: 10px;
+        border-width: 1px;
+    }
+
+    .list_ratings ul li button i{
+        font-size: 1.2rem;
     }
 
     .list_ratings {
@@ -1079,7 +1087,7 @@
         width: 96%;
     }
 
-    .modal-body  {
+    .modal-bodyÂ  {
         margin-top: -35px;
     }
 
@@ -1089,7 +1097,7 @@
         margin-bottom: 20px;
     }
 
-    .forgot_password .modal-footer  {
+    .forgot_password .modal-footerÂ  {
         margin-top: -35px;
 
     }
@@ -1104,7 +1112,7 @@
 
     }
 
-    form.customer-service-form button img  {
+    form.customer-service-form button imgÂ  {
         max-width: 90px;
     }
 
@@ -1441,7 +1449,7 @@
 }
 
 @media (max-height: 450px) {
-    .sidenav a  {
+    .sidenav aÂ  {
         font-size: 14px;
     }
 
@@ -1565,7 +1573,7 @@
 }
 
 @media all and (max-width: 950px) {
-    div#mySidenav  {
+    div#mySidenavÂ  {
         max-width: 170px;
 
     }
@@ -1595,5 +1603,7 @@
     .bookbtn img {
         width: 18px;
     }
+
+
 
 }

@@ -12,7 +12,7 @@ and (orientation: landscape) {
 }
 
     .product-price span img {
-        width: 21px;
+        width: 16px;
     }
 
     .babyimg_info .tpname h2 {
@@ -130,9 +130,6 @@ and (orientation: landscape) {
         max-width: 325px;
     }
 
-    .list_ratings {
-        padding: 0 10px;
-    }
 
     .uniformheader {
         padding: 5px 0px 0 10px;
