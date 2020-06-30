@@ -481,21 +481,26 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.setCurrentRole = function (role) {
         $scope.currentRole = role;
+        $rootScope.$emit('lazyImg:refresh');
     };
 
     $scope.setCurrentVideo = function (video) {
         $scope.currentVideo = video;
+        $rootScope.$emit('lazyImg:refresh');
         //console.log($scope.currentVideo)
 
     };
     $scope.setCurrentLevel = function (level) {
+        $rootScope.$emit('lazyImg:refresh');
         $scope.showAllLevels = false;
         $scope.selectedLevel = level;
     };
     $scope.setCurrentPool = function (pool) {
+        $rootScope.$emit('lazyImg:refresh');
         $scope.currentPool = pool;
     };
     $scope.setCurrentCard = function (card) {
+        $rootScope.$emit('lazyImg:refresh');
         $scope.currentCard = card;
     };
 
