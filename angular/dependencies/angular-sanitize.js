@@ -446,7 +446,7 @@ function $SanitizeProvider() {
       return getInertBodyElement_XHR;
     } else {
       // Check for the Firefox bug - which prevents the inner img JS from being sanitized
-      inertBodyElement.innerHTML = '<svg><p><style><img src="</style><img src=x onerror=alert(1)//">';
+      inertBodyElement.innerHTML = '<svg><p><style><img lazy-src="</style><img lazy-src=x onerror=alert(1)//">';
       if (inertBodyElement.querySelector('svg img')) {
         return getInertBodyElement_DOMParser;
       } else {

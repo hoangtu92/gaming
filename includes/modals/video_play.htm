@@ -1,11 +1,11 @@
 <div class="modal-header">
-    <a class="close" ng-click="modal.video_play.close()"><img src="/assets/images/closebtn-small.png"></a>
+    <a class="close" ng-click="modal.video_play.close()"><img lazy-src="/assets/images/closebtn-small.png"></a>
 
 </div>
 <div class="modal-body">
     <div class="vedio" ng-init="setCurrentVideo(currentRole)">
         <video ng-video="" autoplay style="width:100%;" controls ng-src="{{currentRole.video}}"></video>
-        <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img src="/assets/images/vedioicon.png"/></button>
+        <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img lazy-src="/assets/images/vedioicon.png"/></button>
 
     </div>
 </div>

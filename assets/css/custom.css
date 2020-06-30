@@ -760,9 +760,10 @@ span.numbers {
 	background: #fd3779;
 	color: #fff;
 	border-radius: 100%;
-	padding: 5px 10px;
-	width: 45px;
-	height: 45px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 73%;
 }
 
 .wel-mid-right-top-right-innr::-webkit-scrollbar-track, .reward-collection-modal ul::-webkit-scrollbar-track, .expensec-record-table-outer::-webkit-scrollbar-track, .mall-category-products::-webkit-scrollbar-track {
@@ -2191,13 +2192,15 @@ h3.product-title {
 }
 
 .product-price span {
-	display: block;
 	width: 100%;
-	font-size: 24px;
 	color: #fff;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.3);
 	border-radius: 20px;
+	padding: 2px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .product-price span b {
@@ -2206,7 +2209,7 @@ h3.product-title {
 }
 
 .product-price span img {
-	max-width: 30px !important;
+	max-width: 20px !important;
 	margin: 0;
 	padding: 0;
 	margin-right: 10px;
@@ -4979,8 +4982,8 @@ div.lazy-scroll {
 	}
 
 	.welcome-mid-left-girl-img img.girl-img{
-		min-width: 690px;
-		min-height: 960px;
+		min-width: 600px;
+		min-height: 900px;
 	}
 }
 
@@ -5205,7 +5208,7 @@ select:-webkit-autofill:focus {
 	font-size: 1.5vw
 }
 
-.modal-body  {
+.modal-bodyÂ  {
 	margin-top: -35px;
 
 }
@@ -5213,7 +5216,7 @@ select:-webkit-autofill:focus {
 	overflow-y: hidden;
 }
 
-.ticket_reply .modal-content  {
+.ticket_reply .modal-contentÂ  {
 	padding: 20px;
 }
 .top-modal-section h2{

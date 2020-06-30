@@ -2,7 +2,7 @@
  * Gaming app main file
  */
 
-var gamingApp = angular.module("gaming", ['ngRoute', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngSanitize', 'angularLazyImg']);
+var gamingApp = angular.module("gaming", ['ngRoute', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngSanitize']);
 gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
 
     $http.defaults.headers.common['Content-Type'] = 'application/json; charset=UTF-8';

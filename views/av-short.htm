@@ -1,5 +1,5 @@
 <section ng-init="currentPage = 'videos'" class="uniformsister uniformsister-03">
-    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img src="/assets/images/img-check-circle.png"/>
+    <div class="uniformheader title-arrow"><a href="#!dashboard"> <img lazy-src="/assets/images/img-check-circle.png"/>
         <h1>AV區</h1></a>
         <div class="booksthree_btn">
             <button class="bookbtn booklinebtn pull-right" ng-click="goto('my-av')">已購買</button>
@@ -11,7 +11,7 @@
     <div class="gamelist gamelist-03">
         <div class="gamelist_top" ng-init="getCurrentUserVideos(); getVideos('短片')">
             <div class="list_ratings">
-                <button class="bookbtn"><img src="/assets/images/toglelist2.png"/></button>
+                <button class="bookbtn"><img lazy-src="/assets/images/toglelist2.png"/></button>
 
                 <h2>類別</h2>
 
@@ -33,13 +33,13 @@
                                      ng-click="setCurrentVideo(video); openModal('video_detail', 'fullpage_popup')"><a
                                         href="#">
                                     <div class="image-box"><img class="eyebaby"
-                                                                ng-src="{{path['video_image']}}{{video.thumbnail}}"/>
+                                                                lazy-src="{{path['video_image']}}{{video.thumbnail}}"/>
                                     </div>
                                 </a>
 
                                     <h4><a href="#">{{video.name}}</a></h4>
                                     <h5><a href="#">{{video.actress}}</a></h5>
-                                    <div ng-if="userVideosID.indexOf(video.id) < 0" class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{video.price}}</b></span></div>
+                                    <div ng-if="userVideosID.indexOf(video.id) < 0" class="product-price"><span><img lazy-src="/assets/images/price-icon.png"> <b>{{video.price}}</b></span></div>
                                     <div ng-if="userVideosID.indexOf(video.id) >= 0" class="product-price"><span><b>已購買</b></span></div>
                                     </div>
                                 </div>

@@ -9,17 +9,17 @@
                 <ul class="gamelist_inner card-select">
                     <li ng-repeat="item in inUsedCardlevels">
                         <a href="#" ng-click="removeCard(item)" class="card-remove"><i class="fa fa-close"></i> </a>
-                        <img src="/assets/images/ggg_bgr01.png"/>
+                        <img lazy-src="/assets/images/ggg_bgr01.png"/>
                         <div class="img_inner">
-                            <img ng-src="{{path['card']}}{{item.thumbnail}}"/>
+                            <img lazy-src="{{path['card']}}{{item.thumbnail}}"/>
                         </div>
                     </li>
                     <li ng-click="selectCard()" style="cursor: pointer" ng-repeat="n in [] | range:0:5-inUsedCardlevels.length">
-                        <img src="/assets/images/ggg_bgr01.png"/>
+                        <img lazy-src="/assets/images/ggg_bgr01.png"/>
                     </li>
                 </ul>
             </div>
-            <button class="popupprple_btn" ng-click="goto('card-list')"><img src="../assets/images/puprleimgbtn.png"/><span>確認</span></button>
+            <button class="popupprple_btn" ng-click="goto('card-list')"><img lazy-src="../assets/images/puprleimgbtn.png"/><span>確認</span></button>
         </div>
         <!-- Modal -->
 
