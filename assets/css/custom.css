@@ -4969,6 +4969,11 @@ form.order-form textarea.form-control {
 	.checkout-right {
 		padding-left: 25px;
 	}
+
+	.welcome-mid-left-girl-img img.girl-img{
+		min-width: 690px;
+		min-height: 960px;
+	}
 }
 
 html.page-price_plan, html.page-price_plan .reward-collection-outer {
