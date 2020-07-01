@@ -1067,6 +1067,7 @@
 
     .list_ratings {
         text-align: center;
+        margin-top: 0;
     }
 
     .vedio .vedioicon img {
@@ -1515,7 +1516,7 @@
     }
 
     ul.gamelist_inner{
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .page-card_select section{
