@@ -1772,6 +1772,11 @@ section.uniformsister_vedio .uniformheader h1 {
         /* width: 1400px; */
     }
 
+    ul.gamelist_inner li .listbox h4{
+        height: 25px;
+        line-height: 25px;
+    }
+
     .gamelist .modal {
         position: fixed;
         top: 12%;
