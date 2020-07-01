@@ -1,5 +1,21 @@
 gamingApp.controller("userController", function ($scope, $route, $routeParams, $location, $http, $infoModal, $timeout) {
 
+    var circleValue = document.querySelector('#circle-value');
+    var circleLength = circleValue.getTotalLength();
+
+
+    $scope.initProgressCircle = function () {
+        angular.element(circleValue).css({"stroke-dashoffset": circleLength, "stroke-dasharray": circleLength});
+    };
+
+    $scope.$on("user_loaded", function (e, currentUser) {
+        var percent = currentUser.gameProgress.round();
+        var value = circleLength - (percent*circleLength)/100;
+
+        angular.element(circleValue).animate({
+            "stroke-dashoffset": value
+        });
+    });
 
     if($routeParams.action){
 
