@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: "å¾®è»Ÿæ­£é»‘é«”", sans-serif;
+    font-family: "微軟正黑體", sans-serif;
     font-weight: normal;
 }
 
@@ -1499,6 +1499,9 @@ ul.gamelist_inner li .listbox h4 {
     text-align: left;
     font-weight: 600;
     font-size: 24px;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
 }
 
 ul.gamelist_inner li .listbox h5 {
