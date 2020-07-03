@@ -1,4 +1,4 @@
-gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location, preloader) {
+gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location) {
 
     if(localStorage.showWelcome === '1'){
         $infoModal.open("親愛的<br>" +
@@ -8,7 +8,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
     }
 
 
-    $scope.loaded = false;
+   /* $scope.loaded = false;
     $scope.pictures = [
 
     ];
@@ -20,7 +20,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         console.log('failed');
         // Loading failed on at least one image.
     });
-
+*/
 
     $scope.previewVideo = '';
 
