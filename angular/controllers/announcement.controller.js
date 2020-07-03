@@ -30,6 +30,7 @@ gamingApp.controller("announcementController", function ($scope, $route, $http, 
         })).then(function (res) {
             $scope.items = res.data.content;
             $scope.$broadcast("after_load_item");
+            $scope.$broadcast("refreshImg");
         })
     };
 

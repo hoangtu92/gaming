@@ -36,6 +36,7 @@ gamingApp.controller("cardController", function ($scope, $rootScope, $route, $lo
         $scope.filterLevel = level;
         $http.get(localStorage.base_api + "card/getLevels", {params: {level: level}}).then(function (res) {
             $scope.levels = res.data.model;
+            $scope.$broadcast("refreshImg");
         });
 
     };
@@ -61,10 +62,12 @@ gamingApp.controller("cardController", function ($scope, $rootScope, $route, $lo
     $scope.getCardPools = function () {
         $http.get(localStorage.base_api + "card/getCardPools").then(function (res) {
             $scope.cardPools = res.data;
+            $scope.$broadcast("refreshImg");
         });
 
         $http.get(localStorage.base_api + "card/getLimitedTimeCards").then(function (res) {
             $scope.limitedTimeCards = res.data;
+            $scope.$broadcast("refreshImg");
         });
     }
 
