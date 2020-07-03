@@ -1,6 +1,14 @@
 gamingApp.controller("mainController", function ($window, $rootScope, $location, $scope, $interval, $route, $routeParams, $http, $infoModal, $uibModal, $uibModalStack, ConfigService, $timeout) {
 
     $rootScope.route = $route;
+
+    $rootScope.config = config;
+    localStorage.base_api = config.base_api;
+    localStorage.version = config.version;
+
+
+
+
     $rootScope.apply_card = true;
 
     $scope.b64DecodeUnicode = function(str) {
@@ -10,8 +18,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.currentVideo = {};
-
-
 
 
     $scope.nsOptions =
@@ -76,6 +82,13 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     });
 
+    $scope.getPaths = function(){
+        //Get path setting
+        $http.get(localStorage.base_api + "setting/getPath", {params: {key: "_path"}}).then(function (res) {
+            $rootScope.path = res.data;
+        });
+    };
+
     $scope.applyCard = function(useCard){
 
         $rootScope.apply_card = useCard;
@@ -112,27 +125,12 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.$on('$locationChangeSuccess', function () {
 
         $scope.checkFullScreen();
-        $scope.getCurrentUser();
-        $scope.getCarts();
-    });
-
-    ConfigService.getConfig().then(function (config) {
-        if (typeof localStorage.development !== 'undefined' && localStorage.development === "1") {
-            config.base_api = "http://gaming.dev.ml-codesign.com:8080/api/";
-            config.api_domain = "http://gaming.dev.ml-codesign.com:8080"
-        }
-        $rootScope.config = config;
-        localStorage.base_api = config.base_api;
-        localStorage.version = config.version;
-
-
-        //Get path setting
-        $http.get(localStorage.base_api + "setting/getPath", {params: {key: "_path"}}).then(function (res) {
-            $rootScope.path = res.data;
+        $scope.getCurrentUser(function () {
+            $scope.getPaths();
+            $scope.getCarts();
         });
-
-
     });
+
 
     $scope.$on("cart_updated", function (e, cartItems) {
         $scope.retrieveCartInfo(cartItems);
