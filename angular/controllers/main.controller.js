@@ -397,6 +397,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.currentRole = res.data.model;
             $scope.setCurrentVideo(res.data.model);
             $scope.$broadcast("role_loaded", $scope.currentRole);
+
         });
     };
 
@@ -469,6 +470,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
         $http.post(localStorage.base_api + "role/filter", JSON.stringify($scope.filter)).then(function (res) {
             $scope.$broadcast("after_load_item", res.data);
+            $scope.$broadcast("refreshImg");
             $scope.items = res.data;
             $scope.currentRole = res.data[0];
         })
@@ -481,26 +483,21 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.setCurrentRole = function (role) {
         $scope.currentRole = role;
-        $rootScope.$emit('lazyImg:refresh');
     };
 
     $scope.setCurrentVideo = function (video) {
         $scope.currentVideo = video;
-        $rootScope.$emit('lazyImg:refresh');
         //console.log($scope.currentVideo)
 
     };
     $scope.setCurrentLevel = function (level) {
-        $rootScope.$emit('lazyImg:refresh');
         $scope.showAllLevels = false;
         $scope.selectedLevel = level;
     };
     $scope.setCurrentPool = function (pool) {
-        $rootScope.$emit('lazyImg:refresh');
         $scope.currentPool = pool;
     };
     $scope.setCurrentCard = function (card) {
-        $rootScope.$emit('lazyImg:refresh');
         $scope.currentCard = card;
     };
 
@@ -604,6 +601,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }).then(function (res) {
             $scope.levels = res.data.model;
+            $scope.$broadcast("refreshImg");
             if(cb) cb();
         });
 
@@ -663,6 +661,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function (res) {
 
             $scope.cardLevels = res.data.model;
+            $scope.$broadcast("refreshImg");
 
         })
     };
@@ -670,6 +669,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.getInUsedCards = function(){
         $http.get(localStorage.base_api + "card/getInUsedCards").then(function (res) {
             $scope.inUsedCardlevels = res.data.model;
+            $scope.$broadcast("refreshImg");
         });
     };
 

@@ -9,7 +9,7 @@
     </div>
     <div class="mall-product-outer">
         <div class="container">
-            <div class="mall-category-header-menu"><span class="mall-cat-name"><img lazy-src="/assets/images/category-icon.png"
+            <div class="mall-category-header-menu"><span class="mall-cat-name"><img src="/assets/images/category-icon.png"
                                                                                     class="img-responsive"> 類別</span>
                 <ul class="mall-category-menu" ng-init="getListProductCats()">
                     <li ng-class="{active : currentFilter === undefined}">
@@ -32,7 +32,7 @@
                             <div class="image-box"><img lazy-src="{{path['product']}}{{product.thumbnail}}"
                                                         class="img-responsive"></div>
                             <h3 class="product-title">{{product.name}}</h3>
-                            <div class="product-price"><span><img lazy-src="/assets/images/price-icon.png"> <b>{{product.price.formatPrice()}}</b></span>
+                            <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{product.price.formatPrice()}}</b></span>
                             </div>
                         </a></div>
 

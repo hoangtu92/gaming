@@ -89,42 +89,6 @@ gamingApp.directive(
 
             }
 
-
-            // ---
-            // PRIVATE METHODS.
-            // ---
-
-
-            // I check the document height to see if it's changed.
-            function checkDocumentHeight() {
-
-                // If the render time is currently active, then
-                // don't bother getting the document height -
-                // it won't actually do anything.
-                if ( renderTimer ) {
-
-                    return;
-
-                }
-
-                var currentDocumentHeight = doc.height();
-
-                // If the height has not changed, then ignore -
-                // no more images could have come into view.
-                if ( currentDocumentHeight === documentHeight ) {
-
-                    return;
-
-                }
-
-                // Cache the new document height.
-                documentHeight = currentDocumentHeight;
-
-                startRenderTimer();
-
-            }
-
-
             // I check the lazy-load images that have yet to
             // be rendered.
             function checkImages() {
@@ -188,6 +152,42 @@ gamingApp.directive(
                 }
 
             }
+
+
+            // ---
+            // PRIVATE METHODS.
+            // ---
+
+
+            // I check the document height to see if it's changed.
+            function checkDocumentHeight() {
+
+                // If the render time is currently active, then
+                // don't bother getting the document height -
+                // it won't actually do anything.
+                if ( renderTimer ) {
+
+                    return;
+
+                }
+
+                var currentDocumentHeight = doc.height();
+
+                // If the height has not changed, then ignore -
+                // no more images could have come into view.
+                if ( currentDocumentHeight === documentHeight ) {
+
+                    return;
+
+                }
+
+                // Cache the new document height.
+                documentHeight = currentDocumentHeight;
+
+                startRenderTimer();
+
+            }
+
 
 
             // I clear the render timer so that we can easily
@@ -255,6 +255,8 @@ gamingApp.directive(
 
             // Return the public API.
             return({
+                checkImages: checkImages,
+                windowChanged: windowChanged,
                 addImage: addImage,
                 removeImage: removeImage
             });
@@ -422,6 +424,13 @@ gamingApp.directive(
 
                 }
             );
+
+            $scope.$on("refreshImg", function () {
+                setTimeout(function () {
+                    lazyLoader.checkImages();
+                }, 1000)
+
+            })
 
         }
 
