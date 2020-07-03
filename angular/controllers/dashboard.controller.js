@@ -1,4 +1,4 @@
-gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location) {
+gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location, preloader) {
 
     if(localStorage.showWelcome === '1'){
         $infoModal.open("親愛的<br>" +
@@ -6,6 +6,21 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
             "今天也要加油<br>" +
             "把我脫光喔!")
     }
+
+
+    $scope.loaded = false;
+    $scope.pictures = [
+
+    ];
+
+    preloader.preloadImages( $scope.pictures).then(function() {
+        $scope.loaded = true;
+
+    },function() {
+        console.log('failed');
+        // Loading failed on at least one image.
+    });
+
 
     $scope.previewVideo = '';
 
@@ -44,7 +59,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
     $scope.setActiveItem = function(item){
         console.log(item);
         $scope.activeItem = item;
-    }
+    };
 
     $scope.exit = function () {
         $infoModal.open("請愛的\n" +

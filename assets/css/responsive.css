@@ -995,11 +995,11 @@
         height: 100%;
     }
 
-    ul.gamelist_inner li {
+    body:not(.page-card_list) ul.gamelist_inner li {
         /* width: 50%; */
         text-align: center;
         /* padding: 10px 15px; */
-        min-height: 280px;
+        /* min-height: 280px; */
     }
 
     ul.gameseries li {
@@ -1229,6 +1229,14 @@
         font-size: 30px;
     }
 
+    .welcome-left-author-sec{
+        top: 44%;
+    }
+
+    .right-author-chat-icon{
+        bottom: 51vh;
+    }
+
     .login-welcome-page .form-group label {
         font-size: 24px;
     }
@@ -1447,6 +1455,21 @@
 
     .yellowshed .pull-left.text-right h1.ratetxt {
 
+    }
+}
+
+@media all and (min-width: 2560px){
+    .welcome-mid-left-girl-img img.girl-img{
+        height: 100vh;
+    }
+    .welcome-mid-right-sec {
+        top: 4em;
+    }
+    .right-author-chat-icon {
+        right: 14%;
+    }
+    .slider-item-inner img {
+        height: 250px;
     }
 }
 

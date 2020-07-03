@@ -24,6 +24,7 @@ gamingApp.run(function ($rootScope, $http, $templateCache, $uibModalStack) {
     };
     $http.get('includes/modals/info.htm', {cache: $templateCache});
 
+
 }).factory('httpPreConfig', ['$http', '$rootScope', function ($http, $rootScope) {
     $http.defaults.transformRequest.push(function (data) {
         $rootScope.$broadcast('httpCallStarted');
