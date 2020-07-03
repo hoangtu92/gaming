@@ -37,7 +37,6 @@ gamingApp.controller("productController", function ($scope, $route, $http, $info
             }
         }).then(function (res) {
             $scope.products = res.data.model;
-
         });
     };
 
