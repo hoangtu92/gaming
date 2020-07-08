@@ -382,7 +382,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
         var result = $scope.gaming[bet_area] / 1000,
             style = 'display: none; position: fixed; left: ' + pos.x + 'px; top: ' + pos.y + 'px;',
             icon = '<div class="bet-icon redvlack_circle ' + bet_area + '" style="' + style + '">\n' +
-                '                                    <img lazy-src="/assets/images/redblackbgr.png">\n' +
+                '                                    <img src="/assets/images/redblackbgr.png">\n' +
                 '                                    <div class="text" data-target="' + bet_area + '">' + result + 'K</div>\n' +
                 '                                </div>';
 
