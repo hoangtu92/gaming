@@ -27,7 +27,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
     localStorage.showWelcome = '0';
 
     $scope.owlOptions = {
-        loop: true,
+        loop: false,
         margin: 25,
         nav: true,
         addClassActive: true,
