@@ -37,7 +37,7 @@
                         </p>
                         <p class="form-group">
                             <label>
-                                <input type="text"  ng-required="true" ng-model="order.zipCode" maxlength="10"  name="zipCode" placeholder="郵遞區號" class="form-control">
+                                <input type="text"  ng-required="true" ng-model="order.zipCode" pattern="\d+" maxlength="10"  name="zipCode" placeholder="郵遞區號" class="form-control">
                                 <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.zipCode.$invalid">請填寫必填欄位</span>
                             </label>
                         </p>
@@ -46,7 +46,7 @@
                     <div class="form-row">
                         <p class="form-group">
                             <label>
-                                <input type="text"  ng-required="true" ng-model="order.phone" name="phone" placeholder="電話(*)" class="form-control">
+                                <input type="text"  ng-required="true" ng-model="order.phone" name="phone" pattern="\d+" placeholder="電話(*)" class="form-control">
                                 <span class="validation-error" ng-if="checkoutForm.$submitted && checkoutForm.phone.$invalid">請填寫必填欄位</span>
 
                             </label>

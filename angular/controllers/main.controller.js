@@ -640,6 +640,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         }).then(function (res) {
             $scope.modal['card_detail'].close();
             $scope.getListUserCards();
+            $scope.getInUsedCards();
             $scope.getCurrentUser(function () {
                 $infoModal.open("道具牌已以" + $scope.viewingLevel.salePrice.formatPrice() + "G幣成功售出，您目前的餘額為" + $scope.currentUser.credit.formatPrice())
             })
