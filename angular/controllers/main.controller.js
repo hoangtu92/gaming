@@ -917,5 +917,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.responsesCounter = counts.responses;
     });
 
+    angular.element(".owl-prev, .owl-next").onclick = function () {
+        $scope.$broadcast("refreshImg")
+    }
+
 
 });

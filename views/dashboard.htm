@@ -20,15 +20,15 @@
                 <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
                         <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
-                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" lazy-src="/assets/images/default-avatar.png">
+                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
                             <h3>{{currentUser.username}}</h3>
-                            <span class="price-icon"> <img lazy-src="/assets/images/price-icon.png">
+                            <span class="price-icon"> <img src="/assets/images/price-icon.png">
               <h5>{{currentUser.credit.formatPrice()}}</h5>
               </span> </span> </div>
                     </div>
-                    <div class="right-author-chat-icon"><a href="#" ng-click="playPreview()"><img lazy-src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="playPreview()"><img src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="right-cstm-btn-circle"><a href="#" ng-click="playGame()">
-                        <img lazy-src="/assets/images/btn-circle.png" class="img-responsive"
+                        <img src="/assets/images/btn-circle.png" class="img-responsive"
                              onmouseover="this.src='/assets/images/btn-circle_on.png';"
                              onmouseout="this.src='/assets/images/btn-circle.png';"></a>
                     </div>
