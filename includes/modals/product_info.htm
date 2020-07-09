@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <a class="close" ng-click="modal.product_info.close()"><img lazy-src="/assets/images/closebtn-small.png"></a>
+    <a class="close" ng-click="modal.product_info.close()"><img src="/assets/images/closebtn-small.png"></a>
 
 </div>
 <div class="modal-body">
@@ -29,7 +29,7 @@
             <h2>{{currentProduct.name}}</h2>
             <p ng-bind-html="currentProduct.intro" class="align-left"></p>
 
-            <div class="product-price"><span><img lazy-src="/assets/images/price-icon.png"> <b>{{currentProduct.price.formatPrice()}}</b></span>
+            <div class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{currentProduct.price.formatPrice()}}</b></span>
             </div>
             <div class="mall-product-btn"><a href="#" ng-click="addToCart(currentProduct)">購買</a></div>
         </div>
