@@ -36,6 +36,8 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         freeDrag: false,
         rewind: false,
         pullDrag: false,
+        slideBy: 1,
+        dragEndSpeed: 1000,
         lazyLoad: true,
         responsiveClass: true,
         responsive: {

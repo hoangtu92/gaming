@@ -712,7 +712,7 @@ span.price-icon h5 {
 .slider-item:hover > .slider-item-inner:after,
 .slider-item.selected > .slider-item-inner:after{
 	background-image: url(../images/role-hover-2.png);
-	bottom: -9%;
+	bottom: -8px;
 	height: 33px;
 	width: 100%;
 	background-size: cover;
@@ -5131,6 +5131,7 @@ a.close img{
 }
 .owl-carousel .owl-stage-outer{
 	padding: 10px 0;
+	overflow: initial;
 }
 input:-internal-autofill-selected,
 input:-webkit-autofill,
