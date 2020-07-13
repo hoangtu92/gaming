@@ -93,7 +93,7 @@
         height: 70px;
     }
 
-    .ticket_reply .modal-contentÃ‚Â  {
+    .ticket_reply .modal-content  {
         min-width: 60vw;
 
     }
@@ -507,6 +507,10 @@
 
     .topstart_block h2 {
         font-size: 20px;
+    }
+
+    .owl-nav{
+        display: none;
     }
 
     .toprate_block img.girlimg {
@@ -1088,7 +1092,7 @@
         width: 96%;
     }
 
-    .modal-bodyÃ‚Â  {
+    .modal-body  {
         margin-top: -35px;
     }
 
@@ -1098,7 +1102,7 @@
         margin-bottom: 20px;
     }
 
-    .forgot_password .modal-footerÃ‚Â  {
+    .forgot_password .modal-footer  {
         margin-top: -35px;
 
     }
@@ -1113,7 +1117,7 @@
 
     }
 
-    form.customer-service-form button imgÃ‚Â  {
+    form.customer-service-form button img  {
         max-width: 90px;
     }
 
@@ -1473,7 +1477,7 @@
 }
 
 @media (max-height: 450px) {
-    .sidenav aÃ‚Â  {
+    .sidenav a  {
         font-size: 14px;
     }
 
@@ -1597,7 +1601,7 @@
 }
 
 @media all and (max-width: 950px) {
-    div#mySidenavÃ‚Â  {
+    div#mySidenav  {
         max-width: 170px;
 
     }

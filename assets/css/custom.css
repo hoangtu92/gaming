@@ -5029,7 +5029,7 @@ body.page-price_plan {
 
 @media all and (max-width: 1024px) {
 
-	body {
+	body:not(.page-dashboard) {
 		overflow: auto;
 	}
 
