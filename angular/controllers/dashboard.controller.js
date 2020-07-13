@@ -31,7 +31,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         margin: 25,
         nav: true,
         addClassActive: true,
-        mouseDrag: true,
+        mouseDrag: false,
         touchDrag: true,
         freeDrag: false,
         rewind: false,
