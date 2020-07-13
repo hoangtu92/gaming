@@ -63,7 +63,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         $infoModal.open($scope.b64DecodeUnicode($routeParams.msg));
     }
     $scope.setActiveItem = function(item){
-        console.log(item);
+        //console.log(item);
         $scope.activeItem = item;
     };
 

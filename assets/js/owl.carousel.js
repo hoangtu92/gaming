@@ -758,6 +758,7 @@
 	 * @param {Event} event - The event arguments.
 	 */
 	Owl.prototype.onDragStart = function(event) {
+
 		var stage = null;
 
 		if (event.which === 3) {
@@ -794,6 +795,8 @@
 		this._drag.stage.start = stage;
 		this._drag.stage.current = stage;
 		this._drag.pointer = this.pointer(event);
+
+		//console.log("drag start: ", stage);
 
 		$(document).on('mouseup.owl.core touchend.owl.core', $.proxy(this.onDragEnd, this));
 
@@ -836,6 +839,8 @@
 
 		if(this.current() > 0 || direction === 'left'){
 
+			//console.log("drag move: ", stage, delta);
+
 
 			if (this.settings.loop) {
 				minimum = this.coordinates(this.minimum());
@@ -869,7 +874,8 @@
 			stage = this._drag.stage.current,
 			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
-		if(this.current() > 0 || direction ==='left'){
+		if((this.current() > 0 || direction ==='left') && Math.abs(delta.x) >= 1){
+
 			$(document).off('.owl.core');
 
 			this.$element.removeClass(this.options.grabClass);
