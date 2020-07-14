@@ -1574,6 +1574,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
     width: 100%;
     height: auto;
     display: inline-block;
+    border: none;
 }
 
 .vedio .vedioicon {
@@ -1837,7 +1838,7 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 .vedio video {
-    width: 100%;
+    width: 70%;
 }
 
 .vedio_slider .nowplay.fullpaly .blackoverlay span.hovertxt {
