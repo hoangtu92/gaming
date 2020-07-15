@@ -6,9 +6,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     localStorage.base_api = config.base_api;
     localStorage.version = config.version;
 
-
-
-
     $rootScope.apply_card = true;
 
     $scope.b64DecodeUnicode = function(str) {

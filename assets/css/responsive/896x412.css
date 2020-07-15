@@ -3,7 +3,7 @@
 
 /* Landscape */
 @media only screen
-and (min-device-height: 414px)
+and (min-device-height: 412px)
 and (max-device-width: 896px)
 and (orientation: landscape) {
     /*Card detail*/
