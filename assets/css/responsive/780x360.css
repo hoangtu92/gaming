@@ -80,7 +80,7 @@ and (orientation: landscape) {
     }
 
     .owl-carousel .owl-item img {
-        height: 54px;
+        height: 51px;
     }
 
     .right-cstm-btn-circle img {
@@ -89,7 +89,7 @@ and (orientation: landscape) {
 
     .welcome-mid-right-sec {
         width: 400px;
-        top: 65px;
+        top: 57px;
         padding: 10px;
         right: 100px;
     }
@@ -157,8 +157,8 @@ and (orientation: landscape) {
     }
 
     .right-author-chat-icon {
-        left: 50%;
-        bottom: 37%;
+        left: 61%;
+        bottom: 131px;
     }
 
     button {
