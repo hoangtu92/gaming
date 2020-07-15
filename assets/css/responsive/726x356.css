@@ -1,5 +1,5 @@
 /* Landscape */
-@media only screen and (device-height: 356px) and (device-width: 726px) and (orientation: landscape) {
+@media only screen and (min-device-height: 356px) and (max-device-width: 726px) and (orientation: landscape) {
     /*Card detail*/ .babyimg_info .paragraph {
     font-size: 1.5rem;
 }

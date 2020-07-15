@@ -3,8 +3,8 @@
 
 /* Landscape */
 @media only screen
-and (device-height: 480px)
-and (device-width: 854px)
+and (min-device-height: 480px)
+and (max-device-width: 854px)
 and (orientation: landscape) {
     /*Card detail*/
     .babyimg_info .paragraph {

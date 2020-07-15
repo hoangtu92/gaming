@@ -1,20 +1,18 @@
 
-/* ----------- Samsung A20 ----------- */
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
 
 /* Landscape */
 @media only screen
-and (min-device-width: 412px)
-and (max-device-width: 892px)
-and (min-width: 890px)
-and (-webkit-min-device-pixel-ratio: 1.75)
+and (min-device-height: 360px)
+and (max-device-width: 740px)
 and (orientation: landscape) {
-    /*Card detail*/
-    .babyimg_info .paragraph {
-        font-size: 1.5rem;
-    }
+    /*Card detail*/ .babyimg_info .paragraph {
+    font-size: 1.5rem;
+}
 
     .product-price span img {
-        width: 21px;
+        width: 16px;
     }
 
     .babyimg_info .tpname h2 {
@@ -23,13 +21,13 @@ and (orientation: landscape) {
 
     .babyimg {
         width: auto;
-        top: -33px;
+        top: -60px;
         left: -37px;
     }
 
     .babyimg img {
         width: auto;
-        height: 65vh;
+        height: 80vh;
     }
 
     .card_detail .modal-content {
@@ -64,8 +62,8 @@ and (orientation: landscape) {
     }
 
     .modal-header button.popupprple_btn {
-        right: -48px;
-        top: -37px;
+        right: -47px;
+        top: -33px;
     }
 
     button.popupprple_btn img.popup_close_icon {
@@ -75,31 +73,63 @@ and (orientation: landscape) {
 
     /*Dashboard*/
     .welcome-bottom-inner {
-        padding-bottom: 30px;
+        padding-bottom: 0;
     }
 
     .owl-carousel .owl-item img {
-        height: 45px;
+        height: 60px;
     }
 
     .right-cstm-btn-circle img {
-        max-width: 80px;
+        max-width: 70px;
     }
 
     .welcome-mid-right-sec {
-        width: 370px;
-        top: 100px;
+        width: 400px;
+        top: 68px;
         padding: 10px;
-        right: 50px;
+        right: 74px;
+    }
+
+    span.side-menu-cstm-toogle {
+        width: 38px;
+        height: 38px;
+        font-size: 18px !important;
     }
 
     .welcome-mid-left-girl-img img.girl-img {
+        margin-left: 60px;
+    }
+
+    span.price-icon h5 {
+        padding-left: 25px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    span.price-icon img {
+        width: 20px;
+    }
+
+    .welcome-left-author-data-sec h3 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-left-author-data-sec {
+        width: 160px;
+        padding-left: 45px;
+    }
+
+    .welcome-left-author-sec {
+        top: 49%;
+        left: -20px;
     }
 
     .booksthree_btn {
         padding-top: 5px;
         max-width: 325px;
     }
+
 
     .uniformheader {
         padding: 5px 0px 0 10px;
@@ -119,19 +149,16 @@ and (orientation: landscape) {
     }
 
     .sidenav a.closebtn {
-
         top: 25px !important;
-
         right: 10px !important;
     }
 
     .right-author-chat-icon {
-        left: 70%;
-        bottom: 36%;
+        left: 50%;
+        bottom: 35%;
     }
 
     button {
-
         padding: 5px 20px;
         font-size: 1.5rem;
     }
@@ -153,36 +180,27 @@ and (orientation: landscape) {
     }
 
     .header-top-left-menu ul li a {
-        padding: 5px 20px;
+        padding: 6px 25px;
     }
 
     .slider-item-inner h4 {
-
         font-size: 0.8rem;
-
         padding: 3px;
-
     }
 
     .slider-item-inner .slidertxt-bar {
-
         padding-bottom: 18px;
-
     }
 
     .right-author-chat-icon img {
-
         width: 110px;
-
     }
 
     .wel-mid-right-top-right-innr {
-
         font-size: 1.3rem;
     }
 
     .welcome-mid-right-top-left h3 strong {
-
         font-size: 1.3rem;
     }
 
@@ -195,12 +213,11 @@ and (orientation: landscape) {
     }
 
     .right-cstm-btn-circle {
-        bottom: -45px;
-        right: 14px;
+        bottom: -29px;
+        right: 10px;
     }
 
     .welcome-mid-right-top-left ul {
-
         margin-top: 5px;
     }
 
@@ -213,19 +230,15 @@ and (orientation: landscape) {
     }
 
     .progress-level .progress-level-outer, .progress-level .progress-level-inner {
-
     }
 
     .welcome-bottom-inner-btn a img {
-
         width: 60px;
     }
 
-    .welcome-mid-right-top-left{
+    .welcome-mid-right-top-left {
         width: 150px;
     }
-
-
 
     /*Card select*/
     .card-remove {
@@ -251,7 +264,7 @@ and (orientation: landscape) {
     }
 
     ul.gamelist_inner.grid-200 {
-        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     }
 
     ul.gamelist_inner li {
@@ -309,16 +322,15 @@ and (orientation: landscape) {
 
     /*card buy*/
     .card-pools {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
     }
 
-    .uniform_boxes ul li,
-    .uniformbox_inner {
+    .uniform_boxes ul li, .uniformbox_inner {
         min-height: initial;
     }
 
     .uniform_boxes ul li img {
-        max-height: 110px;
+        max-height: 95px;
         width: auto;
     }
 
@@ -332,6 +344,7 @@ and (orientation: landscape) {
 
     .uniformbox_inner .bookname button.bookbtn {
         font-size: 1.5rem;
+        padding: 5px 10px;
     }
 
     .uniformbox_inner .bookname {
@@ -347,11 +360,15 @@ and (orientation: landscape) {
     }
 
     .uniformbox_inner .coinbtn button.pinkbtn {
-        margin-left: 5px;
+        margin-left: 0px;
     }
 
     .uniformbox_inner .coinbtn button.pinkbtn img {
         max-width: 80px
+    }
+
+    .uniformbox_inner .coinbtn img {
+        max-width: 27px;
     }
 
     /*Card draw*/
@@ -370,18 +387,17 @@ and (orientation: landscape) {
     }
 
     .modal-header button.close {
-
         right: 0px;
         top: 0px;
     }
 
     .modal.fullpage_popup .modal-dialog .modal-content {
-        max-width: 100%;
+        max-width: 100vw;
+        max-height: 100vh;
     }
 
     /*Prize redeem*/
     .boxcheck {
-
         top: 10px;
         right: 5px;
     }
@@ -487,7 +503,7 @@ and (orientation: landscape) {
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .yellowshed .pull-left.text-right h4 {
@@ -507,7 +523,7 @@ and (orientation: landscape) {
 
     .yellowshed .golimg {
         max-width: 50px;
-        padding-top: 0;
+        padding-top: 0px;
     }
 
     .yellowshed .golimg h1 {
@@ -567,7 +583,6 @@ and (orientation: landscape) {
     }
 
     .topstart_block h1 {
-
         font-size: 1.7rem;
     }
 
@@ -593,13 +608,11 @@ and (orientation: landscape) {
     }
 
     .gametable_block {
-
         flex-basis: 99%;
         max-height: calc(100% - 50px);
     }
 
     .game-statistic {
-
         max-width: 407px;
         left: -10px;
         padding: 6px;
@@ -609,9 +622,9 @@ and (orientation: landscape) {
         font-size: 1.3rem;
     }
 
-    .progress-container-star{
-        height:15px;
-        width: 92px;
+    .progress-container-star {
+        height: 15px;
+        width: 95px;
     }
 
     /*Role play*/
@@ -621,23 +634,23 @@ and (orientation: landscape) {
 
     .infowith_pinkbg {
         position: relative;
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
     .infowith_pinkbg h1 {
-        font-size: 2.5rem;
-        margin: 0 0 25px 0;
+        font-size: 2rem;
+        margin: 0 0 10px 0;
     }
 
     .infowith_pinkbg ul {
-        margin-top: 15px;
+        margin-top: 10px;
         padding: 0;
     }
 
     .infowith_pinkbg ul li {
-        font-size: 1.7rem;
-        margin-bottom: 17px;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
     }
 
     .vedio_slider {

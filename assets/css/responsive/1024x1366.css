@@ -1,0 +1,11 @@
+
+
+@media all and (min-device-height: 1024px) and (max-device-width: 1366px) and (orientation: landscape){
+    .welcome-mid-right-sec{
+        left: -9%;
+        top: 1em;
+    }
+    .right-author-chat-icon {
+        bottom: 30vh;
+    }
+}
