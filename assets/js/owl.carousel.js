@@ -796,7 +796,7 @@
 		this._drag.stage.current = stage;
 		this._drag.pointer = this.pointer(event);
 
-		console.log("drag start: ", stage);
+		//console.log("drag start: ", stage);
 
 		$(document).on('mouseup.owl.core touchend.owl.core', $.proxy(this.onDragEnd, this));
 
@@ -841,7 +841,7 @@
 
 		if(this.current() > 0 || direction === 'left'){
 
-			console.log("drag move: ", stage, delta);
+			//console.log("drag move: ", stage, delta);
 
 
 			if (this.settings.loop) {
@@ -876,9 +876,9 @@
 			stage = this._drag.stage.current,
 			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
-		if((this.current() > 0 || direction ==='left') && Math.abs(delta.x) >= 1){
+		if((this.current() > 0 || direction ==='left') && Math.abs(delta.x) >= 0){
 
-			console.log("drag end: ", stage);
+			//console.log("drag end: ", stage);
 
 			$(document).off('.owl.core');
 
@@ -892,7 +892,7 @@
 				this.invalidate('position');
 
 				if(current >=  0){
-					this.update();
+					//this.update();
 				}
 				this._drag.direction = direction;
 
@@ -905,11 +905,11 @@
 				return;
 			}
 
-			this.leave('dragging');
-			this.trigger('dragged');
+
 
 		}
-
+		this.leave('dragging');
+		this.trigger('dragged');
 
 
 
