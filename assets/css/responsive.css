@@ -93,7 +93,7 @@
         height: 70px;
     }
 
-    .ticket_reply .modal-content  {
+    .ticket_reply .modal-contentÂ  {
         min-width: 60vw;
 
     }
@@ -388,6 +388,14 @@
         padding: 3px 10px;
     }
 
+    .welcome-bottom-inner .owl-nav button.owl-prev{
+        left: -30px !important;
+    }
+
+    .welcome-bottom-inner .owl-nav button.owl-next{
+        right: -30px !important;
+    }
+
     ul.gamelist_inner li .listbox h4 {
         font-size: 1.3rem;
     }
@@ -510,7 +518,7 @@
     }
 
     .owl-nav{
-        display: none;
+        /* display: none; */
     }
 
     .toprate_block img.girlimg {
@@ -1092,7 +1100,7 @@
         width: 96%;
     }
 
-    .modal-body  {
+    .modal-bodyÂ  {
         margin-top: -35px;
     }
 
@@ -1102,7 +1110,7 @@
         margin-bottom: 20px;
     }
 
-    .forgot_password .modal-footer  {
+    .forgot_password .modal-footerÂ  {
         margin-top: -35px;
 
     }
@@ -1117,7 +1125,7 @@
 
     }
 
-    form.customer-service-form button img  {
+    form.customer-service-form button imgÂ  {
         max-width: 90px;
     }
 
@@ -1477,7 +1485,7 @@
 }
 
 @media (max-height: 450px) {
-    .sidenav a  {
+    .sidenav aÂ  {
         font-size: 14px;
     }
 
@@ -1605,7 +1613,7 @@
 }
 
 @media all and (max-width: 950px) {
-    div#mySidenav  {
+    div#mySidenavÂ  {
         max-width: 170px;
 
     }
@@ -1621,7 +1629,7 @@
         height: 55px;
         padding: 5px 15px 5px 15px;
         border-radius: 10px;
-        border: 3px solid white;
+        border: 3px solidÂ white;
     }
 
     ul.gamelist_inner.card-select li{

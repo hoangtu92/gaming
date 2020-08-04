@@ -598,11 +598,12 @@ span.price-icon h5 {
 .welcome-bottom-inner .owl-nav {
 	position: absolute;
 	width: 100%;
-	top: 50%;
+	top: 0;
+	height: 100%;
 }
 
 .welcome-bottom-inner .owl-nav button.owl-prev {
-	left: -90px;
+	left: -100px;
 	font-size: 100px;
 	line-height: 0;
 	color: #fff;
@@ -615,7 +616,7 @@ span.price-icon h5 {
 	color: #fff;
 	font-size: 100px;
 	line-height: 0;
-	right: -60px;
+	right: -100px;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -5218,7 +5219,7 @@ select:-webkit-autofill:focus {
 	font-size: 1.5vw
 }
 
-.modal-bodyÂ  {
+.modal-bodyÃ‚Â  {
 	margin-top: -35px;
 
 }
@@ -5226,7 +5227,7 @@ select:-webkit-autofill:focus {
 	overflow-y: hidden;
 }
 
-.ticket_reply .modal-contentÂ  {
+.ticket_reply .modal-contentÃ‚Â  {
 	padding: 20px;
 }
 .top-modal-section h2{
