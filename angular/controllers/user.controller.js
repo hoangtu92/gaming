@@ -1,7 +1,8 @@
 gamingApp.controller("userController", function ($scope, $route, $routeParams, $location, $http, $infoModal, $timeout) {
 
     var circleValue = document.querySelector('#circle-value');
-    var circleLength = circleValue.getTotalLength();
+
+    var circleLength  = circleValue != null ? circleValue.getTotalLength() : 0;
 
 
     $scope.initProgressCircle = function () {
