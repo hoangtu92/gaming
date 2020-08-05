@@ -2537,7 +2537,7 @@ h3.product-title {
 }
 
 .modal-header {
-	padding: 0 0 15px 0;
+	padding: 0;
 	border: none;
 	position: relative;
 }
@@ -4820,7 +4820,7 @@ a.btn {
 }
 
 .modal.in .modal-dialog.modal-xs .modal-body {
-	padding-top: 35px;
+	/* padding-top: 35px; */
 }
 
 .cart-delete-icon {
