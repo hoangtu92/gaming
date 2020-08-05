@@ -317,6 +317,16 @@
     }
 }
 
+@media (max-width: 1280px){
+    .welcome-bottom-inner .owl-nav button.owl-prev{
+        left: -20px !important;
+    }
+
+    .welcome-bottom-inner .owl-nav button.owl-next{
+        right: -20px !important;
+    }
+}
+
 @media all and (min-width: 1024px) and (max-width: 1280px) {
     .welcome-mid-left-girl-img img.girl-img {
         margin-left: -20px;
@@ -1629,7 +1639,7 @@
         height: 55px;
         padding: 5px 15px 5px 15px;
         border-radius: 10px;
-        border: 3px solidÂ white;
+        border: 3px solid white;
     }
 
     ul.gamelist_inner.card-select li{
