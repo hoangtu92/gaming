@@ -2538,7 +2538,7 @@ h3.product-title {
 }
 
 .modal-header {
-	padding: 0;
+	padding: 0 0 15px 0;
 	border: none;
 	position: relative;
 }
@@ -5068,8 +5068,8 @@ body.page-price_plan {
 a.close{
 	opacity: 1;
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: -25px;
+	top: -25px;
 	z-index: 9999;
 }
 
