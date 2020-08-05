@@ -598,8 +598,7 @@ span.price-icon h5 {
 .welcome-bottom-inner .owl-nav {
 	position: absolute;
 	width: 100%;
-	top: 0;
-	height: 100%;
+	top: 50%;
 }
 
 .welcome-bottom-inner .owl-nav button.owl-prev {
@@ -5133,6 +5132,8 @@ a.close img{
 .owl-carousel .owl-stage-outer{
 	padding: 10px 0;
 	overflow: initial;
+	/* position: relative; */
+	/* z-index: 1; */
 }
 input:-internal-autofill-selected,
 input:-webkit-autofill,
