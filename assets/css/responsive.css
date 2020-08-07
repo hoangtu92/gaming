@@ -1580,8 +1580,9 @@
         max-width: 400px;
     }
     .monthly-stored-value-bottom-sec img{
-        width: 94px;
+        width: 132px;
         margin: 0 auto;
+        max-width: 100%;
     }
     .monthly-stored-value-bottom-sec ul li {
         min-height: initial;
@@ -1589,12 +1590,12 @@
     }
 
     .img-outer-cstm {
-        height: 10em;
+        max-height: 10em;
     }
     .monthly-stored-value-bottom-sec li span{
-        max-width: 115px;
-        font-size: 16px;
-        bottom: -28px;
+        max-width: 98px;
+        font-size: 10px;
+        bottom: -13px;
     }
 
     .monthly-stored-value-bottom-sec ul{
@@ -1604,8 +1605,8 @@
         grid-template-columns: repeat(5, 1fr);
     }
     .monthly-stored-value-bottom-sec h4 {
-        font-size: 1.5rem;
-        margin: 0;
+        font-size: 14px;
+        margin: 0 0 15px 0;
     }
 
     #mobile-registration-outer select.country-code, .payment_method_select{
