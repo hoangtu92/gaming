@@ -93,13 +93,13 @@
         height: 70px;
     }
 
-    .ticket_reply .modal-contentÂ  {
+    .ticket_reply .modal-contentÃ‚Â  {
         min-width: 60vw;
 
     }
 
     .card_select .modal-content {
-        overflow-y: hidden;
+        overflow: visible;
     }
 
     .login-welcome-page .form-group label {
@@ -1110,7 +1110,7 @@
         width: 96%;
     }
 
-    .modal-bodyÂ  {
+    .modal-bodyÃ‚Â  {
         margin-top: -35px;
     }
 
@@ -1120,7 +1120,7 @@
         margin-bottom: 20px;
     }
 
-    .forgot_password .modal-footerÂ  {
+    .forgot_password .modal-footerÃ‚Â  {
         margin-top: -35px;
 
     }
@@ -1135,7 +1135,7 @@
 
     }
 
-    form.customer-service-form button imgÂ  {
+    form.customer-service-form button imgÃ‚Â  {
         max-width: 90px;
     }
 
@@ -1495,7 +1495,7 @@
 }
 
 @media (max-height: 450px) {
-    .sidenav aÂ  {
+    .sidenav aÃ‚Â  {
         font-size: 14px;
     }
 
@@ -1623,7 +1623,7 @@
 }
 
 @media all and (max-width: 950px) {
-    div#mySidenavÂ  {
+    div#mySidenavÃ‚Â  {
         max-width: 170px;
 
     }
@@ -1639,7 +1639,7 @@
         height: 55px;
         padding: 5px 15px 5px 15px;
         border-radius: 10px;
-        border: 3px solid white;
+        border: 3px solidÂ white;
     }
 
     ul.gamelist_inner.card-select li{
