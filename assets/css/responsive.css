@@ -31,7 +31,7 @@
 
     .modal.in .modal-dialog.modal-xs .modal-body {
         padding-top: 0px;
-
+        padding-bottom: 0;
     }
 
     button[type="reset"] {
