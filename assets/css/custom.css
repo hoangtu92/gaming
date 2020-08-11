@@ -683,10 +683,10 @@ span.price-icon h5 {
 	position: relative;
 }
 
-.slider-item:hover > .slider-item-inner:before,
-.slider-item.selected > .slider-item-inner:before,
-.slider-item:hover > .slider-item-inner:after,
-.slider-item.selected > .slider-item-inner:after{
+.page-dashboard .slider-item:hover > .slider-item-inner:before,
+.page-dashboard .slider-item.selected > .slider-item-inner:before,
+.page-dashboard .slider-item:hover > .slider-item-inner:after,
+.page-dashboard .slider-item.selected > .slider-item-inner:after{
 	content: '';
 	display: block;
 	position:absolute;
@@ -709,8 +709,8 @@ span.price-icon h5 {
 	top: -7%;
 }
 
-.slider-item:hover > .slider-item-inner:after,
-.slider-item.selected > .slider-item-inner:after{
+.page-dashboard .slider-item:hover > .slider-item-inner:after,
+.page-dashboard .slider-item.selected > .slider-item-inner:after{
 	background-image: url(../images/role-hover-2.png);
 	bottom: -8px;
 	height: 33px;
