@@ -17,7 +17,7 @@
                                 <span class="checkmark"></span> 全部角色</label>
                         </div>
                     </li>
-                    <li>
+                    <li ng-hide="currentUser.totalGameSession == 0" >
                         <div class="form-group-cstm">
                             <label>
                                 <input ng-model="request.filter" value="userStarted" name="filter" type="radio" class="">
