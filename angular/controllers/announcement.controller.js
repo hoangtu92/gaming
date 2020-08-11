@@ -2,8 +2,14 @@ gamingApp.controller("announcementController", function ($scope, $route, $http, 
 
     $scope.owlOptions = {
         loop: false,
+        autoplay: true,
         margin: 0,
         nav: true,
+        mouseDrag: false,
+        touchDrag: true,
+        freeDrag: false,
+        rewind: false,
+        pullDrag: false,
         responsiveClass: true,
         responsive: {
             0: {
