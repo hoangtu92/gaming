@@ -1610,7 +1610,7 @@
         margin: 0 0 15px 0;
     }
 
-    #mobile-registration-outer select.country-code, .payment_method_select{
+    .payment_method_select{
         height: 40px;
     }
 

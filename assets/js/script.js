@@ -39,17 +39,20 @@ function fullScreenMode() {
 function landScapeMode() {
     fullScreenMode();
 
-    /*screen.orientation.lock("landscape-primary")
-        .then(function () {
-            //_LOCK_BUTTON.style.display = 'none';
-            // _UNLOCK_BUTTON.style.display = 'block';
-            if(fullscreenBtn){
-                fullscreenBtn.style.display = "none";
-            }
-        })
-        .catch(function (error) {
-            //alert(error);
-        });*/
+    if(typeof window.screen.orientation !== 'undefined'){
+        window.screen.orientation.lock("landscape-primary")
+            .then(function () {
+                //_LOCK_BUTTON.style.display = 'none';
+                // _UNLOCK_BUTTON.style.display = 'block';
+                if(fullscreenBtn){
+                    fullscreenBtn.style.display = "none";
+                }
+            })
+            .catch(function (error) {
+                //alert(error);
+            });
+    }
+
 }
 
 /* Close fullscreen */

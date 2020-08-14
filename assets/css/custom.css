@@ -3757,7 +3757,10 @@ h3.product-title {
 	}
 
 	#mobile-registration-outer select.country-code {
-		height: 40px;
+		height: 30px;
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
 	}
 
 	#mobile-registration-outer label.cstm-label {
