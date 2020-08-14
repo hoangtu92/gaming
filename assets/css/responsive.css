@@ -1658,3 +1658,9 @@
 
 
 }
+
+@media all and (max-width: 375px){
+    #mobile-registration-outer label.cstm-label{
+        font-size: 14px
+    }
+}
