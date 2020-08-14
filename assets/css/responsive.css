@@ -1106,7 +1106,8 @@
 
     .login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content {
         padding: 10px;
-        width: 96%;
+        width: 100%;
+        max-width: initial;
     }
 
     .modal-body  {
