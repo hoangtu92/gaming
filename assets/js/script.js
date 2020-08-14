@@ -1,6 +1,6 @@
-var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
+/*var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
     // _UNLOCK_BUTTON = document.querySelector("#unlock-button"),
-    _STATUS = document.querySelector("#orientation-status");
+    _STATUS = document.querySelector("#orientation-status");*/
 
 // _STATUS.innerHTML = screen.orientation.type + ' mode';
 
@@ -20,15 +20,14 @@ function fullScreenMode() {
     }
 
 
-
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /*
-        elem.msRequestFullscreen(); IE/Edge */
+    if (document.requestFullscreen) {
+        document.requestFullscreen();
+    } else if (document.mozRequestFullScreen) { /* Firefox */
+        document.mozRequestFullScreen();
+    } else if (document.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitRequestFullscreen();
+    } else if (document.msRequestFullscreen) { /*
+        document.msRequestFullscreen(); IE/Edge */
     }
 
     is_full_screen = true;
@@ -40,9 +39,9 @@ function fullScreenMode() {
 function landScapeMode() {
     fullScreenMode();
 
-    screen.orientation.lock("landscape-primary")
+    /*screen.orientation.lock("landscape-primary")
         .then(function () {
-            _LOCK_BUTTON.style.display = 'none';
+            //_LOCK_BUTTON.style.display = 'none';
             // _UNLOCK_BUTTON.style.display = 'block';
             if(fullscreenBtn){
                 fullscreenBtn.style.display = "none";
@@ -50,7 +49,7 @@ function landScapeMode() {
         })
         .catch(function (error) {
             //alert(error);
-        });
+        });*/
 }
 
 /* Close fullscreen */

@@ -216,6 +216,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
     $scope.login = function () {
         $http.post(localStorage.base_api + "user/signIn", JSON.stringify($scope.user)).then(function (res) {
+
             if (res.data.accessToken) {
                 localStorage.uid = res.data.uid;
                 localStorage.session_token = res.data.accessToken;
