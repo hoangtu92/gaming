@@ -1207,6 +1207,8 @@ body.uniform_maingame {
 
 .redvlack_circle img {
     padding: 0 !important;
+    width: 60px;
+    height: 60px;
 }
 
 .redvlack_circle .text {

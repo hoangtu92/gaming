@@ -80,9 +80,10 @@ function closeFullscreen() {
     // _UNLOCK_BUTTON.style.display = 'none';
 });*/
 // when screen orientation changes
-screen.orientation.addEventListener("change", function () {
+
+/*screen.orientation.addEventListener("change", function () {
     // _STATUS.innerHTML = screen.orientation.type + ' mode';
-});
+});*/
 
 
 
