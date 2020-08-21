@@ -20,13 +20,13 @@ function fullScreenMode() {
     }
 
 
-    if (document.requestFullscreen) {
-        document.requestFullscreen();
-    } else if (document.mozRequestFullScreen) { /* Firefox */
-        document.mozRequestFullScreen();
-    } else if (document.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        document.webkitRequestFullscreen();
-    } else if (document.msRequestFullscreen) { /*
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /*
         document.msRequestFullscreen(); IE/Edge */
     }
 
