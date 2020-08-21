@@ -587,6 +587,15 @@
 
     .uniformvedio_section {
         margin-top: -35px;
+
+    }
+
+    .page-role_play .uniformvedio_section{
+        height: auto !important;
+        position: static !important;
+        top: 0 !important;
+        margin-top: 0 !important;
+        transform:  none !important;
     }
 
     .infowith_pinkbg {
@@ -976,11 +985,6 @@
         max-height: 60vh;
         max-width: 100%;
         width: auto;
-    }
-
-    .redvlack_circle img{
-        width: 40px;
-        height: 40px;
     }
 
 }
@@ -1651,7 +1655,7 @@
         height: 55px;
         padding: 5px 15px 5px 15px;
         border-radius: 10px;
-        border: 3px solid white;
+        border: 3px solid #fff;
     }
 
     ul.gamelist_inner.card-select li{
