@@ -110,6 +110,10 @@ String.prototype.toDate = function () {
     return new Date(this.substr(0, 10).replace(/-/g, "/"));
 };
 
+String.prototype.formatDate = function(){
+    return this.substr(0, 10).replace(/-/g, "/");
+};
+
 String.prototype.formatUnit = function () {
     return this >= 10000 ? this/10000 + "萬" : this;
 };
