@@ -107,7 +107,7 @@ Number.prototype.formatPrice = function () {
 };
 
 String.prototype.toDate = function () {
-    return new Date(this);
+    return new Date(this.substr(0, 10).replace(/-/g, "/"));
 };
 
 String.prototype.formatUnit = function () {
