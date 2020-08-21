@@ -598,6 +598,15 @@
         transform:  none !important;
     }
 
+    .page-role_play .vedio video {
+        width: 100%;
+        min-height: 166px;
+    }
+
+    .page-role_play .vedio{
+        border: none;
+    }
+
     .infowith_pinkbg {
         margin-top: 8%;
     }
