@@ -1138,6 +1138,10 @@
     form.customer-service-form button img  {
         max-width: 90px;
     }
+    .redvlack_circle img{
+        width: 35px;
+        height: 35px;
+    }
 
 
 }
@@ -1155,6 +1159,8 @@
     .vedio_slider .nowplay {
         width: 40%;
     }
+
+
 }
 
 @media all and (min-width: 1024px) and (max-width: 1280px) {
