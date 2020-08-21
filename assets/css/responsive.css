@@ -978,6 +978,11 @@
         width: auto;
     }
 
+    .redvlack_circle img{
+        width: 40px;
+        height: 40px;
+    }
+
 }
 
 /* Landscape phones and portrait tablets */
