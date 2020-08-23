@@ -38,7 +38,7 @@
                             </thead>
                             <tbody ng-init="getTickets()">
                             <tr ng-repeat="item in tickets.content">
-                                <td>{{item.datetime.toDate().toLocaleDateString()}}</td>
+                                <td>{{item.datetime.formatDate()}}</td>
                                 <td class="one-line-content">{{item.issue}}</td>
                                 <td><a href="#" ng-click="setSelectedTicket(item); openModal('ticket_reply')"><img
                                         src="/assets/images/view-reply.png"></a></td>
