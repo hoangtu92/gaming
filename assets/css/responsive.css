@@ -387,6 +387,10 @@
 /* Portrait tablets and small desktops */
 @media all  and (max-width: 995px) {
 
+    .modal.video_detail .modal-content{
+        overflow: auto;
+    }
+
     .progress-container-star {
         height: 10px;
         width: 66px;
