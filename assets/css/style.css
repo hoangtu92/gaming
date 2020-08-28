@@ -912,7 +912,7 @@ section.uniformsister-02 {
     display: grid;
     height: 100%;
     grid-template-columns: 1fr;
-    grid-gap: 25px;
+    /* grid-gap: 25px; */
 }
 
 .markchina {
@@ -938,12 +938,14 @@ section.uniformsister-02 {
 .mark180 ul li {
     width: 100%;
     height: auto;
-    display: inline-block;
     border-bottom: 3px solid #fff;
     box-shadow: 1px 0px 10px rgba(255, 94, 166, 0.83);
     padding: 0;
     position: relative;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mark180 ul li:last-child {
