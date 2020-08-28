@@ -210,49 +210,51 @@
                 </div>
             </div>
 
-            <div class="gamelastpoint">
-                <div class="">
-                    <button ng-click="applySavedBets()" class="prpulbtn">
+
+        </div>
+
+        <div class="gamelastpoint">
+            <div class="">
+                <button ng-click="applySavedBets()" class="prpulbtn">
                     <h3>重複下注</h3>
                 </button>
-                    <!--<button class="prpulbtn" ng-click="saveBet()">
-                        <h3>記憶目前組合</h3>
-                    </button>-->
-                </div>
-                <div class="flex flex-row flex-space-between flex-center">
+                <!--<button class="prpulbtn" ng-click="saveBet()">
+                    <h3>記憶目前組合</h3>
+                </button>-->
+            </div>
+            <div class="flex flex-row flex-space-between flex-center">
 
-                    <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_1}">
-                        <a class="bet-unit" id="betUnit1" href="#" ng-click="selectBet(units.bet_1)">
-                            {{units.bet_1.formatUnit()}}
-                            <div class="nmbrten"></div>
-                        </a>
-                    </div>
-                    <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_2}">
-                        <a class="bet-unit" id="betUnit2" href="#" ng-click="selectBet(units.bet_2)">
-                            {{units.bet_2.formatUnit()}}
-                            <div class="nmbrten"></div>
-                        </a>
-                    </div>
-                    <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_3}">
-                        <a class="bet-unit" id="betUnit3" href="#" ng-click="selectBet(units.bet_3)">
-                            {{units.bet_3.formatUnit()}}
-                            <div class="nmbrten"></div>
-                        </a>
-                    </div>
-                    <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_4}">
-                        <a class="bet-unit" id="betUnit4" href="#" ng-click="selectBet(units.bet_4)">
-                            {{units.bet_4.formatUnit()}}
-                            <div class="nmbrten"></div>
-                        </a>
-                    </div>
+                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_1}">
+                    <a class="bet-unit" id="betUnit1" href="#" ng-click="selectBet(units.bet_1)">
+                        {{units.bet_1.formatUnit()}}
+                        <div class="nmbrten"></div>
+                    </a>
                 </div>
-                <div class="">
-                    <div class="jointsbotm_btn">
-                        <a href="#" ng-click="resetGame()" class="lastbtnimg01 reset-btn">
-                            <h3 class="txt01">清除</h3></a>
-                        <a href="#" ng-click="startGame()" class="lastbtnimg02 start-btn">
-                            <h3 class="txt01">開牌</h3></a>
-                    </div>
+                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_2}">
+                    <a class="bet-unit" id="betUnit2" href="#" ng-click="selectBet(units.bet_2)">
+                        {{units.bet_2.formatUnit()}}
+                        <div class="nmbrten"></div>
+                    </a>
+                </div>
+                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_3}">
+                    <a class="bet-unit" id="betUnit3" href="#" ng-click="selectBet(units.bet_3)">
+                        {{units.bet_3.formatUnit()}}
+                        <div class="nmbrten"></div>
+                    </a>
+                </div>
+                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_4}">
+                    <a class="bet-unit" id="betUnit4" href="#" ng-click="selectBet(units.bet_4)">
+                        {{units.bet_4.formatUnit()}}
+                        <div class="nmbrten"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <div class="jointsbotm_btn">
+                    <a href="#" ng-click="resetGame()" class="lastbtnimg01 reset-btn">
+                        <h3 class="txt01">清除</h3></a>
+                    <a href="#" ng-click="startGame()" class="lastbtnimg02 start-btn">
+                        <h3 class="txt01">開牌</h3></a>
                 </div>
             </div>
         </div>
