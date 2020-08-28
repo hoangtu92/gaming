@@ -29,6 +29,7 @@ gamingApp.directive("owlCarousel", function () {
                     setTimeout(function () {
                         //console.log(scope.owlOptions)
                         iElement.owlCarousel(scope.owlOptions);
+                        iElement.trigger('next.owl.carousel');
                     }, 500)
                 })
 
