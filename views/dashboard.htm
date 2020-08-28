@@ -17,7 +17,7 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img"><img ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
                         <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
                         <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
@@ -72,10 +72,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="welcome-bottom-sec">
+
         <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
                 src="/assets/images/cstm-btn-img.png"></a></div>
+    </div>
+    <div class="welcome-bottom-sec">
+
         <div class="container" ng-init="getListRoles()">
             <div class="welcome-bottom-inner">
 

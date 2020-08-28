@@ -71,19 +71,13 @@
     }
 
     .owl-carousel .owl-item img {
-        height: 40px;
+        height: 50px;
     }
 
     .right-cstm-btn-circle img {
         max-width: 65px;
     }
 
-    .welcome-mid-right-sec {
-        width: 295px;
-        top: 60px;
-        padding: 15px;
-        right: 75px;
-    }
 
     span.side-menu-cstm-toogle {
         width: 38px;
@@ -92,11 +86,10 @@
     }
 
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: 25px;
     }
 
     span.price-icon h5 {
-        padding-left: 25px;
+        padding-left: 17px;
         font-size: 14px;
         line-height: 20px;
     }
@@ -110,12 +103,10 @@
     }
 
     .welcome-left-author-data-sec {
-        width: 190px
+        width: 175px;
     }
 
     .welcome-left-author-sec {
-        top: 47%;
-        left: -20px;
     }
 
     .booksthree_btn {
@@ -150,8 +141,8 @@
     }
 
     .right-author-chat-icon {
-        left: 60%;
-        bottom: 37%;
+        top: 51vh;
+        left: 28vw;
     }
 
     button {
@@ -403,8 +394,6 @@
 
     /*Game*/
     .mark180 ul li img {
-        max-width: 20px;
-        padding: 3px 3px;
     }
 
     .game-statistic {
@@ -418,12 +407,11 @@
     }
 
     .mark180 ul li {
-        padding: 5px 5px;
     }
 
     ul.diseboxs_list li img {
-        max-width: 37px;
-        padding: 5px 10px;
+        /* max-width: 37px; */
+        /* padding: 5px 10px; */
     }
 
     ul.usernmber_list li h1 {
@@ -433,7 +421,6 @@
 
     ul.usernmber_list li p {
         font-size: 1.3rem;
-        margin-bottom: 7px;
     }
 
     .topstart_block {
@@ -470,7 +457,6 @@
     }
 
     .markchina {
-        margin-top: 37px;
     }
 
     .toprate_block {
@@ -528,7 +514,6 @@
     }
 
     .gametableinner {
-        padding-top: 29px;
     }
 
     .gamelastpoint {
@@ -597,8 +582,6 @@
     }
 
     .gametable_block {
-        flex-basis: 99%;
-        max-height: calc(100% - 50px);
     }
 
     .game-statistic {

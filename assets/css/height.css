@@ -1,0 +1,197 @@
+@media all and (max-height: 950px) {
+    .login .login-header h2 {
+        margin-bottom: 15px !important;
+        font-size: 25px;
+    }
+
+    .forgot_password .login-header h2 {
+        margin-bottom: 10px !important;
+        font-size: 20px;
+    }
+
+    a.close img {
+        width: 30px
+    }
+
+    .login-welcome-page .form-group {
+        /* margin-bottom: -10px; */
+    }
+
+    .login .login-welcome-page .form-group {
+        margin-bottom: 10px;
+    }
+
+    .image-box {
+        min-height: 70px;
+    }
+
+    .modal-header .modal-title {
+        /* margin-left: 60px; */
+    }
+
+    .modal .modal-dialog.modal-xs .modal-body {
+        padding-top: 0px;
+        padding-bottom: 0;
+    }
+
+    button[type="reset"] {
+        background: #fd3779;
+
+    }
+
+    .modal-footer {
+        margin-top: -15px;
+    }
+
+    .modal.filter .login-header h2 {
+        font-size: 30px;
+        margin-top: -17px;
+        margin-bottom: 10px;
+    }
+
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection.right-side-list-filter {
+        padding-left: 0%;
+
+    }
+
+    .modal.filter .modal-content {
+        max-width: 65vw;
+    }
+
+    .modal.filter .filter-mid-section ul.filter-mid-left-selection li {
+        padding-left: 40px;
+    }
+
+    .modal.filter .modal-footer {
+        margin-top: -35px;
+    }
+
+
+}
+
+@media (max-height: 750px) {
+    .welcome-mid-right-top-left li h3 {
+        font-size: 18px;
+    }
+
+    .right-cstm-btn-circle img {
+        max-width: 100px;
+    }
+
+    .right-cstm-btn-circle {
+    }
+}
+@media all and (max-height: 480px) {
+    .gaming-header {
+        height: 20vh;
+    }
+
+    .welcome-mid-section {
+        height: 50vh;
+    }
+
+    .welcome-bottom-sec {
+        height: 30vh;
+    }
+
+    .welcome-mid-right-sec:before {
+        width: 120px;
+        height: 120px;
+        top: -41px;
+        left: -36px;
+    }
+
+    .right-author-chat-icon {
+        top: 56vh;
+    }
+
+    .slider-item-inner a {
+        border-width: 2px 2px 2px 2px;
+        border-radius: 5px;
+    }
+
+    .slider-item-inner a:before, .slider-item-inner {
+        border-radius: 5px;
+    }
+
+    .slider-item-inner h4 {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .gametable_block{
+        min-height: 300px;
+    }
+
+    .mark180 ul{
+        grid-gap: 10px;
+    }
+}
+@media (max-height: 450px) {
+    .sidenav a  {
+        font-size: 14px;
+    }
+
+    ul.filter-mid-left-selection li label {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .gaming-header {
+        padding-top: 5px;
+    }
+
+    .gaming-header {
+        height: 17vh;
+    }
+
+    .welcome-mid-section {
+        height: 54vh;
+    }
+
+    .welcome-bottom-sec {
+        height: 29vh;
+    }
+}
+
+@media all and (max-height: 400px) {
+    .gametable_block{
+        min-height: 260px;
+    }
+
+    .mark180 ul{
+        grid-gap: 5px;
+    }
+    .gaming-header {
+        height: 17vh;
+    }
+
+    .welcome-mid-section {
+        height: 51vh;
+    }
+
+    .welcome-bottom-sec {
+        height: 32vh;
+    }
+}
+@media all and (max-height: 360px) {
+    .gametable_block{
+        min-height: 258px;
+    }
+    .mark180 ul{
+        grid-gap: 5px;
+    }
+
+    .gaming-header {
+        height: 17vh;
+    }
+
+    .welcome-mid-section {
+        height: 50vh;
+    }
+
+    .welcome-bottom-sec {
+        height: 33vh;
+    }
+
+
+}

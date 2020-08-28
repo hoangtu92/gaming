@@ -17,10 +17,6 @@ and (orientation: landscape) {
         bottom: 65vh;
     }
 
-    .welcome-mid-right-sec{
-        left: -10%
-    }
-
     .babyimg_info .tpname h2{
         font-size: 2rem
     }
