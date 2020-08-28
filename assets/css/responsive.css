@@ -29,7 +29,7 @@
         /* margin-left: 60px; */
     }
 
-    .modal.in .modal-dialog.modal-xs .modal-body {
+    .modal .modal-dialog.modal-xs .modal-body {
         padding-top: 0px;
         padding-bottom: 0;
     }
@@ -75,11 +75,10 @@
     }
 
     .right-cstm-btn-circle img {
-        max-width: 135px;
+        max-width: 100px;
     }
 
     .right-cstm-btn-circle {
-        bottom: -36px;
     }
 }
 
@@ -89,7 +88,7 @@
     }
 
     .slider-item-inner img {
-        height: 70px;
+        height: 50px;
     }
 
     .ticket_reply .modal-content  {
@@ -289,15 +288,13 @@
 
 @media (max-width: 1440px) {
     .gametableinner {
-        padding-top: 30px
     }
 
     ul.diseboxs_list li img {
-        padding: 20px 12px;
+        /* padding: 20px 12px; */
     }
 
     ul.usernmber_list li p {
-        margin-bottom: 15px;
     }
 
     ul.gamelist_inner li .listbox h4 {
@@ -328,7 +325,6 @@
 
 @media all and (min-width: 1024px) and (max-width: 1280px) {
     .welcome-mid-left-girl-img img.girl-img {
-        margin-left: -20px;
     }
 }
 
@@ -339,7 +335,7 @@
 
     .header-top-left-menu ul li a {
         font-size: 20px;
-        padding: 5px 30px;
+        padding: 5px 20px;
     }
 }
 
@@ -358,7 +354,6 @@
     }
 
     .mark180 ul li img {
-        max-width: 43px;
     }
 
     .mark180 ul li {
@@ -380,7 +375,6 @@
     }
 
     .gametableinner {
-        padding-top: 70px;
     }
 }
 
@@ -433,7 +427,7 @@
     }
 
     .right-author-chat-icon img {
-        width: 100px;
+        width: 125px;
     }
 
     .login-homepage-bottom-sec {
@@ -474,7 +468,6 @@
     }
 
     .img_inner {
-        /* padding: 26px 25px; */
     }
 
     ul.gamelist_inner li .listbox h4 {
@@ -515,7 +508,6 @@
     }
 
     .mark180 ul li img {
-        max-width: 32px;
     }
 
     .yellowshed .pull-left.text-right {
@@ -539,7 +531,6 @@
     }
 
     .yellowshed .pull-left.text-right h1.ratetxt {
-        font-size: 20px;
     }
 
     .markchina h2 {
@@ -547,15 +538,12 @@
     }
 
     .markchina span.bigsign img {
-        max-width: 70px;
     }
 
     ul.usernmber_list li p {
-        font-size: 16px;
     }
 
     ul.usernmber_list li h1 {
-        font-size: 25px;
     }
 
     .circleimgs_botm .nmbrten {
@@ -600,6 +588,10 @@
         top: 0 !important;
         margin-top: 0 !important;
         transform:  none !important;
+        padding-top: 0;
+    }
+    .uniformvedio_section.video-section table{
+        border-spacing: 20px 10px;
     }
 
     .page-role_play .vedio video {
@@ -622,7 +614,6 @@
     .welcome-mid-left-girl-img img.girl-img {
         margin: 0;
         margin-left: auto;
-        margin-top: -50px;
     }
 
     .logo-section img {
@@ -634,7 +625,7 @@
     }
 
     .header-top-left-menu ul li a {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .welcome-bottom-inner {
@@ -642,12 +633,6 @@
     }
 
     .welcome-mid-right-sec {
-        float: none;
-        left: initial;
-        top: 142px;
-        right: 10px;
-        position: fixed;
-        padding: 15px;
     }
 
     span.img-sec {
@@ -684,10 +669,11 @@
     }
 
     .welcome-mid-left-sec {
-        /* float: none; */
+        width: 32%;
     }
 
     .right-author-chat-icon {
+        left: 29vw;
     }
 
     .menu-side-nav {
@@ -753,26 +739,24 @@
     }
 
     .welcome-bottom-inner-btn {
-        top: -25px;
-        right: 16px;
+        right: 9px;
     }
 
     .slider-item-inner h4 {
         font-size: 1.3rem;
-        padding: 7px;
+        padding: 4px;
     }
 
     .slider-item-inner .slidertxt-bar {
-        padding-bottom: 36px;
+        padding-bottom: 30px;
     }
 
     .welcome-bottom-sec .container {
-        max-width: 100%;
-        width: 97%;
+        padding: 0 11vw;
     }
 
     .welcome-bottom-inner-btn a img {
-        width: 90px;
+        width: 60px;
         max-height: initial;
     }
 
@@ -782,7 +766,6 @@
     }
 
     .mark180 ul li img {
-        max-width: 30px;
     }
 
     .game-statistic {
@@ -796,27 +779,23 @@
     }
 
     .mark180 ul li {
-        padding: 10px 8px;
+        box-shadow: none;
+        border-width: 1px;
     }
 
     ul.diseboxs_list li img {
-        max-width: 44px;
-        padding: 10px 12px;
+        /* max-width: 44px; */
+        /* padding: 10px 12px; */
+        /* width: 100%; */
     }
 
     ul.usernmber_list li h1 {
-        font-size: 1.3rem;
-        padding: 7px 0;
     }
 
     ul.usernmber_list li p {
-        font-size: 1.3rem;
-        margin-bottom: 7px;
     }
 
     .topstart_block {
-        padding: 10px;
-        flex-basis: initial;
     }
 
     .toprate_block img.girlimg {
@@ -830,8 +809,7 @@
     }
 
     .totalpoints h3 {
-        font-size: 1.3rem;
-        padding: 6px;
+        font-size: 2.5vw;
     }
 
     .mark180 ul li h2 {
@@ -840,7 +818,6 @@
     }
 
     .markchina span.bigsign img {
-        max-width: 40px;
     }
 
     .markchina h2 {
@@ -848,13 +825,12 @@
     }
 
     .markchina {
-        margin-top: 50px;
     }
 
     .toprate_block {
-        width: 100%;
-        height: 83px;
-        overflow: hidden;
+        /* width: 100%; */
+        /* height: 83px; */
+        /* overflow: hidden; */
     }
 
     .yellowshed .pull-left.text-right {
@@ -904,16 +880,16 @@
     }
 
     .gametableinner {
-        padding-top: 60px;
     }
 
     .gamelastpoint {
-        flex-basis: 16%;
+        /* flex-basis: 16%; */
     }
 
     .gamelastpoint button {
         width: 80px;
         margin-left: 10px;
+        height: 35px;
     }
 
     .start-btn {
@@ -970,7 +946,7 @@
     }
 
     body:not(.page-role_play) section {
-        padding-bottom: 20px;
+        /* padding-bottom: 20px; */
     }
 
     .page-index section {
@@ -1048,16 +1024,14 @@
         width: 50%;
     }
 
-    .img_inner {
-        /* padding: 22px 25px; */
+    .gamelist_inner.card-select .img_inner {
+        padding: 5px;
     }
 
     .top_sec_one {
-        display: inline-block;
     }
 
     .box-011 {
-        display: inline-block;
     }
 
     .gametable_block .col-md-4.col-sm-4 {
@@ -1164,8 +1138,19 @@
         width: 35px;
         height: 35px;
     }
+    .game-statistic h4{
+        font-size: 1.5rem;
+    }
 
+    .game-statistic{
+        padding: 5px;
+    }
 
+}
+
+@media (max-width: 768px){
+    .mark180 ul li img {
+    }
 }
 
 @media (max-width: 479px) {
@@ -1193,7 +1178,7 @@
 
 @media all and (min-width: 1024px) and (max-width: 1250px) {
     .welcome-mid-right-top-left h2 {
-        font-size: 20px;
+        font-size: 3rem;
     }
 
     .login-welcome-page .form-group label {
@@ -1210,7 +1195,7 @@
     }
 
     .wel-mid-right-top-right-innr {
-        font-size: 1.4vw;
+        font-size: 2.3rem;
     }
 
     .welcome-mid-right-bottom-left h6 {
@@ -1234,7 +1219,7 @@
     }
 
     .welcome-mid-right-top-left li h3 {
-        font-size: 1.5vw;
+        font-size: 2.3rem;
     }
 
     .user-credit {
@@ -1283,7 +1268,6 @@
     }
 
     .right-author-chat-icon{
-        bottom: 51vh;
     }
 
     .login-welcome-page .form-group label {
@@ -1447,7 +1431,6 @@
 
     .welcome-left-author-data-sec h3,
     span.price-icon h5 {
-        font-size: 28px;
     }
 
     .wel-mid-right-top-right-innr {
@@ -1479,7 +1462,6 @@
     }
 
     .user-credit {
-        font-size: 20px;
     }
 
     .game-statistic {

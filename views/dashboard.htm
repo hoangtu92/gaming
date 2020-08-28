@@ -17,10 +17,11 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img style="width: auto;" ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img">
+                    <img ng-src="{{currentRole.cover && path['role_image'] + currentRole.cover || '/assets/images/girl-img.png'}}" class="img-responsive girl-img">
                     <div class="welcome-left-author-sec"><span class="img-sec">
-                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
-                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
+                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
+                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" ng-src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
                             <h3>{{currentUser.username}}</h3>
@@ -71,11 +72,12 @@
                     </div>
                 </div>
             </div>
+            <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
+                    src="/assets/images/cstm-btn-img.png"></a></div>
         </div>
     </div>
     <div class="welcome-bottom-sec">
-        <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
-                src="/assets/images/cstm-btn-img.png"></a></div>
+
         <div class="container" ng-init="getListRoles()">
             <div class="welcome-bottom-inner">
 
@@ -96,6 +98,21 @@
                     </div>
                 </data-owl-carousel>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-side-nav" >
+
+        <div id="mySidenav" class="sidenav">
+            <div class="sidenav-inner">
+                <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#!announcement">公告</a>
+                <a href="#!prize-redeem">獎勵領取 <span class="numbers">{{prizes.length}}</span></a>
+                <a href="#!expenses-record">消費紀錄</a>
+                <a href="#!user-information">用戶資料</a>
+                <a href="#!customer-service">客服</a>
+                <a href="#" ng-click="logout()">登出</a>
             </div>
         </div>
     </div>

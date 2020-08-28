@@ -233,7 +233,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
                     $timeout(function () {
                         $location.url("dashboard");
-                    }, 1000)
+                    }, 2000)
                 })
             } else {
                 $infoModal.open("此帳號尚未註冊，請先註冊")
@@ -879,6 +879,12 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.$broadcast("exit_full_screen");
         }
         $scope.$broadcast("fullscreenchange")
+    });
+
+    document.addEventListener("orientationchange", function(event){
+       // window.location.reload();
+        //alert(JSON.stringify(event))
+
     });
 
 
