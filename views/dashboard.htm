@@ -3,7 +3,7 @@
     <div class="gaming-header">
         <div class="container-fluid">
             <div class="row">
-                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#" ng-click="exit()"><img src="/assets/images/logo.png"
+                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#" ng-click="exit()"><img alt="logo" src="/assets/images/logo.png"
                                                                                       class="img-responsive"></a></div>
                 <div class="menu-section col-md-9 col-sm-9 col-xs-9" ng-init="getListPrizes()">
                     <div ng-include="'/includes/sidebar.htm'">
@@ -17,18 +17,18 @@
     <div class="welcome-mid-section">
         <div class="container-fluid">
             <div class="welcome-mid-left-sec">
-                <div class="welcome-mid-left-girl-img"><img ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img">
+                <div class="welcome-mid-left-girl-img"><img ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img lazy-load">
                     <div class="welcome-left-author-sec"><span class="img-sec">
-                        <img ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-if="true" lazy-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
-                        <img ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
+                        <img alt="avatar" ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
+                        <img alt="avatar" ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
                     </span>
                         <div class="welcome-left-author-data-sec">
                             <h3>{{currentUser.username}}</h3>
-                            <span class="price-icon"> <img src="/assets/images/price-icon.png">
+                            <span class="price-icon"> <img alt="coin" src="/assets/images/price-icon.png">
               <h5>{{currentUser.credit.formatPrice()}}</h5>
               </span> </span> </div>
                     </div>
-                    <div class="right-author-chat-icon"><a href="#" ng-click="playPreview()"><img src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="playPreview()"><img alt="chat" src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img
+        <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img alt="filter"
                 src="/assets/images/cstm-btn-img.png"></a></div>
     </div>
     <div class="welcome-bottom-sec">
@@ -84,8 +84,8 @@
                 <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
                     <div class="slider-item-inner">
                         <a href="#" ng-click="setCurrentRole(item)">
-                            <img ng-if="true" lazy-src="{{path['role_image']}}{{item.thumbnail}}"
-                                 class="img-responsive">
+                            <img ng-if="true" data-src="{{path['role_image']}}{{item.thumbnail}}"
+                                 class="img-responsive owl-lazy">
                             <div class="slidertxt-bar">
                                 <div class="progress-level small">
                                     <div class="progress-level-outer"></div>
@@ -98,22 +98,32 @@
                     </div>
                 </data-owl-carousel>
 
+
+                <!--<swiper slides-per-view="7" space-between="10"  ng-if="items" >
+                    <slides>
+                        <slide ng-repeat="item in items" ng-class="{selected: activeItem.id == item.id}" class="slider-item">
+                            <div class="slider-item-inner">
+                                <a href="#" ng-click="setCurrentRole(item)">
+                                    <img ng-if="true" lazy-src="{{path['role_image']}}{{item.thumbnail}}"
+                                         class="img-responsive">
+                                    <div class="slidertxt-bar">
+                                        <div class="progress-level small">
+                                            <div class="progress-level-outer"></div>
+                                            <div class="progress-level-inner" ng-style="{width: (item.userProgress > 0 ? (item.userProgress/item.maximumLevel)*100 : 0) + '%'}"></div>
+                                            <h6 style="position:relative; z-index: 999;">脱掉 {{item.userProgress}}/{{item.maximumLevel}}</h6>
+                                        </div>
+                                    </div>
+                                    <h4>{{item.name}}</h4>
+                                </a>
+                            </div>
+                        </slide>
+                    </slides>
+                    <prev></prev>
+                    <next></next>
+                </swiper>-->
+
             </div>
         </div>
     </div>
 
 </section>
-<div class="menu-side-nav" >
-
-    <div id="mySidenav" class="sidenav">
-        <div class="sidenav-inner">
-            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#!announcement">公告</a>
-            <a href="#!prize-redeem">獎勵領取 <span class="numbers">{{prizes.length}}</span></a>
-            <a href="#!expenses-record">消費紀錄</a>
-            <a href="#!user-information">用戶資料</a>
-            <a href="#!customer-service">客服</a>
-            <a href="#" ng-click="logout()">登出</a>
-        </div>
-    </div>
-</div>

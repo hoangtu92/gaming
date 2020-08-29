@@ -13,8 +13,6 @@ and (orientation: landscape) {
     }
 
     .right-author-chat-icon {
-        right: -20%;
-        bottom: 65vh;
     }
 
     .babyimg_info .tpname h2{
@@ -37,7 +35,6 @@ and (orientation: landscape) {
     }
 
     .babyimg_info {
-        height: 35vh;
     }
 
     .card_detail .modal-footer button.popupprple_btn{
@@ -61,13 +58,9 @@ and (orientation: landscape) {
         display: block;
     }
     .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
     }
 
     button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
     }
     .progress-container-star{
 
@@ -183,7 +176,6 @@ and (orientation: landscape){
     }
 
     .babyimg_info {
-        height: 43vh;
     }
 
     .card_detail .modal-footer button.popupprple_btn{
@@ -207,13 +199,9 @@ and (orientation: landscape){
         display: block;
     }
     .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
     }
 
     button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
     }
 
     .progress-container-star{
@@ -483,8 +471,6 @@ and (orientation: landscape) {
     }
 
     .babyimg_info {
-        height: 32vh;
-        max-height: initial;
     }
 
     .card_detail .modal-footer button.popupprple_btn{
@@ -508,13 +494,9 @@ and (orientation: landscape) {
         display: block;
     }
     .modal-header button.popupprple_btn{
-        right: -31px;
-        top: -54px;
     }
 
     button.popupprple_btn img.popup_close_icon{
-        width:40px;
-        height: 40px;
     }
     .progress-container-star{
 
@@ -522,4 +504,6 @@ and (orientation: landscape) {
 
         height: 25px;
     }
+
+
 }

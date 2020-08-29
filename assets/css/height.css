@@ -36,7 +36,6 @@
 
     button[type="reset"] {
         background: #fd3779;
-
     }
 
     .modal-footer {
@@ -51,7 +50,6 @@
 
     .modal.filter .filter-mid-section ul.filter-mid-left-selection.right-side-list-filter {
         padding-left: 0%;
-
     }
 
     .modal.filter .modal-content {
@@ -66,7 +64,8 @@
         margin-top: -35px;
     }
 
-
+    .right-author-chat-icon {
+    }
 }
 
 @media (max-height: 750px) {
@@ -80,7 +79,20 @@
 
     .right-cstm-btn-circle {
     }
+
+    button.popupprple_btn span {
+        font-size: 1.3rem
+    }
+    .card-detail-container .card-buttons{
+        bottom: -35px
+    }
+
+    button.popupprple_btn img{
+        max-width: 130px;
+    }
+
 }
+
 @media all and (max-height: 480px) {
     .gaming-header {
         height: 20vh;
@@ -102,7 +114,7 @@
     }
 
     .right-author-chat-icon {
-        top: 56vh;
+        top: 55vh;
     }
 
     .slider-item-inner a {
@@ -118,16 +130,26 @@
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
     }
-    .gametable_block{
+
+    .gametable_block {
         min-height: 300px;
     }
 
-    .mark180 ul{
+    .mark180 ul {
         grid-gap: 10px;
     }
 }
-@media (max-height: 450px) {
-    .sidenav a  {
+
+@media all and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+    .sidenav a {
         font-size: 14px;
     }
 
@@ -151,16 +173,30 @@
     .welcome-bottom-sec {
         height: 29vh;
     }
-}
 
+    .card-detail-container .card-buttons{
+        bottom: -35px
+    }
+
+    .right-author-chat-icon {
+        top: 55vh;
+    }
+}
+@media all and (max-height: 420px) {
+    .right-author-chat-icon {
+        top: 57vh;
+    }
+
+}
 @media all and (max-height: 400px) {
-    .gametable_block{
+    .gametable_block {
         min-height: 260px;
     }
 
-    .mark180 ul{
+    .mark180 ul {
         grid-gap: 5px;
     }
+
     .gaming-header {
         height: 17vh;
     }
@@ -172,12 +208,18 @@
     .welcome-bottom-sec {
         height: 32vh;
     }
+
+    .right-author-chat-icon {
+        top: 55vh;
+    }
 }
+
 @media all and (max-height: 360px) {
-    .gametable_block{
+    .gametable_block {
         min-height: 258px;
     }
-    .mark180 ul{
+
+    .mark180 ul {
         grid-gap: 5px;
     }
 
@@ -193,5 +235,22 @@
         height: 33vh;
     }
 
+    button.popupprple_btn span {
+        font-size: 1.3rem
+    }
+    button.popupprple_btn img{
+        max-width: 80px;
+    }
 
+    .card-detail-container .card-buttons{
+        bottom: -30px
+    }
+    .right-author-chat-icon {
+        top: 53vh;
+    }
+}
+@media all and (max-height: 320px) {
+    .right-author-chat-icon {
+        top: 54vh;
+    }
 }

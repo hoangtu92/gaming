@@ -7,20 +7,24 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
             "把我脫光喔!")
     }
 
+    /mobile/i.test(navigator.userAgent) && setTimeout(function
+        () {   window.scrollTo(0, 60); }, 1000);
 
-   /* $scope.loaded = false;
-    $scope.pictures = [
 
-    ];
 
-    preloader.preloadImages( $scope.pictures).then(function() {
-        $scope.loaded = true;
+    /* $scope.loaded = false;
+     $scope.pictures = [
 
-    },function() {
-        console.log('failed');
-        // Loading failed on at least one image.
-    });
-*/
+     ];
+
+     preloader.preloadImages( $scope.pictures).then(function() {
+         $scope.loaded = true;
+
+     },function() {
+         console.log('failed');
+         // Loading failed on at least one image.
+     });
+ */
 
     $scope.previewVideo = '';
 
@@ -31,20 +35,23 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         margin: 25,
         nav: true,
         addClassActive: true,
-        mouseDrag: true,
-        touchDrag: true,
+        mouseDrag: false,
+        touchDrag: false,
         freeDrag: false,
         rewind: false,
         pullDrag: false,
         slideBy: 1,
         dragEndSpeed: 1000,
         lazyLoad: true,
+        lazyLoadEager: 1,
         responsiveClass: true,
+        slideTransition: 'linear',
+        navText: ['<span aria-label="Previous"><img alt="prev" src="/assets/images/prev.png"></span>','<span aria-label="Next"><img alt="next" src="/assets/images/next.png"></span>'],
         responsive: {
             0: {
                 items: 6,
                 nav: true,
-                margin: 10,
+                margin: 10
             },
             768: {
                 items: 6,
@@ -59,6 +66,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
         }
     };
 
+
     if(typeof $routeParams.msg !== "undefined"){
         $infoModal.open($scope.b64DecodeUnicode($routeParams.msg));
     }
@@ -72,9 +80,9 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
             "你確定要離開，不再陪我玩一下嗎?", undefined, "再玩一下", function () {
             //logout
             $location.url("login");
-            $timeout(function () {
+            /*$timeout(function () {
                 closeFullscreen();
-            }, 200);
+            }, 200);*/
         }, "確定")
     };
 
@@ -91,10 +99,10 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
 
         }
 
-    }
+    };
 
-
-
-
+    $scope.$on("after_load_item", function (event) {
+        //alert("Role loaded")
+    })
 
 });

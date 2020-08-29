@@ -67,12 +67,16 @@ button {
     width: 100%;
     height: auto;
     padding: 5px 0px 10px 10px;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
     position: relative;
     z-index: 9;
     /*background: url(../images/transparent_bg.png) no-repeat left top;*/
     background-size: contain;
     background: linear-gradient(169deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,0.028470763305322166) 25%, rgba(225,52,110,0) 100%);
+}
+
+.modal.fullpage_popup .modal-dialog .modal-content .modal-header .uniformheader{
+    padding: 0;
 }
 
 .gamepage .uniformheader{
@@ -528,7 +532,7 @@ ul.gamelist_inner li a {
     }
 
     .av-play .modal.in .modal-dialog {
-        width: 1900px;
+        /* width: 1900px; */
     }
 
     .av-play section.uniformsister-03 .uniformheader img {
@@ -585,12 +589,11 @@ button.popupprple_btn {
     background: transparent;
     position: relative;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 button.popupprple_btn span {
-    font-size: 22px;
+    font-size: 2rem;
     font-weight: 700;
     position: absolute;
     left: 0;
@@ -604,12 +607,11 @@ button.popupprple_btn span {
 
 button.popupprple_btn img {
     max-width: 175px;
-
 }
 
 button.popupprple_btn img.popup_close_icon{
-    width: 60px;
-    height: 60px;
+    width: 4vw;
+    height: 4vw;
 }
 
 .popup_innr_list {
@@ -1245,6 +1247,11 @@ body.uniform_maingame {
     overflow: hidden;
 }
 
+.page-av_play body.uniform_maingame,
+.page-card_list body{
+    overflow-y: auto;
+}
+
 .redvlack_circle {
     max-width: 60px;
     padding: 0;
@@ -1405,17 +1412,11 @@ section.uniformsister-03 .modal-content {
 }
 
 .babyimg {
-    width: 33%;
-    float: left;
-    position: absolute;
-    top: -54px;
-    left: -18px;
 }
 
 .babyimg_info {
-    width: 70%;
-    float: right;
-    height: 255px;
+    width: 100%;
+    height: 100%;
     overflow: auto;
 }
 
@@ -1423,12 +1424,13 @@ section.uniformsister-03 .modal-content {
     background: url(../images/transparent_bg.png) no-repeat left top;
     background-size: contain;
     text-align: left;
+    padding: 1vw;
 }
 
 .babyimg_info .tpname h2 {
-    padding: 20px 25px 2px;
     margin: 0;
     font-weight: 700;
+    font-size: 2vw;
 }
 
 .modal-body {
@@ -1444,8 +1446,8 @@ section.uniformsister-03 .modal-content {
 }
 
 .babyimg_info .paragraph {
-    padding: 30px;
-    font-size: 27px;
+    padding: 1vw;
+    font-size: 2vw;
     text-align: left;
 }
 
@@ -1458,15 +1460,16 @@ section.uniformsister-03 .modal-content {
     margin: 0;
     font-weight: 700;
     color: #fff1a9;
+    font-size: 2vw;
 }
 
 .babyimg_info .ratings_info p {
     text-align: left;
     color: #fff1a9;
-    font-size: 18px;
-    padding-left: 40px;
+    font-size: 1.5vw;
+    padding-left: 3vw;
     position: relative;
-    min-height: 30px;
+    /* min-height: 30px; */
 }
 
 .babyimg_info .ratings_info p::after {
@@ -1490,9 +1493,9 @@ section.uniformsister-03 .modal-dialog .modal-footer {
 
 .modal-header button.popupprple_btn {
     position: absolute;
-    max-width: 72px;
-    right: -19px;
-    top: -66px;
+    max-width: 5vw;
+    right: -2vw;
+    top: 2vh;
 }
 
 .booksthree_btn button.booklinebtn.pull-right {
@@ -1613,7 +1616,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 
 .modal.fullpage_popup .modal-dialog .modal-content .modal-header {
     padding-right: 0;
-    padding: 15px 0 0 15px;
+    height: 5vh;
 }
 .modal.fullpage_popup .modal-dialog{
     /* width: 650px; */
@@ -1644,7 +1647,9 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 
 .vediotxt {
     text-align: left;
-    padding: 0px 50px 0px 10px;
+    padding: 0 2vw;
+    height: 100vh;
+    overflow: auto;
 }
 
 .vediotxt h2 {
@@ -1817,6 +1822,7 @@ section.uniformsister_vedio .uniformheader h1 {
 
 .modal.in .modal-dialog {
     min-width: initial;
+    width: auto;
 }
 
 @media screen and (min-width: 1400px) {
@@ -1837,10 +1843,10 @@ section.uniformsister_vedio .uniformheader h1 {
     }
 
     .babyimg_info {
-        width: 70%;
-        float: right;
-        height: 400px;
-        overflow: auto;
+        /* width: 70%; */
+        /* float: right; */
+        /* height: 20vh; */
+        /* overflow: auto; */
     }
 }
 
@@ -1892,6 +1898,18 @@ section.uniformsister_vedio .uniformheader h1 {
     width: 70%;
 }
 
+.page-av_play .vedio video{
+    width: 100%;
+}
+
+.video_detail .modal-body{
+    padding: 0 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
 .vedio_slider .nowplay.fullpaly .blackoverlay span.hovertxt {
     display: none;
 }
@@ -1911,7 +1929,7 @@ section.uniformsister_vedio .uniformheader h1 {
     color: #fff;
 }
 
-.av-play {
+body:not(.page-av_play) .av-play {
     overflow-y: auto !important;
 }
 
@@ -2037,7 +2055,7 @@ section.uniformsister_vedio .uniformheader h1 {
 
 .gamelist_inner.small{
     grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-    grid-gap: 20px 0px;
+    grid-gap: 10px;
     margin: 10px 0;
 }
 

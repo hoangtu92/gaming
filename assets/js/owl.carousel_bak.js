@@ -758,6 +758,7 @@
 	 * @param {Event} event - The event arguments.
 	 */
 	Owl.prototype.onDragStart = function(event) {
+
 		var stage = null;
 
 		if (event.which === 3) {
@@ -795,6 +796,8 @@
 		this._drag.stage.current = stage;
 		this._drag.pointer = this.pointer(event);
 
+		//console.log("drag start: ", stage);
+
 		$(document).on('mouseup.owl.core touchend.owl.core', $.proxy(this.onDragEnd, this));
 
 		$(document).one('mousemove.owl.core touchmove.owl.core', $.proxy(function(event) {
@@ -811,6 +814,7 @@
 			this.enter('dragging');
 			this.trigger('drag');
 		}, this));
+
 	};
 
 	/**
@@ -824,7 +828,8 @@
 			maximum = null,
 			pull = null,
 			delta = this.difference(this._drag.pointer, this.pointer(event)),
-			stage = this.difference(this._drag.stage.start, delta);
+			stage = this.difference(this._drag.stage.start, delta),
+			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
 		if (!this.is('dragging')) {
 			return;
@@ -832,20 +837,30 @@
 
 		event.preventDefault();
 
-		if (this.settings.loop) {
-			minimum = this.coordinates(this.minimum());
-			maximum = this.coordinates(this.maximum() + 1) - minimum;
-			stage.x = (((stage.x - minimum) % maximum + maximum) % maximum) + minimum;
-		} else {
-			minimum = this.settings.rtl ? this.coordinates(this.maximum()) : this.coordinates(this.minimum());
-			maximum = this.settings.rtl ? this.coordinates(this.minimum()) : this.coordinates(this.maximum());
-			pull = this.settings.pullDrag ? -1 * delta.x / 5 : 0;
-			stage.x = Math.max(Math.min(stage.x, minimum + pull), maximum + pull);
+
+
+		if(this.current() > 0 || direction === 'left'){
+
+			//console.log("drag move: ", stage, delta);
+
+
+			if (this.settings.loop) {
+				minimum = this.coordinates(this.minimum());
+				maximum = this.coordinates(this.maximum() + 1) - minimum;
+				stage.x = (((stage.x - minimum) % maximum + maximum) % maximum) + minimum;
+			} else {
+				minimum = this.settings.rtl ? this.coordinates(this.maximum()) : this.coordinates(this.minimum());
+				maximum = this.settings.rtl ? this.coordinates(this.minimum()) : this.coordinates(this.maximum());
+				pull = this.settings.pullDrag ? -1 * delta.x / 5 : 0;
+				stage.x = Math.max(Math.min(stage.x, minimum + pull), maximum + pull);
+			}
+
+			this._drag.stage.current = stage;
+
+			this.animate(stage.x);
 		}
 
-		this._drag.stage.current = stage;
 
-		this.animate(stage.x);
 	};
 
 	/**
@@ -856,33 +871,48 @@
 	 * @param {Event} event - The event arguments.
 	 */
 	Owl.prototype.onDragEnd = function(event) {
+
 		var delta = this.difference(this._drag.pointer, this.pointer(event)),
 			stage = this._drag.stage.current,
 			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
-		$(document).off('.owl.core');
+		if((this.current() > 0 || direction ==='left') && Math.abs(delta.x) >= 0){
 
-		this.$element.removeClass(this.options.grabClass);
+			//console.log("drag end: ", stage);
 
-		if (delta.x !== 0 && this.is('dragging') || !this.is('valid')) {
-			this.speed(this.settings.dragEndSpeed || this.settings.smartSpeed);
-			this.current(this.closest(stage.x, delta.x !== 0 ? direction : this._drag.direction));
-			this.invalidate('position');
-			this.update();
+			$(document).off('.owl.core');
 
-			this._drag.direction = direction;
+			this.$element.removeClass(this.options.grabClass);
 
-			if (Math.abs(delta.x) > 3 || new Date().getTime() - this._drag.time > 300) {
-				this._drag.target.one('click.owl.core', function() { return false; });
+			if (delta.x !== 0 && this.is('dragging') || !this.is('valid')) {
+				this.speed(this.settings.dragEndSpeed || this.settings.smartSpeed);
+
+				var current = this.closest(stage.x, delta.x !== 0 ? direction : this._drag.direction);
+				this.current(current);
+				this.invalidate('position');
+
+				if(current >=  0){
+					//this.update();
+				}
+				this._drag.direction = direction;
+
+				if (Math.abs(delta.x) > 3 || new Date().getTime() - this._drag.time > 300) {
+					this._drag.target.one('click.owl.core', function() { return false; });
+				}
 			}
-		}
 
-		if (!this.is('dragging')) {
-			return;
-		}
+			if (!this.is('dragging')) {
+				return;
+			}
 
+
+
+		}
 		this.leave('dragging');
 		this.trigger('dragged');
+
+
+
 	};
 
 	/**

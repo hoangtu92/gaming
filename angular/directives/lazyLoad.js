@@ -373,7 +373,12 @@ gamingApp.directive(
             // source value of the image element.
             function renderSource() {
 
+                element[ 0 ].onload = function() {
+                    angular.element(this).css({"opacity": 1})
+                };
+
                 element[ 0 ].src = source;
+
 
             }
 

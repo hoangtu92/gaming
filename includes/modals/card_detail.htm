@@ -1,50 +1,66 @@
 <div class="modal-header">
-    <button class="popupprple_btn" ng-click="modal.card_detail.close()"><img class="popup_close_icon" src="/assets/images/closebtn.png"/>
+    <button class="popupprple_btn" ng-click="modal.card_detail.close()"><img class="popup_close_icon"
+                                                                             src="/assets/images/closebtn.png"/>
     </button>
 </div>
 
 <div class="modal-body">
-    <div class="babyimg"><img lazy-src="{{path['card']}}{{viewingLevel.thumbnail}}"/></div>
+    <div class="card-detail-container">
+        <div class="babyimg"><img class="lazy-load" lazy-src="{{path['card']}}{{viewingLevel.thumbnail}}"/></div>
 
-    <div class="babyimg_info">
-        <div class="tpname">
-            <h2>{{viewingLevel.cardName}}
-                <span style="width: auto; float: right" class="product-price"><span><img src="/assets/images/price-icon.png"> <b>{{viewingLevel.salePrice.formatPrice()}}</b></span>
+        <div class="card-info-container">
+            <div class="babyimg_info">
+                <div class="tpname">
+                    <h2>{{viewingLevel.cardName}}
+                        <span style="width: auto; float: right" class="product-price"><span><img
+                                src="/assets/images/price-icon.png"> <b>{{viewingLevel.salePrice.formatPrice()}}</b></span>
                 </span>
-            </h2>
+                    </h2>
 
-            <div class="star-glowing" style="margin-left: 25px" ng-class="'star-'+viewingLevel.level"></div>
-        </div>
-
-        <div class="paragraph">{{viewingLevel.description}}
-            <div class="ratings_info">
-                <h3>- 星數說明 -</h3>
-
-                <div class="menu select-level">
-                    <a class="showSingle" ng-click="showAll()">全部星等</a>
-                    <a ng-repeat="level in cardLevels | orderBy: 'level'" ng-class="{active: level.level === selectedLevel.level}" class="showSingle" ng-click="setCurrentLevel(level)">{{level.level}}星</a>
+                    <div class="star-glowing" style="margin-left: 25px" ng-class="'star-'+viewingLevel.level"></div>
                 </div>
 
-                <section class="cnt">
-                    <div class="targetDiv" ng-if="!showAllLevels">
-                        <p ng-class="'star-'+ 1">{{selectedLevel.description}}</p>
+                <div class="paragraph">{{viewingLevel.description}}
+                    <div class="ratings_info">
+                        <h3>- 星數說明 -</h3>
+
+                        <div class="menu select-level">
+                            <a class="showSingle" ng-click="showAll()">全部星等</a>
+                            <a ng-repeat="level in cardLevels | orderBy: 'level'"
+                               ng-class="{active: level.level === selectedLevel.level}" class="showSingle"
+                               ng-click="setCurrentLevel(level)">{{level.level}}星</a>
+                        </div>
+
+                        <section class="cnt">
+                            <div class="targetDiv" ng-if="!showAllLevels">
+                                <p ng-class="'star-'+ 1">{{selectedLevel.description}}</p>
+                            </div>
+                            <div class="targetDiv" ng-if="showAllLevels"
+                                 ng-repeat="level in cardLevels | orderBy: 'level'">
+                                <p ng-class="'star-'+ 1">{{level.description}}</p>
+                            </div>
+                        </section>
                     </div>
-                    <div class="targetDiv" ng-if="showAllLevels" ng-repeat="level in cardLevels | orderBy: 'level'" >
-                        <p ng-class="'star-'+ 1">{{level.description}}</p>
-                    </div>
-                </section>
+                </div>
+            </div>
+            <div class="card-buttons">
+                <button class="popupprple_btn" ng-click="sellCardPopup()"><img
+                        src="/assets/images/puprleimgbtn.png"/><span>出售換G幣</span>
+                </button>
+                <button class="popupprple_btn" ng-click="broadcast('use_card', viewingLevel)"><img
+                        src="/assets/images/pinkbtnbgr.png"/><span>配置</span></button>
+                <button ng-if="viewingLevel.upgradable" class="popupprple_btn"
+                        ng-click="broadcast('upgrade_card', viewingLevel)">
+                    <img
+                            src="/assets/images/pinkbtnbgr.png"/><span>升級</span>
+                </button>
             </div>
         </div>
     </div>
+
 </div>
+<!--
 <div class="modal-footer text-right flex justify-content-center flex-center" style="text-align: right">
-    <button class="popupprple_btn" ng-click="sellCardPopup()"><img src="/assets/images/puprleimgbtn.png"/><span>出售換G幣</span>
-    </button>
-    <button class="popupprple_btn" ng-click="broadcast('use_card', viewingLevel)"><img
-            src="/assets/images/pinkbtnbgr.png"/><span>配置</span></button>
-    <button ng-if="viewingLevel.upgradable" class="popupprple_btn" ng-click="broadcast('upgrade_card', viewingLevel)">
-        <img
-                src="/assets/images/pinkbtnbgr.png"/><span>升級</span>
-    </button>
+
 </div>
-<div class="clearfix"></div>
+<div class="clearfix"></div>-->

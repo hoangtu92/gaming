@@ -33,7 +33,7 @@
                                 <div class="listbox"
                                      ng-click="setCurrentVideo(video); openModal('video_detail', 'fullpage_popup')">
                                     <div class="image-box"><a href="#"><img
-                                            class="eyebaby" ng-if="video.thumbnail !== null"
+                                            class="eyebaby lazy-load" ng-if="video.thumbnail !== null"
                                             lazy-src="{{path['video_image']}}{{video.thumbnail}}"/></a>
                                     </div>
 

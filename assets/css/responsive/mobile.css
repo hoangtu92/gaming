@@ -1,9 +1,10 @@
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
 /* Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-    /*Card detail*/ .babyimg_info .paragraph {
-    font-size: 1.5rem;
-}
+@media all and (max-width: 568px) {
+    /*Card detail*/
+    .babyimg_info .paragraph {
+        font-size: 1.5rem;
+    }
 
     .product-price span img {
         width: 21px;
@@ -30,7 +31,6 @@
     }
 
     .babyimg_info {
-        height: 35vh;
     }
 
     .card_detail .modal-footer button.popupprple_btn {
@@ -56,13 +56,9 @@
     }
 
     .modal-header button.popupprple_btn {
-        right: -46px;
-        top: -32px;
     }
 
     button.popupprple_btn img.popup_close_icon {
-        width: 40px;
-        height: 40px;
     }
 
     /*Dashboard*/
@@ -119,8 +115,6 @@
     }
 
     .uniformheader {
-        padding: 5px 0px 0 10px;
-        margin-bottom: 5px;
     }
 
     ul.gamelist_inner li button.listimg {
@@ -141,8 +135,7 @@
     }
 
     .right-author-chat-icon {
-        top: 51vh;
-        left: 28vw;
+        /* top: 51vh; */
     }
 
     button {
@@ -155,11 +148,9 @@
     }
 
     .welcome-bottom-inner .owl-nav button.owl-prev {
-        left: -54px;
     }
 
     .welcome-bottom-inner .owl-nav button.owl-next {
-        right: -25px;
     }
 
     .header-top-left-menu ul li a {

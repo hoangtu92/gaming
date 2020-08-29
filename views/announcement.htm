@@ -15,7 +15,7 @@
                             <p>{{item.content}}</p>
                         </div>
                         <div class="announcement-slider-right-sec">
-                            <img alt="{{item.title}}" ng-src="{{config.api_domain + '/files/news/' + item.image || '/assets/images/annoucement-slidr-img.png'}}" class="img-responsive">
+                            <img alt="{{item.title}}" lazy-src="{{config.api_domain + '/files/news/' + item.image || '/assets/images/annoucement-slidr-img.png'}}" class="img-responsive lazy-load">
                         </div>
                     </div>
                 </data-owl-carousel>

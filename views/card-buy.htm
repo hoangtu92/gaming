@@ -33,7 +33,7 @@
             <li ng-repeat="item in limitedTimeCards" ng-hide="item.timeLimit.toDate().getTime() - now.getTime() <= 0">
                 <div class="uniformbox_inner">
                     <div class="imgg">
-                        <img alt="book" height="" lazy-src="{{path['card']}}{{item.thumbnail}}" width=""/>
+                        <img alt="book" height="" class="lazy-load" lazy-src="{{path['card']}}{{item.thumbnail}}" width=""/>
                     </div>
 
                     <div class="bookname">

@@ -6,8 +6,8 @@
 </div>
 
 <div class="modal-body">
-    <div class="row">
-        <div class="col-md-7 col-sm-7">
+    <div class="video-container flex flex-row flex-space-between">
+        <div>
             <div class="vedio" >
                 <video controls ng-video=""  controlsList="nodownload"  ng-poster="{{path['video_image']}}{{currentVideo.cover}}"></video>
                 <button ng-show="!currentVideo.playing" ng-click="playVideo()" class="vedioicon"><img src="/assets/images/vedioicon.png"/></button>
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="col-md-5 col-sm-5">
+        <div>
             <div class="vediotxt">
                 <h2>{{currentVideo.name}}</h2>
                 <span>{{currentVideo.actress}}</span>

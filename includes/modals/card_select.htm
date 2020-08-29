@@ -12,7 +12,7 @@
                         <a href="#" ng-click="removeCard(item)" class="card-remove"><i class="fa fa-close"></i> </a>
                         <img src="/assets/images/ggg_bgr01.png"/>
                         <div class="img_inner" style="cursor: pointer">
-                            <img ng-click="openCardDetail(item)" src="{{path['card']}}{{item.thumbnail}}"/>
+                            <img ng-click="openCardDetail(item)" class="lazy-load" lazy-src="{{path['card']}}{{item.thumbnail}}"/>
                         </div>
                     </li>
                     <li ng-click="selectCard()" style="cursor: pointer" ng-repeat="n in [] | range:0:5-inUsedCardlevels.length">
