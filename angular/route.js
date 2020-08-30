@@ -7,7 +7,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'Login',
             view: 'login',
             layout: 'non-sidebar',
-            templateUrl: 'views/login.htm',
+            templateUrl: 'views/login.htm?ver=' + config.version,
             controller: 'frontController',
             resolve: {
                 'ConfigServiceData': function (ConfigService) {
@@ -20,7 +20,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'Login',
             view: 'login',
             layout: 'non-sidebar',
-            templateUrl: 'views/login.htm',
+            templateUrl: 'views/login.htm?ver=' + config.version,
             controller: 'userController',
             resolve: {
                 'ConfigServiceData': function (ConfigService) {
@@ -34,7 +34,7 @@ gamingApp.config(function ($routeProvider) {
             title: 'Home',
             view: 'index',
             layout: 'non-sidebar',
-            templateUrl: 'views/front.htm',
+            templateUrl: 'views/front.htm?ver=' + config.version,
             controller: 'frontController',
             resolve: {
                 'ConfigServiceData': function (ConfigService) {
@@ -46,7 +46,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Dashboard',
         view: 'dashboard',
         layout: 'sidebar',
-        templateUrl: 'views/dashboard.htm',
+        templateUrl: 'views/dashboard.htm?ver=' + config.version,
         controller: 'dashboardController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -58,7 +58,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Announcement',
         view: 'announcement',
         layout: 'non-sidebar',
-        templateUrl: 'views/announcement.htm',
+        templateUrl: 'views/announcement.htm?ver=' + config.version,
         controller: 'announcementController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -71,7 +71,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'game',
         layout: 'non-sidebar',
         bodyClass: 'uniform_maingame',
-        templateUrl: 'views/game.htm',
+        templateUrl: 'views/game.htm?ver=' + config.version,
         controller: 'gameController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -84,7 +84,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'role_play',
         layout: 'non-sidebar',
         bodyClass: 'uniform_maingame av-play',
-        templateUrl: 'views/role-play.htm',
+        templateUrl: 'views/role-play.htm?ver=' + config.version,
         controller: 'roleController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -96,7 +96,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'User Information',
         view: 'user_information',
         layout: 'non-sidebar',
-        templateUrl: 'views/user-information.htm',
+        templateUrl: 'views/user-information.htm?ver=' + config.version,
         controller: 'userController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -108,7 +108,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Monthly Stored Value',
         view: 'price_plan',
         layout: 'non-sidebar',
-        templateUrl: 'views/price-plan.htm',
+        templateUrl: 'views/price-plan.htm?ver=' + config.version,
         controller: 'pricePlanController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -120,7 +120,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Mall',
         view: 'mall',
         layout: 'non-sidebar',
-        templateUrl: 'views/product.htm',
+        templateUrl: 'views/product.htm?ver=' + config.version,
         controller: 'productController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -132,7 +132,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Cart',
         view: 'shopping_cart',
         layout: 'non-sidebar',
-        templateUrl: 'views/shopping_cart.htm',
+        templateUrl: 'views/shopping_cart.htm?ver=' + config.version,
         controller: 'orderController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -144,7 +144,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Checkout',
         view: 'checkout',
         layout: 'non-sidebar',
-        templateUrl: 'views/checkout.htm',
+        templateUrl: 'views/checkout.htm?ver=' + config.version,
         controller: 'orderController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -156,7 +156,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Prize redeem',
         view: 'prize_redeem',
         layout: 'non-sidebar',
-        templateUrl: 'views/prize-redeem.htm',
+        templateUrl: 'views/prize-redeem.htm?ver=' + config.version,
         controller: 'prizeController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -169,7 +169,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'av_play',
         layout: 'non-sidebar',
         bodyClass: 'uniform_maingame av-play',
-        templateUrl: 'views/av-play.htm',
+        templateUrl: 'views/av-play.htm?ver=' + config.version,
         controller: 'videoController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -182,7 +182,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'av_short',
         layout: 'non-sidebar',
         bodyClass: 'uniform_maingame av-play',
-        templateUrl: 'views/av-short.htm',
+        templateUrl: 'views/av-short.htm?ver=' + config.version,
         controller: 'videoController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -195,7 +195,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'my_av',
         layout: 'non-sidebar',
         bodyClass: 'uniform_maingame  av-play',
-        templateUrl: 'views/my-av.htm',
+        templateUrl: 'views/my-av.htm?ver=' + config.version,
         controller: 'videoController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -207,7 +207,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Card Buy',
         view: 'card_buy',
         layout: 'non-sidebar',
-        templateUrl: 'views/card-buy.htm',
+        templateUrl: 'views/card-buy.htm?ver=' + config.version,
         controller: 'cardController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -220,7 +220,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'card_list',
         layout: 'non-sidebar',
         bodyClass: '',
-        templateUrl: 'views/card-list.htm',
+        templateUrl: 'views/card-list.htm?ver=' + config.version,
         controller: 'cardController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -233,7 +233,7 @@ gamingApp.config(function ($routeProvider) {
         view: 'card_select',
         layout: 'non-sidebar',
         bodyClass: '',
-        templateUrl: 'views/card-select.htm',
+        templateUrl: 'views/card-select.htm?ver=' + config.version,
         controller: 'cardController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -245,7 +245,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Customer service',
         view: 'customer_service',
         layout: 'non-sidebar',
-        templateUrl: 'views/customer-service.htm',
+        templateUrl: 'views/customer-service.htm?ver=' + config.version,
         controller: 'ticketController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {
@@ -257,7 +257,7 @@ gamingApp.config(function ($routeProvider) {
         title: 'Expenses Records',
         view: 'expenses_record',
         layout: 'non-sidebar',
-        templateUrl: 'views/expenses-record.htm',
+        templateUrl: 'views/expenses-record.htm?ver=' + config.version,
         controller: 'userController',
         resolve: {
             'ConfigServiceData': function (ConfigService) {

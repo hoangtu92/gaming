@@ -1,5 +1,5 @@
 <section class="uniformsister uniformsister-02 gamepage" ng-init="getRole(); getRatios(); getBetUnits()">
-    <div class="uniformheader text-right hover-button" style="display: inline-block">
+    <div class="uniformheader text-right hover-button">
 
         <div class="game-statistic">
             <h4>本局押注: <span>{{gaming.total.formatPrice()}}點</span></h4>
@@ -16,268 +16,189 @@
 
     <div class="gametable_blocktop" ng-init="initGame()">
 
-        <div class="gametableinner">
-            <div class="gametable_block">
-                <div class="gametable_block_inner">
-                    <div class="top_sec_one">
-                        <div class="col-xs-4 col-md-4 col-sm-4">
-                            <div class="box-011">
-                                <div class="col-xs-6 col-md-6 col-sm-6">
-                                    <div class="markchina bet-area" data-bet="big">
-                                        <h2>豹子通殺</h2>
-                                        <span class="bigsign"><img src="/assets/images/sign01.png"></span>
-                                        <h2>1賠{{ratio.big}}</h2>
-                                        <h2 ng-class="{'boost-up' : gaming.effects.INCREASE_BIG_RATE}"></h2>
+        <div class="grid-container">
+            <div class="grid-item grid1">
+
+                <div class="area-big">
+                    <div class="markchina bet-area" data-bet="big">
+                        <h2>豹子通殺</h2>
+                        <span class="bigsign"><img src="/assets/images/sign01.png"></span>
+                        <h2>1賠{{ratio.big}}</h2>
+                        <h2 ng-class="{'boost-up' : gaming.effects.INCREASE_BIG_RATE}"></h2>
+                    </div>
+                </div>
+                <div class="area-small">
+                    <div class="markchina bet-area" data-bet="small">
+                        <h2>豹子通殺</h2>
+                        <span class="bigsign"><img src="/assets/images/sign02.png"></span>
+                        <h2>1賠{{ratio.small}}</h2>
+                    </div>
+                </div>
+
+                <div class="area-progress">
+                    <div class="toprate_block">
+                        <div class="role-image" ng-style="currentRole && {'background-image': 'url(' + path['role_image'] + currentRole.cover + ')'}"></div>
+                       <!-- <img class="girlimg" ng-src="{{path['role_image']}}{{currentRole.cover}}">-->
+                        <div class="yellowshed">
+                            <div class="game-progress text-right">
+                                <h4 class="user-credit">您的G幣: {{currentUser.credit.formatPrice()}}</h4>
+                                <div class="flex flex-center flex-space-between pl-1 pr-1">
+                                    <div class="progress-container">
+                                        <div class="progress-outer"></div>
+                                        <div class="progress-inner inner-line" ng-style="{width: (gaming.betQuota/gaming.nextGoal)*100 + '%'}"></div>
+                                        <!--
+                                                                                    <div class="progress-inner inner-point" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
+                                        -->
                                     </div>
+                                    <span class="ratetxt">{{gaming.betQuota.formatPrice()}}/{{gaming.nextGoal.formatPrice()}}</span>
+
                                 </div>
-                                <div class="col-xs-6 col-md-6 col-sm-6">
-                                    <div class="mark180">
-                                        <ul class="list-unstyled">
-                                            <li><h2>賠{{ratio.exact_triple_dice}}</h2></li>
-                                            <li class="bet-area" data-bet="triple_4">
-                                                <img src="/assets/images/fourred_box.png">
-                                                <img src="/assets/images/fourred_box.png">
-                                                <img src="/assets/images/fourred_box.png">
-                                            </li>
-                                            <li class="bet-area" data-bet="triple_5">
-                                                <img src="/assets/images/fiveblack_box.png">
-                                                <img src="/assets/images/fiveblack_box.png">
-                                                <img src="/assets/images/fiveblack_box.png">
-                                            </li>
-                                            <li class="bet-area" data-bet="triple_6">
-                                                <img src="/assets/images/sixblack_box.png">
-                                                <img src="/assets/images/sixblack_box.png">
-                                                <img src="/assets/images/sixblack_box.png">
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                <div class="progress-container-star">
+                                    <div class="progress-inner inner-star" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
+                                    <div class="star-growing"></div>
                                 </div>
+
                             </div>
-                        </div>
-                        <div class="col-xs-4 col-md-4 col-sm-4 flex flex-column">
-                            <div class="toprate_block">
-                                <img class="girlimg"
-                                     ng-src="{{path['role_image']}}{{currentRole.cover}}">
-                                <div class="yellowshed">
-                                    <div class="pull-right">
-                                        <div class="golimg">
-                                            <a style="display: block; position:relative;"
-                                               href="#!role-play/{{currentRole.id}}"><img
-                                                    src="/assets/images/golbgr.png">
-                                                <h1>脫衣 影片</h1></a>
-
-                                        </div>
-                                    </div>
-                                    <div class="pull-left text-right">
-                                        <h4 class="user-credit">您的G幣: {{currentUser.credit.formatPrice()}}</h4>
-                                        <div class="flex flex-center flex-space-between pl-1 pr-1">
-                                            <div class="progress-container">
-                                                <div class="progress-outer"></div>
-                                                <div class="progress-inner inner-line" ng-style="{width: (gaming.betQuota/gaming.nextGoal)*100 + '%'}"></div>
-                                                <!--
-                                                                                            <div class="progress-inner inner-point" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
-                                                -->
-                                            </div>
-                                            <h1 class="ratetxt">{{gaming.betQuota.formatPrice()}}/{{gaming.nextGoal.formatPrice()}}</h1>
-
-                                        </div>
-
-                                        <div class="progress-container-star">
-                                            <div class="progress-inner inner-star" ng-style="{width: (gaming.progressLevel/currentRole.maximumLevel)*100 + '%'}"></div>
-                                            <div class="star-growing"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="topstart_block flex-basis-100 bet-area" data-bet="any_triple">
-                                <div class="col-xs-4 col-md-4 col-sm-4">
-                                    <ul class="list-unstyled">
-                                        <li><img src="/assets/images/fourred_box.png"></li>
-                                        <li><img src="/assets/images/fourred_box.png"></li>
-                                        <li><img src="/assets/images/fourred_box.png"></li>
-                                        <li><img src="/assets/images/fiveblack_box.png"></li>
-                                        <li><img src="/assets/images/fiveblack_box.png"></li>
-                                        <li><img src="/assets/images/fiveblack_box.png"></li>
-                                        <li><img src="/assets/images/sixblack_box.png"></li>
-                                        <li><img src="/assets/images/sixblack_box.png"></li>
-                                        <li><img src="/assets/images/sixblack_box.png"></li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-4 col-md-4 col-sm-4">
-                                    <h1 style="margin-top: 60px;">全圍</h1>
-                                    <h2>1賠{{ratio.any_triple_dice}}</h2>
-                                </div>
-                                <div class="col-xs-4 col-md-4 col-sm-4">
-                                    <ul class="list-unstyled">
-                                        <li><img src="/assets/images/onered_box.png"></li>
-                                        <li><img src="/assets/images/onered_box.png"></li>
-                                        <li><img src="/assets/images/onered_box.png"></li>
-                                        <li><img src="/assets/images/twoblack_box.png"></li>
-                                        <li><img src="/assets/images/twoblack_box.png"></li>
-                                        <li><img src="/assets/images/twoblack_box.png"></li>
-                                        <li><img src="/assets/images/threeblack_box.png"></li>
-                                        <li><img src="/assets/images/threeblack_box.png"></li>
-                                        <li><img src="/assets/images/threeblack_box.png"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4 col-md-4 col-sm-4">
-                            <div class="box-011">
-                                <div class="col-xs-6 col-md-6 col-sm-6">
-                                    <div class="mark180">
-                                        <ul class="list-unstyled">
-                                            <li><h2>賠{{ratio.exact_triple_dice}}</h2></li>
-                                            <li class="bet-area" data-bet="triple_1">
-                                                <img src="/assets/images/onered_box.png">
-                                                <img src="/assets/images/onered_box.png">
-                                                <img src="/assets/images/onered_box.png">
-                                            </li>
-                                            <li class="bet-area" data-bet="triple_2">
-                                                <img src="/assets/images/twoblack_box.png">
-                                                <img src="/assets/images/twoblack_box.png">
-                                                <img src="/assets/images/twoblack_box.png">
-                                            </li>
-                                            <li class="bet-area" data-bet="triple_3">
-                                                <img src="/assets/images/threeblack_box.png">
-                                                <img src="/assets/images/threeblack_box.png">
-                                                <img src="/assets/images/threeblack_box.png">
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-6 col-sm-6">
-                                    <div class="markchina bet-area" data-bet="small">
-                                        <h2>豹子通殺</h2>
-                                        <span class="bigsign"><img src="/assets/images/sign02.png"></span>
-                                        <h2>1賠{{ratio.small}}</h2>
-                                    </div>
-                                </div>
+                            <div class="play-role-video">
+                                <a style="display: block; position:relative;"
+                                   href="#!role-play/{{currentRole.id}}"><img
+                                        src="/assets/images/btn-play-role-video.png"></a>
                             </div>
                         </div>
                     </div>
-                    <ul class="list-unstyled usernmber_list">
-                        <li class="bet-area" data-bet="score_17"><h1>17</h1>
-                            <p>1賠{{ratio.score_17}}</p></li>
-                        <li class="bet-area" data-bet="score_16"><h1>16</h1>
-                            <p>1賠{{ratio.score_16}}</p></li>
-                        <li class="bet-area" data-bet="score_15"><h1>15</h1>
-                            <p>1賠{{ratio.score_15}}</p></li>
-                        <li class="bet-area" data-bet="score_14"><h1>14</h1>
-                            <p>1賠{{ratio.score_14}}</p></li>
-                        <li class="bet-area" data-bet="score_13"><h1>13</h1>
-                            <p>1賠{{ratio.score_13}}</p></li>
-                        <li class="bet-area" data-bet="score_12"><h1>12</h1>
-                            <p>1賠{{ratio.score_12}}</p></li>
-                        <li class="bet-area" data-bet="score_11"><h1>11</h1>
-                            <p>1賠{{ratio.score_11}}</p></li>
-                        <li class="bet-area" data-bet="score_10"><h1>10</h1>
-                            <p>1賠{{ratio.score_10}}</p></li>
-                        <li class="bet-area" data-bet="score_9"><h1>9</h1>
-                            <p>1賠{{ratio.score_9}}</p></li>
-                        <li class="bet-area" data-bet="score_8"><h1>8</h1>
-                            <p>1賠{{ratio.score_8}}</p></li>
-                        <li class="bet-area" data-bet="score_7"><h1>7</h1>
-                            <p>1賠{{ratio.score_7}}</p></li>
-                        <li class="bet-area" data-bet="score_6"><h1>6</h1>
-                            <p>1賠{{ratio.score_6}}</p></li>
-                        <li class="bet-area" data-bet="score_5"><h1>5</h1>
-                            <p>1賠{{ratio.score_5}}</p></li>
-                        <li class="bet-area" data-bet="score_4"><h1>4</h1>
-                            <p>1賠{{ratio.score_4}}</p></li>
-                    </ul>
-                    <ul class="list-unstyled usernmber_list diseboxs_list">
-                        <li class="bet-area" data-bet="dice_6"><img src="/assets/images/sixblack_box.png"></li>
-                        <li class="bet-area" data-bet="dice_5"><img src="/assets/images/fiveblack_box.png"></li>
-                        <li class="bet-area" data-bet="dice_4"><img src="/assets/images/fourred_box.png"></li>
-                        <li class="bet-area" data-bet="dice_3"><img src="/assets/images/threeblack_box.png"></li>
-                        <li class="bet-area" data-bet="dice_2"><img src="/assets/images/twoblack_box.png"></li>
-                        <li class="bet-area" data-bet="dice_1"><img src="/assets/images/onered_box.png"></li>
-                    </ul>
-
-                    <div class="totalpoints">
-                        <div class="col-xs-4 col-md-4 col-sm-4 text-center single_dice">
-                            <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_SINGE_DICE_RATE}">單骰 1賠{{ratio.single_dice}}</h3>
+                </div>
+                <div class="area-anyTriple">
+                    <div class="topstart_block flex-basis-100 bet-area" data-bet="any_triple">
+                        <div>
+                            <img alt="any triple" src="/assets/images/triple_456.png">
                         </div>
-                        <div class="col-xs-4 col-md-4 col-sm-4 text-center double_dice">
-                            <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_DOUBLE_DICE_RATE}">雙骰 1賠{{ratio.double_dice}}</h3>
+                        <div >
+                            <h1 style="margin-top: 60px;">全圍</h1>
+                            <h2>1賠{{ratio.any_triple_dice}}</h2>
                         </div>
-                        <div class="col-xs-4 col-md-4 col-sm-4 text-center triple_dice">
-                            <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_TRIPLE_DICE_RATE}">圍骰 1賠{{ratio.triple_dice}}</h3>
+                        <div>
+                            <img alt="any triple" src="/assets/images/triple_123.png">
                         </div>
                     </div>
                 </div>
+
+                <div class="area_singleTriple_rate"><h2>賠{{ratio.exact_triple_dice}}</h2></div>
+                <div class="area_singleTriple_rate"><h2>賠{{ratio.exact_triple_dice}}</h2></div>
+
+                <div class="area_triple_4"><div class="bet-area" data-bet="triple_4"><img alt="triple 4" src="/assets/images/triple_4.png"></div></div>
+                <div class="area_triple_1"><div class="bet-area" data-bet="triple_1"><img alt="triple 1" src="/assets/images/triple_1.png"></div></div>
+                <div class="area_triple_5"><div class="bet-area" data-bet="triple_5"><img alt="triple 5" src="/assets/images/triple_5.png"></div></div>
+                <div class="area_triple_2"><div class="bet-area" data-bet="triple_2"><img alt="triple 2" src="/assets/images/triple_2.png"></div></div>
+                <div class="area_triple_6"><div class="bet-area" data-bet="triple_6"><img alt="triple 6" src="/assets/images/triple_6.png"></div></div>
+                <div class="area_triple_3"><div class="bet-area" data-bet="triple_3"><img alt="triple 3" src="/assets/images/triple_3.png"></div></div>
+
             </div>
-
-
+            <div class="grid-item grid2 usernmber_list">
+                <div class="bet-area" data-bet="score_17"><h1>17</h1>
+                    <p>1賠{{ratio.score_17}}</p></div>
+                <div class="bet-area" data-bet="score_16"><h1>16</h1>
+                    <p>1賠{{ratio.score_16}}</p></div>
+                <div class="bet-area" data-bet="score_15"><h1>15</h1>
+                    <p>1賠{{ratio.score_15}}</p></div>
+                <div class="bet-area" data-bet="score_14"><h1>14</h1>
+                    <p>1賠{{ratio.score_14}}</p></div>
+                <div class="bet-area" data-bet="score_13"><h1>13</h1>
+                    <p>1賠{{ratio.score_13}}</p></div>
+                <div class="bet-area" data-bet="score_12"><h1>12</h1>
+                    <p>1賠{{ratio.score_12}}</p></div>
+                <div class="bet-area" data-bet="score_11"><h1>11</h1>
+                    <p>1賠{{ratio.score_11}}</p></div>
+                <div class="bet-area" data-bet="score_10"><h1>10</h1>
+                    <p>1賠{{ratio.score_10}}</p></div>
+                <div class="bet-area" data-bet="score_9"><h1>9</h1>
+                    <p>1賠{{ratio.score_9}}</p></div>
+                <div class="bet-area" data-bet="score_8"><h1>8</h1>
+                    <p>1賠{{ratio.score_8}}</p></div>
+                <div class="bet-area" data-bet="score_7"><h1>7</h1>
+                    <p>1賠{{ratio.score_7}}</p></div>
+                <div class="bet-area" data-bet="score_6"><h1>6</h1>
+                    <p>1賠{{ratio.score_6}}</p></div>
+                <div class="bet-area" data-bet="score_5"><h1>5</h1>
+                    <p>1賠{{ratio.score_5}}</p></div>
+                <div class="bet-area" data-bet="score_4"><h1>4</h1>
+                    <p>1賠{{ratio.score_4}}</p></div>
+            </div>
+            <div class="grid-item grid3 usernmber_list diseboxs_list">
+                <div class="bet-area" data-bet="dice_6"><img alt="dice6" src="/assets/images/sixblack_box.png"></div>
+                <div class="bet-area" data-bet="dice_5"><img alt="dice5" src="/assets/images/fiveblack_box.png"></div>
+                <div class="bet-area" data-bet="dice_4"><img alt="dice4" src="/assets/images/fourred_box.png"></div>
+                <div class="bet-area" data-bet="dice_3"><img alt="dice3" src="/assets/images/threeblack_box.png"></div>
+                <div class="bet-area" data-bet="dice_2"><img alt="dice2" src="/assets/images/twoblack_box.png"></div>
+                <div class="bet-area" data-bet="dice_1"><img alt="dice1" src="/assets/images/onered_box.png"></div>
+            </div>
+            <div class="grid-item grid4">
+                <div class="single_dice">
+                    <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_SINGE_DICE_RATE}">單骰 1賠{{ratio.single_dice}}</h3>
+                </div>
+                <div class="double_dice">
+                    <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_DOUBLE_DICE_RATE}">雙骰 1賠{{ratio.double_dice}}</h3>
+                </div>
+                <div class="triple_dice">
+                    <h3 ng-class="{'boost-up' : gaming.effects.INCREASE_TRIPLE_DICE_RATE}">圍骰 1賠{{ratio.triple_dice}}</h3>
+                </div>
+            </div>
         </div>
-
-        <div class="gamelastpoint">
-            <div class="">
-                <button ng-click="applySavedBets()" class="prpulbtn">
-                    <h3>重複下注</h3>
-                </button>
-                <!--<button class="prpulbtn" ng-click="saveBet()">
-                    <h3>記憶目前組合</h3>
-                </button>-->
-            </div>
-            <div class="flex flex-row flex-space-between flex-center">
-
-                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_1}">
-                    <a class="bet-unit" id="betUnit1" href="#" ng-click="selectBet(units.bet_1)">
-                        {{units.bet_1.formatUnit()}}
-                        <div class="nmbrten"></div>
-                    </a>
-                </div>
-                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_2}">
-                    <a class="bet-unit" id="betUnit2" href="#" ng-click="selectBet(units.bet_2)">
-                        {{units.bet_2.formatUnit()}}
-                        <div class="nmbrten"></div>
-                    </a>
-                </div>
-                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_3}">
-                    <a class="bet-unit" id="betUnit3" href="#" ng-click="selectBet(units.bet_3)">
-                        {{units.bet_3.formatUnit()}}
-                        <div class="nmbrten"></div>
-                    </a>
-                </div>
-                <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_4}">
-                    <a class="bet-unit" id="betUnit4" href="#" ng-click="selectBet(units.bet_4)">
-                        {{units.bet_4.formatUnit()}}
-                        <div class="nmbrten"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="">
-                <div class="jointsbotm_btn">
-                    <a href="#" ng-click="resetGame()" class="lastbtnimg01 reset-btn">
-                        <h3 class="txt01">清除</h3></a>
-                    <a href="#" ng-click="startGame()" class="lastbtnimg02 start-btn">
-                        <h3 class="txt01">開牌</h3></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="dices-result-container" style="cursor: pointer"; ng-click="resetGame()">
-            <div class="dices-result">
-                <img src="{{dices[gaming.dice.dice_1]}}">
-                <img src="{{dices[gaming.dice.dice_2]}}">
-                <img src="{{dices[gaming.dice.dice_3]}}">
-            </div>
-        </div>
-
-        <!--<div class="debug-card" style="position: fixed;
-    top: 1px;
-    right: 185px;
-    background: #10101073;">
-            <ul style="list-style: none;
-    text-align: left;
-    font-size: 12px;">
-                <li ng-repeat="item in $parent.inUsedCardlevels">{{item.cardName}}/{{item.effectName}}: {{item.value}}%</li>
-            </ul>
-        </div>-->
-
 
     </div>
+
+    <div class="gamelastpoint">
+        <div class="">
+            <button ng-click="applySavedBets()" class="prpulbtn">
+                <h3>重複下注</h3>
+            </button>
+            <!--<button class="prpulbtn" ng-click="saveBet()">
+                <h3>記憶目前組合</h3>
+            </button>-->
+        </div>
+        <div class="flex flex-row flex-space-between flex-center">
+
+            <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_1}">
+                <a class="bet-unit" id="betUnit1" href="#" ng-click="selectBet(units.bet_1)">
+                    {{units.bet_1.formatUnit()}}
+                    <div class="nmbrten"></div>
+                </a>
+            </div>
+            <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_2}">
+                <a class="bet-unit" id="betUnit2" href="#" ng-click="selectBet(units.bet_2)">
+                    {{units.bet_2.formatUnit()}}
+                    <div class="nmbrten"></div>
+                </a>
+            </div>
+            <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_3}">
+                <a class="bet-unit" id="betUnit3" href="#" ng-click="selectBet(units.bet_3)">
+                    {{units.bet_3.formatUnit()}}
+                    <div class="nmbrten"></div>
+                </a>
+            </div>
+            <div class="circleimgs_botm" ng-class="{active: selectedBet === units.bet_4}">
+                <a class="bet-unit" id="betUnit4" href="#" ng-click="selectBet(units.bet_4)">
+                    {{units.bet_4.formatUnit()}}
+                    <div class="nmbrten"></div>
+                </a>
+            </div>
+        </div>
+        <div class="">
+            <div class="jointsbotm_btn">
+                <a href="#" ng-click="resetGame()" class="lastbtnimg01 reset-btn">
+                    <h3 class="txt01">清除</h3></a>
+                <a href="#" ng-click="startGame()" class="lastbtnimg02 start-btn">
+                    <h3 class="txt01">開牌</h3></a>
+            </div>
+        </div>
+    </div>
 </section>
+
+
+<div class="dices-result-container" style="cursor: pointer"; ng-click="resetGame()">
+    <div class="dices-result">
+        <img src="{{dices[gaming.dice.dice_1]}}">
+        <img src="{{dices[gaming.dice.dice_2]}}">
+        <img src="{{dices[gaming.dice.dice_3]}}">
+    </div>
+</div>

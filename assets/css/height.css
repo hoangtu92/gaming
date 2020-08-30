@@ -91,6 +91,14 @@
         max-width: 130px;
     }
 
+    .grid-container,  .grid-container *{
+        border-width: 1px !important;
+    }
+
+    .progress-container {
+        height: 10px;
+    }
+
 }
 
 @media all and (max-height: 480px) {
@@ -252,5 +260,8 @@
 @media all and (max-height: 320px) {
     .right-author-chat-icon {
         top: 54vh;
+    }
+    .progress-container {
+        height: 5px;
     }
 }
