@@ -393,6 +393,10 @@ button {
     overflow-x: hidden;
 }
 
+.page-prize_redeem .gamelist_top{
+    overflow: visible;
+}
+
 button.bookbtn {
     background: transparent;
     border: 2px solid #fff;
