@@ -1465,7 +1465,6 @@ section .modal {
 }
 
 .menu.select-level a {
-	font-size: 18px;
 	white-space: nowrap;
 	float: left;
 }
@@ -2749,7 +2748,7 @@ Custom css
 
 div.star-glowing {
 	background-size: auto 9vh;
-	height: 9vh;
+	height: 7vh;
 	background-position: -1vw -1vh;
 }
 
@@ -2884,19 +2883,19 @@ body {
 }
 
 .game-statistic {
-	width: 100%;
+	width: 50vw;
 	display: flex;
 	justify-content: space-between;
-	max-width: 650px;
+	max-width: 1024px;
+	min-width: 375px;
 	position: absolute;
 	left: 0;
 	top: 0;
 	background: rgba(60, 15, 66, 0.56);
-	padding: 10px;
-	border-radius: 23px;
-	border: 3px solid rgba(255, 255, 255, 0.75);
+	padding: 1.5vh;
+	border-radius: 1vw;
+	border: 0.1vw solid rgba(255, 255, 255, 0.75);
 	box-shadow: 0 0 5px #74227d;
-	margin: 0 2.5%;
 }
 
 .game-statistic h4 > span {
@@ -2906,7 +2905,7 @@ body {
 
 .game-statistic h4 {
 	margin: 0;
-	font-size: 2rem;
+	font-size: 1.5vw;
 	max-width: 400px;
 	font-weight: bold;
 }
@@ -2999,15 +2998,15 @@ section {
 }
 
 .bet-unit {
-	width: 70px;
-	height: 70px;
+	width: 10vh;
+	height: 10vh;
 	background-size: contain;
 	background-repeat: no-repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-family: Calibri;
-	font-size: 2rem;
+	font-size: 1.5vw;
 	font-weight: bold;
 	color: white !important;
 	text-decoration: none !important;
@@ -3033,35 +3032,25 @@ section {
 	background-image: url(/assets/images/unit-20.png);
 }
 
-.start-btn {
-	background-image: url(/assets/images/lastbtnbgr01.png);
-	width: 160px;
-	height: 100px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 20px;
-}
+.start-btn {opacity: 1;position: relative;z-index: 1;}
 
 .reset-btn {
-	background-image: url(/assets/images/lastbtnbgr02.png);
-	width: 136px;
-	height: 100px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-origin: content-box;
-	background-position: left 30%;
-	padding-top: 35px;
-	box-sizing: border-box;
+	margin-right: -5vw;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-end;
 }
 
 button.popupprple_btn img, .babyimg img {
 	width: 100%;
+}
+
+.reset-btn img{
+
+	height: 6vh;
+}
+
+.start-btn img{
+
 }
 
 .card_detail .modal-content {
@@ -3085,6 +3074,7 @@ button.popupprple_btn img, .babyimg img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 1.5vw;
 }
 
 .card-detail-container .babyimg img {
@@ -3114,7 +3104,7 @@ button.popupprple_btn img, .babyimg img {
 }
 
 div.menu {
-	margin: 25px 0;
+	margin: 1vh 0;
 	background: transparent;
 	overflow: auto;
 	width: 100%;

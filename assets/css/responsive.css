@@ -65,12 +65,9 @@
     }
 
     .game-statistic {
-        max-width: 500px;
     }
 
     .game-statistic h4 {
-        font-size: 1.75rem;
-        max-width: 200px;
     }
 
     .welcome-mid-right-top-left h2 {
@@ -190,9 +187,6 @@
     }
 
     .gamelastpoint button {
-        padding: 0 5px;
-        width: 100px;
-        height: 50px;
     }
 
     .card-pools {
@@ -204,7 +198,6 @@
     }
 
     .menu.select-level a {
-        font-size: 14px;
     }
 
     .mark180 ul li img {
@@ -388,13 +381,12 @@
     }
 
     .menu.select-level a {
-        font-size: 12px;
         margin: 1px;
         padding: 3px;
     }
 
     .babyimg_info .ratings_info {
-        padding: 10px;
+        /* padding: 0; */
     }
 
     .right-author-chat-icon img {
@@ -529,8 +521,6 @@
     }
 
     button.prpulbtn h3 {
-        top: -5px;
-        font-size: 13px;
     }
 
     .jointsbotm_btn h3.txt01 {
@@ -581,7 +571,6 @@
     }
 
     .booksthree_btn {
-        width: 58%;
     }
 
     .welcome-mid-left-girl-img img.girl-img {
@@ -739,9 +728,6 @@
     }
 
     .game-statistic {
-        position: fixed;
-        left: 5px;
-        top: 0;
     }
 
     section.uniformsister-02 .uniformheader img {
@@ -847,9 +833,6 @@
     }
 
     .bet-unit {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
     }
 
     .gametableinner {
@@ -859,27 +842,18 @@
     }
 
     .gamelastpoint button {
-        width: 80px;
-        margin-left: 10px;
     }
 
     .start-btn {
-        width: 130px;
-        padding-bottom: 34px;
     }
 
     .reset-btn {
-        width: 128px;
-        font-size: 2rem;
-        padding-bottom: 42px;
     }
 
     .jointsbotm_btn h3.txt01 {
-        font-size: 2rem;
     }
 
     .jointsbotm_btn {
-        margin-top: 33px;
     }
 
     .redvlack_circle {
@@ -1757,12 +1731,9 @@
     }
 
     .booksthree_btn {
-        width: 100%;
     }
 
     .booksthree_btn button.bookbtn {
-        margin: 0px 0px 8px 5px;
-        padding: 6px 15px;
     }
 
     .list_ratings button.bookbtn {
@@ -1832,11 +1803,9 @@
         height: 35px;
     }
     .game-statistic h4{
-        font-size: 1.5rem;
     }
 
     .game-statistic{
-        padding: 5px;
     }
 
 }
@@ -2040,6 +2009,7 @@
 
     .game-statistic {
         margin: 0;
+        left: 3vw;
     }
 
     button.prpulbtn {

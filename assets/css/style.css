@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: "å¾®è»Ÿæ­£é»‘é«”", sans-serif;
+    font-family: "微軟正黑體", sans-serif;
     font-weight: normal;
 }
 
@@ -71,13 +71,13 @@ button {
 .uniformheader {
     width: 100%;
     height: auto;
-    /* padding: 5px 0px 10px 10px; */
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     position: relative;
-    z-index: 9;
-    /*background: url(../images/transparent_bg.png) no-repeat left top;*/
     background-size: contain;
     background: linear-gradient(169deg, rgba(225,52,110,0) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,1) 0%, rgba(225,52,110,0.028470763305322166) 25%, rgba(225,52,110,0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .modal.fullpage_popup .modal-dialog .modal-content .modal-header .uniformheader {
@@ -338,7 +338,7 @@ button {
 
 /* When the checkbox is checked, add a blue background */
 .pkcheckbox input:checked ~ .checkmark {
-    background-color: #000;
+    background-color: #d5459b;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -367,10 +367,9 @@ button {
     background: transparent;
     border: 2px solid #fff;
     box-shadow: 0px 0px 8px #ff5ea6;
-    border-radius: 30px;
-    padding: 7px 25px;
-    font-size: 18px;
-    margin-right: 5%;
+    border-radius: 3vw;
+    padding: 1vw 2vw;
+    font-size: 1.5vw;
 }
 
 .uniformheader button.bookbtn:hover, .uniformheader button.bookbtn.active {
@@ -488,7 +487,6 @@ ul.gamelist_inner li a {
     }
 
     .uniformsister .uniformheader button {
-        font-size: 32px !important;
     }
 
     .uniformsister .gamelist {
@@ -609,7 +607,7 @@ button.popupprple_btn {
 }
 
 button.popupprple_btn span {
-    font-size: 2rem;
+    font-size: 1.5vw;
     font-weight: 700;
     position: absolute;
     left: 0;
@@ -1173,21 +1171,18 @@ ul.diseboxs_list li img {
 }
 
 button.prpulbtn {
-    border: 0;
-    /* margin-top: 10px; */
     position: relative;
-    float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(/assets/images/puplepivkbtnimg.png);
-    width: 180px;
-    height: 65px;
+    width: 10vw;
+    height: 4vw;
     background-size: contain;
     background-repeat: no-repeat;
     background: linear-gradient(65deg, rgba(101,51,185,1) 0%, rgba(196,63,183,1) 100%);
-    border: 3px solid white;
+    border: 1px solid white;
     box-shadow: 0 0 4px white;
+    padding: 0;
 }
 
 button.prpulbtn img {
@@ -1195,22 +1190,16 @@ button.prpulbtn img {
 }
 
 button.prpulbtn h3 {
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 5px; */
     right: 0;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.5vw;
     margin: 0;
-    /* background-color: #6533b9; */
-    /* background-color: #c43fb7; */
 }
 
 .circleimgs_botm {
-    /* margin-top: 10px; */
     position: relative;
     transition: .5s;
-    padding: 10px;
+    padding: 0 1vw;
 }
 
 .circleimgs_botm .nmbrten {
@@ -1241,41 +1230,33 @@ button.prpulbtn h3 {
 }
 
 .jointsbotm_btn img {
-    max-width: 335px;
+    height: 10vh;
+    width: auto;
 }
 
 .jointsbotm_btn {
     text-align: right;
-    /* position: absolute; */
     width: 100%;
     height: auto;
     display: flex;
-    /* left: 0; */
-    /* top: 0; */
-    /* margin-top: 60px; */
-    margin-top: 10px;
 }
 
 .jointsbotm_btn h3.txt01 {
     color: #fff;
     margin: 0;
     display: inline-flex;
-    font-size: 35px;
+    font-size: 3vw;
     font-weight: 600;
     text-shadow: 0 0 2px white;
 }
 
 .jointsbotm_btn a + a img {
-    max-width: 165px;
 }
 
 .jointsbotm_btn a img {
-    width: 100%;
-    max-width: 135px;
 }
 
 .jointsbotm_btn a {
-    position: relative;
 }
 
 .jointsbotm_btn a.lastbtnimg01 {
@@ -1336,11 +1317,7 @@ body.uniform_maingame {
 }
 
 .booksthree_btn {
-    float: right;
-    width: 47%;
     text-align: right;
-    padding-top: 15px;
-    margin-right: 5%;
 }
 
 .booksthree_btn button.bookbtn {
@@ -1459,13 +1436,13 @@ section.uniformsister-03 .modal-content {
     background: url(../images/transparent_bg.png) no-repeat left top;
     background-size: contain;
     text-align: left;
-    padding: 1vw;
+    padding: 1vw 1vw 0;
 }
 
 .babyimg_info .tpname h2 {
     margin: 0;
     font-weight: 700;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .modal-body {
@@ -1481,14 +1458,14 @@ section.uniformsister-03 .modal-content {
 }
 
 .babyimg_info .paragraph {
-    padding: 1vw;
-    font-size: 2vw;
+    padding: 0 1vw;
+    font-size: 1.5vw;
     text-align: left;
 }
 
 .babyimg_info .ratings_info {
     text-align: center;
-    padding: 30px;
+    padding: 0;
 }
 
 .babyimg_info .ratings_info h3 {
@@ -1930,6 +1907,7 @@ section.uniformsister_vedio .uniformheader h1 {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    max-height: 10vh;
 }
 
 .vedio video {
@@ -1995,7 +1973,7 @@ body:not(.page-av_play) .av-play {
 }
 
 .title-arrow a img {
-    max-width: 60px !important;
+    width: 6vw;
     margin-top: 0px !important;
 }
 
@@ -2049,7 +2027,7 @@ body:not(.page-av_play) .av-play {
 
 .title-arrow h1 {
     opacity: 0.9;
-    font-size: 30px;
+    font-size: 4vw;
 }
 
 .title-arrow h1:hover {

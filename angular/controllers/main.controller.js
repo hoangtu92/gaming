@@ -403,8 +403,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         if ($route.current.view === "login" || $route.current.view === "index") return;
         $http.get(localStorage.base_api + "user/currentUser").then(function (res) {
             $scope.currentUser = res.data.model;
-            if (cb) cb();
             $scope.$broadcast("user_loaded", $scope.currentUser);
+            if (cb) cb();
+
         })
     };
 

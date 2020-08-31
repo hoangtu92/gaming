@@ -36,6 +36,7 @@ gamingApp.directive("owlCarousel", function () {
                     }
 
                     function handleTouchStart(evt) {
+                        scope.direction = false;
                         xDown = evt.touches[0].clientX;
                         yDown = evt.touches[0].clientY;
                     }

@@ -4,22 +4,22 @@ gamingApp.controller("userController", function ($scope, $route, $routeParams, $
 
     var circleLength  = circleValue != null ? Math.round(circleValue.getTotalLength()) : 0;
 
+    angular.element('#circle-value').css({"stroke-dashoffset": circleLength, "stroke-dasharray": circleLength});
 
-    $scope.initProgressCircle = function () {
+    $scope.getCurrentUser(function () {
+        var percent = $scope.currentUser.gameProgress.round();
+        var value = Math.round(Math.round(circleValue.getTotalLength()) - (percent*circleLength)/100);
 
-        angular.element(circleValue).css({"stroke-dashoffset": circleLength + "px", "stroke-dasharray": circleLength + "px"});
-
-    };
-
-    $scope.$on("user_loaded", function (e, currentUser) {
-        var percent = currentUser.gameProgress.round();
-        var value = Math.round(circleLength - (percent*circleLength)/100);
-
-        angular.element(circleValue).animate({
+        angular.element('#circle-value').animate({
             "stroke-dashoffset": value
         });
-    });
 
+    });
+    /*$scope.$on("user_loaded", function (e, currentUser) {
+
+
+    });
+*/
     if($routeParams.action){
 
         if($routeParams.action === "verify"){

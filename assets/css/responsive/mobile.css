@@ -3,7 +3,6 @@
 @media all and (max-width: 568px) {
     /*Card detail*/
     .babyimg_info .paragraph {
-        font-size: 1.5rem;
     }
 
     .product-price span img {
@@ -11,7 +10,6 @@
     }
 
     .babyimg_info .tpname h2 {
-        font-size: 2rem
     }
 
     .babyimg {
@@ -106,8 +104,6 @@
     }
 
     .booksthree_btn {
-        padding-top: 5px;
-        max-width: 325px;
     }
 
     .list_ratings {
@@ -250,15 +246,12 @@
     }
 
     .booksthree_btn button.bookbtn {
-        font-size: 1.5rem;
     }
 
     .title-arrow a img {
-        max-width: 45px !important;
     }
 
     .title-arrow h1 {
-        font-size: 25px;
     }
 
     /*AV*/
@@ -385,9 +378,6 @@
     }
 
     .game-statistic {
-        position: fixed;
-        left: 5px;
-        top: 0;
     }
 
     section.uniformsister-02 .uniformheader img {
@@ -489,9 +479,6 @@
     }
 
     .bet-unit {
-        width: 38px;
-        height: 38px;
-        font-size: 1.2rem;
     }
 
     .gametableinner {
@@ -501,31 +488,18 @@
     }
 
     .gamelastpoint button {
-        width: 79px;
-        margin-left: 10px;
-        height: 30px;
     }
 
     .start-btn {
-        width: 91px;
-        padding-bottom: 42px;
-        height: 91px;
-        padding-top: 7px;
     }
 
     .reset-btn {
-        width: 94px;
-        font-size: 2rem;
-        padding-bottom: 71px;
-        padding-top: 24px;
     }
 
     .jointsbotm_btn h3.txt01 {
-        font-size: 2rem;
     }
 
     .jointsbotm_btn {
-        margin-top: 57px;
     }
 
     .redvlack_circle {
@@ -564,9 +538,6 @@
     }
 
     .game-statistic {
-        max-width: 407px;
-        left: -10px;
-        padding: 6px;
     }
 
     .game-statistic h4 {
