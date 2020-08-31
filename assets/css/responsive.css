@@ -1164,12 +1164,6 @@
     }
 
     .sidenav a.closebtn {
-        width: 40px;
-        height: 40px;
-        line-height: 34px;
-        font-size: 24px;
-        top: 5px !important;
-        right: 15px !important;
     }
 
     .welcome-bottom-inner-btn {
@@ -1828,13 +1822,6 @@
     }
 
     .sidenav a.closebtn {
-        width: 30px;
-        height: 30px;
-        line-height: 20px;
-        font-size: 21px;
-        top: 5px !important;
-        right: 15px !important;
-
     }
 
     form.customer-service-form button img  {
@@ -2126,10 +2113,6 @@
     }
 
     span.side-menu-cstm-toogle, .sidenav a.closebtn {
-        font-size: 48px !important;
-        width: 90px;
-        height: 90px;
-        line-height: 85px;
     }
 
     span.img-sec {

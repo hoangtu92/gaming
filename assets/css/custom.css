@@ -182,20 +182,23 @@ button[type="submit"] {
 }
 
 .sidenav a.closebtn {
-	color: #fff;
-	display: block;
-	border: 3px solid #fff;
-	padding: 0;
-	width: 55px;
-	height: 55px;
+	border: none;
 	border-radius: 100%;
-	text-align: center;
-	line-height: 45px;
 	padding: 0;
 	margin-top: 0;
-	top: 20px !important;
-	right: 45px !important;
+	top: 1vw;
+	right: 1vw;
 	z-index: 99999999999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+}
+
+.sidenav a.closebtn img{
+	width: 6vw;
+	height: auto;
+	object-fit: contain;
 }
 
 .sidenav a {
@@ -215,11 +218,6 @@ button[type="submit"] {
 }
 
 .sidenav .closebtn {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
 }
 
 .reward-collection-outer {
@@ -642,6 +640,7 @@ span.price-icon h5 {
 	width: 100%;
 	top: 0;
 	height: 100%;
+	z-index: 1;
 }
 
 .welcome-bottom-inner .owl-nav button.owl-prev {
@@ -3673,9 +3672,7 @@ a.close img {
 .owl-carousel .owl-stage-outer {
 	padding: 10px 0;
 	overflow: hidden;
-	/* position: relative; */
-	/* z-index: 1; */
-	/* max-width: 80vw; */
+	z-index: 8;
 	margin: 0 auto;
 }
 
