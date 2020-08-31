@@ -74,7 +74,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }*/
 
-        if($scope.$$route.current.view !== "login" && $scope.$$route.current.view !== "index"  ){
+        if($scope.route.current.view !== "login" && $scope.route.current.view !== "index"  ){
             angular.element(".loading-screen").fadeIn();
         }
 

@@ -14,16 +14,16 @@
             <button ng-show="prizes.length > 0" ng-click="checkAllPrizes()" class="bookbtn">一鍵全選</button>
             <ul ng-init="getListPrizes()" class="gamelist_inner grid-200">
                 <li ng-repeat="prize in prizes">
-                    <label class="shadow">
+                    <label class="shadow" for="price-{{$index}}">
                         <div class="listbox" uib-popover="{{prize.notes}}" popover-trigger="'mouseenter'">
                             <img src="{{'/assets/images/coinicon-02.png'}}">
                             <div class="price"><span>{{prize.amount.formatPrice()}}</span>
                             </div>
                             <div class="boxcheck">
-                                <span class="pkcheckbox">
-                                    <input ng-model="prize.selected" type="checkbox">
+                                <label class="pkcheckbox">
+                                    <input ng-model="prize.selected" id="price-{{$index}}" type="checkbox">
                                     <span class="checkmark"></span>
-                                </span>
+                                </label>
                             </div>
                         </div>
                     </label>
