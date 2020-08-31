@@ -1850,6 +1850,13 @@
     ========================================================================================================================
  */
 
+@media all and (min-width: 600px) {
+    .game-statistic {
+        margin: 0;
+        margin-left: 3vw;
+    }
+}
+
 @media all and (min-width: 992px) {
     .checkout-left {
         border-right: 2px solid rgba(255, 255, 255, 0.3);
@@ -2004,10 +2011,7 @@
         font-size: 20px;
     }
 
-    .game-statistic {
-        margin: 0;
-        margin-left: 3vw;
-    }
+
 
     button.prpulbtn {
 
