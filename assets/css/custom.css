@@ -55,6 +55,7 @@ button[type="submit"] {
 	z-index: 9999;
 	color: white;
 	font-size: 3vw;
+	display: none;
 }
 
 .loading-screen .loading-content{
