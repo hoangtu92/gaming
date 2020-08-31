@@ -5,12 +5,6 @@
             <div class="row">
                 <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#" ng-click="exit()"><img alt="logo" src="/assets/images/logo.png"
                                                                                       class="img-responsive"></a></div>
-                <div class="menu-section col-md-9 col-sm-9 col-xs-9" ng-init="getListPrizes()">
-                    <div ng-include="'/includes/sidebar.htm'">
-
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -33,6 +27,16 @@
                 </div>
             </div>
             <div class="welcome-mid-right-sec gradient-red-bg">
+                <div class="header-top-left-menu flex flex-center justify-content-end">
+                    <ul>
+                        <li><a href="#!card-list">道具</a></li>
+                        <li><a href="#!av-play">AV區</a></li>
+                        <li><a href="#!mall">商城</a></li>
+                        <li><a href="#!monthly-stored-value">儲値</a></li>
+                    </ul>
+
+
+                </div>
                 <div class="welcome-mid-right-top-sec">
                     <div class="welcome-mid-right-top-left">
                         <h2>{{currentRole.name}}</h2>
@@ -124,6 +128,13 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="menu-section" ng-init="getListPrizes()">
+        <div ng-include="'/includes/sidebar.htm'">
+
+        </div>
+
     </div>
 
 </section>

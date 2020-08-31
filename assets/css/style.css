@@ -24,6 +24,11 @@ a:hover, button:hover {
     text-overflow: ellipsis;
 }
 
+.side-menu-cstm-toogle img{
+    width: 6vw;
+    height: auto
+}
+
 button {
     outline: none !important;
 }
@@ -653,6 +658,10 @@ button.popupprple_btn img.popup_close_icon {
 
 img {
     /* width: 100%; */
+}
+
+.logo-section img{
+    width: auto !important;
 }
 
 .gamepage img, .uniform_maingame img {

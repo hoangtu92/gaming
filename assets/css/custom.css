@@ -55,7 +55,7 @@ button[type="submit"] {
 .gaming-header {
 	width: 100%;
 	position: relative;
-	z-index: 999;
+	z-index: 1;
 	height: 20vh;
 	padding-top: 5vh;
 }
@@ -65,17 +65,24 @@ button[type="submit"] {
 }
 
 .header-top-left-menu ul {
-	display: block;
-	float: left;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	width: auto;
-	flex-basis: 80%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .header-top-left-menu ul li {
 	display: inline-block;
+}
+
+.side-menu-cstm-toogle{
+	position: fixed;
+	right: 4vh;
+	top: 4vh;
+	z-index: 9999;
 }
 
 .header-top-left-menu ul li a {
@@ -112,6 +119,9 @@ button[type="submit"] {
 	position: relative;
 	width: 100%;
 	padding: 0 20px;
+	position: fixed;
+	top: 4vh;
+	z-index: 9999;
 }
 
 .logo-section img {
@@ -287,7 +297,7 @@ span.side-menu-cstm-toogle {
 	width: 100%;
 	position: relative;
 	height: 55vh;
-	z-index: 99;
+	z-index: 9;
 }
 
 .welcome-mid-section .container-fluid {
@@ -2383,14 +2393,14 @@ h3.product-title {
 	width: 100%;
 	margin: 30px auto;
 	max-width: 1140px;
-	margin-top: 8%;
+	/* margin-top: 8%; */
 }
 
 #mallmodel .modal-content, .product_info .modal-content {
-	border-radius: 35px;
+	border-radius: 2rem;
 	float: left;
 	width: 100%;
-	padding: 30px;
+	padding: 1.5rem;
 }
 
 #mallmodel #thumbnail-slider, .product_info #thumbnail-slider {
@@ -2411,6 +2421,7 @@ h3.product-title {
 	float: left;
 	width: 50%;
 	padding-left: 30px;
+	overflow-y: auto;
 }
 
 #ninja-slider {
@@ -3434,6 +3445,7 @@ a.cart-icon span {
 
 .order-form input, .order-form .form-row .form-group {
 	width: 50%;
+	height: 50px;
 }
 
 .order-form input, .order-form .form-group label {
@@ -3442,7 +3454,7 @@ a.cart-icon span {
 }
 
 .order-form .form-group label {
-	padding-bottom: 20px;
+	padding-bottom: 0;
 	position: relative;
 	padding-left: 0;
 	margin-left: 10px;
