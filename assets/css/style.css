@@ -1677,7 +1677,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 .vediotxt {
     text-align: left;
     padding: 0 2vw;
-    height: 100vh;
+    height: 100%;
     overflow: auto;
 }
 
