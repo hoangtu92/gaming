@@ -74,13 +74,20 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }*/
 
-        if($scope.route.current.view !== "login" && $scope.route.current.view !== "index"  ){
-            angular.element(".loading-screen").fadeIn();
-        }
+        angular.element(".loading-screen").fadeIn();
 
         $scope.previousPage = previous;
         $scope.destinationPage = destination;
 
+    });
+
+    $scope.$on('$locationChangeSuccess', function () {
+        $scope.checkFullScreen();
+        $scope.getCurrentUser(function () {
+            $scope.getPaths();
+            $scope.getCarts();
+        });
+        angular.element(".loading-screen").fadeOut();
     });
 
     $scope.getPaths = function(){
@@ -122,15 +129,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
 
 
-
-    $scope.$on('$locationChangeSuccess', function () {
-        $scope.checkFullScreen();
-        $scope.getCurrentUser(function () {
-            $scope.getPaths();
-            $scope.getCarts();
-            angular.element(".loading-screen").fadeOut();
-        });
-    });
 
 
     $scope.$on("cart_updated", function (e, cartItems) {
