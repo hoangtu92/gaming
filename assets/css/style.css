@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: "微軟正黑體", sans-serif;
+    font-family: "å¾®è»Ÿæ­£é»‘é«”", sans-serif;
     font-weight: normal;
 }
 
@@ -86,7 +86,6 @@ button {
 }
 
 .gamepage .uniformheader {
-    /* position: absolute; */
     left: 0;
     margin-bottom: 0;
 }
@@ -1220,7 +1219,7 @@ button.prpulbtn h3 {
 
 .circleimgs_botm.active {
     background: rgba(0, 0, 0, 0.42);
-    border-radius: 16px;
+    border-radius: 1vw;
 }
 
 .circleimgs_botm:hover {
@@ -2039,6 +2038,8 @@ body:not(.page-av_play) .av-play {
 .hover-button a, .title-arrow a, .gametable_block li ,.topstart_block, .markchina, .totalpoints h3 {
     opacity: 1;
 }
+
+.page-game .uniformheader {align-items: flex-start;}
 
 .hover-button a:hover, .closebtn:hover, .gametable_block li:hover,.topstart_block:hover, .markchina:hover, .totalpoints h3:hover, .golimg:hover, .hover a:hover, .bet-area.win, .bet-area:hover {
     opacity: 1;

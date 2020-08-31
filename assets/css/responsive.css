@@ -812,9 +812,6 @@
     }
 
     section.uniformsister-02 .uniformheader {
-        /* width: auto; */
-        /* right: 0; */
-        /* left: initial; */
     }
 
     .yellowshed .pull-right {
@@ -924,7 +921,7 @@
 
 
 @media all and (max-width: 950px) {
-    div#mySidenav  {
+    div#mySidenavÂ  {
         max-width: 170px;
 
     }
@@ -1777,7 +1774,7 @@
         max-width: initial;
     }
 
-    .modal-body  {
+    .modal-bodyÂ  {
         margin-top: -35px;
     }
 
@@ -1787,7 +1784,7 @@
         margin-bottom: 20px;
     }
 
-    .forgot_password .modal-footer  {
+    .forgot_password .modal-footerÂ  {
         margin-top: -35px;
 
     }
@@ -1795,7 +1792,7 @@
     .sidenav a.closebtn {
     }
 
-    form.customer-service-form button img  {
+    form.customer-service-form button imgÂ  {
         max-width: 90px;
     }
     .redvlack_circle img{
@@ -2009,7 +2006,7 @@
 
     .game-statistic {
         margin: 0;
-        left: 3vw;
+        margin-left: 3vw;
     }
 
     button.prpulbtn {
@@ -2740,7 +2737,7 @@ Max Width
         height: 55px;
     }
 
-    .ticket_reply .modal-content  {
+    .ticket_reply .modal-contentÂ  {
         min-width: 60vw;
 
     }
@@ -2908,7 +2905,6 @@ Max Width
     }
 
     button.prpulbtn {
-        width: auto
     }
 
     button.prpulbtn h3 {

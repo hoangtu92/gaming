@@ -111,7 +111,6 @@
     }
 
     .page-game .uniformsister.gamepage .uniformheader {
-        padding: 5px 0;
     }
 
 
@@ -458,8 +457,6 @@
 
     section.uniformsister-02 .uniformheader {
         width: auto;
-        right: 0;
-        left: initial;
     }
 
     .yellowshed .pull-right {

@@ -2888,9 +2888,6 @@ body {
 	justify-content: space-between;
 	max-width: 1024px;
 	min-width: 375px;
-	position: absolute;
-	left: 0;
-	top: 0;
 	background: rgba(60, 15, 66, 0.56);
 	padding: 1.5vh;
 	border-radius: 1vw;
