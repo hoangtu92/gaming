@@ -364,6 +364,7 @@ span.side-menu-cstm-toogle {
 	top: 45vh;
 	left: 0;
 	display: flex;
+	align-items: center;
 }
 
 span.img-sec {
@@ -376,7 +377,6 @@ span.img-sec {
 	z-index: 11;
 	position: relative;
 	left: 0;
-	top: -10px;
 	overflow: hidden;
 }
 
