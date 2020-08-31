@@ -74,7 +74,9 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }*/
 
-        angular.element(".loading-screen").fadeIn();
+        if($scope.$$route.current.view !== "login" && $scope.$$route.current.view !== "index"  ){
+            angular.element(".loading-screen").fadeIn();
+        }
 
         $scope.previousPage = previous;
         $scope.destinationPage = destination;
@@ -122,7 +124,6 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
 
 
     $scope.$on('$locationChangeSuccess', function () {
-
         $scope.checkFullScreen();
         $scope.getCurrentUser(function () {
             $scope.getPaths();
