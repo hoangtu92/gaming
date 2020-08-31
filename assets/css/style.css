@@ -82,6 +82,7 @@ button {
 
 .modal.fullpage_popup .modal-dialog .modal-content .modal-header .uniformheader {
     padding: 0;
+    display: block;
 }
 
 .gamepage .uniformheader {
