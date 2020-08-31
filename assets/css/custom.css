@@ -2749,38 +2749,39 @@ Custom css
 }
 
 div.star-glowing {
-	background-size: auto 43px;
-	height: 50px;
+	background-size: auto 9vh;
+	height: 9vh;
+	background-position: -1vw -1vh;
 }
 
 .star-glowing.star-1 {
 	background-image: url("/assets/images/star-glowing-1.png");
-	width: 50px;
+	width: 6vh;
 }
 
 .star-glowing.star-2 {
 	background-image: url("/assets/images/star-glowing-2.png");
-	width: 80px;
+	width: 12vh;
 }
 
 .star-glowing.star-3 {
 	background-image: url("/assets/images/star-glowing-3.png");
-	width: 105px;
+	width: 16vh;
 }
 
 .star-glowing.star-4 {
 	background-image: url("/assets/images/star-glowing-4.png");
-	width: 125px;
+	width: 19vh;
 }
 
 .star-glowing.star-5 {
 	background-image: url("/assets/images/star-glowing-5.png");
-	width: 150px;
+	width: 23vh;
 }
 
 .star-glowing.star-6 {
 	background-image: url("/assets/images/star-glowing-6.png");
-	width: 180px;
+	width: 29vh;
 }
 
 div.starImg {
@@ -3104,6 +3105,7 @@ button.popupprple_btn img, .babyimg img {
 .card-detail-container .card-buttons .popupprple_btn {
 	width: auto;
 	border-radius: 0;
+	padding: 0 2px;
 }
 
 .card_detail .modal-header {
