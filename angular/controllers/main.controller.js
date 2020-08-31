@@ -74,6 +74,8 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             }
         }*/
 
+        angular.element(".loading-screen").fadeIn();
+
         $scope.previousPage = previous;
         $scope.destinationPage = destination;
 
@@ -125,6 +127,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
         $scope.getCurrentUser(function () {
             $scope.getPaths();
             $scope.getCarts();
+            angular.element(".loading-screen").fadeOut();
         });
     });
 

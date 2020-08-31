@@ -43,6 +43,38 @@ button[type="submit"] {
 	box-shadow: none;
 }
 
+.loading-screen {
+	background: linear-gradient(-45deg, transparent, rgb(252 62 129 / 31%), transparent);
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	color: white;
+	font-size: 3vw;
+}
+
+.loading-screen .loading-content{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 /******************************Welcom Page**********************************/
 .welcome-page {
 	background-size: cover;
@@ -78,7 +110,7 @@ button[type="submit"] {
 	display: inline-block;
 }
 
-.side-menu-cstm-toogle{
+.side-menu-cstm-toogle {
 	position: fixed;
 	right: 4vh;
 	top: 4vh;
@@ -268,8 +300,6 @@ p#orientation-status {
 	line-height: 10px;
 	margin: 0;
 }
-
-
 
 /*******************************************************************/
 .menu-side-nav {
@@ -609,7 +639,8 @@ span.price-icon h5 {
 .welcome-bottom-inner .owl-nav {
 	position: absolute;
 	width: 100%;
-	top: 50%;
+	top: 0;
+	height: 100%;
 }
 
 .welcome-bottom-inner .owl-nav button.owl-prev {
@@ -624,7 +655,6 @@ span.price-icon h5 {
 
 .welcome-bottom-inner .owl-nav button.owl-next {
 	color: #fff;
-	font-size: 100px;
 	line-height: 0;
 	right: -7vw;
 	position: absolute;
@@ -632,18 +662,6 @@ span.price-icon h5 {
 	transform: translateY(-50%);
 }
 
-/*.owl-item{
-	width: 170px !important;
-	height: 250px !important;
-}
-.slider-item{
-
-	height: 150px;
-}
-.slider-item-inner{
-	background: green;
-	height: 100px;
-}*/
 .slider-item-inner img {
 	width: auto;
 	object-fit: cover;
@@ -1169,8 +1187,6 @@ input.form-control.cstm-input-one {
 	margin-top: 0px;
 	margin-left: -15px;
 }
-
-
 
 .reward-collection-header-left-sec {
 	float: left;
@@ -2147,7 +2163,6 @@ span.mall-cat-name {
 	padding: 10px 30px;
 }
 
-
 .gallery_product {
 	border-radius: 15px;
 	box-shadow: 0 0 25px #eb3875;
@@ -2560,12 +2575,12 @@ h3.product-title {
 	width: 100%;
 	padding: 0;
 }
-.welcome-bottom-sec .container .swiper-container .swiper-wrapper{
+
+.welcome-bottom-sec .container .swiper-container .swiper-wrapper {
 	max-width: 80vw;
 	overflow: hidden;
 	margin: 0 auto;
 }
-
 
 .login.modal .modal-content, .register.modal .modal-content, .cell_register.modal .modal-content, .mail_register.modal .modal-content, .sms_verify.modal .modal-content, .forget_password.modal .modal-content {
 	float: left;
@@ -2673,15 +2688,14 @@ ul.filter-mid-left-selection .form-group-cstm .checkmark, ul.filter-mid-left-sel
 	margin-right: auto;
 }
 
-.card-detail .modal-dialog{
-	max-width:initial;
+.card-detail .modal-dialog {
+	max-width: initial;
 }
 
 h3.product-title {
 	font-size: 21px;
 	word-break: break-all;
 }
-
 
 #buttons-container {
 	display: none;
@@ -2724,10 +2738,6 @@ h3.product-title {
 	color: white;
 	font-size: 22px;
 }
-
-
-
-
 
 /**
 Custom css
@@ -3053,7 +3063,7 @@ button.popupprple_btn img, .babyimg img {
 	width: 100%;
 }
 
-.card_detail .modal-content{
+.card_detail .modal-content {
 	background: none;
 	box-shadow: none;
 	border: none !important;
@@ -3070,20 +3080,18 @@ button.popupprple_btn img, .babyimg img {
 	position: relative;
 }
 
-.card-detail-container{
+.card-detail-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.card-detail-container .babyimg img{
-
+.card-detail-container .babyimg img {
 	height: 70vh;
-
 	width: auto;
 }
 
-.card-detail-container .card-buttons{
+.card-detail-container .card-buttons {
 	display: flex;
 	position: absolute;
 	width: 100%;
@@ -3092,7 +3100,7 @@ button.popupprple_btn img, .babyimg img {
 	bottom: -46px;
 }
 
-.card-detail-container .card-buttons .popupprple_btn{
+.card-detail-container .card-buttons .popupprple_btn {
 	width: auto;
 	border-radius: 0;
 }
@@ -3550,8 +3558,6 @@ div.lazy-scroll {
 	overflow-y: scroll;
 }
 
-
-
 html.page-price_plan, html.page-price_plan .reward-collection-outer {
 	height: auto;
 }
@@ -3569,8 +3575,6 @@ body.page-price_plan {
 	bottom: 0;
 	left: 0;
 }
-
-
 
 .gain-point, .effect {
 	transition: 500ms;
@@ -3785,8 +3789,7 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	max-width: 100px;
 }
 
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next,
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next, .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
 	width: 5vw;
 	height: 5vw;
 	background-size: contain;
@@ -3795,15 +3798,15 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	transform: translateY(-50%);
 }
 
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
 	background-image: url("/assets/images/prev.png");
 }
 
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
 	background-image: url("/assets/images/next.png");
 }
 
-.swiper-slide{
+.swiper-slide {
 	background: none;
 }
 
@@ -3880,7 +3883,6 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	animation: spin 1s infinite linear;
 }
 
-
 @keyframes spin {
 	from {
 		transform: rotate(0deg);
@@ -3891,7 +3893,7 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	}
 }
 
-.lazy-load{
+.lazy-load {
 	opacity: 0;
 	transition: 300ms;
 	-webkit-transition: 300ms;
@@ -3918,17 +3920,19 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	opacity: 1;
 }
 
-.page-av_play .modal-content{
+.page-av_play .modal-content {
 	overflow: hidden !important
 }
-.page-av_play .video-container{
+
+.page-av_play .video-container {
 	overflow: hidden;
 	height: 68vh;
 }
 
-.page-av_play .video-container > div:first-child{
+.page-av_play .video-container > div:first-child {
 	flex-basis: 60%;
 }
-.page-av_play .video-container > div:last-child{
+
+.page-av_play .video-container > div:last-child {
 	flex-basis: 40%;
 }

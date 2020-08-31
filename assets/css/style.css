@@ -24,9 +24,9 @@ a:hover, button:hover {
     text-overflow: ellipsis;
 }
 
-.side-menu-cstm-toogle img{
+.menu-section .side-menu-cstm-toogle img{
     width: 6vw;
-    height: auto
+    height: auto;
 }
 
 button {
