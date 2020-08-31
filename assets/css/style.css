@@ -303,7 +303,7 @@ button {
 .pkcheckbox {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 0;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
@@ -311,6 +311,8 @@ button {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 3vw;
+    height: 3vw;
 }
 
 /* Hide the browser's default checkbox */
@@ -328,9 +330,9 @@ button {
     top: 0;
     border: 2px solid #fff;
     left: 0;
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 0.5vw;
     background-color: #000;
 }
 
@@ -353,10 +355,10 @@ button {
 
 /* Style the checkmark/indicator */
 .pkcheckbox .checkmark:after {
-    left: -4px;
-    top: -13px;
-    width: 45px;
-    height: 39px;
+    left: -30%;
+    top: -60%;
+    width: 200%;
+    height: 200%;
     background: url(../images/check.png) no-repeat;
     background-size: 100%;
 }
@@ -405,7 +407,7 @@ ul.gamelist_inner {
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 25px;
+    grid-gap: 3vw;
     margin-top: 30px;
     padding: 0;
     list-style: none;
@@ -413,6 +415,10 @@ ul.gamelist_inner {
 
 ul.gamelist_inner.grid-200 {
     grid-template-columns: repeat(6, 1fr) !important;
+}
+
+.page-prize_redeem ul.gamelist_inner.grid-200 {
+    grid-template-columns: repeat(auto-fill, minmax(13vw, 1fr)) !important;
 }
 
 ul.gamelist_inner img {
@@ -486,7 +492,6 @@ ul.gamelist_inner li a {
     }
 
     .uniformsister ul.gamelist_inner li .listbox {
-        /* padding: 50px !important; */
     }
 
     .reward-collection-outer .customer-service-record h3 {
@@ -554,19 +559,21 @@ ul.gamelist_inner li a {
 }
 
 ul.gamelist_inner li .listbox {
-    border: 2px solid #fff;
+    border: 0.2vw solid #fff;
     border-radius: 10px;
-    padding: 25px;
+    padding: 1vw;
     background: rgba(255, 94, 166, 0.32);
     text-align: center;
+    position: relative;
 }
 
 ul.gamelist_inner .listbox {
-    box-shadow: inset 0px 0px 23px #ff5ea6;
+    box-shadow: inset 0px 0px 30px #ff5ea6;
 }
 
 ul.gamelist_inner li .shadow {
     border-radius: 10px;
+    box-shadow: 0px 0px 30px #ff5ea6;
 }
 
 ul.gamelist_inner li:hover .shadow {
@@ -574,21 +581,19 @@ ul.gamelist_inner li:hover .shadow {
 }
 
 ul.gamelist_inner li .listbox img {
-    max-width: 125px;
 }
 
 .boxcheck {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 1vw;
+    right: 1vw;
 }
 
 .price {
     background: rgba(0, 0, 0, 0.4588235294117647);
-    border-radius: 30px;
-    padding: 5px;
-    font-size: 20px;
-    margin-top: 20px;
+    border-radius: 10vw;
+    padding: 2px;
+    font-size: 2.5vw;
 }
 
 button.popupprple_btn {

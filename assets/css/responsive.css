@@ -29,7 +29,6 @@
         font-size: 1.3rem;
     }
     ul.gamelist_inner li .listbox{
-        padding: 15px;
     }
     ul.gamelist_inner {
         grid-gap: 20px;
@@ -383,7 +382,6 @@
         font-size: 1rem;
     }
     ul.gamelist_inner li .listbox{
-        padding: 10px;
     }
     ul.gamelist_inner {
         grid-gap: 10px;
@@ -454,7 +452,6 @@
     }
 
     ul.gamelist_inner li .listbox {
-        padding: 10px;
     }
 
     .product-price span b {

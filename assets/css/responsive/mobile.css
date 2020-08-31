@@ -372,13 +372,9 @@
 
     /*Prize redeem*/
     .boxcheck {
-        top: 10px;
-        right: 5px;
     }
 
     .checkmark {
-        width: 25px;
-        height: 25px;
     }
 
     button.bookbtn {
