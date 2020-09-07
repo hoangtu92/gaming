@@ -3065,13 +3065,18 @@ button.popupprple_btn img, .babyimg img {
 	border-radius: 0 1vw 1vw 0;
 	height: 60vh;
 	position: relative;
+	width: 50vw;
 }
+.modal.card_detail .modal-body{
 
+	padding: 0;
+}
 .card-detail-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 1.5vw;
+	width: 100%;
 }
 
 .card-detail-container .babyimg img {
@@ -3120,6 +3125,7 @@ div.menu {
 .cnt {
 	margin: 2vw;
 	background: transparent;
+	min-height: initial;
 }
 
 .align-left {

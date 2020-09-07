@@ -17,10 +17,13 @@
                 </span>
                     </h2>
 
-                    <div class="star-glowing" ng-class="'star-'+viewingLevel.level"></div>
+                    <div class="flex flex-center">
+                        <div class="star-glowing" ng-class="'star-'+viewingLevel.level"></div>
+                        <div style="margin-left: 5px;">{{viewingLevel.description}}</div>
+                    </div>
                 </div>
 
-                <div class="paragraph">{{viewingLevel.description}}
+                <div class="paragraph">
                     <div class="ratings_info">
                         <h3>- 星數說明 -</h3>
 

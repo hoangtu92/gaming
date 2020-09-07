@@ -9,44 +9,30 @@ var elem = document.documentElement;
 
 var is_full_screen = false;
 
-var fullscreenBtn = document.querySelector("#fullscreen-btn-container");
+function toggleFullScreen() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
 
-function fullScreenMode() {
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
 
-    fullscreenBtn = document.querySelector("#fullscreen-btn-container");
-
-    if(fullscreenBtn){
-        fullscreenBtn.style.display = "none";
+    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
     }
-
-
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /*
-        document.msRequestFullscreen(); IE/Edge */
+    else {
+        cancelFullScreen.call(doc);
     }
-
-    is_full_screen = true;
-
 }
 // upon lock to landscape-primary mode
 
 /* View in fullscreen */
 function landScapeMode() {
-    fullScreenMode();
+    toggleFullScreen();
 
     if(typeof window.screen.orientation !== 'undefined'){
         window.screen.orientation.lock("landscape-primary")
             .then(function () {
-                //_LOCK_BUTTON.style.display = 'none';
-                // _UNLOCK_BUTTON.style.display = 'block';
-                if(fullscreenBtn){
-                    fullscreenBtn.style.display = "none";
-                }
+
             })
             .catch(function (error) {
                 //alert(error);
@@ -57,39 +43,17 @@ function landScapeMode() {
 
 /* Close fullscreen */
 function closeFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { /* Firefox */
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE/Edge */
-        document.msExitFullscreen();
+    if (document.body.exitFullscreen) {
+        document.body.exitFullscreen();
+    } else if (document.body.mozCancelFullScreen) { /* Firefox */
+        document.body.mozCancelFullScreen();
+    } else if (document.body.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.body.webkitExitFullscreen();
+    } else if (document.body.msExitFullscreen) { /* IE/Edge */
+        document.body.msExitFullscreen();
     }
 
     is_full_screen = false;
-}
-
-
-
-// upon unlock
-/*document.querySelector("#unlock-button").addEventListener('click', function () {
-    screen.orientation.unlock();
-
-    _LOCK_BUTTON.style.display = 'block';
-    // _UNLOCK_BUTTON.style.display = 'none';
-});*/
-// when screen orientation changes
-
-/*screen.orientation.addEventListener("change", function () {
-    // _STATUS.innerHTML = screen.orientation.type + ' mode';
-});*/
-
-
-
-
-function myFunction() {
-    document.getElementById("lock-landscape-button").click();
 }
 
 //etTimeout(myFunction, 2000);

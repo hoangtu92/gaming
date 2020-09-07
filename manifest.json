@@ -1,0 +1,14 @@
+{
+  "short_name": "Gaming Baby App",
+  "name": "Gaming Baby",
+  "icons": [
+    {
+      "src": "/assets/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
