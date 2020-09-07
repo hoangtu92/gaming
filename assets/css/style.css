@@ -1681,18 +1681,20 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 
 .vediotxt h2 {
     margin-top: 0;
+    font-size: 3vw;
 }
 
 .vediotxt span {
     color: #c7c7c7;
-    font-size: 22px;
+    font-size: 2vw;
 }
 
 .vediotxt .para_inner {
-    padding: 35px 8px 70px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin: 38px 0px;
+    padding: 3vh 8px 5vh;
+    border-top: 1px solid rgb(238 238 238 / 33%);
+    border-bottom: 1px solid rgb(238 238 238 / 33%);
+    margin: 3vh 0px;
+    font-size: 2vw;
 }
 
 .vediotxt .para_inner p {
@@ -1701,7 +1703,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 
 .vediotxt .transbtn button.btnclas {
     background: rgba(255, 255, 255, 0.25);
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 700;
     border: 2px solid #fff;
     border-radius: 30px;

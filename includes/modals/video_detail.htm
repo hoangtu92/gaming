@@ -24,9 +24,7 @@
                 <h2>{{currentVideo.name}}</h2>
                 <span>{{currentVideo.actress}}</span>
 
-                <div class="para_inner" ng-bind-html="currentVideo.intro">
-
-                </div>
+                <div class="para_inner" ng-if="currentVideo.intro.length > 0" ng-bind-html="currentVideo.intro"></div>
 
                 <div class="transbtn">
                     <button ng-disabled="true" ng-repeat="tag in currentVideo.tags" class="btnclas">#{{tag.name}}
