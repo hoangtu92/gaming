@@ -965,6 +965,8 @@ a.btn-registered-link {
 	border-radius: 30px;
 	color: #c1c1c1;
 	padding: 5px 15px;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
 .payment_method_select {
@@ -2887,7 +2889,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	max-width: 1024px;
-	min-width: 375px;
+	min-width: 411px;
 	background: rgba(60, 15, 66, 0.56);
 	padding: 1.5vh;
 	border-radius: 1vw;
@@ -3936,4 +3938,16 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 .page-av_play .video-container > div:last-child,
 .page-av_short .video-container > div:last-child {
 	flex-basis: 40%;
+}
+.page-game{
+	overflow: auto !important;
+	position: relative !important;
+	height: auto !important;
+	min-height: initial;
+
+}
+
+.page-game section{
+	height: auto !important;
+	min-height: initial;
 }

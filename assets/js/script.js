@@ -152,6 +152,14 @@ function getCookie(cname) {
     return "";
 }
 /*
+
 window.onload = function (ev) {
-   alert(screen.width + "x" +  screen.height + " - " + window.devicePixelRatio);
-};*/
+
+    var value = getComputedStyle(document.querySelector("body section"));
+   alert(JSON.stringify([
+
+       value.width,
+       value.height
+   ]))
+};
+*/
