@@ -3948,6 +3948,6 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 }
 
 .page-game section{
-	height: auto !important;
-	min-height: initial;
+	/*height: auto !important;
+	min-height: initial;*/
 }
