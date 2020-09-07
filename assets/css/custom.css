@@ -3907,19 +3907,27 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 	opacity: 1;
 }
 
-.page-av_play .modal-content {
+.page-av_play .modal-content,
+.page-av_short .modal-content {
 	overflow: hidden !important
 }
 
-.page-av_play .video-container {
+.page-av_play .video-container,
+.page-av_short .video-container {
 	overflow: hidden;
 	height: 68vh;
 }
-
-.page-av_play .video-container > div:first-child {
+.video-container{
+	width: 100%;
+}
+.page-av_play .video-container > div:first-child,
+.page-av_short .video-container > div:first-child{
 	flex-basis: 60%;
+	display: flex;
+	align-items: center;
 }
 
-.page-av_play .video-container > div:last-child {
+.page-av_play .video-container > div:last-child,
+.page-av_short .video-container > div:last-child {
 	flex-basis: 40%;
 }

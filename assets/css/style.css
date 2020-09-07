@@ -1641,7 +1641,8 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 
 .modal.fullpage_popup .modal-dialog .modal-content .modal-header {
     padding-right: 0;
-    height: 5vh;
+    height: 10vh;
+    min-height: 40px;
 }
 
 .modal.fullpage_popup .modal-dialog {
@@ -1922,6 +1923,7 @@ section.uniformsister_vedio .uniformheader h1 {
 
 .vedio video {
     width: 100%;
+    max-height: 70vh;
 }
 
 .page-av_play .vedio video {
@@ -1933,7 +1935,7 @@ section.uniformsister_vedio .uniformheader h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    height: 80vh;
 }
 
 .vedio_slider .nowplay.fullpaly .blackoverlay span.hovertxt {
