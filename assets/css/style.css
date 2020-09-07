@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: "å¾®è»Ÿæ­£é»‘é«”", sans-serif;
+    font-family: "Ã¥Â¾Â®Ã¨Â»Å¸Ã¦Â­Â£Ã©Â»â€˜Ã©Â«â€", sans-serif;
     font-weight: normal;
 }
 
@@ -24,7 +24,7 @@ a:hover, button:hover {
     text-overflow: ellipsis;
 }
 
-.menu-section .side-menu-cstm-toogle img{
+.menu-section .side-menu-cstm-toogle img {
     width: 6vw;
     height: auto;
 }
@@ -91,32 +91,41 @@ button {
 }
 
 .uniform_boxes ul li {
-    padding: 10px 15px;
+    padding: 0;
     position: relative;
 }
 
 .uniform_boxes ul li img {
     width: 100%;
-    margin-top: -25px;
+    margin-top: -4vh;
     padding-bottom: 10px;
+}
+
+.uniform_boxes ul.card-pools li .imgg img {
+    max-width: 140px;
+    width: 11vw;
 }
 
 .card-pools {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5vh;
+}
+
+.card-pools .uniformbox_inner {
+    height: 20vh;
+    max-height: 140px;
 }
 
 .uniform_boxes {
     width: 100%;
     align-items: center;
     display: inline-flex;
-    padding: 0px 20px
+    padding: 5vh 20px;
 }
 
 .uniformbox_inner .imgg {
-    float: left;
-    width: 100%;
+    width: 15vw;
     position: relative;
     max-width: 140px;
 }
@@ -130,18 +139,15 @@ button {
     border: 3px solid #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #fff;
+    display: flex;
 }
 
-.uniformbox_inner .bookname {
-    float: left;
-    padding-left: 20px;
-}
+.uniformbox_inner .bookname {padding: 0 1vw;}
 
 .uniformbox_inner .bookname h2 {
-    font-size: 26px;
+    font-size: 3vw;
     font-weight: 700;
-    margin-top: 14px;
-    margin-bottom: 5px;
+    margin: 0;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.81);
 }
 
@@ -149,32 +155,32 @@ button {
     background: transparent;
     border: 2px solid #fff;
     padding: 6px 25px;
-    font-size: 22px;
+    font-size: 1.5vw;
     font-weight: 600;
     border-radius: 30px;
     margin-top: 5px;
 }
 
 .uniformbox_inner .coinbtn {
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    right: 20px;
-    align-items: center;
-    bottom: 22px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
 }
 
 .uniformbox_inner .coinbtn h3 {
     display: inline-block;
-    font-size: 34px;
-    padding: 0 8px;
+    font-size: 2.5vw;
+    padding: 0;
     margin: 0;
     font-weight: 800;
 }
 
 .uniformbox_inner .coinbtn img {
-    max-width: 35px;
-    margin: 0;
+    max-width: 3vw;
+    margin: 0 0.2vw;
     padding: 0;
 }
 
@@ -182,11 +188,13 @@ button {
     background: transparent;
     border: 0;
     display: inline-block;
-    padding: 5px;
+    padding: 0;
+    margin: 0;
 }
 
 .uniformbox_inner .coinbtn button.pinkbtn img {
     max-width: 100px;
+    width: 7vw;
 }
 
 .uniformbox_inne02 {
@@ -204,6 +212,10 @@ button {
 
 .uniform_boxes ul li:nth-child(3) img {
     padding-bottom: 10px;
+}
+
+.uniform_boxes ul.card-pools li:nth-child(3) img {
+    padding-bottom: 0;
 }
 
 .timebox {
@@ -392,7 +404,7 @@ button {
     overflow-x: hidden;
 }
 
-.page-prize_redeem .gamelist_top{
+.page-prize_redeem .gamelist_top {
     overflow: visible;
 }
 
@@ -400,9 +412,9 @@ button.bookbtn {
     background: transparent;
     border: 2px solid #fff;
     border-radius: 30px;
-    font-size: 21px;
+    font-size: 1.5vw;
     font-weight: 600;
-    padding: 7px 25px;
+    padding: 0.5vh 1.5vw;
 }
 
 ul.gamelist_inner {
@@ -544,7 +556,6 @@ ul.gamelist_inner li a {
     }
 
     .av-play .modal.in .modal-dialog {
-        /* width: 1900px; */
     }
 
     .av-play section.uniformsister-03 .uniformheader img {
@@ -667,7 +678,7 @@ img {
     /* width: 100%; */
 }
 
-.logo-section img{
+.logo-section img {
     width: auto !important;
 }
 
@@ -1634,7 +1645,7 @@ section.uniformsister-03 .uniformheader .crosslink span a {
 }
 
 .modal.fullpage_popup .modal-dialog {
-    /* width: 650px; */
+    width: 100% !important;
 }
 
 .modal.fullpage_popup .modal-dialog .modal-content .vedio {
@@ -1843,7 +1854,6 @@ section.uniformsister_vedio .uniformheader h1 {
 
 @media screen and (min-width: 1400px) {
     .modal.in .modal-dialog {
-        /* width: 1400px; */
     }
 
     ul.gamelist_inner li .listbox h4 {
@@ -2039,7 +2049,9 @@ body:not(.page-av_play) .av-play {
     opacity: 1;
 }
 
-.page-game .uniformheader {align-items: flex-start;}
+.page-game .uniformheader {
+    align-items: flex-start;
+}
 
 .hover-button a:hover, .closebtn:hover, .gametable_block li:hover,.topstart_block:hover, .markchina:hover, .totalpoints h3:hover, .golimg:hover, .hover a:hover, .bet-area.win, .bet-area:hover {
     opacity: 1;
@@ -2179,17 +2191,13 @@ ul.gamelist_inner.card-select li {
     max-width: 80%;
 }
 
-.grid-item .area_triple_1 .bet-area img,
-.grid-item .area_triple_2 .bet-area img,
-.grid-item .area_triple_3 .bet-area img,
-.grid-item .area_triple_4 .bet-area img,
-.grid-item .area_triple_5 .bet-area img,
-.grid-item .area_triple_6 .bet-area img,
-.grid3.grid-item .bet-area img{
+.grid-item .area_triple_1 .bet-area img, .grid-item .area_triple_2 .bet-area img, .grid-item .area_triple_3 .bet-area img, .grid-item .area_triple_4 .bet-area img, .grid-item .area_triple_5 .bet-area img, .grid-item .area_triple_6 .bet-area img, .grid3.grid-item .bet-area img {
     max-height: 5vh;
 }
 
-.grid-item .area-anyTriple .bet-area img {max-height: 12vh;}
+.grid-item .area-anyTriple .bet-area img {
+    max-height: 12vh;
+}
 
 .grid-item .area-anyTriple .topstart_block.bet-area {
     display: grid;
@@ -2198,10 +2206,10 @@ ul.gamelist_inner.card-select li {
     padding: 0 10px;
 }
 
-.grid-item .area-anyTriple .topstart_block.bet-area > div{
+.grid-item .area-anyTriple .topstart_block.bet-area > div {
     display: flex;
-    flex-direction:column;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -2232,8 +2240,13 @@ ul.gamelist_inner.card-select li {
     position: absolute;
 }
 
-
-.grid-container h1{
+.grid-container h1 {
     font-size: 2.5vw !important;
     font-weight: bolder;
+}
+.fullwidth{
+    width: 100%;
+}
+.bottom-card-pool{
+    padding: 0 1vw;
 }

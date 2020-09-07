@@ -16,15 +16,22 @@
                         }}" width=""/>
                     </div>
 
-                    <div class="bookname">
-                        <h2>{{item.category.name}} <span ng-if="item.multiplyTen">x10</span></h2>
-                        <button class="bookbtn" popover-trigger="'mouseenter'" popover-placement="right" uib-popover="{{item.levelPercents.toString()}}">抽卡機率</button>
-                    </div>
+                    <div class="coinbtn">
+                        <div class="bookname">
+                            <h2>{{item.category.name}} <span ng-if="item.multiplyTen">x10</span></h2>
+                        </div>
 
-                    <div class="coinbtn"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
-                        <h3>{{item.price.formatPrice()}}</h3>
-                        <button class="pinkbtn" ng-click="setCurrentPool(item); openModal('card_pool_buy')"><img
-                                src="/assets/images/button01.png"/></button> <!-- Modal -->
+                        <div class="flex flex-center flex-space-between fullwidth bottom-card-pool">
+                            <button class="bookbtn" popover-trigger="'mouseenter'" popover-placement="right" uib-popover="{{item.levelPercents.toString()}}">抽卡機率</button>
+                            <div class="flex flex-center flex-space-between">
+                                <div class="flex flex-center flex-space-between" style="margin-right: 1vw"><img alt="icon" height="" src="/assets/images/coinicon.png" width=""/>
+                                    <h3>{{item.price.formatPrice()}}</h3></div>
+
+                                <button class="pinkbtn" ng-click="setCurrentPool(item); openModal('card_pool_buy')"><img
+                                        src="/assets/images/button01.png"/></button> <!-- Modal -->
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>

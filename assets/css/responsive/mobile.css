@@ -9,8 +9,6 @@
         width: 21px;
     }
 
-    .babyimg_info .tpname h2 {
-    }
 
     .babyimg {
         width: auto;
@@ -28,8 +26,6 @@
         overflow: visible;
     }
 
-    .babyimg_info {
-    }
 
     .card_detail .modal-footer button.popupprple_btn {
         margin-left: 5px;
@@ -53,11 +49,6 @@
         display: block;
     }
 
-    .modal-header button.popupprple_btn {
-    }
-
-    button.popupprple_btn img.popup_close_icon {
-    }
 
     /*Dashboard*/
     .welcome-bottom-inner {
@@ -100,17 +91,9 @@
         width: 175px;
     }
 
-    .welcome-left-author-sec {
-    }
-
-    .booksthree_btn {
-    }
 
     .list_ratings {
         padding: 0;
-    }
-
-    .page-game .uniformsister.gamepage .uniformheader {
     }
 
 
@@ -127,27 +110,11 @@
         font-size: 1rem;
     }
 
-    .sidenav a.closebtn {
-    }
-
-    .right-author-chat-icon {
-        /* top: 51vh; */
-    }
-
-    button {
-        padding: 5px 20px;
-        font-size: 1.5rem;
-    }
 
     .modal-header .modal-title {
         font-size: 2.5rem
     }
 
-    .welcome-bottom-inner .owl-nav button.owl-prev {
-    }
-
-    .welcome-bottom-inner .owl-nav button.owl-next {
-    }
 
     .header-top-left-menu ul li a {
         font-size: 1rem;
@@ -202,9 +169,6 @@
         height: 10px;
     }
 
-    .progress-level .progress-level-outer, .progress-level .progress-level-inner {
-    }
-
     .welcome-bottom-inner-btn a img {
         width: 60px;
     }
@@ -244,14 +208,6 @@
         min-height: initial;
     }
 
-    .booksthree_btn button.bookbtn {
-    }
-
-    .title-arrow a img {
-    }
-
-    .title-arrow h1 {
-    }
 
     /*AV*/
     ul.gamelist_inner li .listbox img.eyebaby {
@@ -286,17 +242,12 @@
         overflow-x: visible;
     }
 
-    button.bookbtn {
-        margin-left: 0;
-    }
 
     /*card buy*/
-    .card-pools {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
 
-    .uniform_boxes ul li, .uniformbox_inner {
-        min-height: initial;
+    .card-pools .uniformbox_inner{
+
+        height: 25vh;
     }
 
     .uniform_boxes ul li img {
@@ -308,28 +259,9 @@
         width: auto;
     }
 
-    .uniformbox_inner .bookname h2 {
-        font-size: 1.5rem;
-    }
 
     .uniformbox_inner .bookname button.bookbtn {
         font-size: 1.5rem;
-    }
-
-    .uniformbox_inner .bookname {
-        padding: 5px;
-    }
-
-    .uniformbox_inner .coinbtn {
-        padding: 10px;
-    }
-
-    .uniformbox_inner .coinbtn h3 {
-        font-size: 1.8rem;
-    }
-
-    .uniformbox_inner .coinbtn button.pinkbtn {
-        margin-left: 5px;
     }
 
     .uniformbox_inner .coinbtn button.pinkbtn img {
@@ -360,36 +292,12 @@
         max-width: 100%;
     }
 
-    /*Prize redeem*/
-    .boxcheck {
-    }
 
-    .checkmark {
-    }
-
-    button.bookbtn {
-        padding: 5px 15px;
-        font-size: 1.5rem;
-    }
-
-    /*Game*/
-    .mark180 ul li img {
-    }
-
-    .game-statistic {
-    }
 
     section.uniformsister-02 .uniformheader img {
         max-width: 125px;
     }
 
-    .mark180 ul li {
-    }
-
-    ul.diseboxs_list li img {
-        /* max-width: 37px; */
-        /* padding: 5px 10px; */
-    }
 
     ul.usernmber_list li h1 {
         font-size: 1.3rem;
@@ -425,15 +333,11 @@
         margin: 5px;
     }
 
-    .markchina span.bigsign img {
-    }
 
     .markchina h2 {
         font-size: 1.5rem;
     }
 
-    .markchina {
-    }
 
 
     .yellowshed .pull-left.text-right {
@@ -443,8 +347,6 @@
         text-align: left;
     }
 
-    .progress-container {
-    }
 
     .yellowshed .pull-left.text-right h1.ratetxt {
         margin: 2px;
@@ -475,29 +377,6 @@
         text-align: center;
     }
 
-    .bet-unit {
-    }
-
-    .gametableinner {
-    }
-
-    .gamelastpoint {
-    }
-
-    .gamelastpoint button {
-    }
-
-    .start-btn {
-    }
-
-    .reset-btn {
-    }
-
-    .jointsbotm_btn h3.txt01 {
-    }
-
-    .jointsbotm_btn {
-    }
 
     .redvlack_circle {
         max-width: 40px
@@ -520,8 +399,6 @@
         padding: 0px 3px;
     }
 
-    .progress-container {
-    }
 
     .gametable_blocktop {
         max-width: 100%;
@@ -531,11 +408,6 @@
         max-width: 20px;
     }
 
-    .gametable_block {
-    }
-
-    .game-statistic {
-    }
 
     .game-statistic h4 {
         font-size: 1.3rem;
