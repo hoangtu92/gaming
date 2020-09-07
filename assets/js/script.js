@@ -17,10 +17,10 @@ function toggleFullScreen() {
     var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
 
     if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-        requestFullScreen.call(docEl);
+        if(typeof requestFullScreen !== 'undefined') requestFullScreen.call(docEl);
     }
     else {
-        cancelFullScreen.call(doc);
+        if(typeof cancelFullScreen !== 'undefined') cancelFullScreen.call(doc);
     }
 }
 // upon lock to landscape-primary mode
