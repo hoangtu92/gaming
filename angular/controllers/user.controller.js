@@ -1,7 +1,6 @@
 gamingApp.controller("userController", function ($scope, $route, $routeParams, $location, $http, $infoModal, $timeout) {
 
     var circleValue = document.querySelector('#circle-value');
-
     var circleLength  = circleValue != null ? Math.round(circleValue.getTotalLength()) : 0;
 
     angular.element('#circle-value').css({"stroke-dashoffset": circleLength, "stroke-dasharray": circleLength});
