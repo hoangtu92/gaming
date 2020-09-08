@@ -3939,8 +3939,8 @@ input:-internal-autofill-selected, input:-webkit-autofill, input:-webkit-autofil
 .page-av_short .video-container > div:last-child {
 	flex-basis: 40%;
 }
-.page-game{
-	overflow: auto !important;
+.page-game, body.page-dashboard{
+	overflow-y: auto !important;
 	position: relative !important;
 	height: auto !important;
 	min-height: initial;
