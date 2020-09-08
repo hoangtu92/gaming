@@ -29,16 +29,29 @@
                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="-67.1 724.9 134.1 134.1" enable-background="new -67.1 724.9 134.1 134.1" xml:space="preserve">
+<defs>
+
+    <filter id="dropshadow" x="-2" y="-2" width="200" height="200">
+      <feGaussianBlur  stdDeviation="3"/>
+    </filter>
+  </defs>
+
 <g>
 
-    <path fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M0,726.4c36.2,0,65.6,29.4,65.6,65.6
+    <path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M0,726.4c36.2,0,65.6,29.4,65.6,65.6
 		S36.2,857.6,0,857.6s-65.6-29.4-65.6-65.6S-36.2,726.4,0,726.4z" id="circle-base"/>
+
+    <path fill="none" stroke="#ce5937" stroke-width="3" stroke-miterlimit="10" d="M0,726.4c36.2,0,65.6,29.4,65.6,65.6
+		S36.2,857.6,0,857.6s-65.6-29.4-65.6-65.6S-36.2,726.4,0,726.4z" id="circle-value2" filter="url(#dropshadow)"/>
+
     <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M0,726.4c36.2,0,65.6,29.4,65.6,65.6
 		S36.2,857.6,0,857.6s-65.6-29.4-65.6-65.6S-36.2,726.4,0,726.4z" id="circle-value"/>
 
+
+
     <g>
-        <text transform="matrix(1 0 0 1 -47.762 782.7366)" fill="#DDDDDD" font-size="24.3975">遊戲進度</text>
-        <text transform="matrix(1 0 0 1 -38.6297 825.3)" fill="#FFFFFF" font-size="40.6624">{{ currentUser.gameProgress.round() }}%</text>
+        <text transform="matrix(1 0 0 1 -47.762 782.7366)" fill="#DDDDDD" font-size="24">遊戲進度</text>
+        <text transform="matrix(1 0 0 1 -38.6297 825.3)" fill="#FFFFFF" font-size="40">{{ currentUser.gameProgress.round() }}%</text>
 	</g>
 </g>
 </svg>
