@@ -2254,3 +2254,7 @@ ul.gamelist_inner.card-select li {
 .bottom-card-pool{
     padding: 0 1vw;
 }
+.game-score{
+    justify-content: space-evenly;
+    width: 100%;
+}
