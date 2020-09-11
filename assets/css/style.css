@@ -404,6 +404,23 @@ button {
     overflow-x: hidden;
 }
 
+.lucky_draw .modal-body{
+}
+
+
+
+.gamelist_top{
+    overflow-y: auto;
+    height: 56vh;
+    min-height: 180px;
+    max-height: 790px;
+}
+
+.lucky_draw .gamelist_top ul{
+
+    margin: 0;
+}
+
 .page-prize_redeem .gamelist_top {
     overflow: visible;
 }
@@ -1747,8 +1764,7 @@ section.uniformsister_vedio .uniformheader h1 {
 }
 
 .infowith_pinkbg h1 {
-    text-align: center;
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: 700;
 }
 
@@ -1760,8 +1776,8 @@ section.uniformsister_vedio .uniformheader h1 {
     background: rgba(0, 0, 0, 0.49);
     padding: 6px 25px;
     border-radius: 30px;
-    margin-bottom: 15px;
-    font-size: 23px;
+    margin-bottom: 2vh;
+    font-size: 1.5vw;
     font-weight: 700;
 }
 
@@ -2093,8 +2109,8 @@ body:not(.page-av_play) .av-play {
 }
 
 .page-card_buy .gamelist_inner.small {
-    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2vw;
 }
 
 ul.gamelist_inner.card-select {

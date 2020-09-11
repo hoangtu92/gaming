@@ -1457,6 +1457,11 @@ section .modal {
 	position: relative;
 }
 
+.lucky_draw .modal-content{
+
+	max-height: 80vh;
+}
+
 .ticket_reply .modal-content {
 	padding: 25px;
 }
@@ -2426,6 +2431,11 @@ h3.product-title {
 	padding-top: 45px;
 	padding-bottom: 40px;
 	margin-top: -20px;
+	min-width: 60px;
+}
+
+.mall-modal-slider{
+	display: flex; align-items: center;
 }
 
 .mall-modal-content-left-sec {
