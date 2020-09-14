@@ -85,7 +85,7 @@
         <div class="container" ng-init="getListRoles()">
             <div class="welcome-bottom-inner">
 
-                <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
+                <!--<data-owl-carousel class="owl-carousel" data-options="carouselOptions">
                     <div class="slider-item-inner">
                         <a href="#" ng-click="setCurrentRole(item)">
                             <img ng-if="true" data-src="{{path['role_image']}}{{item.thumbnail}}"
@@ -100,15 +100,15 @@
                             <h4>{{item.name}}</h4>
                         </a>
                     </div>
-                </data-owl-carousel>
+                </data-owl-carousel>-->
 
 
-                <!--<swiper slides-per-view="7" space-between="10"  ng-if="items" >
+                <swiper slides-per-view="6" space-between="10"  ng-if="items" loop="true">
                     <slides>
                         <slide ng-repeat="item in items" ng-class="{selected: activeItem.id == item.id}" class="slider-item">
                             <div class="slider-item-inner">
                                 <a href="#" ng-click="setCurrentRole(item)">
-                                    <img ng-if="true" lazy-src="{{path['role_image']}}{{item.thumbnail}}"
+                                    <img ng-if="true" ng-src="{{path['role_image']}}{{item.thumbnail}}"
                                          class="img-responsive">
                                     <div class="slidertxt-bar">
                                         <div class="progress-level small">
@@ -124,8 +124,9 @@
                     </slides>
                     <prev></prev>
                     <next></next>
-                </swiper>-->
+                </swiper>
 
+                                <
             </div>
         </div>
     </div>
