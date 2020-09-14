@@ -1,0 +1,116 @@
+<section class="welcome-page" id="container" >
+    <p id="orientation-status"></p>
+    <div class="gaming-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo-section col-md-3 col-sm-3 col-xs-3"><a href="#" ng-click="exit()"><img alt="logo" src="/assets/images/logo.png"
+                                                                                      class="img-responsive"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-mid-section">
+        <div class="container-fluid">
+            <div class="welcome-mid-left-sec">
+                <div class="welcome-mid-left-girl-img"><img ng-if="true" lazy-src="{{path['role_image']}}{{currentRole.cover}}" class="img-responsive girl-img lazy-load">
+                    <div class="welcome-left-author-sec"><span class="img-sec">
+                        <img alt="avatar" ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
+                        <img alt="avatar" ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
+                    </span>
+                        <div class="welcome-left-author-data-sec">
+                            <h3>{{currentUser.username}}</h3>
+                            <span class="price-icon"> <img alt="coin" src="/assets/images/price-icon.png">
+              <h5>{{currentUser.credit.formatPrice()}}</h5>
+              </span> </span> </div>
+                    </div>
+                    <div class="right-author-chat-icon"><a href="#" ng-click="playPreview()"><img alt="chat" src="/assets/images/chat-icon.png" class="img-sreponsive"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-mid-right-sec gradient-red-bg">
+                <div class="header-top-left-menu flex flex-center justify-content-end">
+                    <ul>
+                        <li><a href="#!card-list">道具</a></li>
+                        <li><a href="#!av-play">AV區</a></li>
+                        <li><a href="#!mall">商城</a></li>
+                        <li><a href="#!monthly-stored-value">儲値</a></li>
+                    </ul>
+
+
+                </div>
+                <div class="welcome-mid-right-top-sec">
+                    <div class="welcome-mid-right-top-left">
+                        <h2>{{currentRole.name}}</h2>
+                        <ul>
+                            <li>
+                                <h3>三圍 <strong>{{currentRole.measurement}}</strong></h3>
+                            </li>
+                            <li>
+                                <h3>身高 <strong>{{currentRole.height}} cm</strong></h3>
+                            </li>
+                            <li>
+                                <h3>體重 <strong>{{currentRole.weight}} kg</strong></h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="welcome-mid-right-top-right">
+                        <div class="wel-mid-right-top-right-innr" ng-bind-html="currentRole.narrative">
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="welcome-mid-right-bottom-sec">
+                    <div class="welcome-mid-right-bottom-left">
+
+                        <div class="progress-level">
+                            <div class="progress-level-outer"></div>
+                            <div class="progress-level-inner" ng-style="{width: (currentRole.userProgress > 0 ? (currentRole.userProgress/currentRole.maximumLevel)*100 : 0) + '%'}"></div>
+                            <h6 style="position:relative; z-index: 999;">脱掉 {{currentRole.userProgress}}/{{currentRole.maximumLevel}}</h6>
+                        </div>
+                    </div>
+                    <div class="right-cstm-btn-circle"><a href="#" ng-click="playGame()">
+                        <img src="/assets/images/btn-circle.png" class="img-responsive"
+                             onmouseover="this.src='/assets/images/btn-circle_on.png';"
+                             onmouseout="this.src='/assets/images/btn-circle.png';"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-bottom-inner-btn"><a href="#" class="filter-box" ng-click="openModal('filter')"><img alt="filter"
+                src="/assets/images/cstm-btn-img.png"></a></div>
+    </div>
+    <div class="welcome-bottom-sec">
+
+        <div class="container" ng-init="getListRoles()">
+            <div class="welcome-bottom-inner">
+
+                <data-owl-carousel class="owl-carousel" data-options="carouselOptions">
+                    <div class="slider-item-inner">
+                        <a href="#" ng-click="setCurrentRole(item)">
+                            <img ng-if="true" data-src="{{path['role_image']}}{{item.thumbnail}}"
+                                 class="img-responsive owl-lazy">
+                            <div class="slidertxt-bar">
+                                <div class="progress-level small">
+                                    <div class="progress-level-outer"></div>
+                                    <div class="progress-level-inner" ng-style="{width: (item.userProgress > 0 ? (item.userProgress/item.maximumLevel)*100 : 0) + '%'}"></div>
+                                    <h6 style="position:relative; z-index: 999;">脱掉 {{item.userProgress}}/{{item.maximumLevel}}</h6>
+                                </div>
+                            </div>
+                            <h4>{{item.name}}</h4>
+                        </a>
+                    </div>
+                </data-owl-carousel>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" ng-init="getListPrizes()">
+        <div ng-include="'/includes/sidebar.htm'">
+
+        </div>
+
+    </div>
+
+</section>

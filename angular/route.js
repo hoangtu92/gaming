@@ -54,6 +54,18 @@ gamingApp.config(function ($routeProvider) {
                 return ConfigService.promise;
             }
         }
+    }).when('/dashboard-1/:msg?', {
+        title: 'Dashboard',
+        view: 'dashboard',
+        layout: 'sidebar',
+        templateUrl: 'views/dashboard1.htm?ver=' + config.version,
+        controller: 'dashboardController',
+        resolve: {
+            'ConfigServiceData': function (ConfigService) {
+                // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                return ConfigService.promise;
+            }
+        }
     }).when('/announcement', {
         title: 'Announcement',
         view: 'announcement',
