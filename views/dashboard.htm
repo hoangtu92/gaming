@@ -103,12 +103,12 @@
                 </data-owl-carousel>-->
 
 
-                <swiper slides-per-view="6" space-between="10"  ng-if="items" loop="true">
+                <swiper slides-per-view="6" space-between="10"  ng-if="items">
                     <slides>
                         <slide ng-repeat="item in items" ng-class="{selected: activeItem.id == item.id}" class="slider-item">
                             <div class="slider-item-inner">
                                 <a href="#" ng-click="setCurrentRole(item)">
-                                    <img ng-if="true" ng-src="{{path['role_image']}}{{item.thumbnail}}"
+                                    <img ng-if="true" lazy-src="{{path['role_image']}}{{item.thumbnail}}"
                                          class="img-responsive">
                                     <div class="slidertxt-bar">
                                         <div class="progress-level small">

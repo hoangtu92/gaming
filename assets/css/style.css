@@ -409,7 +409,7 @@ button {
 
 
 
-.gamelist_top{
+.page-card_buy .modal .gamelist_top{
     overflow-y: auto;
     height: 56vh;
     min-height: 180px;
