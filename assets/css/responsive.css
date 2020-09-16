@@ -514,7 +514,7 @@
     }
 
     .welcome-left-author-data-sec {
-        width: 220px;
+        /* width: 220px; */
         min-width: initial;
         left: -33px;
     }
