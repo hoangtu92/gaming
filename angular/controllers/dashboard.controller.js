@@ -1,10 +1,12 @@
 gamingApp.controller("dashboardController", function ($scope, $route, $routeParams, $http, $infoModal, $timeout, $location) {
 
     if(localStorage.showWelcome === '1'){
-        $infoModal.open("親愛的<br>" +
-            "歡迎回來<br>" +
-            "今天也要加油<br>" +
-            "把我脫光喔!")
+        $infoModal.open(
+            "親愛的歡迎回來<br>" +
+            "今天也要加油把我脫光喔!<br>" +
+            "<br>" +
+            "別忘了到上方功能列<br>" +
+            "領取遊戲獎勵喔!<br>")
     }
 
     /mobile/i.test(navigator.userAgent) && setTimeout(function

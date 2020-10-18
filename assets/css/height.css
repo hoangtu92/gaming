@@ -30,8 +30,8 @@
     }
 
     .modal .modal-dialog.modal-xs .modal-body {
-        padding-top: 0px;
-        padding-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     button[type="reset"] {

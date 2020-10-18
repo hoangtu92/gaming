@@ -273,7 +273,7 @@ button {
 }
 
 .modal-header .modal-title {
-    font-size: 35px;
+    font-size: 30px !important;
     font-weight: 600;
     text-shadow: 0px 0px 8px #000;
     color: white;
@@ -404,6 +404,10 @@ button {
     overflow-x: hidden;
 }
 
+.gamelist_top p{
+    font-size: 18px;
+}
+
 .lucky_draw .modal-body{
 }
 
@@ -411,7 +415,7 @@ button {
 
 .page-card_buy .modal .gamelist_top{
     overflow-y: auto;
-    height: 56vh;
+    height: 47vh;
     min-height: 180px;
     max-height: 790px;
 }

@@ -103,7 +103,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     };
 
     $scope.sellCardPopup = function(){
-        $infoModal.open("確認要出售嗎？", function () {
+        $infoModal.open("確認要出售換G幣嗎?", function () {
             $scope.broadcast('sell_card', $scope.viewingLevel);
         })
     };
@@ -643,7 +643,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
             $scope.getListUserCards();
             $scope.getInUsedCards();
             $scope.getCurrentUser(function () {
-                $infoModal.open("道具牌已以" + $scope.viewingLevel.salePrice.formatPrice() + "G幣成功售出，您目前的餘額為" + $scope.currentUser.credit.formatPrice())
+                $infoModal.open("以" + $scope.viewingLevel.salePrice.formatPrice() + "幣售出<br>您目前餘額為" + $scope.currentUser.credit.formatPrice() + "G幣")
             })
 
         }, function (reason) {

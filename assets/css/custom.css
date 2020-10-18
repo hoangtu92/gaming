@@ -1607,6 +1607,10 @@ form.customer-service-form button {
 	margin-top: -50px;
 }
 
+form.customer-service-form .send-a-question-btn button{
+	margin-top:0;
+}
+
 form.customer-service-form button img {
 	max-width: 220px;
 	text-align: center;
@@ -2292,7 +2296,7 @@ h3.product-title {
 	text-align: center;
 	background: #fd3779;
 	padding: 5px 20px;
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: 600;
 	width: auto;
 	border-radius: 10px;
@@ -2745,17 +2749,13 @@ h3.product-title {
 	transform: scale(1.1);
 }
 
-.warning-message {
-	color: white;
-	font-size: 22px;
-}
 
 /**
 Custom css
  */
 .warning-message {
 	color: white;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 div.star-glowing {
@@ -3146,7 +3146,7 @@ div.menu {
 
 button {
 	color: #fff;
-	font-size: 1.5vw;
+	font-size: 14px;
 	font-weight: 600;
 	padding: 5px 40px;
 	border-radius: 10px;
