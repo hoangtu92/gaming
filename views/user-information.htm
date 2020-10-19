@@ -10,7 +10,9 @@
                 <div class="user-info-coulmn">
                     <div class="author-img">
                         <label style="cursor: pointer">
-                            <img ng-src="{{currentUser.avatar !== '' && config.api_domain + '/files/users/' + currentUser.avatar || currentUser.avatar == '' && '/assets/images/default-avatar.png'}}" class="img-responsive">
+                            <img class="img-responsive" alt="avatar" ng-if="currentUser.avatar != null && currentUser.avatar !== ''" ng-src="{{config.api_domain + '/files/users/' + currentUser.avatar}}">
+                            <img class="img-responsive" alt="avatar" ng-if="currentUser.avatar == null || currentUser.avatar == ''" src="/assets/images/default-avatar.png">
+
                             <input file-upload ng-model="userAvatar" type="file" ng-hide="true">
                         </label>
                     </div>

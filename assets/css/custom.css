@@ -1593,7 +1593,6 @@ form.customer-service-form .form-control {
 }
 
 form.customer-service-form textarea {
-	min-height: 500px !important;
 	height: 50vh;
 }
 
@@ -2295,7 +2294,7 @@ h3.product-title {
 	color: #fff;
 	text-align: center;
 	background: #fd3779;
-	padding: 5px 20px;
+	padding: 5px 10px;
 	font-size: 26px;
 	font-weight: 600;
 	width: auto;
