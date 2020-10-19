@@ -8,7 +8,7 @@
         <div class="monthly-stored-value-bottom-sec">
             <ul>
                 <a href="#" ng-click="selectPlan(item)" ng-repeat="item in pricePlans" ng-if="item.type == 1">
-                    <li><div class="img-outer-cstm"><img src="{{'/assets/images/' + item.image || '/assets/images/gold-icon-2.png'}}" class="img-responsive"></div>
+                    <li><div class="img-outer-cstm"><img ng-src="{{'/assets/images/' + item.image || '/assets/images/gold-icon-2.png'}}" class="img-responsive"></div>
                         <h4>{{item.credit.formatPrice()}} G幣</h4>
                         <span> NT {{item.cash.formatPrice()}} </span> </li>
                 </a>
