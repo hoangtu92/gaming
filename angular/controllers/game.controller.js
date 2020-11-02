@@ -498,10 +498,7 @@ gamingApp.controller("gameController", function ($scope, $route, $routeParams, $
 
             if(typeof $scope.previousLevel !== 'undefined' && $scope.gaming.progressLevel > $scope.previousLevel){
                 $(".star-growing").addClass("active");
-                $infoModal.open("討厭啦~讓你贏了\n" +
-                    "可以看我脫一件囉!\n" +
-                    "\n" +
-                    "(點選上方脫衣影片觀看)");
+                $infoModal.open("討厭拉~讓你贏了<br>" + "可以看我脫一件囉!<br>" + "(點選上方脫衣影片觀看)");
             }
 
             angular.element(".dices-result-container").show();

@@ -516,7 +516,7 @@ gamingApp.controller("mainController", function ($window, $rootScope, $location,
     $scope.selectPlan = function (item) {
 
         if(item.type === 0 && $scope.currentUser.vip){
-            $infoModal.open("您已經是VIP")
+            $infoModal.open("您已是包月會員")
         }
         else{
             $scope.currentPlan = item;
