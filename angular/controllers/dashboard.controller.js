@@ -91,7 +91,7 @@ gamingApp.controller("dashboardController", function ($scope, $route, $routePara
 
     $scope.playPreview = function () {
 
-        if($scope.currentRole.video != null){
+        if($scope.currentRole.video != null && 0){
             $scope.openModal('video_play');
         }
         else{
